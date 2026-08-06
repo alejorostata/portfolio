@@ -98,12 +98,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Interactive Profile Console */}
+          {/* Right Column: Fixed-Height Profile Console (Zero Resizing / Shift) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden">
+            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden h-[360px] flex flex-col">
               
               {/* Console Header Bar */}
-              <div className="bg-slate-950 border-b border-slate-800 p-3">
+              <div className="bg-slate-950 border-b border-slate-800 p-3 shrink-0">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-800/80 px-1">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
@@ -169,62 +169,64 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
               </div>
 
-              {/* Tab Content Display */}
-              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed overflow-x-auto min-h-[250px]">
+              {/* Tab Content Display - Fixed Height Container */}
+              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between overflow-hidden">
                 
-                {activeConsoleTab === 'overview' && (
-                  <div className="space-y-2.5 animate-in fade-in duration-200">
-                    <p className="text-slate-400">// Software Engineering Lead Overview</p>
-                    <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                      <p className="text-blue-400 font-bold text-xs">Role Focus</p>
-                      <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Leadership</p>
+                <div className="overflow-y-auto no-scrollbar space-y-2">
+                  {activeConsoleTab === 'overview' && (
+                    <div className="space-y-2.5 animate-in fade-in duration-200">
+                      <p className="text-slate-400">// Software Engineering Lead Overview</p>
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                        <p className="text-blue-400 font-bold text-xs">Role Focus</p>
+                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Leadership</p>
+                      </div>
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                        <p className="text-amber-400 font-bold text-xs">Competitive Achievement</p>
+                        <p className="text-slate-200 text-xs">ACM-ICPC 2014 Philippine National Contestant</p>
+                      </div>
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                        <p className="text-sky-400 font-bold text-xs">Graduate Study</p>
+                        <p className="text-slate-200 text-xs">Master's in Information Technology @ Ateneo de Naga</p>
+                      </div>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                      <p className="text-amber-400 font-bold text-xs">Competitive Achievement</p>
-                      <p className="text-slate-200 text-xs">ACM-ICPC 2014 Philippine National Contestant</p>
+                  )}
+
+                  {activeConsoleTab === 'stack' && (
+                    <div className="space-y-2 animate-in fade-in duration-200">
+                      <p className="text-slate-400">// Primary Engineering Stack</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'C#'</span>, <span className="text-blue-300">'PHP'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobileDesktop</span> = [<span className="text-blue-300">'Flutter'</span>, <span className="text-blue-300">'React Native'</span>, <span className="text-blue-300">'Electron'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">databases</span> = [<span className="text-blue-300">'Supabase (PostgreSQL)'</span>, <span className="text-blue-300">'MariaDB'</span>, <span className="text-blue-300">'MySQL'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">devops</span> = [<span className="text-blue-300">'Git'</span>, <span className="text-blue-300">'Docker'</span>, <span className="text-blue-300">'Jenkins'</span>, <span className="text-blue-300">'AWS'</span>];</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                      <p className="text-sky-400 font-bold text-xs">Graduate Study</p>
-                      <p className="text-slate-200 text-xs">Master's in Information Technology @ Ateneo de Naga</p>
+                  )}
+
+                  {activeConsoleTab === 'leadership' && (
+                    <div className="space-y-2 animate-in fade-in duration-200">
+                      <p className="text-slate-400">// Engineering Management & Team KPIs</p>
+                      <p><span className="text-blue-400">class</span> <span className="text-amber-300">TeamLeadership</span> &#123;</p>
+                      <p className="pl-4"><span className="text-blue-300">evaluations</span>: 'Team KPIs & Performance Appraisal Frameworks (PAF)';</p>
+                      <p className="pl-4"><span className="text-blue-300">mentorship</span>: 'Regular 1-on-1s & Career Development Planning';</p>
+                      <p className="pl-4"><span className="text-blue-300">agileProcess</span>: 'Sprint Planning, Daily Stand-ups & Retrospectives';</p>
+                      <p>&#125;</p>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {activeConsoleTab === 'stack' && (
-                  <div className="space-y-2 animate-in fade-in duration-200">
-                    <p className="text-slate-400">// Primary Engineering Stack</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'C#'</span>, <span className="text-blue-300">'PHP'</span>];</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobileDesktop</span> = [<span className="text-blue-300">'Flutter'</span>, <span className="text-blue-300">'React Native'</span>, <span className="text-blue-300">'Electron'</span>];</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">databases</span> = [<span className="text-blue-300">'Supabase (PostgreSQL)'</span>, <span className="text-blue-300">'MariaDB'</span>, <span className="text-blue-300">'MySQL'</span>];</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">devops</span> = [<span className="text-blue-300">'Git'</span>, <span className="text-blue-300">'Docker'</span>, <span className="text-blue-300">'Jenkins'</span>, <span className="text-blue-300">'AWS'</span>];</p>
-                  </div>
-                )}
+                  {activeConsoleTab === 'ai' && (
+                    <div className="space-y-2 animate-in fade-in duration-200">
+                      <p className="text-slate-400">// AI-Assisted Engineering Workflow</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">aiTools</span> = &#123;</p>
+                      <p className="pl-4"><span className="text-blue-300">agenticAI</span>: 'Gemini Antigravity',</p>
+                      <p className="pl-4"><span className="text-blue-300">codingAssistants</span>: ['Claude Code AI', 'GitHub Copilot'],</p>
+                      <p className="pl-4"><span className="text-blue-300">impact</span>: 'Accelerated development velocity & clean refactoring'</p>
+                      <p>&#125;;</p>
+                    </div>
+                  )}
+                </div>
 
-                {activeConsoleTab === 'leadership' && (
-                  <div className="space-y-2 animate-in fade-in duration-200">
-                    <p className="text-slate-400">// Engineering Management & Team KPIs</p>
-                    <p><span className="text-blue-400">class</span> <span className="text-amber-300">TeamLeadership</span> &#123;</p>
-                    <p className="pl-4"><span className="text-blue-300">evaluations</span>: 'Team KPIs & Performance Appraisal Frameworks (PAF)';</p>
-                    <p className="pl-4"><span className="text-blue-300">mentorship</span>: 'Regular 1-on-1s & Career Development Planning';</p>
-                    <p className="pl-4"><span className="text-blue-300">agileProcess</span>: 'Sprint Planning, Daily Stand-ups & Retrospectives';</p>
-                    <p>&#125;</p>
-                  </div>
-                )}
-
-                {activeConsoleTab === 'ai' && (
-                  <div className="space-y-2 animate-in fade-in duration-200">
-                    <p className="text-slate-400">// AI-Assisted Engineering Workflow</p>
-                    <p><span className="text-blue-400">const</span> <span className="text-amber-300">aiTools</span> = &#123;</p>
-                    <p className="pl-4"><span className="text-blue-300">agenticAI</span>: 'Gemini Antigravity',</p>
-                    <p className="pl-4"><span className="text-blue-300">codingAssistants</span>: ['Claude Code AI', 'GitHub Copilot'],</p>
-                    <p className="pl-4"><span className="text-blue-300">impact</span>: 'Accelerated development velocity & clean refactoring'</p>
-                    <p>&#125;;</p>
-                  </div>
-                )}
-
-                {/* Console Footer Status */}
-                <div className="pt-3 mt-4 border-t border-slate-900 flex items-center justify-between text-slate-400">
+                {/* Console Footer Status - Always Pinned at Bottom */}
+                <div className="pt-2.5 mt-2 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                     <span className="text-[11px] font-sans font-semibold text-blue-400">Ready for Engineering Opportunities</span>
