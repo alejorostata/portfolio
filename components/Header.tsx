@@ -53,14 +53,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-3 sm:gap-4">
           
           {/* Logo & Brand Identity */}
           <a
             href="#hero"
             className="flex items-center gap-2.5 group shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
           >
-            <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform shrink-0">
               <Image
                 src="/logo.svg"
                 alt="Alejo Rostata Logo"
@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 Alejo Rostata
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 hidden xs:inline">
+              <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
                 Software Engineer & Team Lead
               </span>
             </div>
