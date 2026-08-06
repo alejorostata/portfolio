@@ -2,17 +2,17 @@
 
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal } from 'lucide-react';
+import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal, Trophy } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
-  const [activeConsoleTab, setActiveConsoleTab] = useState<'stack' | 'architecture' | 'leadership' | 'ai'>('stack');
+  const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden bg-slate-950">
+    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden bg-linear-ambient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
@@ -99,11 +99,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Interactive Profile Console */}
+          {/* Right Column: Interactive Command Center */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden">
               
-              {/* Console Header Bar with Tabs */}
+              {/* Command Center Header */}
               <div className="bg-slate-950 border-b border-slate-800 p-2 sm:p-3">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-900 px-2">
                   <div className="flex items-center gap-1.5">
@@ -120,6 +120,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 {/* Tab Controls */}
                 <div className="flex items-center gap-1 pt-2 overflow-x-auto no-scrollbar">
                   <button
+                    onClick={() => setActiveConsoleTab('overview')}
+                    type="button"
+                    className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
+                      activeConsoleTab === 'overview'
+                        ? 'bg-indigo-600 text-white shadow-sm'
+                        : 'bg-slate-900 text-slate-400 hover:text-slate-200'
+                    }`}
+                  >
+                    <Terminal className="w-3 h-3" />
+                    <span>Overview</span>
+                  </button>
+                  <button
                     onClick={() => setActiveConsoleTab('stack')}
                     type="button"
                     className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
@@ -129,19 +141,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     }`}
                   >
                     <Code2 className="w-3 h-3" />
-                    <span>Tech Stack</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveConsoleTab('architecture')}
-                    type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
-                      activeConsoleTab === 'architecture'
-                        ? 'bg-indigo-600 text-white shadow-sm'
-                        : 'bg-slate-900 text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    <Layers className="w-3 h-3" />
-                    <span>Architecture</span>
+                    <span>Tech Matrix</span>
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('leadership')}
@@ -173,6 +173,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               {/* Tab Content Display */}
               <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950/80 leading-relaxed overflow-x-auto min-h-[260px]">
                 
+                {activeConsoleTab === 'overview' && (
+                  <div className="space-y-2.5 animate-in fade-in duration-200">
+                    <p className="text-slate-400">// Software Engineering Lead Overview</p>
+                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <p className="text-indigo-400 font-bold text-xs">Role Focus</p>
+                      <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Leadership</p>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <p className="text-amber-400 font-bold text-xs">Competitive Achievement</p>
+                      <p className="text-slate-200 text-xs">ACM-ICPC 2014 Philippine National Contestant</p>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <p className="text-sky-400 font-bold text-xs">Graduate Study</p>
+                      <p className="text-slate-200 text-xs">Master's in Information Technology @ Ateneo de Naga</p>
+                    </div>
+                  </div>
+                )}
+
                 {activeConsoleTab === 'stack' && (
                   <div className="space-y-2 animate-in fade-in duration-200">
                     <p className="text-slate-400">// Primary Engineering Stack</p>
@@ -181,16 +199,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     <p><span className="text-purple-400">const</span> <span className="text-amber-300">mobileDesktop</span> = [<span className="text-indigo-300">'Flutter'</span>, <span className="text-indigo-300">'React Native'</span>, <span className="text-indigo-300">'Electron'</span>];</p>
                     <p><span className="text-purple-400">const</span> <span className="text-amber-300">databases</span> = [<span className="text-indigo-300">'Supabase (PostgreSQL)'</span>, <span className="text-indigo-300">'MariaDB'</span>, <span className="text-indigo-300">'MySQL'</span>];</p>
                     <p><span className="text-purple-400">const</span> <span className="text-amber-300">devops</span> = [<span className="text-indigo-300">'Git'</span>, <span className="text-indigo-300">'Docker'</span>, <span className="text-indigo-300">'Jenkins'</span>, <span className="text-indigo-300">'AWS'</span>];</p>
-                  </div>
-                )}
-
-                {activeConsoleTab === 'architecture' && (
-                  <div className="space-y-2 animate-in fade-in duration-200">
-                    <p className="text-slate-400">// Full-Stack Architecture Principles</p>
-                    <p><span className="text-indigo-400">1. Modular Systems:</span> Scalable REST APIs & Microservices.</p>
-                    <p><span className="text-indigo-400">2. Cross-Platform:</span> Web, Native Mobile (iOS/Android) & Desktop apps.</p>
-                    <p><span className="text-indigo-400">3. Offline-First DB:</span> Hybrid SQL & NoSQL data syncing (Supabase/MySQL).</p>
-                    <p><span className="text-indigo-400">4. Accessibility (WCAG):</span> High-contrast, keyboard-first, screen reader compliant UI.</p>
                   </div>
                 )}
 
