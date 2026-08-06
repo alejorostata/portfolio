@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Translucent Glass CTA Buttons (Option D) */}
+            {/* Solid Filled Dual Buttons (Option B) */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <a
                 href="#experience"
@@ -88,9 +88,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="h-12 px-6 rounded-xl bg-blue-50/80 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-500/20 font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-xs shrink-0 cursor-pointer"
+                className="h-12 px-6 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer"
               >
-                <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <FileText className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>View CV</span>
               </button>
             </div>
