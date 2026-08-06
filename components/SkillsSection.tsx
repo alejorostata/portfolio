@@ -50,11 +50,11 @@ export const SkillsSection: React.FC = () => {
     : SKILL_CATEGORIES.filter((cat) => cat.id === activeTab);
 
   return (
-    <section id="skills" className="py-16 sm:py-20 relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
+    <section id="skills" className="py-12 sm:py-20 relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3 mb-8 sm:mb-10">
+        <div className="max-w-3xl space-y-2.5 sm:space-y-3 mb-6 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-xs font-semibold uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
             <span>Technical Ecosystem</span>
@@ -62,13 +62,13 @@ export const SkillsSection: React.FC = () => {
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Skills, Languages & Frameworks
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base">
             Comprehensive skill set built across backend APIs, modern frontend web apps, mobile, AI tools, Supabase, and engineering leadership.
           </p>
         </div>
 
-        {/* Category Filter Pills Container - Flex Wrap, NO Horizontal Scrollbar */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-8 border-b border-slate-200 dark:border-slate-800 pb-4" role="tablist" aria-label="Skill Categories">
+        {/* Category Filter Pills Container - Mobile Horizontal Scroll Pill Row */}
+        <div className="flex items-center gap-2 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
           <button
             onClick={() => setActiveTab('all')}
             type="button"
@@ -105,34 +105,34 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
           {displayedSkills.map((category) => (
             <div
               key={category.id}
-              className="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 rounded-2xl p-5 sm:p-6 space-y-4 hover:border-blue-500/40 dark:hover:border-blue-500/40 transition-all duration-300 shadow-xs dark:shadow-md flex flex-col justify-between"
+              className="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 rounded-2xl p-4 sm:p-6 space-y-3.5 hover:border-blue-500/40 dark:hover:border-blue-500/40 transition-all duration-300 shadow-xs dark:shadow-md flex flex-col justify-between"
             >
-              <div className="space-y-4">
-                {/* Header */}
-                <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30">
+              <div className="space-y-3.5">
+                {/* Header with whitespace-nowrap shrink-0 on skill count badge to prevent wrapping */}
+                <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 pb-3 gap-2">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 shrink-0">
                       {getCategoryIcon(category.id)}
                     </div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base truncate">
                       {category.name}
                     </h3>
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 whitespace-nowrap shrink-0">
                     {category.skills.length} skills
                   </span>
                 </div>
 
                 {/* Skill Badges */}
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5">
                   {category.skills.map((skill) => (
                     <div
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100/90 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-800 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100/90 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs font-medium text-slate-800 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs"
                     >
                       <Check className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
                       <span>{skill}</span>

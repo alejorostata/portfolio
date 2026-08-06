@@ -12,74 +12,74 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-ambient-slate bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-900">
+    <section id="hero" className="relative pt-24 pb-12 sm:pt-36 sm:pb-24 overflow-hidden bg-ambient-slate bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Bio, Metrics & CTAs */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
             
             {/* Availability Status Badge */}
             <div>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 text-xs font-semibold tracking-wide shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 text-xs font-semibold tracking-wide shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-500"></span>
                 </span>
-                <span>{PERSONAL_INFO.availability}</span>
+                <span className="truncate">{PERSONAL_INFO.availability}</span>
               </div>
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-[1.15]">
                 Hi, I'm <span className="text-blue-600 dark:text-blue-400">{PERSONAL_INFO.name}</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-bold text-slate-700 dark:text-slate-300">
+              <p className="text-base sm:text-2xl font-bold text-slate-700 dark:text-slate-300 leading-snug">
                 Full Stack Software Engineer & Team Lead
               </p>
             </div>
 
-            {/* Metric Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
-              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-xs">
-                <p className="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">~10 Years</p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Software Development Experience</p>
+            {/* Metric Cards Grid - Side-by-Side 2 Columns on Mobile for Clean Symmetry */}
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">~10 Years</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">Software Experience</p>
               </div>
-              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-xs">
-                <p className="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">Full-Stack</p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Frontend, Backend, Web & Mobile</p>
+              <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">Full-Stack</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">Web, Mobile & APIs</p>
               </div>
             </div>
 
             {/* Summary Bio */}
-            <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-base leading-relaxed">
               Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.
             </p>
 
             {/* Meta Role Details */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
                 <span>{PERSONAL_INFO.location}</span>
               </div>
               <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <Briefcase className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
                 <span>Team Lead @ Kryterion</span>
               </div>
               <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <GraduationCap className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
                 <span>MS IT Candidate</span>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1">
               <a
                 href="#experience"
-                className="h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
+                className="h-11 sm:h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <span>Explore Experience</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
+                className="h-11 sm:h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <span>Review or Download CV</span>
@@ -98,9 +98,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Profile Console (Fixed Height h-[390px] sm:h-[400px], ZERO Scrollbar) */}
+          {/* Right Column: Profile Console (Responsive Height to prevent mobile content clipping) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden h-[390px] sm:h-[400px] flex flex-col justify-between">
+            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden min-h-[440px] sm:h-[400px] flex flex-col justify-between">
               
               {/* Console Header Bar */}
               <div className="bg-slate-950 border-b border-slate-800 p-3 shrink-0">
@@ -169,24 +169,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
               </div>
 
-              {/* Tab Content Display - ZERO Scrollbars, Perfect Fit */}
-              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between overflow-hidden">
+              {/* Tab Content Display */}
+              <div className="p-3.5 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between overflow-hidden">
                 
                 <div className="space-y-2 overflow-hidden">
                   {activeConsoleTab === 'overview' && (
                     <div className="space-y-2 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Software Engineering Lead Overview</p>
-                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                      <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-blue-400 font-bold text-xs">Primary Role</p>
-                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Lead @ Kryterion</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">Full Stack Software Engineering & Team Lead @ Kryterion</p>
                       </div>
-                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                      <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-emerald-400 font-bold text-xs">Core Specialization</p>
-                        <p className="text-slate-200 text-xs">Java (Spring Boot), Next.js, Vue.js, Supabase, Flutter, React Native</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">Java (Spring Boot), Next.js, Vue.js, Supabase, Flutter, React Native</p>
                       </div>
-                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
+                      <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-amber-400 font-bold text-xs">Engineering Leadership</p>
-                        <p className="text-slate-200 text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks</p>
                       </div>
                     </div>
                   )}
@@ -226,7 +226,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
 
                 {/* Console Footer Status */}
-                <div className="pt-2.5 mt-2 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
+                <div className="pt-2 sm:pt-2.5 mt-2 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                     <span className="text-[11px] font-sans font-semibold text-blue-400">Ready for Engineering Opportunities</span>
