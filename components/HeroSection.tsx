@@ -75,8 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Action Buttons with "Review Full CV" */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            {/* Borderless Text CTA with Arrow for "Review Full CV" */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <a
                 href="#experience"
                 className="h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer"
@@ -88,10 +88,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="h-12 px-6 rounded-xl bg-transparent border border-slate-300 dark:border-slate-800 hover:border-blue-500/50 hover:bg-blue-500/5 text-slate-700 dark:text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 transition-all shrink-0 cursor-pointer"
+                className="h-12 px-3 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group"
               >
-                <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <span>Review Full CV</span>
+                <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
