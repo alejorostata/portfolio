@@ -46,9 +46,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
   return (
     <header
+      role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/85 dark:bg-slate-950/85 backdrop-blur-md py-3 shadow-xs dark:shadow-slate-900/40 border-b-0'
+          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md py-3 shadow-xs dark:shadow-slate-900/40 border-b-0'
           : 'bg-transparent py-4 sm:py-5 border-b-0'
       }`}
     >
@@ -58,6 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           {/* Logo & Brand Identity */}
           <a
             href="#hero"
+            aria-label="Alejo Rostata Portfolio Homepage"
             className="flex items-center gap-2.5 group shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform shrink-0">
@@ -81,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
           {/* Desktop Navigation Links */}
           <nav
-            aria-label="Main Desktop Navigation"
+            aria-label="Primary Desktop Navigation"
             className="hidden lg:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs"
           >
             {navLinks.map((link) => {
@@ -90,6 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 <a
                   key={link.name}
                   href={link.href}
+                  aria-current={isActive ? 'page' : undefined}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
                     isActive
                       ? 'bg-blue-600 text-white shadow-xs'
@@ -109,20 +112,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             {/* Contact CTA Button */}
             <a
               href="#contact"
+              aria-label="Get in touch with Alejo Rostata"
               className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <span>Get In Touch</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
 
-            {/* Mobile / Tablet Drawer Toggle Button */}
+            {/* Mobile Navigation Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
               className="lg:hidden w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 flex items-center justify-center shrink-0"
-              aria-label="Toggle Navigation Menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu-drawer"
+              aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
 
@@ -130,8 +136,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
         {/* Mobile / Tablet Drawer Navigation Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
-            <nav className="flex flex-col gap-1.5" aria-label="Mobile Navigation">
+          <div
+            id="mobile-menu-drawer"
+            className="lg:hidden mt-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200"
+          >
+            <nav className="flex flex-col gap-1.5" aria-label="Mobile Drawer Navigation">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
                 return (
@@ -139,6 +148,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
+                    aria-current={isActive ? 'page' : undefined}
                     className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all ${
                       isActive
                         ? 'bg-blue-600 text-white shadow-xs'
@@ -156,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                   className="w-full h-11 rounded-xl bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs"
                 >
                   <span>Get In Touch</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </nav>
