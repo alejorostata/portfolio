@@ -150,8 +150,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     id: 'frontend',
-    name: 'Frontend Web',
-    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Bootstrap', 'HTML5 / CSS3'],
+    name: 'Frontend Web & CMS',
+    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Bootstrap', 'WordPress', 'HTML5 / CSS3'],
   },
   {
     id: 'mobile',
