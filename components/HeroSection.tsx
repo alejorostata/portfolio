@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal, Trophy } from 'lucide-react';
+import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden bg-linear-ambient">
+    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
@@ -20,43 +20,43 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-7 space-y-5 sm:space-y-6">
             
             {/* Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-400 text-xs font-semibold tracking-wide">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600 dark:bg-indigo-500"></span>
               </span>
               <span>{PERSONAL_INFO.availability}</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-2.5">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight leading-[1.15]">
-                Hi, I'm <span className="text-indigo-400">{PERSONAL_INFO.name}</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-[1.15]">
+                Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{PERSONAL_INFO.name}</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-semibold text-slate-300">
+              <p className="text-lg sm:text-2xl font-semibold text-slate-700 dark:text-slate-300">
                 Full Stack Software Engineer & Team Lead
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-slate-300 text-sm sm:text-lg max-w-2xl leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg max-w-2xl leading-relaxed">
               {PERSONAL_INFO.summary}
             </p>
 
             {/* Meta Information */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-medium text-slate-400 pt-1">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 pt-1">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-indigo-400 shrink-0" />
+                <MapPin className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
                 <span>{PERSONAL_INFO.location}</span>
               </div>
-              <span className="hidden sm:inline text-slate-700">•</span>
+              <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <Briefcase className="w-4 h-4 text-indigo-400 shrink-0" />
+                <Briefcase className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
                 <span>Team Lead @ Kryterion</span>
               </div>
-              <span className="hidden sm:inline text-slate-700">•</span>
+              <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <GraduationCap className="w-4 h-4 text-indigo-400 shrink-0" />
+                <GraduationCap className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
                 <span>MS IT Candidate</span>
               </div>
             </div>
@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a
                 href="#experience"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20 text-center"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition-all shadow-sm text-center"
               >
                 <span>Explore Experience</span>
                 <ArrowRight className="w-4 h-4" />
@@ -74,38 +74,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all cursor-pointer text-center"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer text-center shadow-sm"
               >
-                <FileText className="w-4 h-4 text-indigo-400" />
+                <FileText className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                 <span>View Full CV (Interactive & Print)</span>
               </button>
             </div>
 
             {/* Key Metrics */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-800/80">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-200 dark:border-slate-800/80">
               <div className="space-y-0.5">
-                <p className="text-xl sm:text-3xl font-extrabold text-indigo-400">10+</p>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-medium leading-tight">Years Experience</p>
+                <p className="text-xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">10+</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">Years Experience</p>
               </div>
               <div className="space-y-0.5">
-                <p className="text-xl sm:text-3xl font-extrabold text-slate-100">ACM-ICPC</p>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-medium leading-tight">2014 Contestant</p>
+                <p className="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100">ACM-ICPC</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">2014 Contestant</p>
               </div>
               <div className="space-y-0.5">
-                <p className="text-xl sm:text-3xl font-extrabold text-sky-400">Full-Stack</p>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-medium leading-tight">Web, Desktop & Mobile</p>
+                <p className="text-xl sm:text-3xl font-extrabold text-sky-600 dark:text-sky-400">Full-Stack</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">Web, Desktop & Mobile</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Interactive Command Center */}
+          {/* Right Column: Code & Interactive Profile Console */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden">
+            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden">
               
-              {/* Command Center Header */}
+              {/* Console Header Bar */}
               <div className="bg-slate-950 border-b border-slate-800 p-2 sm:p-3">
-                <div className="flex items-center justify-between pb-2 border-b border-slate-900 px-2">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-800/80 px-2">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
@@ -171,7 +171,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Tab Content Display */}
-              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950/80 leading-relaxed overflow-x-auto min-h-[260px]">
+              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed overflow-x-auto min-h-[260px]">
                 
                 {activeConsoleTab === 'overview' && (
                   <div className="space-y-2.5 animate-in fade-in duration-200">
