@@ -48,8 +48,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md py-3 shadow-md border-b border-slate-200/80 dark:border-slate-800/80'
-          : 'bg-transparent py-4 sm:py-5'
+          ? 'bg-white/85 dark:bg-slate-950/85 backdrop-blur-md py-3 shadow-xs dark:shadow-slate-900/40 border-b-0'
+          : 'bg-transparent py-4 sm:py-5 border-b-0'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,11 +102,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             })}
           </nav>
 
-          {/* Right Action Controls: Theme Toggle & Contact Button (Standardized h-10 rounded-xl) */}
+          {/* Right Action Controls */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <ThemeToggle />
 
-            {/* Contact CTA Button (Standardized h-10 rounded-xl) */}
+            {/* Contact CTA Button */}
             <a
               href="#contact"
               className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500"
