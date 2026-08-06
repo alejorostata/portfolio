@@ -45,13 +45,13 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <nav className="flex flex-wrap gap-4 text-xs font-medium" aria-label="Footer Navigation">
+          {/* Quick Links with Rounded Focus Rings */}
+          <nav className="flex flex-wrap gap-2 text-xs font-medium" aria-label="Footer Navigation">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-400 hover:text-blue-400 transition-colors"
+                className="px-2.5 py-1 rounded-md text-slate-400 hover:text-blue-400 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 {link.name}
               </a>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <button
               onClick={scrollToTop}
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-blue-400 hover:border-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-blue-400 hover:border-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               aria-label="Back to top of page"
             >
               <span>Back to Top</span>
