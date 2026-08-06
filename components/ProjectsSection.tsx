@@ -8,7 +8,7 @@ export const ProjectsSection: React.FC = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Web & Cloud':
-        return <Server className="w-4 h-4 text-purple-600 dark:text-purple-400" />;
+        return <Server className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />;
       case 'Mobile App':
         return <Smartphone className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />;
       case 'Enterprise & Automation':
@@ -16,7 +16,7 @@ export const ProjectsSection: React.FC = () => {
       case 'DevOps & Tooling':
         return <Wrench className="w-4 h-4 text-amber-600 dark:text-amber-400" />;
       default:
-        return <FolderGit2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />;
+        return <FolderGit2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />;
     }
   };
 
@@ -26,7 +26,7 @@ export const ProjectsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30 text-xs font-semibold uppercase tracking-wider">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>Featured Projects</span>
           </div>
@@ -56,7 +56,7 @@ export const ProjectsSection: React.FC = () => {
                     </span>
 
                     {/* SaaS / B2C / B2B Type Badge */}
-                    <span className="px-2.5 py-1 rounded-full bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-300 text-[11px] sm:text-xs font-semibold">
+                    <span className="px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300 text-[11px] sm:text-xs font-semibold">
                       {project.projectType}
                     </span>
                   </div>
@@ -80,7 +80,7 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
                   {project.title}
                 </h3>
 
@@ -91,7 +91,7 @@ export const ProjectsSection: React.FC = () => {
 
                 {/* Database Badge */}
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-950 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                  <Database className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+                  <Database className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
                   <span>Database: <strong className="text-slate-900 dark:text-slate-200">{project.database}</strong></span>
                 </div>
 
@@ -101,9 +101,9 @@ export const ProjectsSection: React.FC = () => {
                     Architectural & Engineering Highlights
                   </h4>
                   <ul className="space-y-2">
-                    {project.highlights.map((highlight, idx) => (
+                    {project.highlights.map((highlight: string, idx: number) => (
                       <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5" />
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -114,7 +114,7 @@ export const ProjectsSection: React.FC = () => {
               {/* Tech Stack & Links */}
               <div className="pt-5 border-t border-slate-200 dark:border-slate-800/80 space-y-3 sm:space-y-4">
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {project.techStack.map((tech) => (
+                  {project.techStack.map((tech: string) => (
                     <span
                       key={tech}
                       className="px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-mono font-medium bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800/80 text-slate-700 dark:text-slate-300 shadow-sm"
@@ -130,7 +130,7 @@ export const ProjectsSection: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:border-purple-300 dark:hover:border-purple-500/50 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
+                      className="w-full py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-500/50 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
                     >
                       <span>Visit Live Site</span>
                       <ExternalLink className="w-3.5 h-3.5" />

@@ -4,42 +4,46 @@ export interface SkillCategory {
   skills: string[];
 }
 
-export interface ExperienceItem {
+export interface Experience {
   id: string;
   role: string;
   company: string;
+  location: string;
   period: string;
-  location?: string;
   isCurrent?: boolean;
-  summary?: string;
+  summary: string;
   responsibilities: string[];
   technologies: string[];
 }
 
-export interface EducationItem {
+export interface Education {
   id: string;
   degree: string;
   institution: string;
   period: string;
-  details?: string;
+  location?: string;
   badge?: string;
+  details?: string;
 }
 
-export interface ProjectItem {
+export interface Project {
   id: string;
   title: string;
   category: 'Web & Cloud' | 'Mobile App' | 'Enterprise & Automation' | 'DevOps & Tooling';
+  projectType: string;
+  database: string;
   description: string;
-  highlights: string[];
-  techStack: string[];
+  liveUrl?: string;
   company?: string;
+  techStack: string[];
+  highlights: string[];
 }
 
-export interface AchievementItem {
+export interface Achievement {
   id: string;
   title: string;
-  organization: string;
   year: string;
+  organization: string;
   description: string;
   iconName: string;
 }

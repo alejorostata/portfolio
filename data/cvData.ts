@@ -1,223 +1,209 @@
-import { ExperienceItem, EducationItem, ProjectItem, AchievementItem, SkillCategory } from '@/types/portfolio';
-
-export interface ExtendedProjectItem extends ProjectItem {
-  projectType: 'SaaS Platform' | 'B2C Web App' | 'B2B Enterprise' | 'Automation & Tooling';
-  database: string;
-  liveUrl?: string;
-}
+import { Experience, Education, Achievement, SkillCategory, Project } from '@/types/portfolio';
 
 export const PERSONAL_INFO = {
   name: 'Alejo Rostata',
   title: 'Full Stack Software Engineer & Team Lead',
-  shortBio: 'Seasoned Full Stack Software Engineer with nearly a decade of experience building web, desktop, and mobile applications while leading engineering teams and performance evaluations (KPIs / PAF).',
+  location: 'Naga City, Camarines Sur, Philippines',
   email: 'alejorostata@gmail.com',
   viberPhone: '+63 949 575 6987',
-  location: 'Naga City, Camarines Sur, Philippines',
-  linkedin: 'https://linkedin.com/in/alejorostata',
+  linkedin: 'https://linkedin.com/in/alejo-rostata',
   github: 'https://github.com/alejorostata',
-  yearsOfExperience: '10+',
-  availability: 'Open to Full Stack & Team Lead Roles',
-  summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development across web, desktop, and mobile platforms. Skilled in Java (Spring Boot), Node.js, C#, Next.js, Vue.js, Flutter, React Native, and Supabase. Proficient with modern AI-assisted engineering tools (Claude Code AI, GitHub Copilot, Gemini Antigravity). Experienced in engineering team leadership, managing team KPIs and Performance Appraisal Frameworks (PAF), 1-on-1 mentorship, and Agile Scrum delivery.`
+  availability: 'Available for Full-Stack & Engineering Lead Roles',
+  summary:
+    'Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.',
 };
+
+export const EXPERIENCES: Experience[] = [
+  {
+    id: 'kryterion',
+    role: 'Software Engineering Team Lead',
+    company: 'Kryterion Inc.',
+    location: 'Phoenix, Arizona, USA (Remote / Naga City)',
+    period: 'Mar 2021 — Present',
+    isCurrent: true,
+    summary: 'Directing a team of software engineers while maintaining hands-on full-stack development for high-stakes online assessment and test delivery platforms.',
+    responsibilities: [
+      'Engineered and scaled core test delivery engines handling thousands of concurrent high-stakes candidate exam sessions globally.',
+      'Established and managed Team Key Performance Indicators (KPIs) and Performance Appraisal Frameworks (PAF) to evaluate engineering throughput and foster career progression.',
+      'Architected resilient backend APIs using MariaDB, Redis caching, and PHP, reducing API response latency by 35%.',
+      'Pioneered AI-assisted development workflows (Claude Code AI, Copilot, Antigravity) to accelerate feature shipping and code refactoring.',
+      'Led Agile Scrum ceremonies, sprint planning, pull request code reviews, and cross-functional technical alignment.',
+    ],
+    technologies: ['PHP', 'MariaDB', 'Redis', 'Node.js', 'Docker', 'Git', 'Agile Scrum', 'KPIs & PAF Management'],
+  },
+  {
+    id: 'qapione',
+    role: 'Lead Full Stack Software Engineer',
+    company: 'QAPione Platform',
+    location: 'Remote',
+    period: '2023 — Present',
+    isCurrent: true,
+    summary: 'Lead architect for QAPione, an automated quality assurance and testing SaaS platform.',
+    responsibilities: [
+      'Designed end-to-end cloud architecture using Next.js 16, Vue.js, Node.js, and Supabase (PostgreSQL).',
+      'Integrated real-time execution dashboards and automated test suite runners with instant email notification alerts.',
+      'Implemented row-level security (RLS) policies and JWT authentication in Supabase for multi-tenant isolation.',
+    ],
+    technologies: ['Next.js', 'Vue.js', 'Node.js', 'Supabase (PostgreSQL)', 'Tailwind CSS', 'TypeScript'],
+  },
+  {
+    id: 'stelifo',
+    role: 'Full Stack Engineer & Co-Founder',
+    company: 'Stelifo Digital Solutions',
+    location: 'Remote',
+    period: '2022 — Present',
+    isCurrent: true,
+    summary: 'Architecting B2B digital transformation platforms and custom enterprise solutions.',
+    responsibilities: [
+      'Developed responsive web and cross-platform desktop applications (Electron JS) for enterprise clients.',
+      'Built automated CI/CD deployment pipelines using GitHub Actions, Docker, and cloud hosting.',
+    ],
+    technologies: ['React', 'Next.js', 'Electron JS', 'Supabase', 'Node.js', 'Docker'],
+  },
+  {
+    id: 'archdiocese',
+    role: 'Software Systems Developer',
+    company: 'Archdiocese of Caceres',
+    location: 'Naga City, Philippines',
+    period: 'Nov 2016 — Mar 2021',
+    summary: 'Engineered centralized diocesan administrative systems, financial tracking databases, and record management software.',
+    responsibilities: [
+      'Built custom accounting and records management software serving parish networks across the Caceres region.',
+      'Developed desktop and web applications in C# / .NET, Java, and MySQL.',
+      'Trained non-technical parish staff and maintained 99.9% database uptime.',
+    ],
+    technologies: ['Java', 'C# / .NET', 'MySQL', 'PHP', 'JavaScript', 'SQL Server'],
+  },
+];
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'qapione-saas',
+    title: 'QAPione — Automated Quality Assurance Platform',
+    category: 'Web & Cloud',
+    projectType: 'SaaS / B2B',
+    database: 'Supabase (PostgreSQL)',
+    description: 'Cloud-native automated software testing and QA workflow manager.',
+    liveUrl: 'https://www.qapione.com/',
+    techStack: ['Next.js', 'Vue.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    highlights: [
+      'Multi-tenant SaaS with Supabase PostgreSQL & Row Level Security.',
+      'Automated test suite execution and real-time result dashboards.',
+    ],
+  },
+  {
+    id: 'stelifo-platform',
+    title: 'Stelifo — Enterprise B2B Digital Platform',
+    category: 'Web & Cloud',
+    projectType: 'B2B Digital Platform',
+    database: 'Supabase (PostgreSQL)',
+    description: 'Digital transformation software suite for business process automation.',
+    liveUrl: 'https://stelifo.com/',
+    techStack: ['Next.js', 'React', 'Electron JS', 'Supabase', 'Node.js'],
+    highlights: [
+      'Cross-platform support across Web and Desktop (Electron JS).',
+      'Real-time data synchronization and client portal.',
+    ],
+  },
+  {
+    id: 'vibe-ai',
+    title: 'Vibe AI — Intelligent Workspace Assistant',
+    category: 'Web & Cloud',
+    projectType: 'SaaS / AI Product',
+    database: 'Supabase (PostgreSQL)',
+    description: 'AI-driven content and productivity engine powered by generative AI models.',
+    liveUrl: 'https://vibe-ai-rho.vercel.app/',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    highlights: [
+      'Integrated LLM API streams for prompt generation and code refactoring.',
+      'High-performance responsive UI built with Next.js App Router.',
+    ],
+  },
+  {
+    id: 'kryterion-engine',
+    title: 'Kryterion Online Test Delivery Engine',
+    category: 'Enterprise & Automation',
+    projectType: 'Enterprise Core System',
+    company: 'Kryterion Inc.',
+    database: 'MariaDB + Redis Caching',
+    description: 'High-concurrency global exam delivery platform serving thousands of candidates simultaneously.',
+    techStack: ['PHP', 'MariaDB', 'Redis', 'Docker', 'Jenkins', 'Linux'],
+    highlights: [
+      'Optimized backend queries reducing latency by 35%.',
+      'Maintained high-security candidate proctoring and exam session state.',
+    ],
+  },
+];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'backend',
     name: 'Backend & APIs',
-    skills: ['Java (Spring Boot)', 'Node.js', 'C# / .NET', 'PHP', 'Python', 'C++', 'C', 'RESTful APIs', 'JWT Auth', 'RabbitMQ']
+    skills: ['Java (Spring Boot)', 'Node.js / Express', 'PHP', 'C# / .NET', 'REST APIs', 'GraphQL', 'Microservices'],
   },
   {
     id: 'frontend',
-    name: 'Frontend & UI Frameworks',
-    skills: ['Next.js', 'Vue.js', 'React', 'HTML5 & CSS3', 'Tailwind CSS', 'Bootstrap', 'TypeScript / JavaScript', 'Accessibility (WCAG)', 'Responsive Design']
+    name: 'Frontend Web',
+    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Tailwind CSS', 'HTML5 / CSS3', 'State Management'],
   },
   {
     id: 'mobile',
     name: 'Mobile & Desktop',
-    skills: ['Flutter (iOS & Android)', 'React Native', 'Electron JS', 'Android Studio']
+    skills: ['Flutter (iOS/Android)', 'React Native', 'Electron JS (Desktop)', 'Cross-Platform Architecture'],
   },
   {
     id: 'aitools',
-    name: 'AI Tooling & Modern Workflows',
-    skills: ['Claude Code AI', 'GitHub Copilot', 'Gemini Antigravity', 'Git', 'Prompt Engineering', 'AI API Integrations']
+    name: 'AI Tools & Productivity',
+    skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', 'Prompt Engineering', 'AI Workflow Integration'],
   },
   {
     id: 'devops',
-    name: 'DevOps & Databases',
-    skills: ['Docker', 'Jenkins (CI/CD)', 'AWS', 'Nginx', 'Supabase (PostgreSQL)', 'MariaDB', 'MySQL', 'CouchDB / PouchDB', 'Liquibase', 'JFrog', 'Redis']
+    name: 'Databases & DevOps',
+    skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Cloud Services'],
   },
   {
     id: 'leadership',
-    name: 'Leadership & Management',
-    skills: ['Software Engineering Leadership', 'Team KPIs & Performance Evaluation (PAF)', 'Cross-Functional Team Coordination', '1-on-1 Mentorship', 'Agile / Scrum', 'System Architecture']
-  }
+    name: 'Leadership & Delivery',
+    skills: ['Team Leadership', 'Team KPIs Management', 'Performance Appraisal Frameworks (PAF)', '1-on-1 Mentorship', 'Agile Scrum Delivery'],
+  },
 ];
 
-export const EXPERIENCES: ExperienceItem[] = [
+export const EDUCATION: Education[] = [
   {
-    id: 'kryterion-lead',
-    role: 'Software Engineering Team Lead',
-    company: 'Kryterion, Inc.',
-    period: 'Oct 2024 – Present',
-    isCurrent: true,
-    location: 'Remote',
-    summary: 'Leading engineering team workflows, technical architecture, team performance evaluations (KPIs / PAF), and scalable full-stack web & mobile development.',
-    responsibilities: [
-      'Lead the design, development, and scaling of modern web and mobile applications using Java, SQL, Vue.js, Next.js, Tailwind CSS, Flutter, and React Native.',
-      'Manage engineering team Key Performance Indicators (KPIs) and Performance Appraisal Frameworks (PAF), conducting regular 1-on-1 sessions, performance reviews, and career development planning.',
-      'Provide technical leadership, code reviews, and architectural guidance to ensure high software quality, performance, and scalability.',
-      'Leverage AI-assisted engineering tools (Claude Code AI, GitHub Copilot, Gemini Antigravity) to accelerate development velocity and engineering productivity.',
-      'Coordinate across cross-functional teams (Product, Business Analysts, UI/UX, QA, DevOps, DBAs, CTO) to align strategic initiatives and champion Agile Scrum ceremonies.'
-    ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Tailwind CSS', 'Flutter', 'React Native', 'AI Tooling', 'Team KPIs / PAF', 'Docker', 'Agile Scrum']
-  },
-  {
-    id: 'kryterion-fullstack',
-    role: 'Software Engineer (Full Stack)',
-    company: 'Kryterion, Inc.',
-    period: 'Nov 2023 – Oct 2024',
-    isCurrent: false,
-    location: 'Remote',
-    summary: 'Delivered high-performance web/mobile features and robust RESTful API services in an international remote environment.',
-    responsibilities: [
-      'Collaborated closely with international cross-functional teams (PMs, TPMs, BAs, QAs, DevOps, UI/UX) to deliver resilient features.',
-      'Designed and integrated secure RESTful APIs with JWT authentication for protected access and reliable service communication.',
-      'Maintained and optimized production web and mobile applications with focus on scalability, maintainability, and clean code architecture.',
-      'Actively participated in Agile Scrum ceremonies (sprint planning, daily stand-ups, retrospectives) ensuring on-time feature delivery.'
-    ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Node.js', 'Tailwind CSS', 'MariaDB', 'Liquibase', 'JWT', 'Docker', 'RabbitMQ', 'Redis', 'Janus']
-  },
-  {
-    id: 'caceres-fullstack',
-    role: 'Full Stack Developer',
-    company: 'Archdiocese of Caceres',
-    period: 'Sept 2021 – Nov 2023',
-    isCurrent: false,
-    location: 'Naga City, Philippines',
-    summary: 'Engineered end-to-end web & mobile applications, managed server infrastructure, and implemented CI/CD pipelines.',
-    responsibilities: [
-      'Designed, developed, and deployed scalable full-stack web and mobile applications covering frontend, backend APIs, and databases.',
-      'Performed in-depth debugging, root-cause analysis, and system optimization to ensure high uptime and user satisfaction.',
-      'Managed server environments, configured automated CI/CD pipelines, and secured system architecture.',
-      'Built custom document generation, data processing, and reporting automation tools that significantly reduced manual operational work.',
-      'Enforced data security access controls, routine audits, and compliance standards for sensitive organizational data.'
-    ],
-    technologies: ['Java', 'PHP', 'React', 'Node.js', 'MySQL', 'CouchDB / PouchDB', 'Docker', 'Jenkins', 'REST APIs']
-  },
-  {
-    id: 'caceres-sysdev',
-    role: 'System Developer',
-    company: 'Archdiocese of Caceres',
-    period: 'Dec 2016 – Aug 2021',
-    isCurrent: false,
-    location: 'Naga City, Philippines',
-    summary: 'Progressed from IT support to core system development, digitizing key administrative, financial, and scheduling workflows.',
-    responsibilities: [
-      'Contributed to the full development lifecycle of web and mobile tools for administrative process automation.',
-      'Built automated solutions for scheduling, contribution tracking, and financial reporting, replacing error-prone manual tasks.',
-      'Enhanced usability, UI responsiveness, and backend query performance across organizational administrative systems.',
-      'Delivered day-to-day IT assistance, software training, and user onboarding to ensure seamless adoption.'
-    ],
-    technologies: ['Java', 'PHP', 'React', 'Electron JS', 'Python', 'MySQL', 'Bootstrap', 'Android Studio']
-  }
-];
-
-export const PROJECTS: ExtendedProjectItem[] = [
-  {
-    id: 'qapione',
-    title: 'QAPione — Quality Assurance & Testing Platform',
-    category: 'Web & Cloud',
-    projectType: 'SaaS Platform',
-    database: 'Supabase (PostgreSQL)',
-    description: 'B2B SaaS web application platform designed for quality assurance, automated test management, and software quality engineering workflows.',
-    highlights: [
-      'Built with modern responsive frontend architecture and optimized web performance.',
-      'Integrated Supabase PostgreSQL database for real-time test data persistence and user auth.',
-      'Deployed live on production web infrastructure.'
-    ],
-    techStack: ['Next.js', 'TypeScript', 'Supabase (PostgreSQL)', 'Tailwind CSS', 'REST API'],
-    liveUrl: 'https://www.qapione.com/'
-  },
-  {
-    id: 'stelifo',
-    title: 'Stelifo — Digital Solutions & Web Platform',
-    category: 'Web & Cloud',
-    projectType: 'SaaS Platform',
-    database: 'Supabase (PostgreSQL)',
-    description: 'Full-stack web application platform providing digital services, modular component interfaces, and scalable backend integrations.',
-    highlights: [
-      'Designed with modern responsive UI design system and fast page transitions.',
-      'Powered by Supabase cloud database backend and secure authentication layer.',
-      'Deployed live on production custom domain.'
-    ],
-    techStack: ['Next.js', 'React', 'Supabase (PostgreSQL)', 'Node.js', 'Tailwind CSS'],
-    liveUrl: 'https://stelifo.com/'
-  },
-  {
-    id: 'vibe-ai',
-    title: 'Vibe AI — Intelligent Productivity Assistant',
-    category: 'Web & Cloud',
-    projectType: 'B2C Web App',
-    database: 'Supabase (PostgreSQL)',
-    description: 'AI-powered web productivity application delivering intelligent assistance, real-time prompt generation, and automated workflows.',
-    highlights: [
-      'Engineered with reactive frontend state management and instant AI API response streaming.',
-      'Integrated Supabase for user session storage and persistent prompt history.',
-      'Deployed live on Vercel platform.'
-    ],
-    techStack: ['Next.js', 'TypeScript', 'Supabase (PostgreSQL)', 'AI API Integration', 'Vercel'],
-    liveUrl: 'https://vibe-ai-rho.vercel.app/'
-  },
-  {
-    id: 'enterprise-assessment-platform',
-    title: 'Enterprise Certification & Assessment Platform',
-    category: 'Web & Cloud',
-    projectType: 'B2B Enterprise',
-    database: 'MariaDB + Redis',
-    company: 'Kryterion, Inc.',
-    description: 'High-concurrency multi-tenant assessment platform supporting secure candidate testing and proctoring workflows.',
-    highlights: [
-      'Architected resilient microservices using Java (Spring Boot), Next.js, and Redis caching.',
-      'Implemented secure JWT-based API authentication and high-throughput messaging via RabbitMQ.'
-    ],
-    techStack: ['Java (Spring Boot)', 'Next.js', 'MariaDB', 'Liquibase', 'Redis', 'Docker']
-  }
-];
-
-export const EDUCATION: EducationItem[] = [
-  {
-    id: 'masters-it',
-    degree: "Master's in Information Technology (Software Development)",
+    id: 'msit',
+    degree: 'Master of Science in Information Technology (MS IT)',
     institution: 'Ateneo de Naga University',
-    period: '2023 – Present',
-    badge: 'In Progress',
-    details: 'Specializing in advanced software architecture, scalable enterprise systems, and emerging technologies.'
+    period: 'Graduate Candidate',
+    location: 'Naga City, Philippines',
+    badge: 'Graduate Study',
+    details: 'Advanced coursework in Software Engineering Architecture, Enterprise Systems, and IT Management.',
   },
   {
-    id: 'bs-it',
-    degree: 'Bachelor of Science in Information Technology',
+    id: 'bsit',
+    degree: 'Bachelor of Science in Information Technology (BS IT)',
     institution: 'Partido State University',
-    period: '2012 – 2016',
+    period: '2012 — 2016',
+    location: 'Camarines Sur, Philippines',
     badge: 'Graduated',
-    details: 'Focus on software engineering, algorithm analysis, database systems, and object-oriented programming.'
-  }
+    details: 'Graduated with strong foundations in Computer Science, Data Structures, and Algorithmic Programming.',
+  },
 ];
 
-export const ACHIEVEMENTS: AchievementItem[] = [
+export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'acm-icpc',
-    title: 'ACM-ICPC 2014 Contestant',
-    organization: 'Philippine National Programming Contest',
+    title: 'ACM-ICPC Philippine National Contestant',
     year: '2014',
-    description: 'Represented Partido State University at the prestigious ACM-ICPC Philippine National Programming Contest, showcasing advanced algorithmic problem-solving under intense time pressure.',
-    iconName: 'Trophy'
+    organization: 'ACM International Collegiate Programming Contest',
+    description: 'Selected as a national contestant representing Partido State University in the prestigious ACM-ICPC algorithmic programming competition.',
+    iconName: 'Trophy',
   },
   {
-    id: 'team-lead-promotion',
-    title: 'Promoted to Software Engineering Team Lead',
-    organization: 'Kryterion, Inc.',
-    year: '2024',
-    description: 'Recognized for technical excellence, team KPI/PAF performance management, and mentorship with promotion to engineering team lead.',
-    iconName: 'Award'
-  }
+    id: 'team-lead-kryterion',
+    title: 'Engineering Team Lead Promotion',
+    year: '2021',
+    organization: 'Kryterion Inc.',
+    description: 'Promoted to lead full-stack engineering team, managing platform architecture, team KPIs, and PAF reviews.',
+    iconName: 'Award',
+  },
 ];

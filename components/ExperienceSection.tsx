@@ -15,7 +15,7 @@ export const ExperienceSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30 text-xs font-semibold uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Career History</span>
           </div>
@@ -41,7 +41,7 @@ export const ExperienceSection: React.FC = () => {
                   type="button"
                   className={`w-full text-left p-3.5 sm:p-4 rounded-xl border transition-all duration-200 outline-none focus:outline-none relative overflow-hidden group cursor-pointer ${
                     isSelected
-                      ? 'bg-slate-50 dark:bg-slate-900 border-purple-500/50 shadow-sm'
+                      ? 'bg-slate-50 dark:bg-slate-900 border-indigo-500/50 shadow-sm'
                       : 'bg-white dark:bg-slate-900/40 border-slate-200 dark:border-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-900/80'
                   }`}
                   aria-selected={isSelected}
@@ -49,17 +49,17 @@ export const ExperienceSection: React.FC = () => {
                 >
                   {/* Selected Indicator Bar */}
                   {isSelected && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-purple-600 dark:bg-purple-500" />
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-indigo-600 dark:bg-indigo-500" />
                   )}
 
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className={`font-bold text-sm sm:text-base transition-colors ${isSelected ? 'text-purple-600 dark:text-purple-400' : 'text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-slate-100'}`}>
+                        <h3 className={`font-bold text-sm sm:text-base transition-colors ${isSelected ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-slate-100'}`}>
                           {exp.role}
                         </h3>
                         {exp.isCurrent && (
-                          <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase rounded bg-purple-50 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
+                          <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase rounded bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30">
                             Present
                           </span>
                         )}
@@ -77,7 +77,7 @@ export const ExperienceSection: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                    <ChevronRight className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform ${isSelected ? 'text-purple-600 dark:text-purple-400 translate-x-1' : 'text-slate-400 dark:text-slate-600'}`} />
+                    <ChevronRight className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform ${isSelected ? 'text-indigo-600 dark:text-indigo-400 translate-x-1' : 'text-slate-400 dark:text-slate-600'}`} />
                   </div>
                 </button>
               );
@@ -94,7 +94,7 @@ export const ExperienceSection: React.FC = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
                     {selectedExperience.role}
                   </h3>
-                  <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-white dark:bg-slate-800 text-purple-700 dark:text-purple-400 border border-slate-200 dark:border-slate-700">
+                  <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-white dark:bg-slate-800 text-indigo-700 dark:text-indigo-400 border border-slate-200 dark:border-slate-700">
                     {selectedExperience.company}
                   </span>
                 </div>
@@ -106,13 +106,13 @@ export const ExperienceSection: React.FC = () => {
               {/* Responsibilities */}
               <div className="space-y-3 sm:space-y-4">
                 <h4 className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
                   Key Responsibilities & Achievements
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3">
-                  {selectedExperience.responsibilities.map((item, idx) => (
+                  {selectedExperience.responsibilities.map((item: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-2.5 text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-600 dark:bg-purple-400 mt-1.5 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -126,10 +126,10 @@ export const ExperienceSection: React.FC = () => {
                   Technologies & Tools
                 </h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {selectedExperience.technologies.map((tech) => (
+                  {selectedExperience.technologies.map((tech: string) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-medium bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-purple-400 transition-colors"
+                      className="px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-medium bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-indigo-400 transition-colors"
                     >
                       {tech}
                     </span>

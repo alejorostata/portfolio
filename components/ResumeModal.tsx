@@ -116,7 +116,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{exp.period}</span>
                   </div>
                   <ul className="space-y-1.5 pt-1">
-                    {exp.responsibilities.map((r, i) => (
+                    {exp.responsibilities.map((r: string, i: number) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 shrink-0" />
                         <span>{r}</span>
@@ -124,7 +124,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-1.5 pt-2">
-                    {exp.technologies.map((t) => (
+                    {exp.technologies.map((t: string) => (
                       <span key={t} className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
                         {t}
                       </span>
