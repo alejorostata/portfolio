@@ -48,12 +48,12 @@ export const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 mb-8 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
+        {/* Category Filter Pills Container - Generous Padding to Prevent Focus Ring Clipping */}
+        <div className="flex items-center gap-2 mb-8 border-b border-slate-200 dark:border-slate-800 pt-1 pb-3 px-1 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
           <button
             onClick={() => setActiveTab('all')}
             type="button"
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none focus:outline-none shrink-0 cursor-pointer ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
               activeTab === 'all'
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -70,7 +70,7 @@ export const SkillsSection: React.FC = () => {
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
                 type="button"
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none focus:outline-none shrink-0 cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
                   isActive
                     ? 'bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-500/40 shadow-sm'
                     : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
