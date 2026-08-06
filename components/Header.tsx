@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               Alejo Rostata
             </span>
             <span className="text-xs text-slate-400 font-mono block -mt-1">
-              Software Engineer & Leader
+              Software Engineer & Team Lead
             </span>
           </div>
         </a>
@@ -100,7 +100,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
           <button
             onClick={onOpenResume}
-            className="flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 hover:border-indigo-500/50 hover:text-indigo-400 transition-all outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+            type="button"
+            className="flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 hover:border-indigo-500/50 hover:text-indigo-400 transition-all outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
           >
             <FileText className="w-4 h-4 text-indigo-400" />
             <span>View CV</span>
@@ -118,14 +119,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           <ThemeToggle />
           <button
             onClick={onOpenResume}
+            type="button"
             aria-label="View CV Modal"
-            className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-indigo-400 hover:bg-slate-800"
+            className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-indigo-400 hover:bg-slate-800 cursor-pointer"
           >
             <FileText className="w-5 h-5" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+            type="button"
+            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -159,6 +162,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 setMobileMenuOpen(false);
                 onOpenResume();
               }}
+              type="button"
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold hover:bg-slate-800"
             >
               <FileText className="w-5 h-5 text-indigo-400" />

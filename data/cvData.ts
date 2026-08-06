@@ -8,8 +8,8 @@ export interface ExtendedProjectItem extends ProjectItem {
 
 export const PERSONAL_INFO = {
   name: 'Alejo Rostata',
-  title: 'Full Stack Software Engineer & Engineering Leader',
-  shortBio: 'Seasoned Software Engineer with nearly a decade of experience building scalable full-stack web, mobile, and cloud applications while guiding engineering teams.',
+  title: 'Full Stack Software Engineer & Team Lead',
+  shortBio: 'Seasoned Full Stack Software Engineer with nearly a decade of experience building web, desktop, and mobile applications while leading engineering teams and performance evaluations (KPIs / PAF).',
   email: 'alejorostata@gmail.com',
   viberPhone: '+63 949 575 6987',
   location: 'Naga City, Camarines Sur, Philippines',
@@ -17,14 +17,14 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/alejorostata',
   yearsOfExperience: '10+',
   availability: 'Open to Full Stack & Team Lead Roles',
-  summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development, specializing in both backend and frontend technologies. Proficient in web, desktop, and mobile development with strong expertise in cross-platform scalability, accessibility standards (WCAG), CI/CD practices, and Agile Scrum team leadership. Passionate about continuous learning and building scalable, client-centric, and user-focused solutions.`
+  summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development across web, desktop, and mobile platforms. Skilled in Java (Spring Boot), Node.js, C#, Next.js, Vue.js, Flutter, React Native, and Supabase. Proficient with modern AI-assisted engineering tools (Claude Code AI, GitHub Copilot, Gemini Antigravity). Experienced in engineering team leadership, managing team KPIs and Performance Appraisal Frameworks (PAF), 1-on-1 mentorship, and Agile Scrum delivery.`
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'backend',
     name: 'Backend & APIs',
-    skills: ['Java (Spring Boot)', 'Node.js', 'PHP', 'C# / .NET', 'Python', 'C++', 'C', 'RESTful APIs', 'JWT Auth', 'RabbitMQ']
+    skills: ['Java (Spring Boot)', 'Node.js', 'C# / .NET', 'PHP', 'Python', 'C++', 'C', 'RESTful APIs', 'JWT Auth', 'RabbitMQ']
   },
   {
     id: 'frontend',
@@ -34,17 +34,22 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'mobile',
     name: 'Mobile & Desktop',
-    skills: ['Flutter (iOS & Android)', 'React Native', 'Android Studio', 'Electron JS']
+    skills: ['Flutter (iOS & Android)', 'React Native', 'Electron JS', 'Android Studio']
+  },
+  {
+    id: 'aitools',
+    name: 'AI Tooling & Modern Workflows',
+    skills: ['Claude Code AI', 'GitHub Copilot', 'Gemini Antigravity', 'Git', 'Prompt Engineering', 'AI API Integrations']
   },
   {
     id: 'devops',
-    name: 'DevOps, Cloud & DB',
-    skills: ['Docker', 'Jenkins (CI/CD)', 'AWS', 'Nginx', 'Supabase (PostgreSQL)', 'MariaDB', 'MySQL', 'CouchDB / PouchDB', 'Liquibase', 'JFrog', 'Redis', 'Git']
+    name: 'DevOps & Databases',
+    skills: ['Docker', 'Jenkins (CI/CD)', 'AWS', 'Nginx', 'Supabase (PostgreSQL)', 'MariaDB', 'MySQL', 'CouchDB / PouchDB', 'Liquibase', 'JFrog', 'Redis']
   },
   {
     id: 'leadership',
-    name: 'Leadership & Methodology',
-    skills: ['Software Engineering Leadership', 'Cross-Functional Team Coordination', 'Agile / Scrum', '1-on-1 Mentorship', 'System Architecture', 'Troubleshooting & Root Cause Analysis']
+    name: 'Leadership & Management',
+    skills: ['Software Engineering Leadership', 'Team KPIs & Performance Evaluation (PAF)', 'Cross-Functional Team Coordination', '1-on-1 Mentorship', 'Agile / Scrum', 'System Architecture']
   }
 ];
 
@@ -56,15 +61,15 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: 'Oct 2024 – Present',
     isCurrent: true,
     location: 'Remote',
-    summary: 'Leading engineering team workflows, technical architecture, and scalable full-stack development across web and mobile platforms.',
+    summary: 'Leading engineering team workflows, technical architecture, team performance evaluations (KPIs / PAF), and scalable full-stack web & mobile development.',
     responsibilities: [
       'Lead the design, development, and scaling of modern web and mobile applications using Java, SQL, Vue.js, Next.js, Tailwind CSS, Flutter, and React Native.',
-      'Provide technical leadership and architectural guidance to ensure high software quality, performance, and scalability.',
-      'Mentor software engineers through regular 1-on-1 sessions, performance reviews, and career development planning.',
-      'Coordinate across cross-functional teams (Product, Business Analysts, UI/UX, QA, DevOps, DBAs, CTO) to align strategic initiatives.',
-      'Champion Agile Scrum methodologies, optimizing sprint planning, delivery efficiency, and engineering workflows.'
+      'Manage engineering team Key Performance Indicators (KPIs) and Performance Appraisal Frameworks (PAF), conducting regular 1-on-1 sessions, performance reviews, and career development planning.',
+      'Provide technical leadership, code reviews, and architectural guidance to ensure high software quality, performance, and scalability.',
+      'Leverage AI-assisted engineering tools (Claude Code AI, GitHub Copilot, Gemini Antigravity) to accelerate development velocity and engineering productivity.',
+      'Coordinate across cross-functional teams (Product, Business Analysts, UI/UX, QA, DevOps, DBAs, CTO) to align strategic initiatives and champion Agile Scrum ceremonies.'
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Tailwind CSS', 'Flutter', 'React Native', 'Docker', 'AWS', 'Agile Scrum']
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Tailwind CSS', 'Flutter', 'React Native', 'AI Tooling', 'Team KPIs / PAF', 'Docker', 'Agile Scrum']
   },
   {
     id: 'kryterion-fullstack',
@@ -212,7 +217,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     title: 'Promoted to Software Engineering Team Lead',
     organization: 'Kryterion, Inc.',
     year: '2024',
-    description: 'Recognized for technical excellence, proactive cross-functional coordination, and team mentorship with promotion to engineering lead.',
+    description: 'Recognized for technical excellence, team KPI/PAF performance management, and mentorship with promotion to engineering team lead.',
     iconName: 'Award'
   }
 ];

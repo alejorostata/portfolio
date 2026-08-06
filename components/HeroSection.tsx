@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-sky-400">{PERSONAL_INFO.name}</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-slate-300">
-                Full Stack Software Engineer & Engineering Leader
+                Full Stack Software Engineer & Team Lead
               </p>
             </div>
 
@@ -76,10 +76,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
               >
                 <FileText className="w-4 h-4 text-indigo-400" />
-                <span>View Full CV</span>
+                <span>View CV (Interactive & Print)</span>
               </button>
             </div>
 
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
               <div className="space-y-0.5">
                 <p className="text-2xl sm:text-3xl font-extrabold text-sky-400">Full-Stack</p>
-                <p className="text-xs text-slate-400 font-medium">Web, Mobile & Cloud</p>
+                <p className="text-xs text-slate-400 font-medium">Web, Desktop & Mobile</p>
               </div>
             </div>
 
@@ -128,14 +128,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="text-slate-400">name:</span> <span className="text-indigo-300">'Alejo Rostata'</span>;
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">role:</span> <span className="text-indigo-300">'Software Engineer & Team Lead'</span>;
+                  <span className="text-slate-400">role:</span> <span className="text-indigo-300">'Full Stack Software Engineer & Team Lead'</span>;
                 </div>
                 <div className="pl-4">
                   <span className="text-slate-400">capabilities:</span> [
                 </div>
                 <div className="pl-8 text-sky-300">
-                  'Full Stack Web Development', 'Team Mentorship',<br />
-                  'Agile Scrum Delivery', 'Cross-Platform Scaling'
+                  'Full-Stack Software Engineering', 'Desktop, Web & Mobile',<br />
+                  'Team Performance (KPIs & PAF)', 'AI-Assisted Engineering'
                 </div>
                 <div className="pl-4">
                   ];
@@ -144,19 +144,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="text-slate-400">stack:</span> &#123;
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">backend:</span> [<span className="text-indigo-300">'Java (Spring Boot)'</span>, <span className="text-indigo-300">'Node.js'</span>, <span className="text-indigo-300">'PHP'</span>],
+                  <span className="text-slate-400">backend:</span> [<span className="text-indigo-300">'Java (Spring Boot)'</span>, <span className="text-indigo-300">'Node.js'</span>, <span className="text-indigo-300">'C# / .NET'</span>, <span className="text-indigo-300">'PHP'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">frontend:</span> [<span className="text-indigo-300">'Next.js'</span>, <span className="text-indigo-300">'Vue.js'</span>, <span className="text-indigo-300">'Tailwind'</span>],
+                  <span className="text-slate-400">frontend:</span> [<span className="text-indigo-300">'Next.js'</span>, <span className="text-indigo-300">'Vue.js'</span>, <span className="text-indigo-300">'React'</span>, <span className="text-indigo-300">'Tailwind'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">mobile:</span> [<span className="text-indigo-300">'Flutter'</span>, <span className="text-indigo-300">'React Native'</span>],
+                  <span className="text-slate-400">mobileDesktop:</span> [<span className="text-indigo-300">'Flutter'</span>, <span className="text-indigo-300">'React Native'</span>, <span className="text-indigo-300">'Electron JS'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">databases:</span> [<span className="text-indigo-300">'Supabase (PostgreSQL)'</span>, <span className="text-indigo-300">'MariaDB'</span>],
+                  <span className="text-slate-400">databasesDevOps:</span> [<span className="text-indigo-300">'Git'</span>, <span className="text-indigo-300">'Supabase'</span>, <span className="text-indigo-300">'Docker'</span>, <span className="text-indigo-300">'Jenkins'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">devops:</span> [<span className="text-indigo-300">'Docker'</span>, <span className="text-indigo-300">'Jenkins'</span>, <span className="text-indigo-300">'AWS'</span>]
+                  <span className="text-slate-400">aiTooling:</span> [<span className="text-indigo-300">'Claude Code AI'</span>, <span className="text-indigo-300">'GitHub Copilot'</span>, <span className="text-indigo-300">'Gemini Antigravity'</span>]
                 </div>
                 <div className="pl-4">
                   &#125;;
@@ -167,7 +167,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <div className="pt-3 border-t border-slate-900 text-slate-400 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-indigo-400" />
-                    <span className="text-indigo-400 font-sans text-[11px] font-semibold">Available for Full Stack & Lead Engineering Roles</span>
+                    <span className="text-indigo-400 font-sans text-[11px] font-semibold">Available for Full Stack & Team Lead Roles</span>
                   </div>
                 </div>
               </div>
