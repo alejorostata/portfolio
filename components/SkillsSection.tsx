@@ -1,0 +1,123 @@
+'use client';
+
+import React, { useState } from 'react';
+import { SKILL_CATEGORIES } from '@/data/cvData';
+import { Cpu, Server, Layout, Smartphone, Cloud, Users, Check } from 'lucide-react';
+
+export const SkillsSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>('all');
+
+  const getCategoryIcon = (id: string) => {
+    switch (id) {
+      case 'backend':
+        return <Server className="w-4 h-4 text-emerald-400" />;
+      case 'frontend':
+        return <Layout className="w-4 h-4 text-cyan-400" />;
+      case 'mobile':
+        return <Smartphone className="w-4 h-4 text-purple-400" />;
+      case 'devops':
+        return <Cloud className="w-4 h-4 text-amber-400" />;
+      case 'leadership':
+        return <Users className="w-4 h-4 text-rose-400" />;
+      default:
+        return <Cpu className="w-4 h-4 text-emerald-400" />;
+    }
+  };
+
+  const displayedSkills = activeTab === 'all'
+    ? SKILL_CATEGORIES
+    : SKILL_CATEGORIES.filter((cat) => cat.id === activeTab);
+
+  return (
+    <section id="skills" className="py-20 relative bg-grid-pattern">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="max-w-3xl space-y-3 mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <Cpu className="w-3.5 h-3.5" />
+            <span>Technical Ecosystem</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+            Skills, Languages & Engineering Tools
+          </h2>
+          <p className="text-slate-400 text-base">
+            Comprehensive skill set built across backend microservices, modern frontend web apps, cross-platform mobile apps, containerized CI/CD, and engineering team management.
+          </p>
+        </div>
+
+        {/* Category Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-slate-800 pb-4" role="tablist" aria-label="Skill Categories">
+          <button
+            onClick={() => setActiveTab('all')}
+            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+              activeTab === 'all'
+                ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
+                : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
+            }`}
+            role="tab"
+            aria-selected={activeTab === 'all'}
+          >
+            All Skills
+          </button>
+          {SKILL_CATEGORIES.map((cat) => {
+            const isActive = activeTab === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                  isActive
+                    ? 'bg-slate-800 text-emerald-400 border border-emerald-500/40 shadow-md'
+                    : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
+                }`}
+                role="tab"
+                aria-selected={isActive}
+              >
+                {getCategoryIcon(cat.id)}
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Skills Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedSkills.map((category) => (
+            <div
+              key={category.id}
+              className="bg-slate-900/70 border border-slate-800/90 rounded-2xl p-6 space-y-4 hover:border-slate-700 transition-all duration-300 shadow-lg"
+            >
+              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-slate-950 border border-slate-800">
+                    {getCategoryIcon(category.id)}
+                  </div>
+                  <h3 className="font-bold text-slate-100 text-base">
+                    {category.name}
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-slate-400 bg-slate-950 px-2 py-1 rounded border border-slate-800">
+                  {category.skills.length} skills
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs font-medium text-slate-200 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+                  >
+                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
