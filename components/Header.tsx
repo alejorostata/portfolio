@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Terminal } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface HeaderProps {
@@ -14,7 +15,6 @@ export const Header: React.FC<HeaderProps> = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
-    // Run scroll check immediately on mount to fix refresh at bottom of page
     setIsScrolled(window.scrollY > 20);
 
     const handleScroll = () => {
@@ -59,17 +59,24 @@ export const Header: React.FC<HeaderProps> = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Brand / Logo */}
+        {/* Brand / Custom SVG Logo */}
         <a
           href="#hero"
-          className="flex items-center gap-2.5 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-xl p-1 shrink-0"
+          className="flex items-center gap-3 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1 shrink-0"
           aria-label="Alejo Rostata Portfolio Homepage"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-50 dark:bg-slate-900 border border-purple-200 dark:border-slate-800 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:border-purple-500/50 transition-colors shadow-sm shrink-0">
-            <Terminal className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-sm shrink-0 flex items-center justify-center bg-slate-950 border border-slate-800 group-hover:border-blue-500 transition-colors">
+            <Image
+              src="/logo.svg"
+              alt="Alejo Rostata Logo"
+              width={40}
+              height={40}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
           <div className="leading-tight">
-            <span className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg tracking-tight block group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors whitespace-nowrap">
+            <span className="font-bold text-slate-900 dark:text-slate-100 text-base sm:text-lg tracking-tight block group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors whitespace-nowrap">
               Alejo Rostata
             </span>
             <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono hidden sm:block">
@@ -88,7 +95,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 href={link.href}
                 className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 outline-none focus:outline-none ${
                   isActive
-                    ? 'bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-500/15 dark:text-purple-300 dark:border-purple-500/30 font-semibold'
+                    ? 'bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-500/15 dark:text-blue-400 dark:border-blue-500/30 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800/50 border border-transparent'
                 }`}
               >
@@ -103,7 +110,7 @@ export const Header: React.FC<HeaderProps> = () => {
           <ThemeToggle />
           <a
             href="#contact"
-            className="text-xs font-semibold px-4 py-2.5 rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition-all outline-none focus:outline-none shadow-sm"
+            className="text-xs font-semibold px-4 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all outline-none focus:outline-none shadow-sm"
           >
             Get In Touch
           </a>
@@ -120,7 +127,7 @@ export const Header: React.FC<HeaderProps> = () => {
             aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 text-purple-600 dark:text-purple-400" /> : <Menu className="w-5 h-5 text-slate-700 dark:text-slate-200" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-blue-600 dark:text-blue-400" /> : <Menu className="w-5 h-5 text-slate-700 dark:text-slate-200" />}
           </button>
         </div>
       </div>
@@ -137,7 +144,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-purple-600 dark:hover:text-purple-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-all"
+                className="px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-blue-600 dark:hover:text-blue-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-all"
               >
                 {link.name}
               </a>
@@ -148,7 +155,7 @@ export const Header: React.FC<HeaderProps> = () => {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl bg-purple-600 text-white font-bold text-sm hover:bg-purple-700"
+              className="w-full text-center py-3 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700"
             >
               Get In Touch
             </a>

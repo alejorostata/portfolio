@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Terminal, ArrowUp } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -23,11 +24,17 @@ export const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800 pb-8">
           
-          {/* Brand */}
+          {/* Brand & Custom Logo */}
           <div className="space-y-1.5">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-purple-400">
-                <Terminal className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-950 border border-slate-800">
+                <Image
+                  src="/logo.svg"
+                  alt="Alejo Rostata Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-bold text-slate-100 text-lg">
                 Alejo Rostata
@@ -44,7 +51,7 @@ export const Footer: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-400 hover:text-purple-400 transition-colors"
+                className="text-slate-400 hover:text-blue-400 transition-colors"
               >
                 {link.name}
               </a>
@@ -56,7 +63,7 @@ export const Footer: React.FC = () => {
             <button
               onClick={scrollToTop}
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-purple-400 hover:border-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:text-blue-400 hover:border-slate-700 text-xs font-semibold transition-all cursor-pointer shadow-sm"
               aria-label="Back to top of page"
             >
               <span>Back to Top</span>
