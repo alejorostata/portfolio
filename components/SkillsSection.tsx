@@ -31,7 +31,7 @@ export const SkillsSection: React.FC = () => {
     : SKILL_CATEGORIES.filter((cat) => cat.id === activeTab);
 
   return (
-    <section id="skills" className="py-16 sm:py-20 relative bg-slate-50 dark:bg-slate-950">
+    <section id="skills" className="py-16 sm:py-20 relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -48,12 +48,12 @@ export const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filter Pills Container - Generous Padding to Prevent Focus Ring Clipping */}
-        <div className="flex items-center gap-2 mb-8 border-b border-slate-200 dark:border-slate-800 pt-1 pb-3 px-1 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
+        {/* Category Filter Pills Container */}
+        <div className="flex items-center gap-2 mb-8 border-b border-slate-200 dark:border-slate-800 pt-1 pb-3.5 px-1 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
           <button
             onClick={() => setActiveTab('all')}
             type="button"
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
               activeTab === 'all'
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -70,7 +70,7 @@ export const SkillsSection: React.FC = () => {
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
                 type="button"
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all outline-none shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
                   isActive
                     ? 'bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-500/40 shadow-sm'
                     : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -85,33 +85,35 @@ export const SkillsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {/* Skills Cards Grid - Auto-Height, No Hidden Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {displayedSkills.map((category) => (
             <div
               key={category.id}
-              className="bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 space-y-4 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-sm dark:shadow-lg flex flex-col justify-between"
+              className="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 rounded-2xl p-5 sm:p-6 space-y-4 hover:border-blue-500/40 dark:hover:border-blue-500/40 transition-all duration-300 shadow-xs dark:shadow-md flex flex-col justify-between"
             >
               <div className="space-y-4">
+                {/* Header */}
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 pb-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                    <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30">
                       {getCategoryIcon(category.id)}
                     </div>
                     <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">
                       {category.name}
                     </h3>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-mono font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800">
                     {category.skills.length} skills
                   </span>
                 </div>
 
+                {/* Skill Badges - Compact Flex Wrapping so 100% are Visible */}
                 <div className="flex flex-wrap gap-2 pt-1">
                   {category.skills.map((skill) => (
                     <div
                       key={skill}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800/80 text-xs font-medium text-slate-800 dark:text-slate-200 hover:border-blue-400 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-100/90 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-800 dark:text-slate-200 hover:border-blue-400 dark:hover:border-blue-500/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-2xs"
                     >
                       <Check className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
                       <span>{skill}</span>
