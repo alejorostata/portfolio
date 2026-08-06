@@ -90,12 +90,9 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div className="truncate">
                     <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Email Address</p>
-                    <a
-                      href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate block rounded-md focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
-                    >
+                    <span className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base truncate block">
                       {PERSONAL_INFO.email}
-                    </a>
+                    </span>
                   </div>
                 </div>
                 <button
@@ -129,12 +126,9 @@ export const ContactSection: React.FC = () => {
                         Viber Active
                       </span>
                     </div>
-                    <a
-                      href={`tel:${PERSONAL_INFO.viberPhone}`}
-                      className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate block rounded-md focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
-                    >
+                    <span className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base truncate block">
                       {PERSONAL_INFO.viberPhone}
-                    </a>
+                    </span>
                   </div>
                 </div>
                 <button
