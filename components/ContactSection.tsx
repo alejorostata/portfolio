@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Mail, Phone, MapPin, Copy, Check, Send, MessageSquare, PhoneCall } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, Send, MessageSquare, PhoneCall, ExternalLink } from 'lucide-react';
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,15 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+
+    // Build Mailto Link
+    const mailtoSubject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
+    const mailtoBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    window.location.href = mailtoUrl;
     setIsSubmitted(true);
+
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
     }, 4000);
@@ -193,10 +201,17 @@ export const ContactSection: React.FC = () => {
                   <div className="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-400 mx-auto flex items-center justify-center">
                     <Check className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-100">Message Sent Successfully!</h4>
+                  <h4 className="text-lg font-bold text-slate-100">Opening Your Mail Client...</h4>
                   <p className="text-slate-300 text-sm">
-                    Thank you for reaching out, Alejo will get back to you shortly.
+                    If your email client didn't open automatically, click the button below to email Alejo directly:
                   </p>
+                  <a
+                    href={`mailto:${PERSONAL_INFO.email}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-500 transition-all"
+                  >
+                    <span>Direct Mail to {PERSONAL_INFO.email}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -241,7 +256,7 @@ export const ContactSection: React.FC = () => {
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="Software Engineering / Lead Role"
+                      placeholder="Software Engineering Opportunity"
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
                     />
                   </div>
@@ -266,7 +281,7 @@ export const ContactSection: React.FC = () => {
                     className="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Send Message</span>
+                    <span>Send Message (Launches Email Client)</span>
                   </button>
                 </form>
               )}

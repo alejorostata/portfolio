@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 {PERSONAL_INFO.name}
               </span>
               <span className="text-xs text-slate-500 font-mono">
-                Software Engineer & Leader
+                Software Engineer & Team Lead
               </span>
             </div>
           </div>
