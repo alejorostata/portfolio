@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Primary Blue CTA + Light Transparent Outline Pill (Option F) */}
+            {/* Action Buttons with "Review Full CV" */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <a
                 href="#experience"
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 className="h-12 px-6 rounded-xl bg-transparent border border-slate-300 dark:border-slate-800 hover:border-blue-500/50 hover:bg-blue-500/5 text-slate-700 dark:text-slate-200 font-semibold text-sm flex items-center justify-center gap-2 transition-all shrink-0 cursor-pointer"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                <span>View CV</span>
+                <span>Review Full CV</span>
               </button>
             </div>
 
