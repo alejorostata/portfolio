@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Mail, Phone, MapPin, Copy, Check, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Copy, Check, Send, MessageSquare, PhoneCall } from 'lucide-react';
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -18,7 +18,7 @@ const GitHubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 
 export const ContactSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
+  const [copiedViber, setCopiedViber] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -35,10 +35,10 @@ export const ContactSection: React.FC = () => {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText(PERSONAL_INFO.phone);
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2500);
+  const handleCopyViber = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.viberPhone);
+    setCopiedViber(true);
+    setTimeout(() => setCopiedViber(false), 2500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -56,7 +56,7 @@ export const ContactSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Let's Connect</span>
           </div>
@@ -64,7 +64,7 @@ export const ContactSection: React.FC = () => {
             Get In Touch
           </h2>
           <p className="text-slate-400 text-base">
-            Whether you are looking for technical leadership, full-stack system architecture, or consulting expertise, feel free to reach out directly.
+            Whether you are looking for a full stack software engineer, technical lead, or consulting partner, feel free to connect directly via Email or Viber.
           </p>
         </div>
 
@@ -77,14 +77,14 @@ export const ContactSection: React.FC = () => {
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                  <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 font-medium">Email Address</p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-bold text-slate-100 text-base hover:text-emerald-400 transition-colors"
+                      className="font-bold text-slate-100 text-base hover:text-indigo-400 transition-colors"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -92,49 +92,56 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                  type="button"
+                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-indigo-400 hover:border-indigo-500/40 transition-all outline-none focus:outline-none"
                   aria-label="Copy email address"
                   title="Copy Email"
                 >
-                  {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  {copiedEmail ? <Check className="w-4 h-4 text-indigo-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
               {copiedEmail && (
-                <p className="text-xs text-emerald-400 font-semibold text-right animate-in fade-in duration-200">
+                <p className="text-xs text-indigo-400 font-semibold text-right animate-in fade-in duration-200">
                   ✓ Copied to clipboard!
                 </p>
               )}
             </div>
 
-            {/* Phone Card */}
+            {/* Viber / Mobile Phone Card */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
-                    <Phone className="w-5 h-5" />
+                  <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400">
+                    <PhoneCall className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-medium">Phone / WhatsApp</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-slate-400 font-medium">Mobile / Viber</p>
+                      <span className="px-1.5 py-0.5 text-[10px] font-extrabold uppercase rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                        Viber Active
+                      </span>
+                    </div>
                     <a
-                      href={`tel:${PERSONAL_INFO.phone}`}
-                      className="font-bold text-slate-100 text-base hover:text-cyan-400 transition-colors"
+                      href={`tel:${PERSONAL_INFO.viberPhone}`}
+                      className="font-bold text-slate-100 text-base hover:text-purple-400 transition-colors"
                     >
-                      {PERSONAL_INFO.phone}
+                      {PERSONAL_INFO.viberPhone}
                     </a>
                   </div>
                 </div>
                 <button
-                  onClick={handleCopyPhone}
-                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-                  aria-label="Copy phone number"
-                  title="Copy Phone"
+                  onClick={handleCopyViber}
+                  type="button"
+                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-purple-400 hover:border-purple-500/40 transition-all outline-none focus:outline-none"
+                  aria-label="Copy Viber number"
+                  title="Copy Viber Number"
                 >
-                  {copiedPhone ? <Check className="w-4 h-4 text-cyan-400" /> : <Copy className="w-4 h-4" />}
+                  {copiedViber ? <Check className="w-4 h-4 text-purple-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
-              {copiedPhone && (
-                <p className="text-xs text-cyan-400 font-semibold text-right animate-in fade-in duration-200">
-                  ✓ Copied to clipboard!
+              {copiedViber && (
+                <p className="text-xs text-purple-400 font-semibold text-right animate-in fade-in duration-200">
+                  ✓ Viber number copied!
                 </p>
               )}
             </div>
@@ -156,18 +163,18 @@ export const ContactSection: React.FC = () => {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-emerald-500/40 hover:text-emerald-400 transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
               >
-                <LinkedInIcon className="w-4 h-4 text-emerald-400" />
+                <LinkedInIcon className="w-4 h-4 text-indigo-400" />
                 <span>LinkedIn Profile</span>
               </a>
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-emerald-500/40 hover:text-emerald-400 transition-all"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
               >
-                <GitHubIcon className="w-4 h-4 text-emerald-400" />
+                <GitHubIcon className="w-4 h-4 text-indigo-400" />
                 <span>GitHub Repository</span>
               </a>
             </div>
@@ -182,8 +189,8 @@ export const ContactSection: React.FC = () => {
               </h3>
 
               {isSubmitted ? (
-                <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3 animate-in fade-in duration-300">
-                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
+                <div className="p-6 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-center space-y-3 animate-in fade-in duration-300">
+                  <div className="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-400 mx-auto flex items-center justify-center">
                     <Check className="w-6 h-6" />
                   </div>
                   <h4 className="text-lg font-bold text-slate-100">Message Sent Successfully!</h4>
@@ -205,7 +212,7 @@ export const ContactSection: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
                       />
                     </div>
 
@@ -220,7 +227,7 @@ export const ContactSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -234,8 +241,8 @@ export const ContactSection: React.FC = () => {
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="Engineering Leadership Opportunity"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-colors"
+                      placeholder="Software Engineering / Lead Role"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
                     />
                   </div>
 
@@ -249,14 +256,14 @@ export const ContactSection: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hi Alejo, I would love to discuss a software engineering opportunity with you..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
+                      placeholder="Hi Alejo, I would love to discuss a full stack engineering opportunity with you..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                    className="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message</span>

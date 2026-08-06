@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+            <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400">
               <Terminal className="w-4 h-4" />
             </div>
             <div>
@@ -36,19 +36,19 @@ export const Footer: React.FC = () => {
                 {PERSONAL_INFO.name}
               </span>
               <span className="text-xs text-slate-500 font-mono">
-                Software Engineering Team Lead & Full-Stack Architect
+                Software Engineer & Leader
               </span>
             </div>
           </div>
 
           {/* Quick Links */}
           <nav className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400" aria-label="Footer Navigation">
-            <a href="#hero" className="hover:text-emerald-400 transition-colors">About</a>
-            <a href="#experience" className="hover:text-emerald-400 transition-colors">Experience</a>
-            <a href="#skills" className="hover:text-emerald-400 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-emerald-400 transition-colors">Projects</a>
-            <a href="#education" className="hover:text-emerald-400 transition-colors">Education</a>
-            <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
+            <a href="#hero" className="hover:text-indigo-400 transition-colors">About</a>
+            <a href="#experience" className="hover:text-indigo-400 transition-colors">Experience</a>
+            <a href="#skills" className="hover:text-indigo-400 transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-indigo-400 transition-colors">Projects</a>
+            <a href="#education" className="hover:text-indigo-400 transition-colors">Education</a>
+            <a href="#contact" className="hover:text-indigo-400 transition-colors">Contact</a>
           </nav>
 
           {/* Actions & Scroll to top */}
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-indigo-400 transition-colors"
               aria-label="LinkedIn Profile"
             >
               <LinkedInIcon className="w-4 h-4" />
@@ -66,14 +66,15 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
+              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-indigo-400 transition-colors"
               aria-label="GitHub Repository"
             >
               <GitHubIcon className="w-4 h-4" />
             </a>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              type="button"
+              className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all outline-none focus:outline-none"
               aria-label="Scroll back to top of page"
               title="Back to Top"
             >

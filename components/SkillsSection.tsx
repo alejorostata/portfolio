@@ -10,9 +10,9 @@ export const SkillsSection: React.FC = () => {
   const getCategoryIcon = (id: string) => {
     switch (id) {
       case 'backend':
-        return <Server className="w-4 h-4 text-emerald-400" />;
+        return <Server className="w-4 h-4 text-indigo-400" />;
       case 'frontend':
-        return <Layout className="w-4 h-4 text-cyan-400" />;
+        return <Layout className="w-4 h-4 text-sky-400" />;
       case 'mobile':
         return <Smartphone className="w-4 h-4 text-purple-400" />;
       case 'devops':
@@ -20,7 +20,7 @@ export const SkillsSection: React.FC = () => {
       case 'leadership':
         return <Users className="w-4 h-4 text-rose-400" />;
       default:
-        return <Cpu className="w-4 h-4 text-emerald-400" />;
+        return <Cpu className="w-4 h-4 text-indigo-400" />;
     }
   };
 
@@ -34,15 +34,15 @@ export const SkillsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
             <span>Technical Ecosystem</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-            Skills, Languages & Engineering Tools
+            Skills, Languages & Frameworks
           </h2>
           <p className="text-slate-400 text-base">
-            Comprehensive skill set built across backend microservices, modern frontend web apps, cross-platform mobile apps, containerized CI/CD, and engineering team management.
+            Comprehensive skill set built across backend APIs, modern frontend web apps, Supabase & SQL databases, mobile apps, containerized CI/CD, and team coordination.
           </p>
         </div>
 
@@ -50,9 +50,10 @@ export const SkillsSection: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-slate-800 pb-4" role="tablist" aria-label="Skill Categories">
           <button
             onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+            type="button"
+            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all outline-none focus:outline-none ${
               activeTab === 'all'
-                ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20'
                 : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
             }`}
             role="tab"
@@ -66,9 +67,10 @@ export const SkillsSection: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                type="button"
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all outline-none focus:outline-none ${
                   isActive
-                    ? 'bg-slate-800 text-emerald-400 border border-emerald-500/40 shadow-md'
+                    ? 'bg-slate-800 text-indigo-400 border border-indigo-500/40 shadow-md'
                     : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
                 }`}
                 role="tab"
@@ -106,9 +108,9 @@ export const SkillsSection: React.FC = () => {
                 {category.skills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs font-medium text-slate-200 hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs font-medium text-slate-200 hover:border-indigo-500/40 hover:text-indigo-300 transition-colors"
                   >
-                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                     <span>{skill}</span>
                   </div>
                 ))}

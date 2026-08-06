@@ -1,16 +1,22 @@
 import { ExperienceItem, EducationItem, ProjectItem, AchievementItem, SkillCategory } from '@/types/portfolio';
 
+export interface ExtendedProjectItem extends ProjectItem {
+  projectType: 'SaaS Platform' | 'B2C Web App' | 'B2B Enterprise' | 'Automation & Tooling';
+  database: string;
+  liveUrl?: string;
+}
+
 export const PERSONAL_INFO = {
   name: 'Alejo Rostata',
   title: 'Full Stack Software Engineer & Engineering Leader',
-  shortBio: 'Seasoned Software Engineer with nearly a decade of experience building scalable full-stack web and mobile applications while leading cross-functional teams.',
+  shortBio: 'Seasoned Software Engineer with nearly a decade of experience building scalable full-stack web, mobile, and cloud applications while guiding engineering teams.',
   email: 'alejorostata@gmail.com',
-  phone: '', // Phone number hidden for privacy
+  viberPhone: '+63 949 575 6987',
   location: 'Naga City, Camarines Sur, Philippines',
   linkedin: 'https://linkedin.com/in/alejorostata',
   github: 'https://github.com/alejorostata',
   yearsOfExperience: '10+',
-  availability: 'Open to Full Stack & Team Lead Opportunities',
+  availability: 'Open to Full Stack & Team Lead Roles',
   summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development, specializing in both backend and frontend technologies. Proficient in web, desktop, and mobile development with strong expertise in cross-platform scalability, accessibility standards (WCAG), CI/CD practices, and Agile Scrum team leadership. Passionate about continuous learning and building scalable, client-centric, and user-focused solutions.`
 };
 
@@ -33,7 +39,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'devops',
     name: 'DevOps, Cloud & DB',
-    skills: ['Docker', 'Jenkins (CI/CD)', 'AWS', 'Nginx', 'MariaDB', 'MySQL', 'CouchDB / PouchDB', 'Liquibase', 'JFrog', 'Redis', 'Git']
+    skills: ['Docker', 'Jenkins (CI/CD)', 'AWS', 'Nginx', 'Supabase (PostgreSQL)', 'MariaDB', 'MySQL', 'CouchDB / PouchDB', 'Liquibase', 'JFrog', 'Redis', 'Git']
   },
   {
     id: 'leadership',
@@ -111,52 +117,60 @@ export const EXPERIENCES: ExperienceItem[] = [
   }
 ];
 
-export const PROJECTS: (ProjectItem & { liveUrl?: string })[] = [
+export const PROJECTS: ExtendedProjectItem[] = [
   {
     id: 'qapione',
     title: 'QAPione — Quality Assurance & Testing Platform',
     category: 'Web & Cloud',
-    description: 'Modern, high-performance web platform designed for quality assurance, automated test management, and software quality workflows.',
+    projectType: 'SaaS Platform',
+    database: 'Supabase (PostgreSQL)',
+    description: 'B2B SaaS web application platform designed for quality assurance, automated test management, and software quality engineering workflows.',
     highlights: [
       'Built with modern responsive frontend architecture and optimized web performance.',
-      'Delivers intuitive dashboard UI for managing test cases and quality metrics.',
-      'Deployed live on production infrastructure.'
+      'Integrated Supabase PostgreSQL database for real-time test data persistence and user auth.',
+      'Deployed live on production web infrastructure.'
     ],
-    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'REST API'],
+    techStack: ['Next.js', 'TypeScript', 'Supabase (PostgreSQL)', 'Tailwind CSS', 'REST API'],
     liveUrl: 'https://www.qapione.com/'
   },
   {
     id: 'stelifo',
-    title: 'Stelifo — Enterprise Digital Solution Platform',
+    title: 'Stelifo — Digital Solutions & Web Platform',
     category: 'Web & Cloud',
-    description: 'Scalable web application platform providing seamless digital services, modular UI components, and resilient cloud integration.',
+    projectType: 'SaaS Platform',
+    database: 'Supabase (PostgreSQL)',
+    description: 'Full-stack web application platform providing digital services, modular component interfaces, and scalable backend integrations.',
     highlights: [
-      'Designed with modern dark/light UI design system and fast page transition performance.',
-      'Integrated scalable backend API services and structured database architecture.',
-      'Deployed live on custom enterprise domain.'
+      'Designed with modern responsive UI design system and fast page transitions.',
+      'Powered by Supabase cloud database backend and secure authentication layer.',
+      'Deployed live on production custom domain.'
     ],
-    techStack: ['Full Stack Web', 'Vue.js / Next.js', 'Node.js', 'Cloud Hosting', 'Tailwind CSS'],
+    techStack: ['Next.js', 'React', 'Supabase (PostgreSQL)', 'Node.js', 'Tailwind CSS'],
     liveUrl: 'https://stelifo.com/'
   },
   {
     id: 'vibe-ai',
-    title: 'Vibe AI — Intelligent Assistant & Automation App',
+    title: 'Vibe AI — Intelligent Productivity Assistant',
     category: 'Web & Cloud',
-    description: 'Interactive AI-powered web application delivering intelligent assistance, real-time prompt generation, and automated productivity tools.',
+    projectType: 'B2C Web App',
+    database: 'Supabase (PostgreSQL)',
+    description: 'AI-powered web productivity application delivering intelligent assistance, real-time prompt generation, and automated workflows.',
     highlights: [
-      'Engineered with modern reactive UI and instant API response handling.',
-      'Integrated cloud LLM API endpoints and persistent user session management.',
+      'Engineered with reactive frontend state management and instant AI API response streaming.',
+      'Integrated Supabase for user session storage and persistent prompt history.',
       'Deployed live on Vercel platform.'
     ],
-    techStack: ['Next.js', 'TypeScript', 'AI API Integration', 'Tailwind CSS', 'Vercel Deployment'],
+    techStack: ['Next.js', 'TypeScript', 'Supabase (PostgreSQL)', 'AI API Integration', 'Vercel'],
     liveUrl: 'https://vibe-ai-rho.vercel.app/'
   },
   {
     id: 'enterprise-assessment-platform',
-    title: 'Enterprise Multi-Tenant Assessment Platform',
+    title: 'Enterprise Certification & Assessment Platform',
     category: 'Web & Cloud',
+    projectType: 'B2B Enterprise',
+    database: 'MariaDB + Redis',
     company: 'Kryterion, Inc.',
-    description: 'High-concurrency assessment platform supporting secure certification, user authentication, and candidate evaluation workflows.',
+    description: 'High-concurrency multi-tenant assessment platform supporting secure candidate testing and proctoring workflows.',
     highlights: [
       'Architected resilient microservices using Java (Spring Boot), Next.js, and Redis caching.',
       'Implemented secure JWT-based API authentication and high-throughput messaging via RabbitMQ.'

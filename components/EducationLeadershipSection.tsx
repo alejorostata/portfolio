@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { EDUCATION, ACHIEVEMENTS } from '@/data/cvData';
-import { GraduationCap, Award, Trophy, BookOpen, Users, Sparkles, CheckCircle } from 'lucide-react';
+import { GraduationCap, Award, Trophy, BookOpen } from 'lucide-react';
 
 export const EducationLeadershipSection: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ export const EducationLeadershipSection: React.FC = () => {
           {/* Education Column */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-emerald-400" />
+              <BookOpen className="w-5 h-5 text-indigo-400" />
               <span>Formal Education</span>
             </h3>
 
@@ -42,7 +42,7 @@ export const EducationLeadershipSection: React.FC = () => {
                     <h4 className="text-lg font-bold text-slate-100">
                       {edu.degree}
                     </h4>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
                       {edu.badge}
                     </span>
                   </div>

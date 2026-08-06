@@ -11,9 +11,9 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
-      {/* Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[300px] h-[250px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none" />
+      {/* Ambient Glow Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[300px] h-[250px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -22,10 +22,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold tracking-wide">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
               <span>{PERSONAL_INFO.availability}</span>
             </div>
@@ -33,7 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             {/* Main Headline */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight leading-[1.1]">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">{PERSONAL_INFO.name}</span>
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-sky-400">{PERSONAL_INFO.name}</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-slate-300">
                 Full Stack Software Engineer & Engineering Leader
@@ -48,17 +48,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             {/* Location & Quick Meta */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-400 pt-1">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-emerald-400" />
+                <MapPin className="w-4 h-4 text-indigo-400" />
                 <span>{PERSONAL_INFO.location}</span>
               </div>
               <span className="text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <Briefcase className="w-4 h-4 text-emerald-400" />
+                <Briefcase className="w-4 h-4 text-indigo-400" />
                 <span>Software Engineering Team Lead @ Kryterion</span>
               </div>
               <span className="text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
-                <GraduationCap className="w-4 h-4 text-emerald-400" />
+                <GraduationCap className="w-4 h-4 text-indigo-400" />
                 <span>MS IT Candidate</span>
               </div>
             </div>
@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
                 href="#experience"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-sm hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
               >
                 <span>Explore Experience</span>
                 <ArrowRight className="w-4 h-4" />
@@ -75,9 +75,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-emerald-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                type="button"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
               >
-                <FileText className="w-4 h-4 text-emerald-400" />
+                <FileText className="w-4 h-4 text-indigo-400" />
                 <span>View Full CV</span>
               </button>
             </div>
@@ -85,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             {/* Quick Metrics */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
               <div className="space-y-0.5">
-                <p className="text-2xl sm:text-3xl font-extrabold text-emerald-400">10+</p>
+                <p className="text-2xl sm:text-3xl font-extrabold text-indigo-400">10+</p>
                 <p className="text-xs text-slate-400 font-medium">Years Experience</p>
               </div>
               <div className="space-y-0.5">
@@ -93,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <p className="text-xs text-slate-400 font-medium">2014 National Contestant</p>
               </div>
               <div className="space-y-0.5">
-                <p className="text-2xl sm:text-3xl font-extrabold text-cyan-400">Full-Stack</p>
+                <p className="text-2xl sm:text-3xl font-extrabold text-sky-400">Full-Stack</p>
                 <p className="text-xs text-slate-400 font-medium">Web, Mobile & Cloud</p>
               </div>
             </div>
@@ -112,9 +113,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                   <span className="ml-2 text-slate-300 font-sans font-medium text-xs">engineer_profile.ts</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-emerald-400">
+                <div className="flex items-center gap-1.5 text-indigo-400">
                   <ShieldCheck className="w-4 h-4" />
-                  <span className="text-[11px]">Production Ready</span>
+                  <span className="text-[11px]">Production Verified</span>
                 </div>
               </div>
 
@@ -124,15 +125,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="text-purple-400">interface</span> <span className="text-amber-300">SoftwareEngineer</span> &#123;
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">name:</span> <span className="text-emerald-300">'Alejo Rostata'</span>;
+                  <span className="text-slate-400">name:</span> <span className="text-indigo-300">'Alejo Rostata'</span>;
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">role:</span> <span className="text-emerald-300">'Full Stack Software Engineer & Team Lead'</span>;
+                  <span className="text-slate-400">role:</span> <span className="text-indigo-300">'Software Engineer & Team Lead'</span>;
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">coreCapabilities:</span> [
+                  <span className="text-slate-400">capabilities:</span> [
                 </div>
-                <div className="pl-8 text-cyan-300">
+                <div className="pl-8 text-sky-300">
                   'Full Stack Web Development', 'Team Mentorship',<br />
                   'Agile Scrum Delivery', 'Cross-Platform Scaling'
                 </div>
@@ -143,16 +144,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="text-slate-400">stack:</span> &#123;
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">backend:</span> [<span className="text-emerald-300">'Java (Spring Boot)'</span>, <span className="text-emerald-300">'Node.js'</span>, <span className="text-emerald-300">'PHP'</span>],
+                  <span className="text-slate-400">backend:</span> [<span className="text-indigo-300">'Java (Spring Boot)'</span>, <span className="text-indigo-300">'Node.js'</span>, <span className="text-indigo-300">'PHP'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">frontend:</span> [<span className="text-emerald-300">'Next.js'</span>, <span className="text-emerald-300">'Vue.js'</span>, <span className="text-emerald-300">'Tailwind'</span>],
+                  <span className="text-slate-400">frontend:</span> [<span className="text-indigo-300">'Next.js'</span>, <span className="text-indigo-300">'Vue.js'</span>, <span className="text-indigo-300">'Tailwind'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">mobile:</span> [<span className="text-emerald-300">'Flutter'</span>, <span className="text-emerald-300">'React Native'</span>],
+                  <span className="text-slate-400">mobile:</span> [<span className="text-indigo-300">'Flutter'</span>, <span className="text-indigo-300">'React Native'</span>],
                 </div>
                 <div className="pl-8">
-                  <span className="text-slate-400">devops:</span> [<span className="text-emerald-300">'Docker'</span>, <span className="text-emerald-300">'Jenkins'</span>, <span className="text-emerald-300">'AWS'</span>]
+                  <span className="text-slate-400">databases:</span> [<span className="text-indigo-300">'Supabase (PostgreSQL)'</span>, <span className="text-indigo-300">'MariaDB'</span>],
+                </div>
+                <div className="pl-8">
+                  <span className="text-slate-400">devops:</span> [<span className="text-indigo-300">'Docker'</span>, <span className="text-indigo-300">'Jenkins'</span>, <span className="text-indigo-300">'AWS'</span>]
                 </div>
                 <div className="pl-4">
                   &#125;;
@@ -162,8 +166,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 {/* Live Status Output */}
                 <div className="pt-3 border-t border-slate-900 text-slate-400 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span className="text-emerald-400 font-sans text-[11px] font-semibold">Available for Full Stack & Leadership Roles</span>
+                    <CheckCircle2 className="w-4 h-4 text-indigo-400" />
+                    <span className="text-indigo-400 font-sans text-[11px] font-semibold">Available for Full Stack & Lead Engineering Roles</span>
                   </div>
                 </div>
               </div>

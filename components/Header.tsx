@@ -50,26 +50,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-xl'
-          : 'bg-transparent py-5'
+          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60 py-3 shadow-xl'
+          : 'bg-transparent border-b border-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
           href="#hero"
-          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-xl p-1"
+          className="flex items-center gap-2.5 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 rounded-xl p-1"
           aria-label="Alejo Rostata Portfolio Homepage"
         >
-          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 group-hover:border-emerald-500/50 group-hover:text-emerald-300 transition-colors shadow-inner">
+          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-indigo-400 group-hover:border-indigo-500/50 group-hover:text-indigo-300 transition-colors shadow-inner">
             <Terminal className="w-5 h-5" />
           </div>
           <div>
-            <span className="font-bold text-slate-100 text-lg tracking-tight block group-hover:text-emerald-400 transition-colors">
+            <span className="font-bold text-slate-100 text-lg tracking-tight block group-hover:text-indigo-400 transition-colors">
               Alejo Rostata
             </span>
             <span className="text-xs text-slate-400 font-mono block -mt-1">
-              Software Engineer
+              Software Engineer & Leader
             </span>
           </div>
         </a>
@@ -82,10 +82,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
+                className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 outline-none focus:outline-none ${
                   isActive
-                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                    ? 'bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 font-semibold'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/50 border border-transparent'
                 }`}
               >
                 {link.name}
@@ -100,14 +100,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
           <button
             onClick={onOpenResume}
-            className="flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 hover:border-emerald-500/50 hover:text-emerald-400 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 hover:border-indigo-500/50 hover:text-indigo-400 transition-all outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
           >
-            <FileText className="w-4 h-4 text-emerald-400" />
+            <FileText className="w-4 h-4 text-indigo-400" />
             <span>View CV</span>
           </button>
           <a
             href="#contact"
-            className="text-xs font-semibold px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shadow-md shadow-emerald-500/10"
+            className="text-xs font-semibold px-4 py-2.5 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 transition-all outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 shadow-md shadow-indigo-500/20"
           >
             Get In Touch
           </a>
@@ -119,18 +119,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           <button
             onClick={onOpenResume}
             aria-label="View CV Modal"
-            className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-emerald-400 hover:bg-slate-800"
+            className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-indigo-400 hover:bg-slate-800"
           >
             <FileText className="w-5 h-5" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-emerald-400" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-indigo-400" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-900 hover:text-emerald-400 border border-transparent hover:border-slate-800 transition-all"
+                className="px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-900 hover:text-indigo-400 border border-transparent hover:border-slate-800 transition-all"
               >
                 {link.name}
               </a>
@@ -161,13 +161,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               }}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold hover:bg-slate-800"
             >
-              <FileText className="w-5 h-5 text-emerald-400" />
+              <FileText className="w-5 h-5 text-indigo-400" />
               <span>View Full CV</span>
             </button>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400"
+              className="w-full text-center py-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500"
             >
               Get In Touch
             </a>
