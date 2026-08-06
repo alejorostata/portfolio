@@ -75,11 +75,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Borderless Text CTA with Arrow for "Review or Download CV" */}
+            {/* Action Buttons with Rounded Focus Rings */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <a
                 href="#experience"
-                className="h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer"
+                className="h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <span>Explore Experience</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group"
+                className="h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <span>Review or Download CV</span>
@@ -121,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <button
                     onClick={() => setActiveConsoleTab('overview')}
                     type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       activeConsoleTab === 'overview'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-slate-900 text-slate-400 hover:text-slate-200'
@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <button
                     onClick={() => setActiveConsoleTab('stack')}
                     type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       activeConsoleTab === 'stack'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-slate-900 text-slate-400 hover:text-slate-200'
@@ -145,7 +145,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <button
                     onClick={() => setActiveConsoleTab('leadership')}
                     type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       activeConsoleTab === 'leadership'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-slate-900 text-slate-400 hover:text-slate-200'
@@ -157,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <button
                     onClick={() => setActiveConsoleTab('ai')}
                     type="button"
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       activeConsoleTab === 'ai'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-slate-900 text-slate-400 hover:text-slate-200'

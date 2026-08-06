@@ -62,7 +62,7 @@ export const Header: React.FC<HeaderProps> = () => {
         {/* Brand / Custom SVG Logo */}
         <a
           href="#hero"
-          className="flex items-center gap-3 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1 shrink-0"
+          className="flex items-center gap-3 group rounded-xl p-1 shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 transition-all"
           aria-label="Alejo Rostata Portfolio Homepage"
         >
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-sm shrink-0 flex items-center justify-center bg-slate-950 border border-slate-800 group-hover:border-blue-500 transition-colors">
@@ -93,7 +93,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 outline-none focus:outline-none ${
+                className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 ${
                   isActive
                     ? 'bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-500/15 dark:text-blue-400 dark:border-blue-500/30 font-semibold'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800/50 border border-transparent'
@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = () => {
           <ThemeToggle />
           <a
             href="#contact"
-            className="text-xs font-semibold px-4 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all outline-none focus:outline-none shadow-sm"
+            className="text-xs font-semibold px-4 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 shadow-sm"
           >
             Get In Touch
           </a>
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             type="button"
-            className="p-2 sm:p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white outline-none focus:outline-none cursor-pointer shadow-sm"
+            className="p-2 sm:p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 cursor-pointer shadow-sm"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -144,7 +144,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-blue-600 dark:hover:text-blue-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-all"
+                className="px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-blue-600 dark:hover:text-blue-400 border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-all focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 {link.name}
               </a>
@@ -155,7 +155,7 @@ export const Header: React.FC<HeaderProps> = () => {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700"
+              className="w-full text-center py-3 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               Get In Touch
             </a>

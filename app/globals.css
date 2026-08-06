@@ -33,16 +33,18 @@
   background: rgba(59, 130, 246, 0.25);
 }
 
-/* Keyboard Tab Focus Ring with Exact Border Radius Matching */
-:focus-visible {
+/* 100% Rounded Keyboard Tab Focus Ring System */
+*:focus {
   outline: none !important;
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6 !important;
-  border-radius: inherit !important;
 }
 
-.dark :focus-visible {
-  box-shadow: 0 0 0 2px #09090b, 0 0 0 4px #3b82f6 !important;
-  border-radius: inherit !important;
+*:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6 !important;
+}
+
+.dark *:focus-visible {
+  box-shadow: 0 0 0 2px #020617, 0 0 0 4px #3b82f6 !important;
 }
 
 /* Mobile Scroll Utility */
