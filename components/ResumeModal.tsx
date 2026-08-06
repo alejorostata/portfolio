@@ -40,7 +40,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       {/* Modal Container */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative animate-in zoom-in-95 duration-200">
         
-        {/* Clean Single Action Header Bar */}
+        {/* Header Bar */}
         <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 inline-block shrink-0" />
@@ -49,27 +49,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
-            <a
-              href="/alejo_rostata_cv.pdf"
-              download="CV (Software Engineer) - Alejo Rostata.pdf"
-              className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 active:bg-blue-800 transition-all flex items-center gap-2 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
-            >
-              <Download className="w-4 h-4 shrink-0" />
-              <span className="hidden sm:inline">Download Original PDF CV</span>
-              <span className="sm:hidden">Download PDF</span>
-            </a>
-
-            <button
-              onClick={onClose}
-              type="button"
-              className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 hover:border-rose-300 dark:hover:border-rose-800 transition-all outline-none cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
-              aria-label="Close CV Modal"
-              title="Close Modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            type="button"
+            className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 hover:border-rose-300 dark:hover:border-rose-800 transition-all outline-none cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
+            aria-label="Close CV Modal"
+            title="Close Modal"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Modal Scrollable Content */}
@@ -157,6 +145,28 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
+        </div>
+
+        {/* Modal Footer Bar */}
+        <div className="px-4 sm:px-6 py-3.5 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
+          <span className="text-xs text-slate-500 font-mono hidden sm:inline">Alejo Rostata — CV</span>
+          <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+            <a
+              href="/alejo_rostata_cv.pdf"
+              download="CV (Software Engineer) - Alejo Rostata.pdf"
+              className="flex-1 sm:flex-initial px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 active:bg-blue-800 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download PDF CV</span>
+            </a>
+            <button
+              onClick={onClose}
+              type="button"
+              className="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-xs hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              Close
+            </button>
+          </div>
         </div>
 
       </div>
