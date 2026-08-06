@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Briefcase, Award, GraduationCap, MapPin, ArrowRight, FileText, CheckCircle2, Code2, Layers, ShieldCheck } from 'lucide-react';
+import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
@@ -36,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">{PERSONAL_INFO.name}</span>
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-slate-300">
-                {PERSONAL_INFO.title}
+                Full Stack Software Engineer & Engineering Leader
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <span className="text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
                 <Briefcase className="w-4 h-4 text-emerald-400" />
-                <span>Team Lead @ Kryterion, Inc.</span>
+                <span>Software Engineering Team Lead @ Kryterion</span>
               </div>
               <span className="text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-emerald-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 font-semibold text-sm hover:bg-slate-800 hover:border-emerald-500/50 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
                 <FileText className="w-4 h-4 text-emerald-400" />
                 <span>View Full CV</span>
@@ -94,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
               <div className="space-y-0.5">
                 <p className="text-2xl sm:text-3xl font-extrabold text-cyan-400">Full-Stack</p>
-                <p className="text-xs text-slate-400 font-medium">Web, Mobile & DevOps</p>
+                <p className="text-xs text-slate-400 font-medium">Web, Mobile & Cloud</p>
               </div>
             </div>
 
@@ -110,31 +110,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                  <span className="ml-2 text-slate-300 font-sans font-medium text-xs">architect_profile.ts</span>
+                  <span className="ml-2 text-slate-300 font-sans font-medium text-xs">engineer_profile.ts</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-emerald-400">
                   <ShieldCheck className="w-4 h-4" />
-                  <span className="text-[11px]">Production Verified</span>
+                  <span className="text-[11px]">Production Ready</span>
                 </div>
               </div>
 
               {/* Code Editor Body */}
               <div className="p-5 font-mono text-xs text-slate-300 space-y-3 bg-slate-950/90 leading-relaxed overflow-x-auto">
                 <div>
-                  <span className="text-purple-400">interface</span> <span className="text-amber-300">EngineeringLead</span> &#123;
+                  <span className="text-purple-400">interface</span> <span className="text-amber-300">SoftwareEngineer</span> &#123;
                 </div>
                 <div className="pl-4">
                   <span className="text-slate-400">name:</span> <span className="text-emerald-300">'Alejo Rostata'</span>;
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">currentRole:</span> <span className="text-emerald-300">'Software Engineering Team Lead'</span>;
+                  <span className="text-slate-400">role:</span> <span className="text-emerald-300">'Full Stack Software Engineer & Team Lead'</span>;
                 </div>
                 <div className="pl-4">
                   <span className="text-slate-400">coreCapabilities:</span> [
                 </div>
                 <div className="pl-8 text-cyan-300">
-                  'System Architecture', 'Team Mentorship',<br />
-                  'Agile Delivery', 'Cross-Platform Scaling'
+                  'Full Stack Web Development', 'Team Mentorship',<br />
+                  'Agile Scrum Delivery', 'Cross-Platform Scaling'
                 </div>
                 <div className="pl-4">
                   ];
@@ -163,9 +163,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <div className="pt-3 border-t border-slate-900 text-slate-400 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span className="text-emerald-400 font-sans text-[11px] font-semibold">Active Leadership & Architecture</span>
+                    <span className="text-emerald-400 font-sans text-[11px] font-semibold">Available for Full Stack & Leadership Roles</span>
                   </div>
-                  <span className="text-slate-500 font-mono text-[10px]">v10.0.0</span>
                 </div>
               </div>
 

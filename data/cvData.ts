@@ -2,16 +2,16 @@ import { ExperienceItem, EducationItem, ProjectItem, AchievementItem, SkillCateg
 
 export const PERSONAL_INFO = {
   name: 'Alejo Rostata',
-  title: 'Software Engineering Team Lead & Full-Stack Architect',
-  shortBio: 'Seasoned Software Engineer with nearly a decade of experience designing, scaling, and leading high-impact full-stack web and mobile systems.',
+  title: 'Full Stack Software Engineer & Engineering Leader',
+  shortBio: 'Seasoned Software Engineer with nearly a decade of experience building scalable full-stack web and mobile applications while leading cross-functional teams.',
   email: 'alejorostata@gmail.com',
-  phone: '+63 949 575 6987',
+  phone: '', // Phone number hidden for privacy
   location: 'Naga City, Camarines Sur, Philippines',
   linkedin: 'https://linkedin.com/in/alejorostata',
   github: 'https://github.com/alejorostata',
   yearsOfExperience: '10+',
-  availability: 'Open to High-Impact Leadership & Technical Roles',
-  summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development, specializing in both backend and frontend technologies. Proficient in web, desktop, and mobile development with strong expertise in cross-platform scalability, accessibility standards (WCAG), CI/CD practices, and Agile Scrum leadership. Passionate about continuous learning and building scalable, client-centric, and user-focused solutions.`
+  availability: 'Open to Full Stack & Team Lead Opportunities',
+  summary: `Seasoned Software Engineer with nearly a decade of experience in full-stack development, specializing in both backend and frontend technologies. Proficient in web, desktop, and mobile development with strong expertise in cross-platform scalability, accessibility standards (WCAG), CI/CD practices, and Agile Scrum team leadership. Passionate about continuous learning and building scalable, client-centric, and user-focused solutions.`
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
@@ -38,7 +38,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'leadership',
     name: 'Leadership & Methodology',
-    skills: ['Software Engineering Leadership', 'Cross-Functional Team Management', 'Agile / Scrum', '1-on-1 Mentorship', 'System Architecture', 'Troubleshooting & Root Cause Analysis']
+    skills: ['Software Engineering Leadership', 'Cross-Functional Team Coordination', 'Agile / Scrum', '1-on-1 Mentorship', 'System Architecture', 'Troubleshooting & Root Cause Analysis']
   }
 ];
 
@@ -50,7 +50,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: 'Oct 2024 – Present',
     isCurrent: true,
     location: 'Remote',
-    summary: 'Leading engineering team workflows, system architecture, and scalable full-stack development across web and mobile platforms.',
+    summary: 'Leading engineering team workflows, technical architecture, and scalable full-stack development across web and mobile platforms.',
     responsibilities: [
       'Lead the design, development, and scaling of modern web and mobile applications using Java, SQL, Vue.js, Next.js, Tailwind CSS, Flutter, and React Native.',
       'Provide technical leadership and architectural guidance to ensure high software quality, performance, and scalability.',
@@ -111,58 +111,57 @@ export const EXPERIENCES: ExperienceItem[] = [
   }
 ];
 
-export const PROJECTS: ProjectItem[] = [
+export const PROJECTS: (ProjectItem & { liveUrl?: string })[] = [
+  {
+    id: 'qapione',
+    title: 'QAPione — Quality Assurance & Testing Platform',
+    category: 'Web & Cloud',
+    description: 'Modern, high-performance web platform designed for quality assurance, automated test management, and software quality workflows.',
+    highlights: [
+      'Built with modern responsive frontend architecture and optimized web performance.',
+      'Delivers intuitive dashboard UI for managing test cases and quality metrics.',
+      'Deployed live on production infrastructure.'
+    ],
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'REST API'],
+    liveUrl: 'https://www.qapione.com/'
+  },
+  {
+    id: 'stelifo',
+    title: 'Stelifo — Enterprise Digital Solution Platform',
+    category: 'Web & Cloud',
+    description: 'Scalable web application platform providing seamless digital services, modular UI components, and resilient cloud integration.',
+    highlights: [
+      'Designed with modern dark/light UI design system and fast page transition performance.',
+      'Integrated scalable backend API services and structured database architecture.',
+      'Deployed live on custom enterprise domain.'
+    ],
+    techStack: ['Full Stack Web', 'Vue.js / Next.js', 'Node.js', 'Cloud Hosting', 'Tailwind CSS'],
+    liveUrl: 'https://stelifo.com/'
+  },
+  {
+    id: 'vibe-ai',
+    title: 'Vibe AI — Intelligent Assistant & Automation App',
+    category: 'Web & Cloud',
+    description: 'Interactive AI-powered web application delivering intelligent assistance, real-time prompt generation, and automated productivity tools.',
+    highlights: [
+      'Engineered with modern reactive UI and instant API response handling.',
+      'Integrated cloud LLM API endpoints and persistent user session management.',
+      'Deployed live on Vercel platform.'
+    ],
+    techStack: ['Next.js', 'TypeScript', 'AI API Integration', 'Tailwind CSS', 'Vercel Deployment'],
+    liveUrl: 'https://vibe-ai-rho.vercel.app/'
+  },
   {
     id: 'enterprise-assessment-platform',
-    title: 'Enterprise Multi-Tenant Assessment & Certification Platform',
+    title: 'Enterprise Multi-Tenant Assessment Platform',
     category: 'Web & Cloud',
     company: 'Kryterion, Inc.',
-    description: 'High-concurrency web application platform supporting secure certification, user authentication, and real-time candidate assessment workflows.',
+    description: 'High-concurrency assessment platform supporting secure certification, user authentication, and candidate evaluation workflows.',
     highlights: [
       'Architected resilient microservices using Java (Spring Boot), Next.js, and Redis caching.',
-      'Implemented secure JWT-based API authentication and high-throughput messaging via RabbitMQ.',
-      'Streamlined database schema migrations using Liquibase and MariaDB.'
+      'Implemented secure JWT-based API authentication and high-throughput messaging via RabbitMQ.'
     ],
-    techStack: ['Java (Spring Boot)', 'Next.js', 'Vue.js', 'MariaDB', 'Liquibase', 'Redis', 'RabbitMQ', 'Docker', 'AWS']
-  },
-  {
-    id: 'cross-platform-mobile-app',
-    title: 'Cross-Platform Mobile Testing & Verification Suite',
-    category: 'Mobile App',
-    company: 'Kryterion, Inc.',
-    description: 'Native-performing mobile application built for iOS and Android delivering secure test proctoring, identity verification, and offline syncing capabilities.',
-    highlights: [
-      'Built with Flutter and React Native targeting seamless performance on both iOS and Android devices.',
-      'Integrated live streaming and media processing protocols using Janus server integrations.',
-      'Implemented responsive UI patterns compliant with WCAG accessibility standards.'
-    ],
-    techStack: ['Flutter', 'React Native', 'Java', 'Janus Media Server', 'REST APIs', 'Tailwind CSS']
-  },
-  {
-    id: 'archdiocese-automation-system',
-    title: 'Institutional Workflow Automation & Financial Management System',
-    category: 'Enterprise & Automation',
-    company: 'Archdiocese of Caceres',
-    description: 'Comprehensive administrative digitization system for scheduling, contribution tracking, automated document generation, and financial reporting.',
-    highlights: [
-      'Automated routine document generation and data aggregation, saving hundreds of hours of manual labor.',
-      'Implemented hybrid SQL/NoSQL storage (MySQL + CouchDB/PouchDB) for reliable offline-first data synchronization.',
-      'Deployed automated CI/CD deployment pipelines using Jenkins and Docker.'
-    ],
-    techStack: ['Node.js', 'React', 'PHP', 'Electron JS', 'MySQL', 'CouchDB', 'Jenkins', 'Docker']
-  },
-  {
-    id: 'devops-cicd-pipeline',
-    title: 'Automated CI/CD & Microservice Deployment Infrastructure',
-    category: 'DevOps & Tooling',
-    company: 'Kryterion, Inc. / Archdiocese',
-    description: 'Standardized containerized build, test, and deployment workflows with automated artifact storage and monitoring.',
-    highlights: [
-      'Configured Jenkins multi-stage build pipelines integrated with Docker containers and JFrog Artifactory.',
-      'Configured Nginx reverse proxy routing, SSL termination, and security headers.',
-      'Reduced deployment downtime to near-zero with automated containerized rollouts.'
-    ],
-    techStack: ['Docker', 'Jenkins', 'JFrog', 'Nginx', 'AWS', 'Git']
+    techStack: ['Java (Spring Boot)', 'Next.js', 'MariaDB', 'Liquibase', 'Redis', 'Docker']
   }
 ];
 

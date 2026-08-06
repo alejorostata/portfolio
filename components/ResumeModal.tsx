@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { PERSONAL_INFO, EXPERIENCES, EDUCATION, SKILL_CATEGORIES, ACHIEVEMENTS } from '@/data/cvData';
-import { X, Download, Mail, Phone, MapPin, Briefcase, GraduationCap, Trophy, CheckCircle, Code } from 'lucide-react';
+import { PERSONAL_INFO, EXPERIENCES, EDUCATION, ACHIEVEMENTS } from '@/data/cvData';
+import { X, Download, Mail, MapPin, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -51,14 +51,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.print()}
-              className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-1.5"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Print CV</span>
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-rose-400 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-rose-400 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               aria-label="Close CV Modal"
             >
               <X className="w-5 h-5" />
@@ -79,8 +79,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </p>
             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400">
               <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5 text-emerald-400" /> {PERSONAL_INFO.email}</span>
-              <span>•</span>
-              <span className="flex items-center gap-1"><Phone className="w-3.5 h-3.5 text-emerald-400" /> {PERSONAL_INFO.phone}</span>
               <span>•</span>
               <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-emerald-400" /> {PERSONAL_INFO.location}</span>
             </div>
@@ -160,7 +158,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           <span className="text-xs text-slate-500 font-mono">Alejo Rostata — Curriculum Vitae</span>
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-emerald-500 text-slate-950 font-bold text-xs hover:bg-emerald-400 transition-colors"
+            className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs hover:bg-emerald-400 transition-colors"
           >
             Close Viewer
           </button>

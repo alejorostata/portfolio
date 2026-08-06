@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PROJECTS } from '@/data/cvData';
-import { FolderGit2, ExternalLink, ShieldAlert, CheckCircle2, Layers, Cpu, Server, Smartphone, Wrench } from 'lucide-react';
+import { FolderGit2, ExternalLink, CheckCircle2, Server, Smartphone, Cpu, Wrench, Globe } from 'lucide-react';
 
 export const ProjectsSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -36,13 +36,13 @@ export const ProjectsSection: React.FC = () => {
         <div className="max-w-3xl space-y-3 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <FolderGit2 className="w-3.5 h-3.5" />
-            <span>Architecture & Key Systems</span>
+            <span>Case Studies & Deployed Products</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
-            Featured Systems & Enterprise Solutions
+            Featured Projects & Web Systems
           </h2>
           <p className="text-slate-400 text-base">
-            Representative software applications, mobile platforms, and infrastructure solutions engineered for high scalability, security, and performance.
+            Representative full-stack web applications, AI productivity tools, and enterprise platform solutions shipped to production.
           </p>
         </div>
 
@@ -80,11 +80,22 @@ export const ProjectsSection: React.FC = () => {
                     {getCategoryIcon(project.category)}
                     <span>{project.category}</span>
                   </div>
-                  {project.company && (
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500 hover:text-slate-950 transition-all"
+                    >
+                      <Globe className="w-3.5 h-3.5" />
+                      <span>Live Site</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : project.company ? (
                     <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md">
                       {project.company}
                     </span>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Title */}
@@ -100,7 +111,7 @@ export const ProjectsSection: React.FC = () => {
                 {/* Key Highlights */}
                 <div className="space-y-2 pt-2">
                   <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400">
-                    Architectural Highlights
+                    Architectural & Engineering Highlights
                   </h4>
                   <ul className="space-y-2">
                     {project.highlights.map((highlight, idx) => (
@@ -113,8 +124,8 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tech Stack */}
-              <div className="pt-6 border-t border-slate-800/80 space-y-3">
+              {/* Tech Stack & Links */}
+              <div className="pt-6 border-t border-slate-800/80 space-y-4">
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
                     <span
@@ -125,6 +136,20 @@ export const ProjectsSection: React.FC = () => {
                     </span>
                   ))}
                 </div>
+
+                {project.liveUrl && (
+                  <div className="pt-1">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 hover:text-emerald-400 hover:border-emerald-500/50 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+                    >
+                      <span>Visit Live Application ({project.liveUrl.replace('https://', '').replace('/', '')})</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
               </div>
 
             </div>
