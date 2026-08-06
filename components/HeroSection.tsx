@@ -40,7 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </p>
             </div>
 
-            {/* Metric Cards Grid - Clean Equal Sizing */}
+            {/* Metric Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
               <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-xs">
                 <p className="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">~10 Years</p>
@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Action Buttons with Rounded Focus Rings */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <a
                 href="#experience"
@@ -98,9 +98,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Profile Console (Fixed Exact Height h-[420px] sm:h-[430px]) */}
+          {/* Right Column: Profile Console (Fixed Height h-[390px] sm:h-[400px], ZERO Scrollbar) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden h-[420px] sm:h-[430px] flex flex-col justify-between">
+            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden h-[390px] sm:h-[400px] flex flex-col justify-between">
               
               {/* Console Header Bar */}
               <div className="bg-slate-950 border-b border-slate-800 p-3 shrink-0">
@@ -169,32 +169,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
               </div>
 
-              {/* Tab Content Display */}
+              {/* Tab Content Display - ZERO Scrollbars, Perfect Fit */}
               <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between overflow-hidden">
                 
-                <div className="space-y-2 overflow-y-auto no-scrollbar">
+                <div className="space-y-2 overflow-hidden">
                   {activeConsoleTab === 'overview' && (
-                    <div className="space-y-2.5 animate-in fade-in duration-200">
+                    <div className="space-y-2 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Software Engineering Lead Overview</p>
-                      <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-blue-400 font-bold text-xs">Primary Role</p>
-                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Lead @ Kryterion, Inc.</p>
+                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Lead @ Kryterion</p>
                       </div>
-                      <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-emerald-400 font-bold text-xs">Core Specialization</p>
-                        <p className="text-slate-200 text-xs">Scalable Web & Mobile Architecture (Java Spring Boot, Next.js, Vue, Flutter, React Native, Supabase)</p>
+                        <p className="text-slate-200 text-xs">Java (Spring Boot), Next.js, Vue.js, Supabase, Flutter, React Native</p>
                       </div>
-                      <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
+                      <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
                         <p className="text-amber-400 font-bold text-xs">Engineering Leadership</p>
-                        <p className="text-slate-200 text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks (PAF)</p>
+                        <p className="text-slate-200 text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks</p>
                       </div>
                     </div>
                   )}
 
                   {activeConsoleTab === 'stack' && (
-                    <div className="space-y-2.5 animate-in fade-in duration-200">
+                    <div className="space-y-2 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Primary Engineering Stack</p>
-                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'REST APIs'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'APIs'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Shadcn'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobile</span> = [<span className="text-blue-300">'Flutter (iOS & Android)'</span>, <span className="text-blue-300">'React Native'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">databases</span> = [<span className="text-blue-300">'Supabase (PostgreSQL)'</span>, <span className="text-blue-300">'MariaDB'</span>, <span className="text-blue-300">'MySQL'</span>];</p>
@@ -203,7 +203,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   )}
 
                   {activeConsoleTab === 'leadership' && (
-                    <div className="space-y-2.5 animate-in fade-in duration-200">
+                    <div className="space-y-2 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Engineering Management & Team KPIs</p>
                       <p><span className="text-blue-400">class</span> <span className="text-amber-300">TeamLeadership</span> &#123;</p>
                       <p className="pl-4"><span className="text-blue-300">evaluations</span>: 'Team KPIs & Performance Appraisal Frameworks (PAF)';</p>
@@ -214,7 +214,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   )}
 
                   {activeConsoleTab === 'ai' && (
-                    <div className="space-y-2.5 animate-in fade-in duration-200">
+                    <div className="space-y-2 animate-in fade-in duration-200">
                       <p className="text-slate-400">// AI-Assisted Engineering Workflow</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">aiTools</span> = &#123;</p>
                       <p className="pl-4"><span className="text-blue-300">agenticAI</span>: 'Gemini Antigravity',</p>
@@ -226,7 +226,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
 
                 {/* Console Footer Status */}
-                <div className="pt-3 mt-4 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
+                <div className="pt-2.5 mt-2 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                     <span className="text-[11px] font-sans font-semibold text-blue-400">Ready for Engineering Opportunities</span>
