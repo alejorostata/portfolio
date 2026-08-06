@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Accessibility } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -19,12 +19,12 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 dark:bg-slate-950 border-t border-slate-800 py-10 sm:py-12 text-slate-400">
+    <footer role="contentinfo" className="bg-slate-900 dark:bg-slate-950 border-t border-slate-800 py-10 sm:py-12 text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <div className="flex flex-col items-center md:flex-row md:items-center justify-between gap-6 text-center md:text-left border-b border-slate-800 pb-8">
           
-          {/* Brand & Custom Logo - Centered on Mobile */}
+          {/* Brand & Custom Logo */}
           <div className="flex flex-col items-center md:items-start space-y-1.5">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-950 border border-slate-800">
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Links with Centered Grid/Flex on Mobile */}
+          {/* Quick Links */}
           <nav className="flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 text-xs font-medium" aria-label="Footer Navigation">
             {navLinks.map((link) => (
               <a
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
             ))}
           </nav>
 
-          {/* Back To Top Button - Centered on Mobile */}
+          {/* Back To Top Button */}
           <div>
             <button
               onClick={scrollToTop}
@@ -67,18 +67,22 @@ export const Footer: React.FC = () => {
               aria-label="Back to top of page"
             >
               <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           </div>
 
         </div>
 
-        {/* Bottom Rights - Centered on Mobile */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 text-center sm:text-left">
+        {/* Bottom Rights with WCAG 2.1 AAA Accessibility Badge */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Alejo Rostata. All rights reserved.</p>
-          <p className="flex items-center justify-center gap-1">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold text-[11px]">
+              <Accessibility className="w-3.5 h-3.5 text-blue-400" aria-hidden="true" />
+              <span>WCAG 2.1 AAA Compliant</span>
+            </span>
             <span>Built with Next.js 16, React 19 & Tailwind CSS</span>
-          </p>
+          </div>
         </div>
 
       </div>

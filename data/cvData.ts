@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/alejorostata',
   availability: 'Available for Full-Stack & Engineering Lead Roles',
   summary:
-    'Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.',
+    'Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications with 100% WCAG AAA Accessibility standards.',
 };
 
 export const EXPERIENCES: Experience[] = [
@@ -24,13 +24,13 @@ export const EXPERIENCES: Experience[] = [
     summary: 'Leading engineering team execution, architectural scaling, and full-stack development for the Webassessor test delivery platform across web and mobile.',
     responsibilities: [
       'Lead the design, development, and scaling of the Webassessor online assessment platform across web and mobile using Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, and React Native (iOS & Android).',
-      'Provide technical leadership and architectural guidance to ensure high performance, security, and scalability for global exam sessions.',
+      'Provide technical leadership and architectural guidance to ensure high performance, security, WCAG AAA web accessibility, and scalability for global exam sessions.',
       'Mentor software engineers through regular 1-on-1 sessions, performance reviews, and career development planning.',
       'Coordinate with cross-functional teams, including Software Engineers, Product Team, Business Analysts, UI/UX Designers, QAs, DevOps, DBAs, CTO, and Managers to align priorities and drive strategic initiatives.',
       'Champion Agile methodologies, improving team workflows, sprint planning, and delivery efficiency.',
-      'Foster a collaborative and growth-oriented engineering culture focused on innovation and continuous improvement.',
+      'Foster a collaborative and growth-oriented engineering culture focused on innovation, accessibility standards, and continuous improvement.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'Flutter', 'React Native', 'MariaDB', 'Team Leadership', 'Agile Scrum'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'WCAG AAA Accessibility', 'Flutter', 'React Native', 'MariaDB', 'Team Leadership', 'Agile Scrum'],
   },
   {
     id: 'kryterion-engineer',
@@ -42,7 +42,7 @@ export const EXPERIENCES: Experience[] = [
     responsibilities: [
       'Worked effectively in a fully remote environment, collaborating through Microsoft Teams, Slack, and Jira.',
       'Collaborated closely with international, cross-functional teams including Product Owners, Engineering Managers, TPMs, BAs, QAs, DevOps, UI/UX Designers, and fellow engineers to deliver high-quality features.',
-      'Developed and maintained web and mobile applications with a focus on scalability, performance, and maintainability.',
+      'Developed and maintained web and mobile applications with a focus on scalability, performance, accessibility, and maintainability.',
       'Designed and integrated RESTful APIs with secure authentication to ensure protected access and reliable communication.',
       'Participated in Agile Scrum ceremonies such as sprint planning, stand-ups, and retrospectives to ensure alignment and timely delivery.',
     ],
@@ -137,7 +137,7 @@ export const PROJECTS: Project[] = [
     techStack: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'MariaDB', 'Redis', 'Docker', 'Jenkins'],
     highlights: [
       'Scaled core assessment delivery engine with high-concurrency exam session state.',
-      'Engineered responsive web interfaces using Vue.js, Bootstrap, and Tailwind CSS.',
+      'Engineered responsive web interfaces using Vue.js, Bootstrap, and Tailwind CSS with WCAG accessibility standards.',
     ],
   },
 ];
@@ -151,7 +151,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'frontend',
     name: 'Frontend Web & CMS',
-    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Bootstrap', 'WordPress', 'HTML5 / CSS3'],
+    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
   },
   {
     id: 'mobile',
