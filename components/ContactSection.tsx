@@ -59,40 +59,40 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-950/80 border-t border-slate-800 relative">
+    <section id="contact" className="py-16 sm:py-20 bg-slate-950/80 border-t border-slate-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3 mb-12">
+        <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Let's Connect</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-100 tracking-tight">
             Get In Touch
           </h2>
-          <p className="text-slate-400 text-base">
+          <p className="text-slate-400 text-sm sm:text-base">
             Whether you are looking for a full stack software engineer, technical lead, or consulting partner, feel free to connect directly via Email or Viber.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
           
           {/* Left Column: Direct Info & Quick Copy */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
             
             {/* Email Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 overflow-hidden">
+                  <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="truncate">
                     <p className="text-xs text-slate-400 font-medium">Email Address</p>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="font-bold text-slate-100 text-base hover:text-indigo-400 transition-colors"
+                      className="font-bold text-slate-100 text-sm sm:text-base hover:text-indigo-400 transition-colors truncate block"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -101,7 +101,7 @@ export const ContactSection: React.FC = () => {
                 <button
                   onClick={handleCopyEmail}
                   type="button"
-                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-indigo-400 hover:border-indigo-500/40 transition-all outline-none focus:outline-none"
+                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-indigo-400 hover:border-indigo-500/40 transition-all shrink-0 cursor-pointer"
                   aria-label="Copy email address"
                   title="Copy Email"
                 >
@@ -116,22 +116,22 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Viber / Mobile Phone Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-4 shadow-lg hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 overflow-hidden">
+                  <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 shrink-0">
                     <PhoneCall className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="truncate">
                     <div className="flex items-center gap-2">
                       <p className="text-xs text-slate-400 font-medium">Mobile / Viber</p>
-                      <span className="px-1.5 py-0.5 text-[10px] font-extrabold uppercase rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                      <span className="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
                         Viber Active
                       </span>
                     </div>
                     <a
                       href={`tel:${PERSONAL_INFO.viberPhone}`}
-                      className="font-bold text-slate-100 text-base hover:text-purple-400 transition-colors"
+                      className="font-bold text-slate-100 text-sm sm:text-base hover:text-purple-400 transition-colors truncate block"
                     >
                       {PERSONAL_INFO.viberPhone}
                     </a>
@@ -140,7 +140,7 @@ export const ContactSection: React.FC = () => {
                 <button
                   onClick={handleCopyViber}
                   type="button"
-                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-purple-400 hover:border-purple-500/40 transition-all outline-none focus:outline-none"
+                  className="p-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-purple-400 hover:border-purple-500/40 transition-all shrink-0 cursor-pointer"
                   aria-label="Copy Viber number"
                   title="Copy Viber Number"
                 >
@@ -155,35 +155,35 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Location Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex items-center gap-3 shadow-lg">
-              <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-400">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-6 flex items-center gap-3 shadow-lg">
+              <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-400 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-medium">Location</p>
-                <p className="font-bold text-slate-100 text-base">{PERSONAL_INFO.location}</p>
+                <p className="font-bold text-slate-100 text-sm sm:text-base">{PERSONAL_INFO.location}</p>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-1 flex items-center gap-3">
               <a
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
+                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
               >
                 <LinkedInIcon className="w-4 h-4 text-indigo-400" />
-                <span>LinkedIn Profile</span>
+                <span>LinkedIn</span>
               </a>
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
+                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-xs hover:border-indigo-500/40 hover:text-indigo-400 transition-all"
               >
                 <GitHubIcon className="w-4 h-4 text-indigo-400" />
-                <span>GitHub Repository</span>
+                <span>GitHub</span>
               </a>
             </div>
 
@@ -191,8 +191,8 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
-              <h3 className="text-xl font-bold text-slate-100">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 sm:p-8 space-y-5 sm:space-y-6 shadow-xl">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-100">
                 Send a Direct Message
               </h3>
 
@@ -201,15 +201,15 @@ export const ContactSection: React.FC = () => {
                   <div className="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-400 mx-auto flex items-center justify-center">
                     <Check className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-100">Opening Your Mail Client...</h4>
-                  <p className="text-slate-300 text-sm">
-                    If your email client didn't open automatically, click the button below to email Alejo directly:
+                  <h4 className="text-base sm:text-lg font-bold text-slate-100">Opening Mail Client...</h4>
+                  <p className="text-slate-300 text-xs sm:text-sm">
+                    If your email app didn't launch automatically, click below to send directly:
                   </p>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-500 transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-500 transition-all"
                   >
-                    <span>Direct Mail to {PERSONAL_INFO.email}</span>
+                    <span>Send Email to {PERSONAL_INFO.email}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -227,7 +227,7 @@ export const ContactSection: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -242,7 +242,7 @@ export const ContactSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="Software Engineering Opportunity"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -271,17 +271,17 @@ export const ContactSection: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hi Alejo, I would love to discuss a full stack engineering opportunity with you..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-colors resize-none"
+                      placeholder="Hi Alejo, I would love to discuss a software engineering opportunity with you..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:border-indigo-500 focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                    className="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-sm hover:bg-indigo-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20 cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Send Message (Launches Email Client)</span>
+                    <span>Send Message</span>
                   </button>
                 </form>
               )}
