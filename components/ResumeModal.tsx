@@ -40,39 +40,32 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       {/* Modal Container */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative animate-in zoom-in-95 duration-200">
         
-        {/* Header Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shrink-0">
-          <div className="flex items-center justify-between gap-2 w-full sm:w-auto">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-400 inline-block shrink-0" />
-              <h2 id="resume-modal-title" className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-lg truncate">
-                CV — {PERSONAL_INFO.name}
-              </h2>
-            </div>
-            <button
-              onClick={onClose}
-              type="button"
-              className="sm:hidden p-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 transition-all outline-none"
-              aria-label="Close CV Modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        {/* Clean Single Action Header Bar */}
+        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shrink-0">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 inline-block shrink-0" />
+            <h2 id="resume-modal-title" className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-lg truncate">
+              Curriculum Vitae — {PERSONAL_INFO.name}
+            </h2>
           </div>
 
-          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-200 dark:border-slate-800/60">
-            <button
-              onClick={() => window.print()}
-              type="button"
-              className="flex-1 sm:flex-initial px-3.5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+          <div className="flex items-center gap-2 shrink-0">
+            <a
+              href="/alejo_rostata_cv.pdf"
+              download="CV (Software Engineer) - Alejo Rostata.pdf"
+              className="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 active:bg-blue-800 transition-all flex items-center gap-2 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
-            </button>
+              <Download className="w-4 h-4 shrink-0" />
+              <span className="hidden sm:inline">Download Original PDF CV</span>
+              <span className="sm:hidden">Download PDF</span>
+            </a>
+
             <button
               onClick={onClose}
               type="button"
-              className="hidden sm:flex p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 transition-all outline-none cursor-pointer"
+              className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 hover:border-rose-300 dark:hover:border-rose-800 transition-all outline-none cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label="Close CV Modal"
+              title="Close Modal"
             >
               <X className="w-5 h-5" />
             </button>
@@ -87,13 +80,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
               {PERSONAL_INFO.name}
             </h1>
-            <p className="text-base sm:text-lg font-semibold text-indigo-600 dark:text-indigo-400">
+            <p className="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-400">
               {PERSONAL_INFO.title}
             </p>
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
-              <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" /> {PERSONAL_INFO.email}</span>
+              <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> {PERSONAL_INFO.email}</span>
               <span>•</span>
-              <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" /> {PERSONAL_INFO.location}</span>
+              <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> {PERSONAL_INFO.location}</span>
             </div>
             <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm pt-1">
               {PERSONAL_INFO.summary}
@@ -102,7 +95,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Experience Section */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-2">
+            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-2">
               <Briefcase className="w-4 h-4" />
               Professional Experience
             </h3>
@@ -111,14 +104,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div key={exp.id} className="space-y-2 border-l-2 border-slate-200 dark:border-slate-800 pl-3.5">
                   <div className="flex flex-wrap items-center justify-between gap-1">
                     <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">
-                      {exp.role} — <span className="text-indigo-600 dark:text-indigo-400">{exp.company}</span>
+                      {exp.role} — <span className="text-blue-600 dark:text-blue-400">{exp.company}</span>
                     </h4>
                     <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{exp.period}</span>
                   </div>
                   <ul className="space-y-1.5 pt-1">
                     {exp.responsibilities.map((r: string, i: number) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mt-1.5 shrink-0" />
                         <span>{r}</span>
                       </li>
                     ))}
@@ -138,7 +131,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Education & Achievements */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-200 dark:border-slate-800">
             <div className="space-y-3">
-              <h3 className="text-xs font-mono uppercase tracking-wider font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-2">
+              <h3 className="text-xs font-mono uppercase tracking-wider font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
                 <GraduationCap className="w-4 h-4" />
                 Education
               </h3>
@@ -164,28 +157,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
-        </div>
-
-        {/* Footer */}
-        <div className="px-4 sm:px-6 py-3.5 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
-          <span className="text-[11px] sm:text-xs text-slate-500 font-mono">Alejo Rostata — CV</span>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => window.print()}
-              type="button"
-              className="px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition-colors flex items-center gap-1.5 cursor-pointer"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
-            </button>
-            <button
-              onClick={onClose}
-              type="button"
-              className="px-3.5 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 font-bold text-xs hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors cursor-pointer"
-            >
-              Close
-            </button>
-          </div>
         </div>
 
       </div>
