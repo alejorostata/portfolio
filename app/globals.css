@@ -33,14 +33,16 @@
   background: rgba(59, 130, 246, 0.25);
 }
 
-/* Focus Ring Fix */
-a:focus, button:focus, input:focus, textarea:focus {
-  outline: none;
+/* Keyboard Tab Focus Ring with Exact Border Radius Matching */
+:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6 !important;
+  border-radius: inherit !important;
 }
 
-:focus-visible {
-  outline: 2px solid #3b82f6 !important;
-  outline-offset: 2px !important;
+.dark :focus-visible {
+  box-shadow: 0 0 0 2px #09090b, 0 0 0 4px #3b82f6 !important;
+  border-radius: inherit !important;
 }
 
 /* Mobile Scroll Utility */

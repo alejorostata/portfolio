@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
             </div>
 
-            {/* Borderless Text CTA with Arrow for "Review Full CV" */}
+            {/* Borderless Text CTA with Arrow for "Review or Download CV" */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <a
                 href="#experience"
@@ -88,10 +88,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 type="button"
-                className="h-12 px-3 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group"
+                className="h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>Review Full CV</span>
+                <span>Review or Download CV</span>
                 <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
