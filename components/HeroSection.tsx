@@ -48,13 +48,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
               <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-xs">
                 <p className="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">Full-Stack</p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Frontend, Backend, Web, Mobile & Desktop</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Frontend, Backend, Web & Mobile</p>
               </div>
             </div>
 
             {/* Summary Bio */}
             <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-              Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.
+              Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.
             </p>
 
             {/* Meta Role Details */}
@@ -98,7 +98,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Fixed-Height Profile Console */}
+          {/* Right Column: Profile Console */}
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden min-h-[410px] sm:min-h-[420px] flex flex-col justify-between">
               
@@ -116,7 +116,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   </span>
                 </div>
 
-                {/* Tab Controls with Rounded Focus Rings */}
+                {/* Tab Controls */}
                 <div className="flex items-center gap-1.5 pt-2.5 pb-1 px-1 overflow-x-auto no-scrollbar">
                   <button
                     onClick={() => setActiveConsoleTab('overview')}
@@ -169,7 +169,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 </div>
               </div>
 
-              {/* Tab Content Display - Generous Fixed Bounding Height */}
+              {/* Tab Content Display */}
               <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between">
                 
                 <div className="space-y-2">
@@ -177,16 +177,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     <div className="space-y-2.5 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Software Engineering Lead Overview</p>
                       <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                        <p className="text-blue-400 font-bold text-xs">Role Focus</p>
-                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Leadership</p>
+                        <p className="text-blue-400 font-bold text-xs">Primary Role</p>
+                        <p className="text-slate-200 text-xs">Full Stack Software Engineering & Team Lead @ Kryterion, Inc.</p>
                       </div>
                       <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                        <p className="text-amber-400 font-bold text-xs">Competitive Achievement</p>
-                        <p className="text-slate-200 text-xs">ACM-ICPC 2014 Philippine National Contestant</p>
+                        <p className="text-emerald-400 font-bold text-xs">Core Specialization</p>
+                        <p className="text-slate-200 text-xs">Scalable Web & Mobile Architecture (Java Spring Boot, Next.js, Vue, Flutter, React Native, Supabase)</p>
                       </div>
                       <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 font-sans">
-                        <p className="text-sky-400 font-bold text-xs">Graduate Study</p>
-                        <p className="text-slate-200 text-xs">Master's in Information Technology @ Ateneo de Naga</p>
+                        <p className="text-amber-400 font-bold text-xs">Engineering Leadership</p>
+                        <p className="text-slate-200 text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks (PAF)</p>
                       </div>
                     </div>
                   )}
@@ -194,11 +194,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   {activeConsoleTab === 'stack' && (
                     <div className="space-y-2.5 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Primary Engineering Stack</p>
-                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'C#'</span>, <span className="text-blue-300">'PHP'</span>];</p>
-                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
-                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobileDesktop</span> = [<span className="text-blue-300">'Flutter'</span>, <span className="text-blue-300">'React Native'</span>, <span className="text-blue-300">'Electron'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'REST APIs'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Shadcn'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobile</span> = [<span className="text-blue-300">'Flutter (iOS & Android)'</span>, <span className="text-blue-300">'React Native'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">databases</span> = [<span className="text-blue-300">'Supabase (PostgreSQL)'</span>, <span className="text-blue-300">'MariaDB'</span>, <span className="text-blue-300">'MySQL'</span>];</p>
-                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">devops</span> = [<span className="text-blue-300">'Git'</span>, <span className="text-blue-300">'Docker'</span>, <span className="text-blue-300">'Jenkins'</span>, <span className="text-blue-300">'AWS'</span>];</p>
+                      <p><span className="text-blue-400">const</span> <span className="text-amber-300">cloudDevops</span> = [<span className="text-blue-300">'Vercel'</span>, <span className="text-blue-300">'Docker'</span>, <span className="text-blue-300">'Jenkins'</span>, <span className="text-blue-300">'AWS'</span>];</p>
                     </div>
                   )}
 
@@ -225,7 +225,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   )}
                 </div>
 
-                {/* Console Footer Status - Pinned at Bottom */}
+                {/* Console Footer Status */}
                 <div className="pt-3 mt-4 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
