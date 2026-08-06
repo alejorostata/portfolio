@@ -33,18 +33,15 @@
   background: rgba(59, 130, 246, 0.25);
 }
 
-/* 100% Rounded Keyboard Tab Focus Ring System */
+/* Clean High-Contrast Keyboard Focus Ring System */
 *:focus {
   outline: none !important;
 }
 
 *:focus-visible {
-  outline: none !important;
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6 !important;
-}
-
-.dark *:focus-visible {
-  box-shadow: 0 0 0 2px #020617, 0 0 0 4px #3b82f6 !important;
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+  border-radius: inherit !important;
 }
 
 /* Mobile Scroll Utility */
