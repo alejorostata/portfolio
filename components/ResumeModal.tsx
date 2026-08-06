@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION, ACHIEVEMENTS } from '@/data/cvData';
-import { X, Download, Mail, MapPin, Briefcase, GraduationCap, Trophy } from 'lucide-react';
+import { Download, Mail, MapPin, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -40,24 +40,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       {/* Modal Container */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative animate-in zoom-in-95 duration-200">
         
-        {/* Header Bar */}
-        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shrink-0">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 inline-block shrink-0" />
-            <h2 id="resume-modal-title" className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-lg truncate">
-              Curriculum Vitae — {PERSONAL_INFO.name}
-            </h2>
-          </div>
-
-          <button
-            onClick={onClose}
-            type="button"
-            className="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-rose-500 hover:border-rose-300 dark:hover:border-rose-800 transition-all outline-none cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
-            aria-label="Close CV Modal"
-            title="Close Modal"
-          >
-            <X className="w-5 h-5" />
-          </button>
+        {/* Header Bar - Clean Title Only */}
+        <div className="flex items-center gap-2.5 px-4 sm:px-6 py-4 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shrink-0">
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 inline-block shrink-0" />
+          <h2 id="resume-modal-title" className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-lg truncate">
+            Curriculum Vitae — {PERSONAL_INFO.name}
+          </h2>
         </div>
 
         {/* Modal Scrollable Content */}
@@ -147,24 +135,24 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         </div>
 
-        {/* Modal Footer Bar */}
+        {/* Modal Footer Bar - 100% Consistent Button System */}
         <div className="px-4 sm:px-6 py-3.5 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
           <span className="text-xs text-slate-500 font-mono hidden sm:inline">Alejo Rostata — CV</span>
           <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
             <a
               href="/alejo_rostata_cv.pdf"
               download="CV (Software Engineer) - Alejo Rostata.pdf"
-              className="flex-1 sm:flex-initial px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 active:bg-blue-800 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="flex-1 sm:flex-initial h-11 px-5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 shrink-0" />
               <span>Download PDF CV</span>
             </a>
             <button
               onClick={onClose}
               type="button"
-              className="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-bold text-xs hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="h-11 px-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
             >
-              Close
+              <span>Close</span>
             </button>
           </div>
         </div>
