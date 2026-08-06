@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '@/data/cvData';
-import { Cpu, Server, Layout, Smartphone, Cloud, Users, Check, Sparkles } from 'lucide-react';
+import { Cpu, Server, Layout, Smartphone, Cloud, Users, Check, Sparkles, ChevronDown } from 'lucide-react';
 
 export const SkillsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('all');
@@ -67,8 +67,31 @@ export const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Category Filter Pills Container - Mobile Horizontal Scroll Pill Row */}
-        <div className="flex items-center gap-2 mb-6 sm:mb-8 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar whitespace-nowrap" role="tablist" aria-label="Skill Categories">
+        {/* Category Controls: Mobile Dropdown Select Menu (< sm: 640px) */}
+        <div className="sm:hidden mb-6">
+          <label htmlFor="mobile-category-select" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            Filter Skill Category:
+          </label>
+          <div className="relative">
+            <select
+              id="mobile-category-select"
+              value={activeTab}
+              onChange={(e) => setActiveTab(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
+            >
+              <option value="all">⚡ All Skills ({SKILL_CATEGORIES.reduce((acc, cat) => acc + cat.skills.length, 0)} total)</option>
+              {SKILL_CATEGORIES.map((cat) => (
+                <option key={cat.id} value={cat.id}>
+                  {cat.name} ({cat.skills.length} skills)
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Category Filter Pills Container: Desktop / Tablet Flex Wrap (>= sm: 640px) */}
+        <div className="hidden sm:flex flex-wrap items-center gap-2 sm:gap-2.5 mb-8 border-b border-slate-200 dark:border-slate-800 pb-4" role="tablist" aria-label="Skill Categories">
           <button
             onClick={() => setActiveTab('all')}
             type="button"
@@ -112,7 +135,7 @@ export const SkillsSection: React.FC = () => {
               className="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 rounded-2xl p-4 sm:p-6 space-y-3.5 hover:border-blue-500/40 dark:hover:border-blue-500/40 transition-all duration-300 shadow-xs dark:shadow-md flex flex-col justify-between"
             >
               <div className="space-y-3.5">
-                {/* Header with whitespace-nowrap shrink-0 on skill count badge to prevent wrapping */}
+                {/* Header with whitespace-nowrap shrink-0 on skill count badge */}
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800/80 pb-3 gap-2">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 shrink-0">
