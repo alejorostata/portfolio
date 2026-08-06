@@ -20,30 +20,28 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const savedTheme = localStorage.getItem('portfolio-theme') as Theme | null;
     if (savedTheme) {
       setTheme(savedTheme);
-      if (savedTheme === 'light') {
-        document.documentElement.classList.add('light');
-        document.documentElement.classList.remove('dark');
-      } else {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-      }
+      applyTheme(savedTheme);
     } else {
-      document.documentElement.classList.add('dark');
+      applyTheme('dark');
     }
   }, []);
+
+  const applyTheme = (targetTheme: Theme) => {
+    const root = document.documentElement;
+    if (targetTheme === 'light') {
+      root.classList.remove('dark');
+      root.classList.add('light');
+    } else {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    }
+  };
 
   const toggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
     localStorage.setItem('portfolio-theme', nextTheme);
-
-    if (nextTheme === 'light') {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-    }
+    applyTheme(nextTheme);
   };
 
   return (
