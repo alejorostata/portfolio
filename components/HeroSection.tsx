@@ -98,9 +98,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Profile Console */}
+          {/* Right Column: Profile Console (Fixed Exact Height h-[420px] sm:h-[430px]) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden min-h-[410px] sm:min-h-[420px] flex flex-col justify-between">
+            <div className="relative rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden h-[420px] sm:h-[430px] flex flex-col justify-between">
               
               {/* Console Header Bar */}
               <div className="bg-slate-950 border-b border-slate-800 p-3 shrink-0">
@@ -170,9 +170,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Tab Content Display */}
-              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-300 bg-slate-950 leading-relaxed flex-1 flex flex-col justify-between overflow-hidden">
                 
-                <div className="space-y-2">
+                <div className="space-y-2 overflow-y-auto no-scrollbar">
                   {activeConsoleTab === 'overview' && (
                     <div className="space-y-2.5 animate-in fade-in duration-200">
                       <p className="text-slate-400">// Software Engineering Lead Overview</p>
