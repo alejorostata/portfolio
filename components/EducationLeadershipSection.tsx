@@ -11,7 +11,7 @@ export const EducationLeadershipSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-500/30 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-xs font-semibold uppercase tracking-wider">
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Academic Background & Honors</span>
           </div>
@@ -28,7 +28,7 @@ export const EducationLeadershipSection: React.FC = () => {
           {/* Education Column */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               <span>Formal Education</span>
             </h3>
 
@@ -42,7 +42,7 @@ export const EducationLeadershipSection: React.FC = () => {
                     <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
                       {edu.degree}
                     </h4>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-400">
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400">
                       {edu.badge}
                     </span>
                   </div>
