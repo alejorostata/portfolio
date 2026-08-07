@@ -18,7 +18,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'kryterion-lead',
     role: 'Software Engineering Team Lead',
     company: 'Kryterion, Inc. (Webassessor Platform)',
-    location: 'Remote (US-Based) / Naga City, Philippines',
+    location: 'Remote / Phoenix, Arizona, USA',
     period: 'Oct 2024 — Present',
     isCurrent: true,
     summary: 'Leading engineering team execution, architectural scaling, and full-stack development for the Webassessor test delivery platform across web and mobile.',
@@ -36,7 +36,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'kryterion-engineer',
     role: 'Software Engineer (Full Stack)',
     company: 'Kryterion, Inc. (Webassessor Platform)',
-    location: 'Remote (US-Based) / Naga City, Philippines',
+    location: 'Remote / Phoenix, Arizona, USA',
     period: 'Nov 2023 — Oct 2024',
     summary: 'Full-stack engineering for Webassessor platform, microservices, and secure API integrations.',
     responsibilities: [

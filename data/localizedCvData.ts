@@ -275,7 +275,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Líder de Equipo de Ingeniería de Software',
           company: 'Kryterion, Inc. (Plataforma Webassessor)',
-          location: 'Remoto (EE. UU.) / Ciudad de Naga, Filipinas',
+          location: 'Remoto / Phoenix, Arizona, EE. UU.',
           period: 'Oct 2024 — Presente',
           summary: 'Liderando la ejecución del equipo de ingeniería, escalado arquitectónico y desarrollo full-stack para la plataforma Webassessor en web y móvil.',
           responsibilities: [
@@ -293,7 +293,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Ingeniero de Software (Full Stack)',
           company: 'Kryterion, Inc. (Plataforma Webassessor)',
-          location: 'Remoto (EE. UU.) / Ciudad de Naga, Filipinas',
+          location: 'Remoto / Phoenix, Arizona, EE. UU.',
           period: 'Nov 2023 — Oct 2024',
           summary: 'Ingeniería full-stack para la plataforma Webassessor, microservicios e integraciones de API seguras.',
           responsibilities: [
@@ -348,7 +348,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineering Team Lead',
           company: 'Kryterion, Inc. (Webassessor Platform)',
-          location: 'Remote (US-Based) / Lungsod ng Naga, Pilipinas',
+          location: 'Remote / Phoenix, Arizona, USA',
           period: 'Okt 2024 — Kasalukuyan',
           summary: 'Pinamumunuan ang inhinyerya, arkitektura, at full-stack development para sa Webassessor platform sa web at mobile.',
           responsibilities: [
@@ -366,7 +366,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineer (Full Stack)',
           company: 'Kryterion, Inc. (Webassessor Platform)',
-          location: 'Remote (US-Based) / Lungsod ng Naga, Pilipinas',
+          location: 'Remote / Phoenix, Arizona, USA',
           period: 'Nob 2023 — Okt 2024',
           summary: 'Full-stack engineering para sa Webassessor platform, microservices, at ligtas na API integrations.',
           responsibilities: [
@@ -421,7 +421,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineering Team Lead',
           company: 'Kryterion, Inc. (Webassessor-Plattform)',
-          location: 'Remote (USA) / Naga City, Philippinen',
+          location: 'Remote / Phoenix, Arizona, USA',
           period: 'Okt 2024 — Heute',
           summary: 'Leitung der Ausführung des Entwicklungsteams, der architektonischen Skalierung und der Full-Stack-Entwicklung für die Webassessor-Plattform auf Web und Mobile.',
           responsibilities: [
@@ -439,7 +439,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineer (Full Stack)',
           company: 'Kryterion, Inc. (Webassessor-Plattform)',
-          location: 'Remote (USA) / Naga City, Philippinen',
+          location: 'Remote / Phoenix, Arizona, USA',
           period: 'Nov 2023 — Okt 2024',
           summary: 'Full-Stack-Engineering für die Webassessor-Plattform, Mikroservices und sichere API-Integrationen.',
           responsibilities: [
@@ -494,7 +494,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'ソフトウェアエンジニアリング チームリード',
           company: 'Kryterion 社 (Webassessor プラットフォーム)',
-          location: 'リモート (米国本社) / フィリピン ナガ市',
+          location: 'リモート / 米国 アリゾナ州 フェニックス',
           period: '2024年10月 — 現在',
           summary: 'WebおよびモバイルにわたるWebassessor試験配信プラットフォームの開発チーム統括、アーキテクチャ拡張、フルスタック開発を牽引。',
           responsibilities: [
@@ -512,7 +512,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'フルスタック ソフトウェアエンジニア',
           company: 'Kryterion 社 (Webassessor プラットフォーム)',
-          location: 'リモート (米国本社) / フィリピン ナガ市',
+          location: 'リモート / 米国 アリゾナ州 フェニックス',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessorプラットフォーム、マイクロサービス、セキュアなAPI連携のフルスタック開発。',
           responsibilities: [
@@ -567,7 +567,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '소프트웨어 엔지니어링 팀 리드',
           company: 'Kryterion, Inc. (Webassessor 플랫폼)',
-          location: '원격 (미국 본사) / 필리핀 나가 시',
+          location: '원격 / 미국 아리조나 피닉스',
           period: '2024년 10월 — 현재',
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
           responsibilities: [
@@ -585,7 +585,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '풀스택 소프트웨어 엔지니어',
           company: 'Kryterion, Inc. (Webassessor 플랫폼)',
-          location: '원격 (미국 본사) / 필리핀 나가 시',
+          location: '원격 / 미국 아리조나 피닉스',
           period: '2023년 11월 — 2024년 10월',
           summary: 'Webassessor 플랫폼, 마이크로서비스 및 안전한 API 통합을 위한 풀스택 엔지니어링.',
           responsibilities: [
@@ -640,7 +640,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '软件工程团队负责人',
           company: 'Kryterion, Inc. (Webassessor 平台)',
-          location: '远程 (美国总部) / 菲律宾 纳加市',
+          location: '远程 / 美国 亚利桑那州 菲尼克斯',
           period: '2024年10月 — 至今',
           summary: '领导 Web 和移动端 Webassessor 考试交付平台的工程团队执行、架构扩展及全栈开发。',
           responsibilities: [
@@ -658,7 +658,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '全栈软件工程师',
           company: 'Kryterion, Inc. (Webassessor 平台)',
-          location: '远程 (美国总部) / 菲律宾 纳加市',
+          location: '远程 / 美国 亚利桑那州 菲尼克斯',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessor 平台的全栈工程、微服务及安全 API 集成。',
           responsibilities: [
