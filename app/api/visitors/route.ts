@@ -9,10 +9,13 @@ export async function GET() {
   }
 
   try {
-    // GoatCounter API: fetch all-time hits grouped by page path
-    // start = your account launch date, end = today
+    // start = your GoatCounter account launch date
+    // end = tomorrow in UTC to account for UTC+8 Manila timezone offset
+    //       (visits recorded on "2026-08-08 Manila" = "2026-08-07 UTC")
     const start = '2026-08-01';
-    const end = new Date().toISOString().split('T')[0];
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 1);
+    const end = endDate.toISOString().split('T')[0];
 
     const res = await fetch(
       `https://alejorostata.goatcounter.com/api/v0/stats/hits?start=${start}&end=${end}&limit=200`,
@@ -21,8 +24,8 @@ export async function GET() {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        // Cache for 1 hour — avoids hitting GoatCounter on every page load
-        next: { revalidate: 3600 },
+        // Cache for 5 minutes — balance between freshness and API rate limits
+        next: { revalidate: 300 },
       }
     );
 
