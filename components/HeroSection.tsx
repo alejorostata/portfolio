@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             {/* Main Headline */}
             <div className="space-y-1.5 sm:space-y-2">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-[1.15]">
-                {t('hero.title')}
+                {t('hero.greeting')} <span className="text-blue-600 dark:text-blue-400">{PERSONAL_INFO.name}</span>
               </h1>
               <p className="text-base sm:text-2xl font-bold text-slate-700 dark:text-slate-300 leading-snug">
                 {t('hero.role')}
@@ -45,12 +45,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             {/* Metric Cards Grid - Side-by-Side 2 Columns on Mobile for Clean Symmetry */}
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.statsYears')}</p>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.statsYearsLabel')}</p>
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric1Val')}</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.metric1Label')}</p>
               </div>
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.statsProjects')}</p>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.statsProjectsLabel')}</p>
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric2Val')}</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.metric2Label')}</p>
               </div>
             </div>
 
@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 href="#experience"
                 className="h-11 sm:h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
-                <span>{t('nav.experience')}</span>
+                <span>{t('hero.btnExploreExperience')}</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
 
@@ -93,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 className="h-11 sm:h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>{t('hero.btnCV')}</span>
+                <span>{t('hero.btnReviewCV')}</span>
                 <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

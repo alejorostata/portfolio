@@ -2,8 +2,8 @@ export type Locale = 'en' | 'es' | 'fil' | 'de' | 'ja' | 'ko' | 'zh';
 
 export interface LanguageOption {
   code: Locale;
-  label: string;      // Native endonym (e.g. "日本語", "Español")
-  englishName: string; // English name (e.g. "Japanese", "Spanish")
+  label: string;
+  englishName: string;
 }
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
@@ -25,60 +25,54 @@ export interface TranslationSchema {
     education: string;
     contact: string;
     getInTouch: string;
-    cvModal: string;
   };
   hero: {
     availabilityBadge: string;
-    title: string;
+    greeting: string;
+    name: string;
     role: string;
+    metric1Val: string;
+    metric1Label: string;
+    metric2Val: string;
+    metric2Label: string;
     tagline: string;
     location: string;
     company: string;
     degree: string;
-    btnContact: string;
-    btnCV: string;
-    btnGitHub: string;
-    btnLinkedIn: string;
-    statsYears: string;
-    statsYearsLabel: string;
-    statsProjects: string;
-    statsProjectsLabel: string;
-    statsTeams: string;
-    statsTeamsLabel: string;
+    btnExploreExperience: string;
+    btnReviewCV: string;
   };
   experience: {
     badge: string;
     title: string;
     subtitle: string;
     present: string;
+    keyResponsibilities: string;
+    techAndTools: string;
   };
   skills: {
     badge: string;
     title: string;
     subtitle: string;
-    allCategories: string;
-    selectCategory: string;
-    categories: {
-      languages: string;
-      frontend: string;
-      backend: string;
-      mobile: string;
-      database: string;
-      devops: string;
-    };
+    allSkills: string;
+    filterLabel: string;
+    skillsCount: string;
   };
   projects: {
     badge: string;
     title: string;
     subtitle: string;
-    viewCode: string;
-    viewDemo: string;
-    featured: string;
+    liveSite: string;
+    database: string;
+    highlights: string;
+    visitLiveSite: string;
   };
   education: {
     badge: string;
     title: string;
     subtitle: string;
+    formalEducation: string;
+    honors: string;
   };
   contact: {
     badge: string;
@@ -88,32 +82,29 @@ export interface TranslationSchema {
     mobileLabel: string;
     viberActive: string;
     locationLabel: string;
-    locationValue: string;
     formTitle: string;
     nameField: string;
     emailField: string;
     subjectField: string;
     messageField: string;
     btnSend: string;
-    sending: string;
-    successMessage: string;
-    errorMessage: string;
+    copiedClipboard: string;
+    copiedViber: string;
+    openingMailClient: string;
+    mailClientSubtext: string;
+    sendEmailTo: string;
   };
   cvModal: {
     title: string;
+    verifiedPdf: string;
     downloadBtn: string;
     shareBtn: string;
     copyLinkSuccess: string;
-    tabOverview: string;
-    tabExperience: string;
-    tabSkills: string;
-    tabEducation: string;
     closeBtn: string;
   };
   footer: {
     rights: string;
     backToTop: string;
-    visits: string;
     wcagBadge: string;
   };
 }
