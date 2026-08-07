@@ -85,9 +85,13 @@ export interface TranslationSchema {
     locationValue: string;
     formTitle: string;
     nameField: string;
+    namePlaceholder: string;
     emailField: string;
+    emailPlaceholder: string;
     subjectField: string;
+    subjectPlaceholder: string;
     messageField: string;
+    messagePlaceholder: string;
     btnSend: string;
     copiedClipboard: string;
     copiedViber: string;
