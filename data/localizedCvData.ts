@@ -202,7 +202,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '시스템 개발자',
           location: '필리핀 나가 시',
-          period: '2016년 12월 — 2021년 8월',
+          period: '2016年 12月 — 2021年 8月',
         };
       }
     }
@@ -258,6 +258,10 @@ export function getProjects(locale: Locale): Project[] {
           title: 'QAPione — 自動品質保証 (QA) プラットフォーム',
           description: 'クラウドネイティブの自動ソフトウェアテストおよびQAワークフロー管理システム。',
           projectType: 'SaaS / B2B プラットフォーム',
+          highlights: [
+            'Supabase PostgreSQL、Stripe決済、行レベルセキュリティ(RLS)を備えたマルチテナントSaaS。',
+            '自動テストスイート実行、リアルタイム結果ダッシュボード、Vercelクラウドホスティング。',
+          ],
         };
       }
       if (proj.id === 'stelifo-platform') {
@@ -266,6 +270,10 @@ export function getProjects(locale: Locale): Project[] {
           title: 'Stelifo — SaaS & B2B Web・モバイルプラットフォーム',
           description: '業務自動化ワークフローのためのWebおよびモバイルアプリを備えたデジタル変革SaaS。',
           projectType: 'SaaS / B2B Web & モバイル',
+          highlights: [
+            'React Nativeで構築されたWebアプリおよびクロスプラットフォームモバイルアプリ。',
+            'Stripeサブスクリプション決済、Resend.comメール配信、Vercelホスティングを統合。',
+          ],
         };
       }
       if (proj.id === 'vibe-ai') {
@@ -274,6 +282,10 @@ export function getProjects(locale: Locale): Project[] {
           title: 'Vibe AI — インテリジェント ワークスペース アシスタント',
           description: '生成AIモデルを搭載したAI駆動のコンテンツおよび生産性向上エンジン。',
           projectType: 'SaaS / AI プロダクト',
+          highlights: [
+            'プロンプト生成およびコードリファクタリング用のLLM APIストリームを統合。',
+            '高性能なNext.js App RouterアーキテクチャでVercelにデプロイ。',
+          ],
         };
       }
       if (proj.id === 'kryterion-engine') {
@@ -282,6 +294,10 @@ export function getProjects(locale: Locale): Project[] {
           title: 'Webassessor — Kryterion オンライン試験配信プラットフォーム',
           description: '世界中の受験者に同時に対応する高コンカレンシーのオンライン試験・監視システム。',
           projectType: 'エンタープライズ試験プラットフォーム',
+          highlights: [
+            '高コンカレンシーの試験セッション状態を持つコア評価配信エンジンを拡張。',
+            'Vue.js、Bootstrap、Tailwind CSSを使用し、WCAGアクセシビリティ規格に準拠したWebUIを構築。',
+          ],
         };
       }
     }
@@ -290,13 +306,209 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          projectType: 'Plataforma SaaS / B2B',
           description: 'Gestor automatizado de pruebas de software y flujo de trabajo de control de calidad nativo de la nube.',
+          highlights: [
+            'SaaS multinquilino con Supabase PostgreSQL, pagos Stripe y seguridad RLS.',
+            'Ejecución de pruebas automatizadas y paneles de resultados en tiempo real con hosting Vercel.',
+          ],
+        };
+      }
+      if (proj.id === 'stelifo-platform') {
+        return {
+          ...proj,
+          projectType: 'Plataforma Web y Móvil SaaS / B2B',
+          description: 'Plataforma de transformación digital SaaS con aplicaciones web y móviles para flujos de trabajo empresariales.',
+          highlights: [
+            'Plataforma web y aplicación móvil multiplataforma construida con React Native.',
+            'Pagos por suscripción con Stripe, correos transaccionales con Resend.com y hosting Vercel.',
+          ],
         };
       }
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          projectType: 'Producto SaaS / IA',
           description: 'Motor de contenido y productividad impulsado por modelos de inteligencia artificial generativa.',
+          highlights: [
+            'Flujos de API de LLM integrados para generación de prompts y refactorización de código.',
+            'Desplegado en Vercel con arquitectura de alto rendimiento Next.js App Router.',
+          ],
+        };
+      }
+      if (proj.id === 'kryterion-engine') {
+        return {
+          ...proj,
+          projectType: 'Plataforma Empresarial de Evaluación',
+          description: 'Plataforma global de evaluación en línea e inspección de exámenes de alta concurrencia.',
+          highlights: [
+            'Motor de evaluación central escalado con estado de sesión de examen de alta concurrencia.',
+            'Interfaces web responsivas con Vue.js, Bootstrap, Tailwind CSS y estándares WCAG.',
+          ],
+        };
+      }
+    }
+
+    if (locale === 'fil') {
+      if (proj.id === 'qapione-saas') {
+        return {
+          ...proj,
+          highlights: [
+            'Multi-tenant SaaS na may Supabase PostgreSQL, Stripe payments, at Row Level Security.',
+            'Awtomatikong pagpapatakbo ng test suite, real-time dashboards, at Vercel cloud hosting.',
+          ],
+        };
+      }
+      if (proj.id === 'stelifo-platform') {
+        return {
+          ...proj,
+          highlights: [
+            'Web application platform at cross-platform mobile app na binuo gamit ang React Native.',
+            'Integrated Stripe subscription payments, Resend.com emails, at Vercel hosting.',
+          ],
+        };
+      }
+      if (proj.id === 'vibe-ai') {
+        return {
+          ...proj,
+          highlights: [
+            'Pinagsamang LLM API streams para sa prompt generation at code refactoring.',
+            'Naka-deploy sa Vercel gamit ang mabilis na Next.js App Router architecture.',
+          ],
+        };
+      }
+      if (proj.id === 'kryterion-engine') {
+        return {
+          ...proj,
+          highlights: [
+            'Pinalawak ang core assessment engine para sa maraming sabay-sabay na kumuha ng pagsusulit.',
+            'Bumuo ng responsive web UI gamit ang Vue.js, Bootstrap, at Tailwind CSS na may WCAG standards.',
+          ],
+        };
+      }
+    }
+
+    if (locale === 'de') {
+      if (proj.id === 'qapione-saas') {
+        return {
+          ...proj,
+          highlights: [
+            'Multi-Tenant-SaaS mit Supabase PostgreSQL, Stripe-Zahlungen und Row Level Security.',
+            'Automatische Testausführung, Echtzeit-Ergebnis-Dashboards und Vercel-Cloud-Hosting.',
+          ],
+        };
+      }
+      if (proj.id === 'stelifo-platform') {
+        return {
+          ...proj,
+          highlights: [
+            'Webanwendungs-Plattform und plattformübergreifende mobile App entwickelt mit React Native.',
+            'Integrierte Stripe-Abonnementzahlungen, Resend.com-E-Mails und Vercel-Hosting.',
+          ],
+        };
+      }
+      if (proj.id === 'vibe-ai') {
+        return {
+          ...proj,
+          highlights: [
+            'Integrierte LLM-API-Streams für Prompt-Generierung und Code-Refactoring.',
+            'Bereitgestellt auf Vercel mit leistungsstarker Next.js App Router-Architektur.',
+          ],
+        };
+      }
+      if (proj.id === 'kryterion-engine') {
+        return {
+          ...proj,
+          highlights: [
+            'Skalierte zentrale Bewertungsengine mit hochparallelem Prüfungsstatus.',
+            'Responsive Web-Benutzeroberflächen mit Vue.js, Bootstrap, Tailwind CSS und WCAG-Standards entwickelt.',
+          ],
+        };
+      }
+    }
+
+    if (locale === 'ko') {
+      if (proj.id === 'qapione-saas') {
+        return {
+          ...proj,
+          projectType: 'SaaS / B2B 플랫폼',
+          highlights: [
+            'Supabase PostgreSQL, Stripe 결제 및 행 수준 보안(RLS)을 갖춘 멀티테넌트 SaaS.',
+            '자동화된 테스트 실행, 실시간 결과 대시보드 및 Vercel 클라우드 호스팅.',
+          ],
+        };
+      }
+      if (proj.id === 'stelifo-platform') {
+        return {
+          ...proj,
+          projectType: 'SaaS / B2B 웹 및 모바일 플랫폼',
+          highlights: [
+            'React Native로 구축된 웹 애플리케이션 플랫폼 및 교차 플랫폼 모바일 앱.',
+            'Stripe 구독 결제, Resend.com 이메일 및 Vercel 호스팅 통합.',
+          ],
+        };
+      }
+      if (proj.id === 'vibe-ai') {
+        return {
+          ...proj,
+          projectType: 'SaaS / AI 제품',
+          highlights: [
+            '프롬프트 생성 및 코드 리팩토링을 위한 LLM API 스트림 통합.',
+            '고성능 Next.js App Router 아키텍처로 Vercel에 배포.',
+          ],
+        };
+      }
+      if (proj.id === 'kryterion-engine') {
+        return {
+          ...proj,
+          projectType: '엔터프라이즈 평가 플랫폼',
+          highlights: [
+            '고동시성 시험 세션 상태를 갖춘 핵심 평가 전달 엔진 확장.',
+            'Vue.js, Bootstrap, Tailwind CSS를 사용하고 WCAG 접근성 표준을 준수한 웹 UI 구축.',
+          ],
+        };
+      }
+    }
+
+    if (locale === 'zh') {
+      if (proj.id === 'qapione-saas') {
+        return {
+          ...proj,
+          projectType: 'SaaS / B2B 平台',
+          highlights: [
+            '具备 Supabase PostgreSQL、Stripe 支付及行级安全 (RLS) 的多租户 SaaS。',
+            '自动化测试套件执行、实时结果仪表板与 Vercel 云端托管。',
+          ],
+        };
+      }
+      if (proj.id === 'stelifo-platform') {
+        return {
+          ...proj,
+          projectType: 'SaaS / B2B Web 与移动端平台',
+          highlights: [
+            '基于 React Native 构建的 Web 应用平台与跨平台移动应用。',
+            '集成 Stripe 订阅支付、Resend.com 事务邮件与 Vercel 托管。',
+          ],
+        };
+      }
+      if (proj.id === 'vibe-ai') {
+        return {
+          ...proj,
+          projectType: 'SaaS / AI 产品',
+          highlights: [
+            '集成用于提示词生成与代码重构的 LLM API 流。',
+            '基于高性能 Next.js App Router 架构部署于 Vercel。',
+          ],
+        };
+      }
+      if (proj.id === 'kryterion-engine') {
+        return {
+          ...proj,
+          projectType: '企业级考试评估平台',
+          highlights: [
+            '扩展具有高并发考试会话状态的核心评估交付引擎。',
+            '使用 Vue.js、Bootstrap 和 Tailwind CSS 构建符合 WCAG 无障碍标准的响应式 Web 界面。',
+          ],
         };
       }
     }
