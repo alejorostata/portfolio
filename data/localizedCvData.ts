@@ -275,7 +275,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Líder de Equipo de Ingeniería de Software',
           company: 'Kryterion, Inc. (Plataforma Webassessor)',
-          location: 'Remoto / Ciudad de Naga, Filipinas',
+          location: 'Remoto (EE. UU.) / Ciudad de Naga, Filipinas',
           period: 'Oct 2024 — Presente',
           summary: 'Liderando la ejecución del equipo de ingeniería, escalado arquitectónico y desarrollo full-stack para la plataforma Webassessor en web y móvil.',
           responsibilities: [
@@ -293,7 +293,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Ingeniero de Software (Full Stack)',
           company: 'Kryterion, Inc. (Plataforma Webassessor)',
-          location: 'Remoto / Ciudad de Naga, Filipinas',
+          location: 'Remoto (EE. UU.) / Ciudad de Naga, Filipinas',
           period: 'Nov 2023 — Oct 2024',
           summary: 'Ingeniería full-stack para la plataforma Webassessor, microservicios e integraciones de API seguras.',
           responsibilities: [
@@ -310,7 +310,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Desarrollador Full Stack',
           company: 'Arquidiócesis de CÁCERES',
-          location: 'Ciudad de Naga, Filipinas',
+          location: 'Híbrido / Ciudad de Naga, Filipinas',
           period: 'Sept 2021 — Nov 2023',
           summary: 'Diseño y despliegue de sistemas web y móviles full-stack, arquitecturas de bases de datos y herramientas automatizadas.',
           responsibilities: [
@@ -328,7 +328,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Desarrollador de Sistemas',
           company: 'Arquidiócesis de CÁCERES',
-          location: 'Ciudad de Naga, Filipinas',
+          location: 'Presencial / Ciudad de Naga, Filipinas',
           period: 'Dic 2016 — Ago 2021',
           summary: 'Construcción de software administrativo, automatización de procesos y sistemas de bases de datos.',
           responsibilities: [
@@ -348,7 +348,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineering Team Lead',
           company: 'Kryterion, Inc. (Webassessor Platform)',
-          location: 'Remote / Lungsod ng Naga, Pilipinas',
+          location: 'Remote (US-Based) / Lungsod ng Naga, Pilipinas',
           period: 'Okt 2024 — Kasalukuyan',
           summary: 'Pinamumunuan ang inhinyerya, arkitektura, at full-stack development para sa Webassessor platform sa web at mobile.',
           responsibilities: [
@@ -366,7 +366,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineer (Full Stack)',
           company: 'Kryterion, Inc. (Webassessor Platform)',
-          location: 'Remote / Lungsod ng Naga, Pilipinas',
+          location: 'Remote (US-Based) / Lungsod ng Naga, Pilipinas',
           period: 'Nob 2023 — Okt 2024',
           summary: 'Full-stack engineering para sa Webassessor platform, microservices, at ligtas na API integrations.',
           responsibilities: [
@@ -383,7 +383,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Full Stack Developer',
           company: 'Arkodyosesis ng Caceres',
-          location: 'Lungsod ng Naga, Pilipinas',
+          location: 'Hybrid / Lungsod ng Naga, Pilipinas',
           period: 'Set 2021 — Nob 2023',
           summary: 'Pagdidisenyo at pagpapatakbo ng mga full-stack web at mobile system, arkitektura ng database, at mga awtomatikong tool.',
           responsibilities: [
@@ -401,7 +401,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'System Developer',
           company: 'Arkodyosesis ng Caceres',
-          location: 'Lungsod ng Naga, Pilipinas',
+          location: 'On-Site / Lungsod ng Naga, Pilipinas',
           period: 'Dis 2016 — Ago 2021',
           summary: 'Pagbuo ng administrative software, awtomasyon ng proseso, at mga sistema ng database.',
           responsibilities: [
@@ -421,7 +421,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineering Team Lead',
           company: 'Kryterion, Inc. (Webassessor-Plattform)',
-          location: 'Remote / Naga City, Philippinen',
+          location: 'Remote (USA) / Naga City, Philippinen',
           period: 'Okt 2024 — Heute',
           summary: 'Leitung der Ausführung des Entwicklungsteams, der architektonischen Skalierung und der Full-Stack-Entwicklung für die Webassessor-Plattform auf Web und Mobile.',
           responsibilities: [
@@ -439,7 +439,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Software Engineer (Full Stack)',
           company: 'Kryterion, Inc. (Webassessor-Plattform)',
-          location: 'Remote / Naga City, Philippinen',
+          location: 'Remote (USA) / Naga City, Philippinen',
           period: 'Nov 2023 — Okt 2024',
           summary: 'Full-Stack-Engineering für die Webassessor-Plattform, Mikroservices und sichere API-Integrationen.',
           responsibilities: [
@@ -456,7 +456,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Full Stack Entwickler',
           company: 'Erzdiözese Caceres',
-          location: 'Naga City, Philippinen',
+          location: 'Hybrid / Naga City, Philippinen',
           period: 'Sept 2021 — Nov 2023',
           summary: 'Architektur und Bereitstellung von Full-Stack-Web- und Mobil-Systemen sowie Datenbankarchitekturen.',
           responsibilities: [
@@ -474,7 +474,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'Systementwickler',
           company: 'Erzdiözese Caceres',
-          location: 'Naga City, Philippinen',
+          location: 'Vor Ort / Naga City, Philippinen',
           period: 'Dez 2016 — Aug 2021',
           summary: 'Entwicklung von Verwaltungssoftware, Prozessautomatisierung und Datenbank-Systemen.',
           responsibilities: [
@@ -494,7 +494,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'ソフトウェアエンジニアリング チームリード',
           company: 'Kryterion 社 (Webassessor プラットフォーム)',
-          location: 'リモート / フィリピン ナガ市',
+          location: 'リモート (米国本社) / フィリピン ナガ市',
           period: '2024年10月 — 現在',
           summary: 'WebおよびモバイルにわたるWebassessor試験配信プラットフォームの開発チーム統括、アーキテクチャ拡張、フルスタック開発を牽引。',
           responsibilities: [
@@ -512,7 +512,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'フルスタック ソフトウェアエンジニア',
           company: 'Kryterion 社 (Webassessor プラットフォーム)',
-          location: 'リモート / フィリピン ナガ市',
+          location: 'リモート (米国本社) / フィリピン ナガ市',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessorプラットフォーム、マイクロサービス、セキュアなAPI連携のフルスタック開発。',
           responsibilities: [
@@ -529,7 +529,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'フルスタックWeb & モバイルデベロッパー',
           company: 'カセレス大司教区',
-          location: 'フィリピン ナガ市',
+          location: 'ハイブリッド / フィリピン ナガ市',
           period: '2021年9月 — 2023年11月',
           summary: 'フルスタックWeb・モバイルシステム、データベース設計、自動化ツールの設計および運用。',
           responsibilities: [
@@ -547,7 +547,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: 'システムデベロッパー',
           company: 'カセレス大司教区',
-          location: 'フィリピン ナガ市',
+          location: 'オンサイト / フィリピン ナガ市',
           period: '2016年12月 — 2021年8月',
           summary: '管理ソフトウェア開発、プロセス自動化、データベースシステムの構築。',
           responsibilities: [
@@ -567,7 +567,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '소프트웨어 엔지니어링 팀 리드',
           company: 'Kryterion, Inc. (Webassessor 플랫폼)',
-          location: '원격 / 필리핀 나가 시',
+          location: '원격 (미국 본사) / 필리핀 나가 시',
           period: '2024년 10월 — 현재',
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
           responsibilities: [
@@ -585,7 +585,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '풀스택 소프트웨어 엔지니어',
           company: 'Kryterion, Inc. (Webassessor 플랫폼)',
-          location: '원격 / 필리핀 나가 시',
+          location: '원격 (미국 본사) / 필리핀 나가 시',
           period: '2023년 11월 — 2024년 10월',
           summary: 'Webassessor 플랫폼, 마이크로서비스 및 안전한 API 통합을 위한 풀스택 엔지니어링.',
           responsibilities: [
@@ -602,7 +602,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '풀스택 개발자',
           company: '카세레스 대교구',
-          location: '필리핀 나가 시',
+          location: '하이브리드 / 필리핀 나가 시',
           period: '2021년 9월 — 2023년 11월',
           summary: '풀스택 웹 및 모바일 시스템, 데이터베이스 아키텍처 및 자동화 도구 설계 및 배포.',
           responsibilities: [
@@ -620,7 +620,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '시스템 개발자',
           company: '카세레스 대교구',
-          location: '필리핀 나가 시',
+          location: '온사이트 / 필리핀 나가 시',
           period: '2016년 12월 — 2021년 8월',
           summary: '행정 소프트웨어 개발, 프로세스 자동화 및 데이터베이스 시스템 구축.',
           responsibilities: [
@@ -640,7 +640,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '软件工程团队负责人',
           company: 'Kryterion, Inc. (Webassessor 平台)',
-          location: '远程 / 菲律宾 纳加市',
+          location: '远程 (美国总部) / 菲律宾 纳加市',
           period: '2024年10月 — 至今',
           summary: '领导 Web 和移动端 Webassessor 考试交付平台的工程团队执行、架构扩展及全栈开发。',
           responsibilities: [
@@ -658,7 +658,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '全栈软件工程师',
           company: 'Kryterion, Inc. (Webassessor 平台)',
-          location: '远程 / 菲律宾 纳加市',
+          location: '远程 (美国总部) / 菲律宾 纳加市',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessor 平台的全栈工程、微服务及安全 API 集成。',
           responsibilities: [
@@ -675,7 +675,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '全栈开发人员',
           company: '卡塞雷斯总教区',
-          location: '菲律宾 纳加市',
+          location: '混合办公 / 菲律宾 纳加市',
           period: '2021年9月 — 2023年11月',
           summary: '架构与部署全栈 Web 和移动端系统、数据库架构及自动化工具。',
           responsibilities: [
@@ -693,7 +693,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '系统开发人员',
           company: '卡塞雷斯总教区',
-          location: '菲律宾 纳加市',
+          location: '现场办公 / 菲律宾 纳加市',
           period: '2016年12月 — 2021年8月',
           summary: '构建行政管理软件、流程自动化与数据库系统。',
           responsibilities: [

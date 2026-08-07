@@ -18,7 +18,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'kryterion-lead',
     role: 'Software Engineering Team Lead',
     company: 'Kryterion, Inc. (Webassessor Platform)',
-    location: 'Remote / Naga City, Philippines',
+    location: 'Remote (US-Based) / Naga City, Philippines',
     period: 'Oct 2024 — Present',
     isCurrent: true,
     summary: 'Leading engineering team execution, architectural scaling, and full-stack development for the Webassessor test delivery platform across web and mobile.',
@@ -36,7 +36,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'kryterion-engineer',
     role: 'Software Engineer (Full Stack)',
     company: 'Kryterion, Inc. (Webassessor Platform)',
-    location: 'Remote / Naga City, Philippines',
+    location: 'Remote (US-Based) / Naga City, Philippines',
     period: 'Nov 2023 — Oct 2024',
     summary: 'Full-stack engineering for Webassessor platform, microservices, and secure API integrations.',
     responsibilities: [
@@ -52,7 +52,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'caceres-fullstack',
     role: 'Full Stack Developer',
     company: 'Archdiocese of Caceres',
-    location: 'Naga City, Philippines',
+    location: 'Hybrid / Naga City, Philippines',
     period: 'Sept 2021 — Nov 2023',
     summary: 'Architecting and deploying full-stack web and mobile systems, database architectures, and automated tools.',
     responsibilities: [
@@ -69,7 +69,7 @@ export const EXPERIENCES: Experience[] = [
     id: 'caceres-system',
     role: 'System Developer',
     company: 'Archdiocese of Caceres',
-    location: 'Naga City, Philippines',
+    location: 'On-Site / Naga City, Philippines',
     period: 'Dec 2016 — Aug 2021',
     summary: 'Building administrative software, process automation, and database systems.',
     responsibilities: [
