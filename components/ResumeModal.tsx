@@ -140,17 +140,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         <div className="flex-1 bg-slate-100 dark:bg-slate-950 p-2.5 sm:p-4 flex flex-col space-y-2.5 min-h-[360px] sm:min-h-[500px]">
           
           {/* Mobile PDF Notice Banner */}
-          <div className="sm:hidden p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs text-blue-900 dark:text-blue-300 flex items-center justify-between gap-2.5 shrink-0">
-            <span className="leading-tight text-[11px] font-medium">{t('cvModal.mobileNotice')}</span>
-            <a
-              href="/alejo_rostata_cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] shrink-0 inline-flex items-center gap-1 shadow-xs"
-            >
-              <span>{t('cvModal.openNewTab')}</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+          <div className="sm:hidden p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-[11px] font-medium text-blue-900 dark:text-blue-300 text-center shrink-0">
+            {t('cvModal.mobileNotice')}
           </div>
 
           {/* Embedded PDF iframe */}
