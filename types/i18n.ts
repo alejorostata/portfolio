@@ -42,6 +42,25 @@ export interface TranslationSchema {
     degree: string;
     btnExploreExperience: string;
     btnReviewCV: string;
+    consoleOverviewTab: string;
+    consoleStackTab: string;
+    consoleLeadershipTab: string;
+    consoleAiTab: string;
+    consoleOverviewHeader: string;
+    consolePrimaryRoleLabel: string;
+    consolePrimaryRoleVal: string;
+    consoleCoreSpecLabel: string;
+    consoleCoreSpecVal: string;
+    consoleLeadershipLabel: string;
+    consoleLeadershipVal: string;
+    consoleStackHeader: string;
+    consoleLeadershipHeader: string;
+    consoleEvalVal: string;
+    consoleMentorshipVal: string;
+    consoleAgileVal: string;
+    consoleAiHeader: string;
+    consoleImpactVal: string;
+    consoleStatus: string;
   };
   experience: {
     badge: string;

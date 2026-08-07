@@ -559,7 +559,7 @@ export function getExperiences(locale: Locale): Experience[] {
           period: '2024년 10월 — 현재',
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
           responsibilities: [
-            'Java (Spring Boot), MariaDB, Vue.js, Next.js, Tailwind CSS, Flutter, React Native를 사용한 Webassessor 플랫폼의 설계, 개발 및 확장 총괄.',
+            'Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, React Native를 사용한 Webassessor 플랫폼의 설계, 개발 및 확장 총괄.',
             '글로벌 시험 세션을 위한 고성능, 보안, WCAG AAA 접근성 및 확장성을 보장하는 기술 지도.',
             '정기적인 1대1 세션 및 성과 평가를 통한 소프트웨어 엔지니어 멘토링.',
             '다기능 팀(제품, UI/UX, QA, DevOps, CTO)과 협력하여 전략적 우선순위 조율.',
@@ -813,6 +813,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          projectType: 'SaaS / B2B Platform',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Multi-tenant SaaS na may Supabase PostgreSQL, Stripe payments, at Row Level Security.',
             'Awtomatikong pagpapatakbo ng test suite, real-time dashboards, at Vercel cloud hosting.',
@@ -822,6 +824,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          projectType: 'SaaS / B2B Web at Mobile Platform',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Web application platform at cross-platform mobile app na binuo gamit ang React Native.',
             'Integrated Stripe subscription payments, Resend.com emails, at Vercel hosting.',
@@ -831,6 +835,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          projectType: 'SaaS / AI Product',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Pinagsamang LLM API streams para sa prompt generation at code refactoring.',
             'Naka-deploy sa Vercel gamit ang mabilis na Next.js App Router architecture.',
@@ -840,6 +846,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          projectType: 'Enterprise Assessment Platform',
+          database: 'MariaDB + Redis Caching',
           highlights: [
             'Pinalawak ang core assessment engine para sa maraming sabay-sabay na kumuha ng pagsusulit.',
             'Bumuo ng responsive web UI gamit ang Vue.js, Bootstrap, at Tailwind CSS na may WCAG standards.',
@@ -852,6 +860,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          projectType: 'SaaS / B2B-Plattform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
             'Multi-Tenant-SaaS mit Supabase PostgreSQL, Stripe-Zahlungen und Row Level Security.',
@@ -862,6 +871,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          projectType: 'SaaS / B2B-Web- & Mobilplattform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
             'Webanwendungs-Plattform und plattformübergreifende mobile App entwickelt mit React Native.',
@@ -872,6 +882,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          projectType: 'SaaS / KI-Produkt',
           database: 'Supabase (PostgreSQL)',
           highlights: [
             'Integrierte LLM-API-Streams für Prompt-Generierung und Code-Refactoring.',
@@ -882,6 +893,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          projectType: 'Enterprise-Bewertungsplattform',
           database: 'MariaDB + Redis-Caching',
           highlights: [
             'Skalierte zentrale Bewertungsengine mit hochparallelem Prüfungsstatus.',
@@ -895,6 +907,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          title: 'QAPione — 자동화된 QA 플랫폼',
+          description: '클라우드 네이티브 자동화 소프트웨어 테스트 및 QA 워크플로우 관리 시스템.',
           projectType: 'SaaS / B2B 플랫폼',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -906,6 +920,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          title: 'Stelifo — SaaS & B2B 웹 및 모바일 플랫폼',
+          description: '비즈니스 자동화 워크플로우를 위한 웹 및 모바일 앱을 갖춘 디지털 전환 SaaS.',
           projectType: 'SaaS / B2B 웹 및 모바일 플랫폼',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -917,6 +933,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          title: 'Vibe AI — 지능형 워크스페이스 어시스턴트',
+          description: '생성형 AI 모델로 구동되는 AI 기반 콘텐츠 및 생산성 엔진.',
           projectType: 'SaaS / AI 제품',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -928,6 +946,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          title: 'Webassessor — Kryterion 온라인 시험 전달 플랫폼',
+          description: '전 세계 응시자를 동시에 지원하는 고동시성 온라인 시험 및 감독 시스템.',
           projectType: '엔터프라이즈 평가 플랫폼',
           database: 'MariaDB + Redis 캐싱',
           highlights: [
@@ -942,6 +962,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          title: 'QAPione — 自动化 QA 平台',
+          description: '云原生自动化软件测试与 QA 工作流管理系统。',
           projectType: 'SaaS / B2B 平台',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -953,6 +975,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          title: 'Stelifo — SaaS 与 B2B Web/移动端平台',
+          description: '具备用于业务自动化工作流的 Web 和移动应用的数字化转型 SaaS。',
           projectType: 'SaaS / B2B Web 与移动端平台',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -964,6 +988,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          title: 'Vibe AI — 智能工作区助手',
+          description: '由生成式 AI 模型驱动的 AI 内容与生产力引擎。',
           projectType: 'SaaS / AI 产品',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -975,6 +1001,8 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          title: 'Webassessor — Kryterion 在线考试交付平台',
+          description: '同时服务全球考生的高并发在线考试与监考系统。',
           projectType: '企业级考试评估平台',
           database: 'MariaDB + Redis 缓存',
           highlights: [
@@ -1023,6 +1051,7 @@ export function getEducation(locale: Locale): Education[] {
         return {
           ...edu,
           degree: 'Maestría en Tecnologías de la Información (MS IT)',
+          institution: 'Universidad Ateneo de Naga',
           period: '2023 — Presente',
           location: 'Ciudad de Naga, Filipinas',
           badge: 'Candidato a Graduado',
@@ -1033,6 +1062,8 @@ export function getEducation(locale: Locale): Education[] {
         return {
           ...edu,
           degree: 'Licenciatura en Tecnologías de la Información (BS IT)',
+          institution: 'Universidad Estatal de Partido',
+          period: '2012 — 2016',
           location: 'Camarines Sur, Filipinas',
           badge: 'Graduado',
           details: 'Graduado con sólidas bases en Ciencias de la Computación, Estructuras de Datos y Programación Algorítmica.',
@@ -1044,16 +1075,23 @@ export function getEducation(locale: Locale): Education[] {
       if (edu.id === 'msit') {
         return {
           ...edu,
+          degree: 'Master of Science in Information Technology (MS IT)',
+          institution: 'Ateneo de Naga University',
           badge: 'Kandidato sa Graduate School',
           period: '2023 — Kasalukuyan',
           location: 'Lungsod ng Naga, Pilipinas',
+          details: 'Advanced na pag-aaral sa Software Engineering Architecture, Enterprise Systems, at IT Management.',
         };
       }
       if (edu.id === 'bsit') {
         return {
           ...edu,
+          degree: 'Bachelor of Science in Information Technology (BS IT)',
+          institution: 'Partido State University',
           badge: 'Nagtapos',
+          period: '2012 — 2016',
           location: 'Camarines Sur, Pilipinas',
+          details: 'Nagtapos na may matibay na pundasyon sa Computer Science, Data Structures, at Algorithmic Programming.',
         };
       }
     }
@@ -1062,16 +1100,23 @@ export function getEducation(locale: Locale): Education[] {
       if (edu.id === 'msit') {
         return {
           ...edu,
+          degree: 'Master of Science in Information Technology (MS IT)',
+          institution: 'Ateneo de Naga Universität',
           period: '2023 — Heute',
           location: 'Naga City, Philippinen',
           badge: 'Masterkandidat',
+          details: 'Fortgeschrittene Kurse in Software-Engineering-Architektur, Enterprise-Systemen und IT-Management.',
         };
       }
       if (edu.id === 'bsit') {
         return {
           ...edu,
+          degree: 'Bachelor of Science in Information Technology (BS IT)',
+          institution: 'Partido Staatsuniversität',
+          period: '2012 — 2016',
           location: 'Camarines Sur, Philippinen',
           badge: 'Absolviert',
+          details: 'Abschluss mit solider Grundlage in Informatik, Datenstrukturen und algorithmischer Programmierung.',
         };
       }
     }
@@ -1081,18 +1126,22 @@ export function getEducation(locale: Locale): Education[] {
         return {
           ...edu,
           degree: '정보기술 석사 (MS IT)',
+          institution: '아테네오 데 나가 대학교',
           period: '2023년 — 현재',
           location: '필리핀 나가 시',
           badge: '재학 중 (석사 과정)',
+          details: '소프트웨어 엔지니어링 아키텍처, 엔터프라이즈 시스템 및 IT 관리에 대한 심화 과목 이수.',
         };
       }
       if (edu.id === 'bsit') {
         return {
           ...edu,
           degree: '정보기술 학사 (BS IT)',
+          institution: '파르티도 주립 대학교',
           period: '2012년 — 2016년',
           location: '필리핀 카마리네스 수르',
           badge: '졸업',
+          details: '컴퓨터 과학, 데이터 구조 및 알고리즘 프로그래밍에 대한 탄탄한 기초를 바탕으로 졸업.',
         };
       }
     }
@@ -1102,18 +1151,22 @@ export function getEducation(locale: Locale): Education[] {
         return {
           ...edu,
           degree: '信息技术硕士 (MS IT)',
+          institution: '雅典耀纳加大学',
           period: '2023年 — 至今',
           location: '菲律宾 纳加市',
           badge: '攻读中 (硕士候选人)',
+          details: '高级软件工程架构、企业级系统与 IT 管理课程。',
         };
       }
       if (edu.id === 'bsit') {
         return {
           ...edu,
           degree: '信息技术学士 (BS IT)',
+          institution: '巴蒂多州立大学',
           period: '2012年 — 2016年',
           location: '菲律宾 卡马林斯州',
           badge: '已毕业',
+          details: '具备扎实的计算机科学、数据结构和算法编程基础并顺利毕业。',
         };
       }
     }
@@ -1170,6 +1223,15 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: 'ACM-ICPC Philippine National Contestant',
           organization: 'ACM International Collegiate Programming Contest',
+          description: 'Pinili bilang pambansang kalahok na kumakatawan sa Partido State University sa prestihiyosong ACM-ICPC algorithmic programming competition.',
+        };
+      }
+      if (ach.id === 'team-lead-kryterion') {
+        return {
+          ...ach,
+          title: 'Promoted to Engineering Team Lead',
+          organization: 'Kryterion, Inc.',
+          description: 'Naitaas bilang lider ng full-stack engineering team para sa Webassessor platform, nangangasiwa sa arkitektura, team KPIs, at performance appraisals.',
         };
       }
     }
@@ -1180,6 +1242,15 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: 'ACM-ICPC Philippinischer Nationaler Teilnehmer',
           organization: 'ACM Internationaler Kollegialer Programmierwettbewerb',
+          description: 'Ausgewählt als nationaler Teilnehmer zur Vertretung der Partido Staatsuniversität beim renommierten ACM-ICPC Algorithmen-Wettbewerb.',
+        };
+      }
+      if (ach.id === 'team-lead-kryterion') {
+        return {
+          ...ach,
+          title: 'Beförderung zum Engineering Team Lead',
+          organization: 'Kryterion, Inc.',
+          description: 'Befördert zur Leitung des Full-Stack-Entwicklungsteams der Webassessor-Plattform mit Verantwortung für Architektur, KPIs und Leistungsbeurteilungen.',
         };
       }
     }
@@ -1190,6 +1261,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: 'ACM-ICPC 필리핀 국가대표 참가자',
           organization: 'ACM 국제 대학생 프로그래밍 경시 대회',
+          description: '권위 있는 ACM-ICPC 알고리즘 프로그래밍 경진대회에서 파르티도 주립 대학교 대표로 선정.',
         };
       }
       if (ach.id === 'team-lead-kryterion') {
@@ -1197,6 +1269,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: '엔지니어링 팀 리드 승진',
           organization: 'Kryterion, Inc.',
+          description: 'Webassessor 플랫폼의 풀스택 엔지니어링 팀 리드로 승진하여 아키텍처, KPI 및 성과 평가 총괄.',
         };
       }
     }
@@ -1207,6 +1280,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: 'ACM-ICPC 菲律宾国家级参赛者',
           organization: 'ACM 国际大学生程序设计竞赛',
+          description: '代表巴蒂多州立大学入选参加著名的 ACM-ICPC 算法程序设计竞赛。',
         };
       }
       if (ach.id === 'team-lead-kryterion') {
@@ -1214,6 +1288,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: '工程团队负责人晋升',
           organization: 'Kryterion, Inc.',
+          description: '获晋升领导 Webassessor 平台的全栈工程团队，掌控架构、团队 KPI 与绩效评估。',
         };
       }
     }

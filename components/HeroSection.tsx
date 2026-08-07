@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     }`}
                   >
                     <Terminal className="w-3.5 h-3.5" />
-                    <span>Overview</span>
+                    <span>{t('hero.consoleOverviewTab')}</span>
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('stack')}
@@ -142,7 +142,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     }`}
                   >
                     <Code2 className="w-3.5 h-3.5" />
-                    <span>Tech Matrix</span>
+                    <span>{t('hero.consoleStackTab')}</span>
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('leadership')}
@@ -154,7 +154,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     }`}
                   >
                     <Users className="w-3.5 h-3.5" />
-                    <span>KPIs & PAF</span>
+                    <span>{t('hero.consoleLeadershipTab')}</span>
                   </button>
                   <button
                     onClick={() => setActiveConsoleTab('ai')}
@@ -166,7 +166,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     }`}
                   >
                     <Sparkles className="w-3.5 h-3.5" />
-                    <span>AI Tools</span>
+                    <span>{t('hero.consoleAiTab')}</span>
                   </button>
                 </div>
               </div>
@@ -177,25 +177,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <div className="space-y-2 overflow-hidden">
                   {activeConsoleTab === 'overview' && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <p className="text-slate-400">// Software Engineering Lead Overview</p>
+                      <p className="text-slate-400">{t('hero.consoleOverviewHeader')}</p>
                       <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
-                        <p className="text-blue-400 font-bold text-xs">Primary Role</p>
-                        <p className="text-slate-200 text-[11px] sm:text-xs">Full Stack Software Engineering & Team Lead @ Kryterion</p>
+                        <p className="text-blue-400 font-bold text-xs">{t('hero.consolePrimaryRoleLabel')}</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">{t('hero.consolePrimaryRoleVal')}</p>
                       </div>
                       <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
-                        <p className="text-emerald-400 font-bold text-xs">Core Specialization</p>
-                        <p className="text-slate-200 text-[11px] sm:text-xs">Java (Spring Boot), Next.js, Vue.js, Supabase, Flutter, React Native</p>
+                        <p className="text-emerald-400 font-bold text-xs">{t('hero.consoleCoreSpecLabel')}</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">{t('hero.consoleCoreSpecVal')}</p>
                       </div>
                       <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-0.5 font-sans">
-                        <p className="text-amber-400 font-bold text-xs">Engineering Leadership</p>
-                        <p className="text-slate-200 text-[11px] sm:text-xs">Driving Team Velocity, KPIs & Performance Appraisal Frameworks</p>
+                        <p className="text-amber-400 font-bold text-xs">{t('hero.consoleLeadershipLabel')}</p>
+                        <p className="text-slate-200 text-[11px] sm:text-xs">{t('hero.consoleLeadershipVal')}</p>
                       </div>
                     </div>
                   )}
 
                   {activeConsoleTab === 'stack' && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <p className="text-slate-400">// Primary Engineering Stack</p>
+                      <p className="text-slate-400">{t('hero.consoleStackHeader')}</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">backend</span> = [<span className="text-blue-300">'Java (Spring Boot)'</span>, <span className="text-blue-300">'Node.js'</span>, <span className="text-blue-300">'APIs'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">frontend</span> = [<span className="text-blue-300">'Next.js'</span>, <span className="text-blue-300">'Vue.js'</span>, <span className="text-blue-300">'React'</span>, <span className="text-blue-300">'Shadcn'</span>, <span className="text-blue-300">'Tailwind'</span>];</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">mobile</span> = [<span className="text-blue-300">'Flutter (iOS & Android)'</span>, <span className="text-blue-300">'React Native'</span>];</p>
@@ -206,22 +206,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
                   {activeConsoleTab === 'leadership' && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <p className="text-slate-400">// Engineering Management & Team KPIs</p>
+                      <p className="text-slate-400">{t('hero.consoleLeadershipHeader')}</p>
                       <p><span className="text-blue-400">class</span> <span className="text-amber-300">TeamLeadership</span> &#123;</p>
-                      <p className="pl-4"><span className="text-blue-300">evaluations</span>: 'Team KPIs & Performance Appraisal Frameworks (PAF)';</p>
-                      <p className="pl-4"><span className="text-blue-300">mentorship</span>: 'Regular 1-on-1s & Career Development Planning';</p>
-                      <p className="pl-4"><span className="text-blue-300">agileProcess</span>: 'Sprint Planning, Daily Stand-ups & Retrospectives';</p>
+                      <p className="pl-4"><span className="text-blue-300">evaluations</span>: '{t('hero.consoleEvalVal')}';</p>
+                      <p className="pl-4"><span className="text-blue-300">mentorship</span>: '{t('hero.consoleMentorshipVal')}';</p>
+                      <p className="pl-4"><span className="text-blue-300">agileProcess</span>: '{t('hero.consoleAgileVal')}';</p>
                       <p>&#125;</p>
                     </div>
                   )}
 
                   {activeConsoleTab === 'ai' && (
                     <div className="space-y-2 animate-in fade-in duration-200">
-                      <p className="text-slate-400">// AI-Assisted Engineering Workflow</p>
+                      <p className="text-slate-400">{t('hero.consoleAiHeader')}</p>
                       <p><span className="text-blue-400">const</span> <span className="text-amber-300">aiTools</span> = &#123;</p>
                       <p className="pl-4"><span className="text-blue-300">agenticAI</span>: 'Gemini Antigravity',</p>
                       <p className="pl-4"><span className="text-blue-300">codingAssistants</span>: ['Claude Code AI', 'GitHub Copilot'],</p>
-                      <p className="pl-4"><span className="text-blue-300">impact</span>: 'Accelerated development velocity & clean refactoring'</p>
+                      <p className="pl-4"><span className="text-blue-300">impact</span>: '{t('hero.consoleImpactVal')}'</p>
                       <p>&#125;;</p>
                     </div>
                   )}
@@ -231,7 +231,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <div className="pt-2 sm:pt-2.5 mt-2 border-t border-slate-900 flex items-center justify-between text-slate-400 shrink-0">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
-                    <span className="text-[11px] font-sans font-semibold text-blue-400">Ready for Engineering Opportunities</span>
+                    <span className="text-[11px] font-sans font-semibold text-blue-400">{t('hero.consoleStatus')}</span>
                   </div>
                 </div>
 
