@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SkipLink } from "@/components/SkipLink";
 
@@ -78,6 +79,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
         <SkipLink />
         {children}
+        {/* GoatCounter Analytics — privacy-friendly, no cookies, GDPR compliant */}
+        <Script
+          data-goatcounter="https://alejorostata.goatcounter.com/count"
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
