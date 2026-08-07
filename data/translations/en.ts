@@ -2,6 +2,7 @@ import { TranslationSchema } from '@/types/i18n';
 
 export const en: TranslationSchema = {
   nav: {
+    brandName: 'Alejo Rostata',
     about: 'About',
     experience: 'Experience',
     skills: 'Skills',
@@ -95,5 +96,7 @@ export const en: TranslationSchema = {
     rights: 'All rights reserved.',
     backToTop: 'Back to Top',
     wcagBadge: 'WCAG 2.1 AAA Compliant',
+    visits: 'visits',
+    techNote: 'Built with Next.js 16, React 19 & Tailwind CSS',
   },
 };

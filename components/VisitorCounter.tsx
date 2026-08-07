@@ -2,11 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { Users } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 // Configurable offset for initial display — set to 0 anytime to show exact raw count
 const VISITOR_OFFSET = 5000;
 
 export const VisitorCounter: React.FC = () => {
+  const { t } = useLanguage();
   const [count, setCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -39,7 +41,7 @@ export const VisitorCounter: React.FC = () => {
       title="Portfolio visits tracked by GoatCounter"
     >
       <Users className="w-3 h-3 text-slate-500 shrink-0" aria-hidden="true" />
-      <span>{totalVisits.toLocaleString()} visits</span>
+      <span>{totalVisits.toLocaleString()} {t('footer.visits')}</span>
     </span>
   );
 };

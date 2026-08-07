@@ -2,6 +2,7 @@ import { TranslationSchema } from '@/types/i18n';
 
 export const ko: TranslationSchema = {
   nav: {
+    brandName: 'Alejo Rostata',
     about: '소개',
     experience: '경력',
     skills: '기술',
@@ -92,8 +93,10 @@ export const ko: TranslationSchema = {
     closeBtn: '닫기',
   },
   footer: {
-    rights: 'All rights reserved.',
+    rights: '모든 권리 보유.',
     backToTop: '맨 위로',
     wcagBadge: 'WCAG 2.1 AAA 준수',
+    visits: '회 방문',
+    techNote: 'Next.js 16, React 19 및 Tailwind CSS로 제작',
   },
 };

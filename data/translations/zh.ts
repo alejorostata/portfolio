@@ -2,6 +2,7 @@ import { TranslationSchema } from '@/types/i18n';
 
 export const zh: TranslationSchema = {
   nav: {
+    brandName: 'Alejo Rostata',
     about: '关于',
     experience: '经历',
     skills: '技能',
@@ -95,5 +96,7 @@ export const zh: TranslationSchema = {
     rights: '保留所有权利。',
     backToTop: '返回顶部',
     wcagBadge: '符合 WCAG 2.1 AAA 标准',
+    visits: '次访问',
+    techNote: '基于 Next.js 16、React 19 与 Tailwind CSS 构建',
   },
 };

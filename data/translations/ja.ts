@@ -2,6 +2,7 @@ import { TranslationSchema } from '@/types/i18n';
 
 export const ja: TranslationSchema = {
   nav: {
+    brandName: 'Alejo Rostata',
     about: '概要',
     experience: '経歴',
     skills: 'スキル',
@@ -92,8 +93,10 @@ export const ja: TranslationSchema = {
     closeBtn: '閉じる',
   },
   footer: {
-    rights: 'All rights reserved.',
+    rights: '無断転載を禁じます。',
     backToTop: 'ページトップへ',
     wcagBadge: 'WCAG 2.1 AAA 準拠',
+    visits: '回訪問',
+    techNote: 'Next.js 16、React 19、Tailwind CSS で構築',
   },
 };

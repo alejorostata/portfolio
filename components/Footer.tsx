@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
               <Accessibility className="w-3.5 h-3.5 text-blue-400" aria-hidden="true" />
               <span>{t('footer.wcagBadge')}</span>
             </span>
-            <span>Built with Next.js 16, React 19 & Tailwind CSS</span>
+            <span>{t('footer.techNote')}</span>
           </div>
         </div>
 

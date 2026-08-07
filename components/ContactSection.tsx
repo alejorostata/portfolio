@@ -124,7 +124,7 @@ export const ContactSection: React.FC = () => {
                   <div className="truncate">
                     <div className="flex items-center gap-2">
                       <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t('contact.mobileLabel')}</p>
-                      <span className="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded bg-blue-50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-500/30">
+                      <span className="px-2 py-0.5 text-[10px] font-bold rounded bg-blue-50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-500/30 shrink-0">
                         {t('contact.viberActive')}
                       </span>
                     </div>

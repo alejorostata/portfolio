@@ -18,6 +18,7 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
 
 export interface TranslationSchema {
   nav: {
+    brandName: string;
     about: string;
     experience: string;
     skills: string;
@@ -111,5 +112,7 @@ export interface TranslationSchema {
     rights: string;
     backToTop: string;
     wcagBadge: string;
+    visits: string;
+    techNote: string;
   };
 }

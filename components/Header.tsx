@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                Alejo Rostata
+                {t('nav.brandName')}
               </span>
               <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
                 {t('hero.role')}
