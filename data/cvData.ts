@@ -24,13 +24,13 @@ export const EXPERIENCES: Experience[] = [
     summary: 'Leading engineering team execution, architectural scaling, and full-stack development for the Webassessor test delivery platform across web and mobile.',
     responsibilities: [
       'Lead the design, development, and scaling of the Webassessor online assessment platform across web and mobile using Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, and React Native (iOS & Android).',
-      'Provide technical leadership and architectural guidance to ensure high performance, security, WCAG AAA web accessibility, and scalability for global exam sessions.',
+      'Provide technical leadership and architectural guidance to ensure high performance, security, WCAG AAA web accessibility, multi-language internationalization (i18n), and scalability for global exam sessions.',
       'Mentor software engineers through regular 1-on-1 sessions, performance reviews, and career development planning.',
       'Coordinate with cross-functional teams, including Software Engineers, Product Team, Business Analysts, UI/UX Designers, QAs, DevOps, DBAs, CTO, and Managers to align priorities and drive strategic initiatives.',
       'Champion Agile methodologies, improving team workflows, sprint planning, and delivery efficiency.',
       'Foster a collaborative and growth-oriented engineering culture focused on innovation, accessibility standards, and continuous improvement.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'WCAG AAA Accessibility', 'Flutter', 'React Native', 'MariaDB', 'Team Leadership', 'Agile Scrum'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'WCAG AAA Accessibility', 'Multi-Language i18n', 'Flutter', 'React Native', 'MariaDB', 'Team Leadership', 'Agile Scrum'],
   },
   {
     id: 'kryterion-engineer',
@@ -137,6 +137,7 @@ export const PROJECTS: Project[] = [
     techStack: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'MariaDB', 'Redis', 'Docker', 'Jenkins'],
     highlights: [
       'Scaled core assessment delivery engine with high-concurrency exam session state.',
+      'Engineered multi-language internationalization (i18n) and dynamic localization engine supporting seamless language switching for global test candidates.',
       'Engineered responsive web interfaces using Vue.js, Bootstrap, and Tailwind CSS with WCAG accessibility standards.',
     ],
   },

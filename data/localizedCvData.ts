@@ -13,14 +13,14 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'バックエンド & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (決済)', 'Resend.com (メール)', 'マイクロサービス'],
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (決済)', 'Resend.com (メール)', 'マイクロサービス', '国際化 (i18n) & 多言語'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
           name: 'フロントエンド Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Webアクセシビリティ (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '多言語ローカライゼーション (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Webアクセシビリティ (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
@@ -58,14 +58,14 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Backend y APIs',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'APIs REST', 'GraphQL', 'Stripe (Pagos)', 'Resend.com (Correos)', 'Microservicios'],
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'APIs REST', 'GraphQL', 'Stripe (Pagos)', 'Resend.com (Correos)', 'Microservicios', 'Internacionalización (i18n)'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
           name: 'Frontend Web y CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Accesibilidad Web (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Localización Multilingüe (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Accesibilidad Web (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
@@ -103,14 +103,14 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Backend & APIs',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Zahlungen)', 'Resend.com (E-Mails)', 'Mikroservices'],
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Zahlungen)', 'Resend.com (E-Mails)', 'Mikroservices', 'Internationalisierung (i18n)'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
           name: 'Frontend Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Barrierefreiheit (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Mehrsprachige Lokalisierung (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Barrierefreiheit (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
@@ -148,14 +148,14 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '백엔드 & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (결제)', 'Resend.com (이메일)', '마이크로서비스'],
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (결제)', 'Resend.com (이메일)', '마이크로서비스', '국제화 (i18n)'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
           name: '프론트엔드 웹 & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', '웹 접근성 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '다국어 로컬라이제이션 (i18n)', 'Shadcn UI', 'Tailwind CSS', '웹 접근성 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
@@ -193,14 +193,14 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '后端 & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (支付)', 'Resend.com (邮件)', '微服务'],
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (支付)', 'Resend.com (邮件)', '微服务', '国际化 (i18n)'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
           name: '前端 Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Web 无障碍 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '多语言本地化 (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Web 无障碍 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
@@ -234,6 +234,18 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
     }
 
     if (locale === 'fil') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'Multi-Language i18n'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Multi-Language Localization (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
       if (cat.id === 'aitools') {
         return {
           ...cat,
@@ -268,7 +280,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: 'Liderando la ejecución del equipo de ingeniería, escalado arquitectónico y desarrollo full-stack para la plataforma Webassessor en web y móvil.',
           responsibilities: [
             'Liderar el diseño, desarrollo y escalado de la plataforma de evaluación en línea Webassessor en web y móvil utilizando Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter y React Native (iOS y Android).',
-            'Brindar liderazgo técnico y orientación arquitectónica para garantizar un alto rendimiento, seguridad, accesibilidad web WCAG AAA y escalabilidad para sesiones globales de examen.',
+            'Brindar liderazgo técnico y orientación arquitectónica para garantizar un alto rendimiento, seguridad, accesibilidad web WCAG AAA, internacionalización multilingüe (i18n) y escalabilidad para sesiones globales de examen.',
             'Mentorear ingenieros de software a través de sesiones 1 a 1, revisiones de desempeño y planificación de desarrollo profesional.',
             'Coordinar con equipos multidisciplinarios (Ingenieros, Producto, Analistas, Diseñadores UI/UX, QA, DevOps, CTO) para alinear prioridades.',
             'Fomentar metodologías Ágiles, mejorando flujos de trabajo del equipo, planificación de sprints y eficiencia de entrega.',
@@ -341,7 +353,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: 'Pinamumunuan ang inhinyerya, arkitektura, at full-stack development para sa Webassessor platform sa web at mobile.',
           responsibilities: [
             'Pamunuan ang pagdidisenyo, pagbuo, at pagpapalawak ng Webassessor online assessment platform sa web at mobile gamit ang Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, at React Native.',
-            'Magbigay ng teknikal na pamumuno at gabay sa arkitektura upang matiyak ang mataas na pagganap, seguridad, at WCAG AAA web accessibility.',
+            'Magbigay ng teknikal na pamumuno at gabay sa arkitektura upang matiyak ang mataas na pagganap, seguridad, WCAG AAA web accessibility, multi-language internationalization (i18n), at scalability para sa mga pandaigdigang pagsusulit.',
             'Mag-mentor sa mga inhinyero sa pamamagitan ng regular na 1-on-1 sessions at performance reviews.',
             'Makipag-ugnayan sa mga cross-functional na koponan (Product, Designers, QA, DevOps, CTO) para sa mga estratehikong prayoridad.',
             'Isulong ang Agile methodologies upang mapabuti ang daloy ng trabaho at kahusayan sa paghahatid.',
@@ -414,7 +426,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: 'Leitung der Ausführung des Entwicklungsteams, der architektonischen Skalierung und der Full-Stack-Entwicklung für die Webassessor-Plattform auf Web und Mobile.',
           responsibilities: [
             'Leitung des Designs, der Entwicklung und der Skalierung der Webassessor-Plattform mit Java (Spring Boot), MariaDB, Vue.js, Next.js, Tailwind CSS, Flutter und React Native.',
-            'Bereitstellung technischer Führung und Architekturberatung zur Gewährleistung von hoher Leistung, Sicherheit und WCAG AAA Barrierefreiheit.',
+            'Bereitstellung technischer Führung und Architekturberatung zur Gewährleistung von hoher Leistung, Sicherheit, WCAG AAA Barrierefreiheit, mehrsprachiger Internationalisierung (i18n) und Skalierbarkeit.',
             'Mentoring von Softwareingenieuren durch regelmäßige 1-zu-1-Sitzungen und Leistungsbeurteilungen.',
             'Koordinierung mit funktionsübergreifenden Teams (Produkt, UI/UX, QA, DevOps, CTO) zur Ausrichtung von Prioritäten.',
             'Förderung von Agile-Methoden zur Verbesserung der Team-Workflows und Liefer-Effizienz.',
@@ -487,7 +499,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: 'WebおよびモバイルにわたるWebassessor試験配信プラットフォームの開発チーム統括、アーキテクチャ拡張、フルスタック開発を牽引。',
           responsibilities: [
             'Java (Spring Boot)、MariaDB、Vue.js、Next.js、Tailwind CSS、Bootstrap、Flutter、React Nativeを用いたWebassessorの設計・開発・拡張の統括。',
-            'グローバルな試験セッションにおける高性能、セキュリティ、WCAG AAAアクセシビリティ、拡張性を確保する技術指導。',
+            'グローバルな試験セッションにおける高性能、セキュリティ、WCAG AAAアクセシビリティ、多言語国際化(i18n)および拡張性を確保する技術指導。',
             '定期的な1対1の面談、人事評価、キャリア開発計画を通じたエンジニアの育成。',
             'プロダクト、UI/UX、QA、DevOps、CTOなどのクロスファンクショナルチームとの連携。',
             'アジャイル開発の推進によるスプリント計画と配信効率の向上。',
@@ -560,7 +572,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
           responsibilities: [
             'Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, React Native를 사용한 Webassessor 플랫폼의 설계, 개발 및 확장 총괄.',
-            '글로벌 시험 세션을 위한 고성능, 보안, WCAG AAA 접근성 및 확장성을 보장하는 기술 지도.',
+            '글로벌 시험 세션을 위한 고성능, 보안, WCAG AAA 접근성, 다국어 국제화(i18n) 및 확장성을 보장하는 기술 지도.',
             '정기적인 1대1 세션 및 성과 평가를 통한 소프트웨어 엔지니어 멘토링.',
             '다기능 팀(제품, UI/UX, QA, DevOps, CTO)과 협력하여 전략적 우선순위 조율.',
             '애자일 방법론을 추진하여 팀 워크플로우 및 스프린트 제공 효율성 향상.',
@@ -633,7 +645,7 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: '领导 Web 和移动端 Webassessor 考试交付平台的工程团队执行、架构扩展及全栈开发。',
           responsibilities: [
             '主导使用 Java (Spring Boot)、MariaDB、Vue.js、Next.js、Tailwind CSS、Flutter 与 React Native 开发和扩展 Webassessor 考试平台。',
-            '提供技术领导与架构指导，确保全球考试会话的高性能、安全性与 WCAG AAA 无障碍标准。',
+            '提供技术领导与架构指导，确保全球考试会话的高性能、安全性、WCAG AAA 无障碍标准与多语言国际化 (i18n)。',
             '通过定期一对一辅导、绩效评估与职业发展规划指导软件工程师。',
             '与跨职能团队（产品、UI/UX、QA、DevOps、CTO）协调，对齐战略优先级。',
             '推行敏捷开发方法，优化团队工作流、冲刺计划与交付效率。',
@@ -752,6 +764,7 @@ export function getProjects(locale: Locale): Project[] {
           database: 'MariaDB + Redis キャッシュ',
           highlights: [
             '高コンカレンシーの試験セッション状態を持つコア評価配信エンジンを拡張。',
+            '世界中の受験者のためにスムーズな言語切り替えを可能にする多言語国際化(i18n)および動的ローカライゼーションエンジンを構築。',
             'Vue.js、Bootstrap、Tailwind CSSを使用し、WCAGアクセシビリティ規格に準拠したWebUIを構築。',
           ],
         };
@@ -803,6 +816,7 @@ export function getProjects(locale: Locale): Project[] {
           description: 'Plataforma global de evaluación en línea e inspección de exámenes de alta concurrencia.',
           highlights: [
             'Motor de evaluación central escalado con estado de sesión de examen de alta concurrencia.',
+            'Motor de internacionalización multilingüe (i18n) y localización dinámica diseñado para permitir el cambio fluido de idiomas para candidatos globales.',
             'Interfaces web responsivas con Vue.js, Bootstrap, Tailwind CSS y estándares WCAG.',
           ],
         };
@@ -850,6 +864,7 @@ export function getProjects(locale: Locale): Project[] {
           database: 'MariaDB + Redis Caching',
           highlights: [
             'Pinalawak ang core assessment engine para sa maraming sabay-sabay na kumuha ng pagsusulit.',
+            'Bumuo ng multi-language internationalization (i18n) at dynamic localization engine na nagbibigay-daan sa mabilis na pagpapalit ng wika para sa mga pandaigdigang kumuha ng pagsusulit.',
             'Bumuo ng responsive web UI gamit ang Vue.js, Bootstrap, at Tailwind CSS na may WCAG standards.',
           ],
         };
@@ -897,6 +912,7 @@ export function getProjects(locale: Locale): Project[] {
           database: 'MariaDB + Redis-Caching',
           highlights: [
             'Skalierte zentrale Bewertungsengine mit hochparallelem Prüfungsstatus.',
+            'Entwicklung einer mehrsprachigen Internationalisierungs- (i18n) und dynamischen Lokalisierungsengine für nahtlosen Sprachwechsel weltweit.',
             'Responsive Web-Benutzeroberflächen mit Vue.js, Bootstrap, Tailwind CSS und WCAG-Standards entwickelt.',
           ],
         };
@@ -952,6 +968,7 @@ export function getProjects(locale: Locale): Project[] {
           database: 'MariaDB + Redis 캐싱',
           highlights: [
             '고동시성 시험 세션 상태를 갖춘 핵심 평가 전달 엔진 확장.',
+            '전 세계 응시자를 위한 실시간 언어 전환을 지원하는 다국어 국제화(i18n) 및 동적 로컬라이제이션 엔진 구축.',
             'Vue.js, Bootstrap, Tailwind CSS를 사용하고 WCAG 접근성 표준을 준수한 웹 UI 구축.',
           ],
         };
@@ -1007,6 +1024,7 @@ export function getProjects(locale: Locale): Project[] {
           database: 'MariaDB + Redis 缓存',
           highlights: [
             '扩展具有高并发考试会话状态的核心评估交付引擎。',
+            '构建支持全球考生无缝无刷切换语言的多语言国际化 (i18n) 与动态本地化引擎。',
             '使用 Vue.js、Bootstrap 和 Tailwind CSS 构建符合 WCAG 无障碍标准的响应式 Web 界面。',
           ],
         };
@@ -1193,7 +1211,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: 'エンジニアリング チームリード昇格',
           organization: 'Kryterion 社',
-          description: 'Webassessorプラットフォームのフルスタック開発チームリードに昇格。アーキテクチャ、KPI、人事評価を担当。',
+          description: 'Webassessorプラットフォームのフルスタック開発チームリードに昇格。アーキテクチャ、多言語ローカライゼーション(i18n)、KPI、人事評価を担当。',
         };
       }
     }
@@ -1269,7 +1287,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: '엔지니어링 팀 리드 승진',
           organization: 'Kryterion, Inc.',
-          description: 'Webassessor 플랫폼의 풀스택 엔지니어링 팀 리드로 승진하여 아키텍처, KPI 및 성과 평가 총괄.',
+          description: 'Webassessor 플랫폼의 풀스택 엔지니어링 팀 리드로 승진하여 아키텍처, 다국어 로컬라이제이션(i18n), KPI 및 성과 평가 총괄.',
         };
       }
     }
@@ -1288,7 +1306,7 @@ export function getAchievements(locale: Locale): Achievement[] {
           ...ach,
           title: '工程团队负责人晋升',
           organization: 'Kryterion, Inc.',
-          description: '获晋升领导 Webassessor 平台的全栈工程团队，掌控架构、团队 KPI 与绩效评估。',
+          description: '获晋升领导 Webassessor 平台的全栈工程团队，掌控架构、多语言本地化 (i18n)、团队 KPI 与绩效评估。',
         };
       }
     }
