@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SKILL_CATEGORIES } from '@/data/cvData';
+import { getSkillCategories } from '@/data/localizedCvData';
 import { Cpu, Server, Layout, Smartphone, Cloud, Users, Check, Sparkles, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export const SkillsSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const skillCategories = getSkillCategories(locale);
   const [activeTab, setActiveTab] = useState<string>('all');
 
   const getCategoryIcon = (id: string) => {
@@ -29,27 +30,12 @@ export const SkillsSection: React.FC = () => {
   };
 
   const getShortName = (cat: { id: string; name: string }) => {
-    switch (cat.id) {
-      case 'backend':
-        return 'Backend & APIs';
-      case 'frontend':
-        return 'Frontend Web';
-      case 'mobile':
-        return 'Mobile';
-      case 'aitools':
-        return 'AI Tools';
-      case 'devops':
-        return 'Cloud & DevOps';
-      case 'leadership':
-        return 'Leadership';
-      default:
-        return cat.name;
-    }
+    return cat.name;
   };
 
   const displayedSkills = activeTab === 'all'
-    ? SKILL_CATEGORIES
-    : SKILL_CATEGORIES.filter((cat) => cat.id === activeTab);
+    ? skillCategories
+    : skillCategories.filter((cat) => cat.id === activeTab);
 
   return (
     <section id="skills" className="py-12 sm:py-20 relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
@@ -81,8 +67,8 @@ export const SkillsSection: React.FC = () => {
               onChange={(e) => setActiveTab(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
             >
-              <option value="all">⚡ {t('skills.allSkills')} ({SKILL_CATEGORIES.reduce((acc, cat) => acc + cat.skills.length, 0)} total)</option>
-              {SKILL_CATEGORIES.map((cat) => (
+              <option value="all">⚡ {t('skills.allSkills')} ({skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)} total)</option>
+              {skillCategories.map((cat) => (
                 <option key={cat.id} value={cat.id}>
                   {cat.name} ({cat.skills.length} {t('skills.skillsCount')})
                 </option>
@@ -107,7 +93,7 @@ export const SkillsSection: React.FC = () => {
           >
             {t('skills.allSkills')}
           </button>
-          {SKILL_CATEGORIES.map((cat) => {
+          {skillCategories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
               <button

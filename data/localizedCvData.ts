@@ -4,6 +4,255 @@ import { EXPERIENCES, PROJECTS, SKILL_CATEGORIES, EDUCATION, ACHIEVEMENTS } from
 
 // Localized helper to translate dynamic data content seamlessly across all 7 languages
 
+export function getSkillCategories(locale: Locale): SkillCategory[] {
+  if (locale === 'en') return SKILL_CATEGORIES;
+
+  return SKILL_CATEGORIES.map((cat) => {
+    if (locale === 'ja') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          name: 'バックエンド & API',
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (決済)', 'Resend.com (メール)', 'マイクロサービス'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          name: 'フロントエンド Web & CMS',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Webアクセシビリティ (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
+      if (cat.id === 'mobile') {
+        return {
+          ...cat,
+          name: 'モバイル & クロスプラットフォーム',
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'クロスプラットフォームアーキテクチャ'],
+        };
+      }
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'AI ツール & 生産性',
+          skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', 'プロンプトエンジニアリング', 'AIワークフロー統合'],
+        };
+      }
+      if (cat.id === 'devops') {
+        return {
+          ...cat,
+          name: 'データベース、クラウド & DevOps',
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (ホスティング)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: 'リーダーシップ & デリバリー',
+          skills: ['チームリーダーシップ', 'チームKPI管理', '人事評価フレームワーク (PAF)', '1対1メンターシップ', 'アジャイルスクラム開発'],
+        };
+      }
+    }
+
+    if (locale === 'es') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          name: 'Backend y APIs',
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'APIs REST', 'GraphQL', 'Stripe (Pagos)', 'Resend.com (Correos)', 'Microservicios'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          name: 'Frontend Web y CMS',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Accesibilidad Web (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
+      if (cat.id === 'mobile') {
+        return {
+          ...cat,
+          name: 'Móvil y Multiplataforma',
+          skills: ['Flutter (iOS y Android)', 'React Native (iOS y Android)', 'Arquitectura Multiplataforma'],
+        };
+      }
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'Herramientas de IA y Productividad',
+          skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', 'Ingeniería de Prompts', 'Integración de Flujos de IA'],
+        };
+      }
+      if (cat.id === 'devops') {
+        return {
+          ...cat,
+          name: 'Bases de Datos, Nube y DevOps',
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'Servicios AWS'],
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: 'Liderazgo y Entrega',
+          skills: ['Liderazgo de Equipos', 'Gestión de KPIs de Equipo', 'Marcos de Evaluación del Desempeño (PAF)', 'Mentoría 1 a 1', 'Entrega Ágil Scrum'],
+        };
+      }
+    }
+
+    if (locale === 'de') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          name: 'Backend & APIs',
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Zahlungen)', 'Resend.com (E-Mails)', 'Mikroservices'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          name: 'Frontend Web & CMS',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Barrierefreiheit (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
+      if (cat.id === 'mobile') {
+        return {
+          ...cat,
+          name: 'Mobil & Plattformübergreifend',
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Plattformübergreifende Architektur'],
+        };
+      }
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'KI-Tools & Produktivität',
+          skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', 'Prompt Engineering', 'KI-Workflow-Integration'],
+        };
+      }
+      if (cat.id === 'devops') {
+        return {
+          ...cat,
+          name: 'Datenbanken, Cloud & DevOps',
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: 'Führung & Delivery',
+          skills: ['Teamführung', 'Team-KPI-Management', 'Leistungsbeurteilungssysteme (PAF)', '1-zu-1-Mentoring', 'Agile Scrum Delivery'],
+        };
+      }
+    }
+
+    if (locale === 'ko') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          name: '백엔드 & API',
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (결제)', 'Resend.com (이메일)', '마이크로서비스'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          name: '프론트엔드 웹 & CMS',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', '웹 접근성 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
+      if (cat.id === 'mobile') {
+        return {
+          ...cat,
+          name: '모바일 & 교차 플랫폼',
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', '크로스 플랫폼 아키텍처'],
+        };
+      }
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'AI 도구 & 생산성',
+          skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', '프롬프트 엔지니어링', 'AI 워크플로우 통합'],
+        };
+      }
+      if (cat.id === 'devops') {
+        return {
+          ...cat,
+          name: '데이터베이스, 클라우드 & DevOps',
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (호스팅)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 서비스'],
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: '리더십 & 딜리버리',
+          skills: ['팀 리더십', '팀 KPI 관리', '성과 평가 프레임워크 (PAF)', '1대1 멘토링', '애자일 스크럼 개발'],
+        };
+      }
+    }
+
+    if (locale === 'zh') {
+      if (cat.id === 'backend') {
+        return {
+          ...cat,
+          name: '后端 & API',
+          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (支付)', 'Resend.com (邮件)', '微服务'],
+        };
+      }
+      if (cat.id === 'frontend') {
+        return {
+          ...cat,
+          name: '前端 Web & CMS',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Web 无障碍 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+        };
+      }
+      if (cat.id === 'mobile') {
+        return {
+          ...cat,
+          name: '移动端 & 跨平台',
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', '跨平台架构'],
+        };
+      }
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'AI 工具与生产力',
+          skills: ['Gemini Antigravity', 'Claude Code AI', 'GitHub Copilot', '提示词工程', 'AI 工作流集成'],
+        };
+      }
+      if (cat.id === 'devops') {
+        return {
+          ...cat,
+          name: '数据库、云端与 DevOps',
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (托管)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 服务'],
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: '领导力与交付',
+          skills: ['团队领导力', '团队 KPI 管理', '绩效评估框架 (PAF)', '一对一指导', '敏捷 Scrum 交付'],
+        };
+      }
+    }
+
+    if (locale === 'fil') {
+      if (cat.id === 'aitools') {
+        return {
+          ...cat,
+          name: 'AI Tools & Produktibidad',
+        };
+      }
+      if (cat.id === 'leadership') {
+        return {
+          ...cat,
+          name: 'Pamumuno & Delivery',
+          skills: ['Pamumuno ng Koponan', 'Pamamahala ng Team KPIs', 'Performance Appraisal Frameworks (PAF)', '1-on-1 Mentorship', 'Agile Scrum Delivery'],
+        };
+      }
+    }
+
+    return cat;
+  });
+}
+
 export function getExperiences(locale: Locale): Experience[] {
   if (locale === 'en') return EXPERIENCES;
 
@@ -202,7 +451,7 @@ export function getExperiences(locale: Locale): Experience[] {
           ...exp,
           role: '시스템 개발자',
           location: '필리핀 나가 시',
-          period: '2016年 12月 — 2021年 8月',
+          period: '2016년 12월 — 2021年 8월',
         };
       }
     }
