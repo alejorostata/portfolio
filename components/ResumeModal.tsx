@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Download, ShieldCheck, FileText } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Download, ShieldCheck, FileText, Share2, Check } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -12,6 +12,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
+  const [copiedShare, setCopiedShare] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -70,6 +71,31 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     };
   }, [isOpen, onClose]);
 
+  const handleShareCV = async () => {
+    const cvUrl = typeof window !== 'undefined' ? `${window.location.origin}/alejo_rostata_cv.pdf` : '/alejo_rostata_cv.pdf';
+    
+    // Attempt native Web Share API
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Alejo Rostata — CV (Software Engineer)',
+          text: 'Check out Alejo Rostata\'s Software Engineer & Team Lead CV',
+          url: cvUrl,
+        });
+        return;
+      } catch (err) {
+        // Fallback to copy link if user cancelled share sheet
+      }
+    }
+
+    // Fallback: Copy direct URL to clipboard
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      await navigator.clipboard.writeText(cvUrl);
+      setCopiedShare(true);
+      setTimeout(() => setCopiedShare(false), 2500);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -112,8 +138,29 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           />
         </div>
 
-        {/* Modal Footer: Standardized Design System Buttons */}
-        <div className="flex items-center justify-end gap-3 p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 shrink-0">
+        {/* Modal Footer: Standardized Action Buttons */}
+        <div className="flex flex-wrap items-center justify-end gap-2.5 p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 shrink-0">
+          {/* Share CV Button */}
+          <button
+            onClick={handleShareCV}
+            type="button"
+            className="h-11 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/80 text-slate-800 dark:text-slate-100 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer hover:border-blue-400"
+            title="Share or Copy Direct Link to CV"
+          >
+            {copiedShare ? (
+              <>
+                <Check className="w-4 h-4 text-emerald-500" aria-hidden="true" />
+                <span className="text-emerald-600 dark:text-emerald-400">CV Link Copied!</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                <span>Share CV</span>
+              </>
+            )}
+          </button>
+
+          {/* Download PDF Button */}
           <a
             href="/alejo_rostata_cv.pdf"
             download="CV (Software Engineer) - Alejo Rostata.pdf"
@@ -123,6 +170,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <span>Download PDF CV</span>
           </a>
 
+          {/* Close Button */}
           <button
             ref={closeButtonRef}
             onClick={onClose}
