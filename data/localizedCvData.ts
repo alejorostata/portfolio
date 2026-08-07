@@ -267,10 +267,11 @@ export function getExperiences(locale: Locale): Experience[] {
           summary: 'Liderando la ejecución del equipo de ingeniería, escalado arquitectónico y desarrollo full-stack para la plataforma Webassessor en web y móvil.',
           responsibilities: [
             'Liderar el diseño, desarrollo y escalado de la plataforma de evaluación en línea Webassessor en web y móvil utilizando Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter y React Native (iOS y Android).',
-            'Brindar liderazgo técnico y orientación arquitectónica para garantizar un alto rendimiento, seguridad, accesibilidad web WCAG AAA y escalabilidad.',
-            'Mentorear ingenieros de software a través de sesiones 1 a 1, revisiones de desempeño y planificación de carrera.',
-            'Coordinar con equipos multidisciplinarios (Producto, Diseñadores UI/UX, QA, DevOps, CTO) para alinear prioridades.',
-            'Fomentar metodologías Ágiles, mejorando flujos de trabajo, planificación de sprints y eficiencia de entrega.',
+            'Brindar liderazgo técnico y orientación arquitectónica para garantizar un alto rendimiento, seguridad, accesibilidad web WCAG AAA y escalabilidad para sesiones globales de examen.',
+            'Mentorear ingenieros de software a través de sesiones 1 a 1, revisiones de desempeño y planificación de desarrollo profesional.',
+            'Coordinar con equipos multidisciplinarios (Ingenieros, Producto, Analistas, Diseñadores UI/UX, QA, DevOps, CTO) para alinear prioridades.',
+            'Fomentar metodologías Ágiles, mejorando flujos de trabajo del equipo, planificación de sprints y eficiencia de entrega.',
+            'Promover una cultura de ingeniería colaborativa centrada en la innovación, estándares de accesibilidad y mejora continua.',
           ],
         };
       }
@@ -281,24 +282,48 @@ export function getExperiences(locale: Locale): Experience[] {
           location: 'Remoto / Ciudad de Naga, Filipinas',
           period: 'Nov 2023 — Oct 2024',
           summary: 'Ingeniería full-stack para la plataforma Webassessor, microservicios e integraciones de API seguras.',
+          responsibilities: [
+            'Trabajar eficazmente en un entorno totalmente remoto colaborando a través de Microsoft Teams, Slack y Jira.',
+            'Colaborar estrechamente con equipos internacionales e interdisciplinarios para entregar funcionalidades de alta calidad.',
+            'Desarrollar y mantener aplicaciones web y móviles enfocadas en escalabilidad, rendimiento, accesibilidad y mantenibilidad.',
+            'Diseñar e integrar APIs RESTful con autenticación segura para garantizar un acceso protegido.',
+            'Participar en ceremonias de Agile Scrum como planificación de sprints y retrospectivas.',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
           role: 'Desarrollador Full Stack',
+          company: 'Arquidiócesis de CÁCERES',
           location: 'Ciudad de Naga, Filipinas',
           period: 'Sept 2021 — Nov 2023',
           summary: 'Diseño y despliegue de sistemas web y móviles full-stack, arquitecturas de bases de datos y herramientas automatizadas.',
+          responsibilities: [
+            'Diseñar, desarrollar y desplegar aplicaciones web y móviles full-stack escalables a través del frontend, backend, APIs y bases de datos.',
+            'Realizar depuración profunda, análisis de causa raíz y resolución de problemas para garantizar la estabilidad.',
+            'Gestionar entornos de servidor, implementar pipelines CI/CD y asegurar la arquitectura del sistema.',
+            'Construir integraciones y herramientas de automatización para generación de documentos y procesamiento de datos.',
+            'Brindar asistencia técnica, sesiones de incorporación y documentación de usuario.',
+            'Aplicar controles de acceso, monitoreo y auditorías de rutina para salvaguardar la información sensible.',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
           role: 'Desarrollador de Sistemas',
+          company: 'Arquidiócesis de CÁCERES',
           location: 'Ciudad de Naga, Filipinas',
           period: 'Dic 2016 — Ago 2021',
           summary: 'Construcción de software administrativo, automatización de procesos y sistemas de bases de datos.',
+          responsibilities: [
+            'Progreso desde soporte de TI y administrativo hacia el desarrollo de sistemas, contribuyendo al diseño y mantenimiento de aplicaciones.',
+            'Construir soluciones para digitalizar la programación, seguimiento de contribuciones y elaboración de informes.',
+            'Mejorar la usabilidad, el rendimiento y los flujos de trabajo en sistemas financieros y administrativos.',
+            'Brindar asistencia diaria de TI a usuarios finales asegurando una adopción fluida del sistema.',
+            'Estructurar bases de datos, implementar lógica backend y ajustar interfaces frontend.',
+          ],
         };
       }
     }
@@ -311,6 +336,14 @@ export function getExperiences(locale: Locale): Experience[] {
           location: 'Remote / Lungsod ng Naga, Pilipinas',
           period: 'Okt 2024 — Kasalukuyan',
           summary: 'Pinamumunuan ang inhinyerya, arkitektura, at full-stack development para sa Webassessor platform sa web at mobile.',
+          responsibilities: [
+            'Pamunuan ang pagdidisenyo, pagbuo, at pagpapalawak ng Webassessor online assessment platform sa web at mobile gamit ang Java (Spring Boot), MariaDB, SQL, Vue.js, Next.js, Tailwind CSS, Bootstrap, Flutter, at React Native.',
+            'Magbigay ng teknikal na pamumuno at gabay sa arkitektura upang matiyak ang mataas na pagganap, seguridad, at WCAG AAA web accessibility.',
+            'Mag-mentor sa mga inhinyero sa pamamagitan ng regular na 1-on-1 sessions at performance reviews.',
+            'Makipag-ugnayan sa mga cross-functional na koponan (Product, Designers, QA, DevOps, CTO) para sa mga estratehikong prayoridad.',
+            'Isulong ang Agile methodologies upang mapabuti ang daloy ng trabaho at kahusayan sa paghahatid.',
+            'Linangin ang isang kolaboratibong kultura ng inhinyerya na nakatutok sa makabagong ideya at patuloy na pag-unlad.',
+          ],
         };
       }
       if (exp.id === 'kryterion-engineer') {
@@ -320,22 +353,48 @@ export function getExperiences(locale: Locale): Experience[] {
           location: 'Remote / Lungsod ng Naga, Pilipinas',
           period: 'Nob 2023 — Okt 2024',
           summary: 'Full-stack engineering para sa Webassessor platform, microservices, at ligtas na API integrations.',
+          responsibilities: [
+            'Mahusay na nagtrabaho sa isang fully remote na kapaligiran gamit ang Microsoft Teams, Slack, at Jira.',
+            'Nakipagtulungan sa mga internasyonal na koponan upang maghatid ng mga de-kalidad na tampok.',
+            'Bumuo at nagpanatili ng mga web at mobile application na nakatuon sa scalability, performance, at accessibility.',
+            'Nagdisenyo at nag-integrate ng RESTful APIs na may ligtas na awtentikasyon.',
+            'Sumali sa mga Agile Scrum ceremonies tulad ng sprint planning at retrospectives.',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
           role: 'Full Stack Developer',
+          company: 'Arkodyosesis ng Caceres',
           location: 'Lungsod ng Naga, Pilipinas',
           period: 'Set 2021 — Nob 2023',
+          summary: 'Pagdidisenyo at pagpapatakbo ng mga full-stack web at mobile system, arkitektura ng database, at mga awtomatikong tool.',
+          responsibilities: [
+            'Nagdisenyo, nagbuo, at nagpatakbo ng mga scalable na full-stack web at mobile application sa frontend, backend, APIs, at databases.',
+            'Nagsagawa ng malalim na debugging at pagsusuri upang matiyak ang katatagan ng application.',
+            'Nangasiwa ng mga kapaligiran ng server, nagpatupad ng CI/CD pipelines, at nag-secure ng system architecture.',
+            'Bumuo ng mga tool sa awtomasyon para sa paggawa ng dokumento at pagproseso ng data.',
+            'Nagbigay ng teknikal na tulong at dokumentasyon sa mga gumagamit.',
+            'Nagpatupad ng mga kontrol sa pag-access at regular na audit upang protektahan ang sensitibong impormasyon.',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
           role: 'System Developer',
+          company: 'Arkodyosesis ng Caceres',
           location: 'Lungsod ng Naga, Pilipinas',
           period: 'Dis 2016 — Ago 2021',
+          summary: 'Pagbuo ng administrative software, awtomasyon ng proseso, at mga sistema ng database.',
+          responsibilities: [
+            'Umunlad mula sa IT support tungo sa system development, tumutulong sa pagdidisenyo at pagpapanatili ng mga application.',
+            'Bumuo ng mga solusyon upang i-digitize ang iskedyul, pagsubaybay sa ambag, at pag-uulat.',
+            'Pinabuti ang kakayahang magamit at pagganap sa mga sistemang pinansyal at administratibo.',
+            'Nagbigay ng araw-araw na tulong sa IT sa mga gumagamit.',
+            'Nag-ayos ng mga database, nagpatupad ng backend logic, at nag-ayos ng mga frontend interface.',
+          ],
         };
       }
     }
@@ -348,6 +407,14 @@ export function getExperiences(locale: Locale): Experience[] {
           location: 'Remote / Naga City, Philippinen',
           period: 'Okt 2024 — Heute',
           summary: 'Leitung der Ausführung des Entwicklungsteams, der architektonischen Skalierung und der Full-Stack-Entwicklung für die Webassessor-Plattform auf Web und Mobile.',
+          responsibilities: [
+            'Leitung des Designs, der Entwicklung und der Skalierung der Webassessor-Plattform mit Java (Spring Boot), MariaDB, Vue.js, Next.js, Tailwind CSS, Flutter und React Native.',
+            'Bereitstellung technischer Führung und Architekturberatung zur Gewährleistung von hoher Leistung, Sicherheit und WCAG AAA Barrierefreiheit.',
+            'Mentoring von Softwareingenieuren durch regelmäßige 1-zu-1-Sitzungen und Leistungsbeurteilungen.',
+            'Koordinierung mit funktionsübergreifenden Teams (Produkt, UI/UX, QA, DevOps, CTO) zur Ausrichtung von Prioritäten.',
+            'Förderung von Agile-Methoden zur Verbesserung der Team-Workflows und Liefer-Effizienz.',
+            'Pflege einer kollaborativen Entwicklungskultur mit Fokus auf Innovation und kontinuierliche Verbesserung.',
+          ],
         };
       }
       if (exp.id === 'kryterion-engineer') {
@@ -356,20 +423,49 @@ export function getExperiences(locale: Locale): Experience[] {
           role: 'Software Engineer (Full Stack)',
           location: 'Remote / Naga City, Philippinen',
           period: 'Nov 2023 — Okt 2024',
+          summary: 'Full-Stack-Engineering für die Webassessor-Plattform, Mikroservices und sichere API-Integrationen.',
+          responsibilities: [
+            'Effektive Arbeit in einer Remote-Umgebung über Microsoft Teams, Slack und Jira.',
+            'Enger Austausch mit internationalen Teams zur Lieferung hochwertiger Funktionen.',
+            'Entwicklung und Wartung von Web- und mobilen Anwendungen mit Fokus auf Leistung und Wartbarkeit.',
+            'Entwurf und Integration von RESTful-APIs mit sicherer Authentifizierung.',
+            'Teilnahme an Agile-Scrum-Ceremonies wie Sprint-Planung und Retrospektiven.',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
+          role: 'Full Stack Entwickler',
+          company: 'Erzdiözese Caceres',
           location: 'Naga City, Philippinen',
           period: 'Sept 2021 — Nov 2023',
+          summary: 'Architektur und Bereitstellung von Full-Stack-Web- und Mobil-Systemen sowie Datenbankarchitekturen.',
+          responsibilities: [
+            'Design, Entwicklung und Bereitstellung skalierbarer Full-Stack-Anwendungen über Frontend, Backend, APIs und Datenbanken.',
+            'Durchführung tiefgreifender Fehlerbehebung zur Gewährleistung der Anwendungsstabilität.',
+            'Verwaltung von Serverumgebungen, Implementierung von CI/CD-Pipelines und Sicherung der Systemarchitektur.',
+            'Erstellung von Automatisierungstools zur Dokumentengenerierung und Datenverarbeitung.',
+            'Bereitstellung technischer Unterstützung und Benutzdokumentation.',
+            'Anwendung von Zugriffskontrollen und Audits zum Schutz sensibler Informationen.',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
+          role: 'Systementwickler',
+          company: 'Erzdiözese Caceres',
           location: 'Naga City, Philippinen',
           period: 'Dez 2016 — Aug 2021',
+          summary: 'Entwicklung von Verwaltungssoftware, Prozessautomatisierung und Datenbank-Systemen.',
+          responsibilities: [
+            'Aufstieg vom IT-Support zur Systementwicklung mit Beiträgen zu Design und Wartung.',
+            'Entwicklung von Lösungen zur Digitalisierung von Terminplanung, Beitragsverfolgung und Berichterstattung.',
+            'Verbesserung der Benutzerfreundlichkeit und Leistung in Finanz- und Verwaltungssystemen.',
+            'Tägliche IT-Unterstützung für Endbenutzer.',
+            'Strukturierung von Datenbanken, Implementierung von Backend-Logik und Anpassen von Benutzeroberflächen.',
+          ],
         };
       }
     }
@@ -383,11 +479,12 @@ export function getExperiences(locale: Locale): Experience[] {
           period: '2024年10月 — 現在',
           summary: 'WebおよびモバイルにわたるWebassessor試験配信プラットフォームの開発チーム統括、アーキテクチャ拡張、フルスタック開発を牽引。',
           responsibilities: [
-            'Java (Spring Boot)、MariaDB、Vue.js、Next.js、Tailwind CSS、Flutter、React Nativeを用いたWebassessorの設計・開発・拡張の統括。',
+            'Java (Spring Boot)、MariaDB、Vue.js、Next.js、Tailwind CSS、Bootstrap、Flutter、React Nativeを用いたWebassessorの設計・開発・拡張の統括。',
             'グローバルな試験セッションにおける高性能、セキュリティ、WCAG AAAアクセシビリティ、拡張性を確保する技術指導。',
             '定期的な1対1の面談、人事評価、キャリア開発計画を通じたエンジニアの育成。',
             'プロダクト、UI/UX、QA、DevOps、CTOなどのクロスファンクショナルチームとの連携。',
             'アジャイル開発の推進によるスプリント計画と配信効率の向上。',
+            'イノベーション、アクセシビリティ標準、継続的改善に焦点を当てた協力的なエンジニアリング文化の育成。',
           ],
         };
       }
@@ -398,24 +495,48 @@ export function getExperiences(locale: Locale): Experience[] {
           location: 'リモート / フィリピン ナガ市',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessorプラットフォーム、マイクロサービス、セキュアなAPI連携のフルスタック開発。',
+          responsibilities: [
+            'Microsoft Teams、Slack、Jiraを活用した完全リモート環境でのスムーズな連携。',
+            'プロダクトオーナー、開発マネージャー、QA、DevOps、デザイナーと協力した高品質な機能の提供。',
+            '拡張性、パフォーマンス、アクセシビリティ、保守性に優れたWebおよびモバイルアプリの開発・保守。',
+            '安全な認証を備えたRESTful APIの設計と統合。',
+            'スプリント計画やレトロスペクティブなどのアジャイルスクラム開発への参加。',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
           role: 'フルスタックWeb & モバイルデベロッパー',
+          company: 'カセレス大司教区',
           location: 'フィリピン ナガ市',
           period: '2021年9月 — 2023年11月',
           summary: 'フルスタックWeb・モバイルシステム、データベース設計、自動化ツールの設計および運用。',
+          responsibilities: [
+            'フロントエンド、バックエンド、API、データベースにわたる拡張可能なフルスタックWebおよびモバイルアプリの設計・開発・運用。',
+            '詳細なデバッグ、根本原因分析、問題解決によるアプリケーションの安定性確保。',
+            'サーバー環境の管理、CI/CDパイプラインの構築、システムアーキテクチャのセキュリティ強化。',
+            '書類生成、データ処理、レポート作成などの自動化ツール構築による手動作業の削減。',
+            'スムーズな導入のための技術サポート、オンボーディング、ユーザーマニュアルの作成。',
+            'アクセス制御、モニタリング、定期監査による機密情報の保護。',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
           role: 'システムデベロッパー',
+          company: 'カセレス大司教区',
           location: 'フィリピン ナガ市',
           period: '2016年12月 — 2021年8月',
           summary: '管理ソフトウェア開発、プロセス自動化、データベースシステムの構築。',
+          responsibilities: [
+            'ITサポートからシステム開発へと昇格し、Webおよびモバイルアプリの設計・開発・保守に貢献。',
+            'スケジュール管理、寄付追跡、レポート作成をデジタル化するソリューションの構築。',
+            '財務および管理システムにおける使いやすさ、パフォーマンス、ワークフローの改善。',
+            '日常的なITサポートの提供によるシステム導入の支援。',
+            'データベース構造の設計、バックエンドロジックの実装、フロントエンド画面の調整。',
+          ],
         };
       }
     }
@@ -428,6 +549,14 @@ export function getExperiences(locale: Locale): Experience[] {
           location: '원격 / 필리핀 나가 시',
           period: '2024년 10월 — 현재',
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
+          responsibilities: [
+            'Java (Spring Boot), MariaDB, Vue.js, Next.js, Tailwind CSS, Flutter, React Native를 사용한 Webassessor 플랫폼의 설계, 개발 및 확장 총괄.',
+            '글로벌 시험 세션을 위한 고성능, 보안, WCAG AAA 접근성 및 확장성을 보장하는 기술 지도.',
+            '정기적인 1대1 세션 및 성과 평가를 통한 소프트웨어 엔지니어 멘토링.',
+            '다기능 팀(제품, UI/UX, QA, DevOps, CTO)과 협력하여 전략적 우선순위 조율.',
+            '애자일 방법론을 추진하여 팀 워크플로우 및 스프린트 제공 효율성 향상.',
+            '혁신 및 지속적인 개선에 중점을 둔 협력적인 엔지니어링 문화 조성.',
+          ],
         };
       }
       if (exp.id === 'kryterion-engineer') {
@@ -436,22 +565,49 @@ export function getExperiences(locale: Locale): Experience[] {
           role: '풀스택 소프트웨어 엔지니어',
           location: '원격 / 필리핀 나가 시',
           period: '2023년 11월 — 2024년 10월',
+          summary: 'Webassessor 플랫폼, 마이크로서비스 및 안전한 API 통합을 위한 풀스택 엔지니어링.',
+          responsibilities: [
+            'Microsoft Teams, Slack, Jira를 통해 원격 환경에서 효율적으로 협업.',
+            '글로벌 다기능 팀과 긴밀히 협력하여 고품질 기능 제공.',
+            '확장성, 성능, 접근성 및 유지 관리성에 중점을 둔 웹 및 모바일 앱 개발.',
+            '안전한 인증을 갖춘 RESTful API 설계 및 통합.',
+            '스프린트 계획 및 회고 등 애자일 스크럼 회의 참여.',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
           role: '풀스택 개발자',
+          company: '카세레스 대교구',
           location: '필리핀 나가 시',
           period: '2021년 9월 — 2023년 11월',
+          summary: '풀스택 웹 및 모바일 시스템, 데이터베이스 아키텍처 및 자동화 도구 설계 및 배포.',
+          responsibilities: [
+            '프론트엔드, 백엔드, API, 데이터베이스 전반에 걸친 풀스택 웹 및 모바일 애플리케이션 설계 및 배포.',
+            '심층 디버깅 및 문제 해결을 통한 애플리케이션 안정성 확보.',
+            '서버 환경 관리, CI/CD 파이프라인 구현 및 시스템 아키텍처 보안 강화.',
+            '문서 생성 및 데이터 처리를 위한 자동화 도구 구축.',
+            '기술 지원, 온보딩 세션 및 사용자 문서 제공.',
+            '민감한 정보를 보호하기 위한 접근 제어 및 정기 감사 실시.',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
           role: '시스템 개발자',
+          company: '카세레스 대교구',
           location: '필리핀 나가 시',
-          period: '2016년 12월 — 2021年 8월',
+          period: '2016년 12월 — 2021년 8월',
+          summary: '행정 소프트웨어 개발, 프로세스 자동화 및 데이터베이스 시스템 구축.',
+          responsibilities: [
+            'IT 지원에서 시스템 개발로 성장하여 웹 및 모바일 앱의 설계 및 유지 관리에 기여.',
+            '일정 관리, 기부 추적 및 보고서 작성을 디지털화하는 솔루션 구축.',
+            '재무 및 행정 시스템의 사용성, 성능 및 워크플로우 개선.',
+            '원활한 시스템 도입을 위한 일상적인 IT 지원 제공.',
+            '데이터베이스 구조 설계, 백엔드 로직 구현 및 프론트엔드 화면 조정.',
+          ],
         };
       }
     }
@@ -464,6 +620,14 @@ export function getExperiences(locale: Locale): Experience[] {
           location: '远程 / 菲律宾 纳加市',
           period: '2024年10月 — 至今',
           summary: '领导 Web 和移动端 Webassessor 考试交付平台的工程团队执行、架构扩展及全栈开发。',
+          responsibilities: [
+            '主导使用 Java (Spring Boot)、MariaDB、Vue.js、Next.js、Tailwind CSS、Flutter 与 React Native 开发和扩展 Webassessor 考试平台。',
+            '提供技术领导与架构指导，确保全球考试会话的高性能、安全性与 WCAG AAA 无障碍标准。',
+            '通过定期一对一辅导、绩效评估与职业发展规划指导软件工程师。',
+            '与跨职能团队（产品、UI/UX、QA、DevOps、CTO）协调，对齐战略优先级。',
+            '推行敏捷开发方法，优化团队工作流、冲刺计划与交付效率。',
+            '培养以创新、无障碍标准与持续改进为核心的协作型工程文化。',
+          ],
         };
       }
       if (exp.id === 'kryterion-engineer') {
@@ -472,22 +636,49 @@ export function getExperiences(locale: Locale): Experience[] {
           role: '全栈软件工程师',
           location: '远程 / 菲律宾 纳加市',
           period: '2023年11月 — 2024年10月',
+          summary: 'Webassessor 平台的全栈工程、微服务及安全 API 集成。',
+          responsibilities: [
+            '通过 Microsoft Teams、Slack 和 Jira 在完全远程的环境中高效协作。',
+            '与全球跨职能团队紧密合作，交付高质量功能。',
+            '开发与维护注重可扩展性、高性能、无障碍与可维护性的 Web 和移动端应用。',
+            '设计并集成具备安全身份验证的 RESTful API。',
+            '参与敏捷 Scrum 仪式，包括冲刺计划与回顾会议。',
+          ],
         };
       }
       if (exp.id === 'caceres-fullstack') {
         return {
           ...exp,
           role: '全栈开发人员',
+          company: '卡塞雷斯总教区',
           location: '菲律宾 纳加市',
           period: '2021年9月 — 2023年11月',
+          summary: '架构与部署全栈 Web 和移动端系统、数据库架构及自动化工具。',
+          responsibilities: [
+            '设计、开发并部署涵盖前端、后端、API 和数据库的可扩展全栈 Web 与移动端应用。',
+            '执行深度调试、根本原因分析与问题解决，确保应用稳定性。',
+            '管理服务器环境、实施 CI/CD 流水线并保障系统架构安全。',
+            '构建用于文档生成和数据处理的自动化工具，减少人工工作量。',
+            '提供技术支持、入职培训与用户文档。',
+            '实施访问控制、监控和日常审计，以保护敏感信息。',
+          ],
         };
       }
       if (exp.id === 'caceres-system') {
         return {
           ...exp,
           role: '系统开发人员',
+          company: '卡塞雷斯总教区',
           location: '菲律宾 纳加市',
           period: '2016年12月 — 2021年8月',
+          summary: '构建行政管理软件、流程自动化与数据库系统。',
+          responsibilities: [
+            '从 IT 支持晋升至系统开发，参与 Web 与移动端应用的设计、开发与维护。',
+            '构建解决方案以实现日程安排、捐赠跟踪与报告生成的数字化。',
+            '改进财务与行政管理系统的易用性、性能与工作流。',
+            '为终端用户提供日常 IT 支持，确保系统平稳采用。',
+            '设计数据库结构、实现后端逻辑并调整前端界面。',
+          ],
         };
       }
     }
