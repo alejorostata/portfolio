@@ -44,15 +44,15 @@ export const LanguageToggle: React.FC = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="inline-flex items-center justify-center gap-1.5 h-10 px-3 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold text-xs transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
+        className="inline-flex items-center justify-center gap-1 sm:gap-1.5 h-9 sm:h-10 px-2 sm:px-3 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-semibold text-xs transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 shrink-0"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={`Select language. Current language: ${activeLang.englishName}`}
       >
-        <Globe className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />
-        <span className="font-medium text-xs">{activeLang.label}</span>
+        <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />
+        <span className="font-medium text-[11px] sm:text-xs max-w-[70px] sm:max-w-[100px] truncate">{activeLang.label}</span>
         <ChevronDown
-          className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
+          className={`w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400 transition-transform duration-200 shrink-0 ${
             isOpen ? 'rotate-180' : ''
           }`}
           aria-hidden="true"

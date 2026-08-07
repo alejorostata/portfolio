@@ -69,13 +69,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 sm:gap-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Logo & Brand Identity */}
           <a
             href="#hero"
             aria-label="Alejo Rostata Portfolio Homepage"
-            className="flex items-center gap-2.5 group shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
+            className="flex items-center gap-2.5 group shrink min-w-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform shrink-0">
               <Image
@@ -86,11 +86,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            <div className="flex flex-col min-w-0 truncate">
+              <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
                 {t('nav.brandName')}
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
+              <span className="hidden md:inline-block text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight truncate max-w-[180px] xl:max-w-[240px]">
                 {t('hero.role')}
               </span>
             </div>
@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Primary Desktop Navigation"
-            className="hidden lg:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs"
+            className="hidden lg:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs shrink-0"
           >
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -108,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                   key={link.id}
                   href={link.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 shrink-0 ${
                     isActive
                       ? 'bg-blue-600 text-white shadow-xs'
                       : 'text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-200/60 dark:hover:bg-slate-800/60'
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           </nav>
 
           {/* Right Action Controls */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <LanguageToggle />
             <ThemeToggle />
 
@@ -129,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             <a
               href="#contact"
               aria-label="Get in touch with Alejo Rostata"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="hidden xl:inline-flex items-center justify-center gap-1.5 h-10 px-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <span>{t('nav.getInTouch')}</span>
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -139,7 +139,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="lg:hidden w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 flex items-center justify-center shrink-0"
+              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 flex items-center justify-center shrink-0"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu-drawer"
               aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
