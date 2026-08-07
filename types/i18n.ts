@@ -122,8 +122,11 @@ export interface TranslationSchema {
   cvModal: {
     title: string;
     verifiedPdf: string;
+    webResumeTab: string;
+    pdfDocTab: string;
     downloadBtn: string;
     shareBtn: string;
+    openNewTab: string;
     copyLinkSuccess: string;
     closeBtn: string;
   };
