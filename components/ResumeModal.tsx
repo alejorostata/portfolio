@@ -123,11 +123,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div>
               <h2 id="resume-modal-title" className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-slate-100">
-                {t('cvModal.title')} — Alejo Rostata
+                {t('cvModal.title')}
               </h2>
               <p className="text-xs text-slate-600 dark:text-slate-300 flex items-center gap-1.5 mt-0.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                <span>Verified PDF Resume</span>
+                <span>{t('cvModal.verifiedPdf')}</span>
               </p>
             </div>
           </div>

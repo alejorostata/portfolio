@@ -262,6 +262,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Líder de Equipo de Ingeniería de Software',
+          company: 'Kryterion, Inc. (Plataforma Webassessor)',
           location: 'Remoto / Ciudad de Naga, Filipinas',
           period: 'Oct 2024 — Presente',
           summary: 'Liderando la ejecución del equipo de ingeniería, escalado arquitectónico y desarrollo full-stack para la plataforma Webassessor en web y móvil.',
@@ -279,6 +280,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Ingeniero de Software (Full Stack)',
+          company: 'Kryterion, Inc. (Plataforma Webassessor)',
           location: 'Remoto / Ciudad de Naga, Filipinas',
           period: 'Nov 2023 — Oct 2024',
           summary: 'Ingeniería full-stack para la plataforma Webassessor, microservicios e integraciones de API seguras.',
@@ -333,6 +335,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Software Engineering Team Lead',
+          company: 'Kryterion, Inc. (Webassessor Platform)',
           location: 'Remote / Lungsod ng Naga, Pilipinas',
           period: 'Okt 2024 — Kasalukuyan',
           summary: 'Pinamumunuan ang inhinyerya, arkitektura, at full-stack development para sa Webassessor platform sa web at mobile.',
@@ -350,6 +353,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Software Engineer (Full Stack)',
+          company: 'Kryterion, Inc. (Webassessor Platform)',
           location: 'Remote / Lungsod ng Naga, Pilipinas',
           period: 'Nob 2023 — Okt 2024',
           summary: 'Full-stack engineering para sa Webassessor platform, microservices, at ligtas na API integrations.',
@@ -404,6 +408,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Software Engineering Team Lead',
+          company: 'Kryterion, Inc. (Webassessor-Plattform)',
           location: 'Remote / Naga City, Philippinen',
           period: 'Okt 2024 — Heute',
           summary: 'Leitung der Ausführung des Entwicklungsteams, der architektonischen Skalierung und der Full-Stack-Entwicklung für die Webassessor-Plattform auf Web und Mobile.',
@@ -421,6 +426,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'Software Engineer (Full Stack)',
+          company: 'Kryterion, Inc. (Webassessor-Plattform)',
           location: 'Remote / Naga City, Philippinen',
           period: 'Nov 2023 — Okt 2024',
           summary: 'Full-Stack-Engineering für die Webassessor-Plattform, Mikroservices und sichere API-Integrationen.',
@@ -475,6 +481,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'ソフトウェアエンジニアリング チームリード',
+          company: 'Kryterion 社 (Webassessor プラットフォーム)',
           location: 'リモート / フィリピン ナガ市',
           period: '2024年10月 — 現在',
           summary: 'WebおよびモバイルにわたるWebassessor試験配信プラットフォームの開発チーム統括、アーキテクチャ拡張、フルスタック開発を牽引。',
@@ -492,6 +499,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: 'フルスタック ソフトウェアエンジニア',
+          company: 'Kryterion 社 (Webassessor プラットフォーム)',
           location: 'リモート / フィリピン ナガ市',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessorプラットフォーム、マイクロサービス、セキュアなAPI連携のフルスタック開発。',
@@ -546,6 +554,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: '소프트웨어 엔지니어링 팀 리드',
+          company: 'Kryterion, Inc. (Webassessor 플랫폼)',
           location: '원격 / 필리핀 나가 시',
           period: '2024년 10월 — 현재',
           summary: '웹 및 모바일 플랫폼 Webassessor의 엔지니어링 팀 실행, 아키텍처 확장 및 풀스택 개발 주도.',
@@ -563,6 +572,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: '풀스택 소프트웨어 엔지니어',
+          company: 'Kryterion, Inc. (Webassessor 플랫폼)',
           location: '원격 / 필리핀 나가 시',
           period: '2023년 11월 — 2024년 10월',
           summary: 'Webassessor 플랫폼, 마이크로서비스 및 안전한 API 통합을 위한 풀스택 엔지니어링.',
@@ -617,6 +627,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: '软件工程团队负责人',
+          company: 'Kryterion, Inc. (Webassessor 平台)',
           location: '远程 / 菲律宾 纳加市',
           period: '2024年10月 — 至今',
           summary: '领导 Web 和移动端 Webassessor 考试交付平台的工程团队执行、架构扩展及全栈开发。',
@@ -634,6 +645,7 @@ export function getExperiences(locale: Locale): Experience[] {
         return {
           ...exp,
           role: '全栈软件工程师',
+          company: 'Kryterion, Inc. (Webassessor 平台)',
           location: '远程 / 菲律宾 纳加市',
           period: '2023年11月 — 2024年10月',
           summary: 'Webassessor 平台的全栈工程、微服务及安全 API 集成。',
@@ -698,6 +710,7 @@ export function getProjects(locale: Locale): Project[] {
           title: 'QAPione — 自動品質保証 (QA) プラットフォーム',
           description: 'クラウドネイティブの自動ソフトウェアテストおよびQAワークフロー管理システム。',
           projectType: 'SaaS / B2B プラットフォーム',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Supabase PostgreSQL、Stripe決済、行レベルセキュリティ(RLS)を備えたマルチテナントSaaS。',
             '自動テストスイート実行、リアルタイム結果ダッシュボード、Vercelクラウドホスティング。',
@@ -709,7 +722,8 @@ export function getProjects(locale: Locale): Project[] {
           ...proj,
           title: 'Stelifo — SaaS & B2B Web・モバイルプラットフォーム',
           description: '業務自動化ワークフローのためのWebおよびモバイルアプリを備えたデジタル変革SaaS。',
-          projectType: 'SaaS / B2B Web & モバイル',
+          projectType: 'SaaS / B2B Web & モバイルプラットフォーム',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'React Nativeで構築されたWebアプリおよびクロスプラットフォームモバイルアプリ。',
             'Stripeサブスクリプション決済、Resend.comメール配信、Vercelホスティングを統合。',
@@ -722,6 +736,7 @@ export function getProjects(locale: Locale): Project[] {
           title: 'Vibe AI — インテリジェント ワークスペース アシスタント',
           description: '生成AIモデルを搭載したAI駆動のコンテンツおよび生産性向上エンジン。',
           projectType: 'SaaS / AI プロダクト',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'プロンプト生成およびコードリファクタリング用のLLM APIストリームを統合。',
             '高性能なNext.js App RouterアーキテクチャでVercelにデプロイ。',
@@ -734,6 +749,7 @@ export function getProjects(locale: Locale): Project[] {
           title: 'Webassessor — Kryterion オンライン試験配信プラットフォーム',
           description: '世界中の受験者に同時に対応する高コンカレンシーのオンライン試験・監視システム。',
           projectType: 'エンタープライズ試験プラットフォーム',
+          database: 'MariaDB + Redis キャッシュ',
           highlights: [
             '高コンカレンシーの試験セッション状態を持つコア評価配信エンジンを拡張。',
             'Vue.js、Bootstrap、Tailwind CSSを使用し、WCAGアクセシビリティ規格に準拠したWebUIを構築。',
@@ -747,6 +763,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'Plataforma SaaS / B2B',
+          database: 'Supabase (PostgreSQL)',
           description: 'Gestor automatizado de pruebas de software y flujo de trabajo de control de calidad nativo de la nube.',
           highlights: [
             'SaaS multinquilino con Supabase PostgreSQL, pagos Stripe y seguridad RLS.',
@@ -758,6 +775,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'Plataforma Web y Móvil SaaS / B2B',
+          database: 'Supabase (PostgreSQL)',
           description: 'Plataforma de transformación digital SaaS con aplicaciones web y móviles para flujos de trabajo empresariales.',
           highlights: [
             'Plataforma web y aplicación móvil multiplataforma construida con React Native.',
@@ -769,6 +787,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'Producto SaaS / IA',
+          database: 'Supabase (PostgreSQL)',
           description: 'Motor de contenido y productividad impulsado por modelos de inteligencia artificial generativa.',
           highlights: [
             'Flujos de API de LLM integrados para generación de prompts y refactorización de código.',
@@ -780,6 +799,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'Plataforma Empresarial de Evaluación',
+          database: 'MariaDB + Caché Redis',
           description: 'Plataforma global de evaluación en línea e inspección de exámenes de alta concurrencia.',
           highlights: [
             'Motor de evaluación central escalado con estado de sesión de examen de alta concurrencia.',
@@ -832,6 +852,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Multi-Tenant-SaaS mit Supabase PostgreSQL, Stripe-Zahlungen und Row Level Security.',
             'Automatische Testausführung, Echtzeit-Ergebnis-Dashboards und Vercel-Cloud-Hosting.',
@@ -841,6 +862,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Webanwendungs-Plattform und plattformübergreifende mobile App entwickelt mit React Native.',
             'Integrierte Stripe-Abonnementzahlungen, Resend.com-E-Mails und Vercel-Hosting.',
@@ -850,6 +872,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Integrierte LLM-API-Streams für Prompt-Generierung und Code-Refactoring.',
             'Bereitgestellt auf Vercel mit leistungsstarker Next.js App Router-Architektur.',
@@ -859,6 +882,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          database: 'MariaDB + Redis-Caching',
           highlights: [
             'Skalierte zentrale Bewertungsengine mit hochparallelem Prüfungsstatus.',
             'Responsive Web-Benutzeroberflächen mit Vue.js, Bootstrap, Tailwind CSS und WCAG-Standards entwickelt.',
@@ -872,6 +896,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / B2B 플랫폼',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'Supabase PostgreSQL, Stripe 결제 및 행 수준 보안(RLS)을 갖춘 멀티테넌트 SaaS.',
             '자동화된 테스트 실행, 실시간 결과 대시보드 및 Vercel 클라우드 호스팅.',
@@ -882,6 +907,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / B2B 웹 및 모바일 플랫폼',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             'React Native로 구축된 웹 애플리케이션 플랫폼 및 교차 플랫폼 모바일 앱.',
             'Stripe 구독 결제, Resend.com 이메일 및 Vercel 호스팅 통합.',
@@ -892,6 +918,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / AI 제품',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             '프롬프트 생성 및 코드 리팩토링을 위한 LLM API 스트림 통합.',
             '고성능 Next.js App Router 아키텍처로 Vercel에 배포.',
@@ -902,6 +929,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: '엔터프라이즈 평가 플랫폼',
+          database: 'MariaDB + Redis 캐싱',
           highlights: [
             '고동시성 시험 세션 상태를 갖춘 핵심 평가 전달 엔진 확장.',
             'Vue.js, Bootstrap, Tailwind CSS를 사용하고 WCAG 접근성 표준을 준수한 웹 UI 구축.',
@@ -915,6 +943,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / B2B 平台',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             '具备 Supabase PostgreSQL、Stripe 支付及行级安全 (RLS) 的多租户 SaaS。',
             '自动化测试套件执行、实时结果仪表板与 Vercel 云端托管。',
@@ -925,6 +954,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / B2B Web 与移动端平台',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             '基于 React Native 构建的 Web 应用平台与跨平台移动应用。',
             '集成 Stripe 订阅支付、Resend.com 事务邮件与 Vercel 托管。',
@@ -935,6 +965,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: 'SaaS / AI 产品',
+          database: 'Supabase (PostgreSQL)',
           highlights: [
             '集成用于提示词生成与代码重构的 LLM API 流。',
             '基于高性能 Next.js App Router 架构部署于 Vercel。',
@@ -945,6 +976,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           projectType: '企业级考试评估平台',
+          database: 'MariaDB + Redis 缓存',
           highlights: [
             '扩展具有高并发考试会话状态的核心评估交付引擎。',
             '使用 Vue.js、Bootstrap 和 Tailwind CSS 构建符合 WCAG 无障碍标准的响应式 Web 界面。',
