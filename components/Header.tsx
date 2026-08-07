@@ -40,8 +40,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Immediately trigger on mount to detect scroll position on page refresh
+    handleScroll();
+    const rafId = requestAnimationFrame(handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
