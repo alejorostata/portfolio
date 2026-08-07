@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowUp, Accessibility } from 'lucide-react';
+import { VisitorCounter } from './VisitorCounter';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -73,10 +74,11 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Rights with WCAG 2.1 AAA Accessibility Badge */}
+        {/* Bottom Rights with WCAG badge and Visitor Counter */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Alejo Rostata. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
+            <VisitorCounter />
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold text-[11px]">
               <Accessibility className="w-3.5 h-3.5 text-blue-400" aria-hidden="true" />
               <span>WCAG 2.1 AAA Compliant</span>
