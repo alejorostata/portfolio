@@ -720,6 +720,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'QAPione — 自動品質保証 (QA) プラットフォーム',
+          category: 'Web & クラウド',
           description: 'クラウドネイティブの自動ソフトウェアテストおよびQAワークフロー管理システム。',
           projectType: 'SaaS / B2B プラットフォーム',
           database: 'Supabase (PostgreSQL)',
@@ -733,6 +734,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Stelifo — SaaS & B2B Web・モバイルプラットフォーム',
+          category: 'Web & クラウド',
           description: '業務自動化ワークフローのためのWebおよびモバイルアプリを備えたデジタル変革SaaS。',
           projectType: 'SaaS / B2B Web & モバイルプラットフォーム',
           database: 'Supabase (PostgreSQL)',
@@ -746,6 +748,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Vibe AI — インテリジェント ワークスペース アシスタント',
+          category: 'Web & クラウド',
           description: '生成AIモデルを搭載したAI駆動のコンテンツおよび生産性向上エンジン。',
           projectType: 'SaaS / AI プロダクト',
           database: 'Supabase (PostgreSQL)',
@@ -759,6 +762,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Webassessor — Kryterion オンライン試験配信プラットフォーム',
+          category: 'エンタープライズ & 自動化',
           description: '世界中の受験者に同時に対応する高コンカレンシーのオンライン試験・監視システム。',
           projectType: 'エンタープライズ試験プラットフォーム',
           database: 'MariaDB + Redis キャッシュ',
@@ -775,6 +779,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          category: 'Web y Nube',
           projectType: 'Plataforma SaaS / B2B',
           database: 'Supabase (PostgreSQL)',
           description: 'Gestor automatizado de pruebas de software y flujo de trabajo de control de calidad nativo de la nube.',
@@ -787,6 +792,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          category: 'Web y Nube',
           projectType: 'Plataforma Web y Móvil SaaS / B2B',
           database: 'Supabase (PostgreSQL)',
           description: 'Plataforma de transformación digital SaaS con aplicaciones web y móviles para flujos de trabajo empresariales.',
@@ -799,6 +805,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          category: 'Web y Nube',
           projectType: 'Producto SaaS / IA',
           database: 'Supabase (PostgreSQL)',
           description: 'Motor de contenido y productividad impulsado por modelos de inteligencia artificial generativa.',
@@ -811,6 +818,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          category: 'Empresarial y Automatización',
           projectType: 'Plataforma Empresarial de Evaluación',
           database: 'MariaDB + Caché Redis',
           description: 'Plataforma global de evaluación en línea e inspección de exámenes de alta concurrencia.',
@@ -827,6 +835,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          category: 'Web at Cloud',
           projectType: 'SaaS / B2B Platform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -838,6 +847,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          category: 'Web at Cloud',
           projectType: 'SaaS / B2B Web at Mobile Platform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -849,6 +859,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          category: 'Web at Cloud',
           projectType: 'SaaS / AI Product',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -860,6 +871,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          category: 'Enterprise at Awtomasyon',
           projectType: 'Enterprise Assessment Platform',
           database: 'MariaDB + Redis Caching',
           highlights: [
@@ -875,6 +887,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'qapione-saas') {
         return {
           ...proj,
+          category: 'Web & Cloud',
           projectType: 'SaaS / B2B-Plattform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -886,6 +899,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'stelifo-platform') {
         return {
           ...proj,
+          category: 'Web & Cloud',
           projectType: 'SaaS / B2B-Web- & Mobilplattform',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -897,6 +911,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'vibe-ai') {
         return {
           ...proj,
+          category: 'Web & Cloud',
           projectType: 'SaaS / KI-Produkt',
           database: 'Supabase (PostgreSQL)',
           highlights: [
@@ -908,6 +923,7 @@ export function getProjects(locale: Locale): Project[] {
       if (proj.id === 'kryterion-engine') {
         return {
           ...proj,
+          category: 'Enterprise & Automatisierung',
           projectType: 'Enterprise-Bewertungsplattform',
           database: 'MariaDB + Redis-Caching',
           highlights: [
@@ -924,6 +940,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'QAPione — 자동화된 QA 플랫폼',
+          category: '웹 & 클라우드',
           description: '클라우드 네이티브 자동화 소프트웨어 테스트 및 QA 워크플로우 관리 시스템.',
           projectType: 'SaaS / B2B 플랫폼',
           database: 'Supabase (PostgreSQL)',
@@ -937,6 +954,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Stelifo — SaaS & B2B 웹 및 모바일 플랫폼',
+          category: '웹 & 클라우드',
           description: '비즈니스 자동화 워크플로우를 위한 웹 및 모바일 앱을 갖춘 디지털 전환 SaaS.',
           projectType: 'SaaS / B2B 웹 및 모바일 플랫폼',
           database: 'Supabase (PostgreSQL)',
@@ -950,6 +968,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Vibe AI — 지능형 워크스페이스 어시스턴트',
+          category: '웹 & 클라우드',
           description: '생성형 AI 모델로 구동되는 AI 기반 콘텐츠 및 생산성 엔진.',
           projectType: 'SaaS / AI 제품',
           database: 'Supabase (PostgreSQL)',
@@ -963,6 +982,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Webassessor — Kryterion 온라인 시험 전달 플랫폼',
+          category: '엔터프라이즈 & 자동화',
           description: '전 세계 응시자를 동시에 지원하는 고동시성 온라인 시험 및 감독 시스템.',
           projectType: '엔터프라이즈 평가 플랫폼',
           database: 'MariaDB + Redis 캐싱',
@@ -980,6 +1000,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'QAPione — 自动化 QA 平台',
+          category: 'Web 与云端',
           description: '云原生自动化软件测试与 QA 工作流管理系统。',
           projectType: 'SaaS / B2B 平台',
           database: 'Supabase (PostgreSQL)',
@@ -993,6 +1014,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Stelifo — SaaS 与 B2B Web/移动端平台',
+          category: 'Web 与云端',
           description: '具备用于业务自动化工作流的 Web 和移动应用的数字化转型 SaaS。',
           projectType: 'SaaS / B2B Web 与移动端平台',
           database: 'Supabase (PostgreSQL)',
@@ -1006,6 +1028,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Vibe AI — 智能工作区助手',
+          category: 'Web 与云端',
           description: '由生成式 AI 模型驱动的 AI 内容与生产力引擎。',
           projectType: 'SaaS / AI 产品',
           database: 'Supabase (PostgreSQL)',
@@ -1019,6 +1042,7 @@ export function getProjects(locale: Locale): Project[] {
         return {
           ...proj,
           title: 'Webassessor — Kryterion 在线考试交付平台',
+          category: '企业级与自动化',
           description: '同时服务全球考生的高并发在线考试与监考系统。',
           projectType: '企业级考试评估平台',
           database: 'MariaDB + Redis 缓存',

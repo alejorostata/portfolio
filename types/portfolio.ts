@@ -29,7 +29,7 @@ export interface Education {
 export interface Project {
   id: string;
   title: string;
-  category: 'Web & Cloud' | 'Mobile App' | 'Enterprise & Automation' | 'DevOps & Tooling';
+  category: string;
   projectType: string;
   database: string;
   description: string;
