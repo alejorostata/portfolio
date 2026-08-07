@@ -105,9 +105,8 @@ export const fil: TranslationSchema = {
   },
   cvModal: {
     title: 'Curriculum Vitae',
-    verifiedPdf: 'Binalidadong PDF at Live Resume',
-    webResumeTab: 'Web Resume',
-    pdfDocTab: 'Dokumento ng PDF',
+    verifiedPdf: 'Binalidadong PDF Resume',
+    mobileNotice: 'Limitado ang pag-render ng PDF iframe sa mobile. I-tap ang Buksan ang PDF o I-download sa ibaba.',
     downloadBtn: 'I-download ang PDF',
     shareBtn: 'I-share ang Link',
     openNewTab: 'Buksan ang PDF',

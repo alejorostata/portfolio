@@ -105,9 +105,8 @@ export const zh: TranslationSchema = {
   },
   cvModal: {
     title: '个人简历 / 履历',
-    verifiedPdf: '已验证 PDF 与 Web 简历',
-    webResumeTab: 'Web 简历',
-    pdfDocTab: 'PDF 文档',
+    verifiedPdf: '已验证 PDF 简历',
+    mobileNotice: '移动端浏览器中的 PDF 预览受限，请点击下方的“打开 PDF”或“下载”查看。',
     downloadBtn: '下载 PDF',
     shareBtn: '分享链接',
     openNewTab: '打开 PDF',

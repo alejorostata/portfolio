@@ -105,9 +105,8 @@ export const ko: TranslationSchema = {
   },
   cvModal: {
     title: '이력서 / 경력기술서',
-    verifiedPdf: '검증된 PDF 및 웹 이력서',
-    webResumeTab: '웹 이력서',
-    pdfDocTab: 'PDF 문서',
+    verifiedPdf: '검증된 PDF 이력서',
+    mobileNotice: '모바일 브라우저에서는 PDF 임베디드 렌더링이 제한될 수 있습니다. 아래의 "PDF 열기" 또는 "다운로드"를 이용해 주세요.',
     downloadBtn: 'PDF 다운로드',
     shareBtn: '링크 공유',
     openNewTab: 'PDF 열기',

@@ -105,9 +105,8 @@ export const ja: TranslationSchema = {
   },
   cvModal: {
     title: '職務経歴書 / 履歴書',
-    verifiedPdf: '検証済み PDF ＆ Web 履歴書',
-    webResumeTab: 'Web 履歴書',
-    pdfDocTab: 'PDF ドキュメント',
+    verifiedPdf: '検証済み PDF 履歴書',
+    mobileNotice: 'モバイルブラウザでは PDF の埋め込み表示が限定されます。以下の「PDF を開く」または「ダウンロード」をご利用ください。',
     downloadBtn: 'PDF をダウンロード',
     shareBtn: 'リンクを共有',
     openNewTab: 'PDF を開く',

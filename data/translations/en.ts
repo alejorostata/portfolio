@@ -105,9 +105,8 @@ export const en: TranslationSchema = {
   },
   cvModal: {
     title: 'Curriculum Vitae',
-    verifiedPdf: 'Verified PDF & Live Portfolio Resume',
-    webResumeTab: 'Web Resume',
-    pdfDocTab: 'PDF Document',
+    verifiedPdf: 'Verified PDF Resume',
+    mobileNotice: 'PDF iframe rendering is limited on mobile browsers. Tap Open PDF or Download below to view.',
     downloadBtn: 'Download PDF',
     shareBtn: 'Share Link',
     openNewTab: 'Open PDF',

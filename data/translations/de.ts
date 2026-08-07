@@ -105,9 +105,8 @@ export const de: TranslationSchema = {
   },
   cvModal: {
     title: 'Lebenslauf',
-    verifiedPdf: 'Geprüftes PDF & Live-Lebenslauf',
-    webResumeTab: 'Web-Lebenslauf',
-    pdfDocTab: 'PDF-Dokument',
+    verifiedPdf: 'Geprüfter PDF-Lebenslauf',
+    mobileNotice: 'Die PDF-Vorschau ist auf mobilen Browsern eingeschränkt. Tippen Sie unten auf PDF öffnen oder Herunterladen.',
     downloadBtn: 'PDF Herunterladen',
     shareBtn: 'Link Teilen',
     openNewTab: 'PDF Öffnen',

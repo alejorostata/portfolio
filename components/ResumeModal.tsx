@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Download, ShieldCheck, FileText, Share2, Check, X, ExternalLink, Briefcase, GraduationCap, Award, Code2 } from 'lucide-react';
+import { Download, ShieldCheck, FileText, Share2, Check, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { getExperiences, getEducation, getSkillCategories, getAchievements } from '@/data/localizedCvData';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -12,17 +11,11 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
   const [copiedShare, setCopiedShare] = useState(false);
-  const [activeTab, setActiveTab] = useState<'web' | 'pdf'>('web');
-
-  const experiences = getExperiences(locale);
-  const education = getEducation(locale);
-  const skillCategories = getSkillCategories(locale);
-  const achievements = getAchievements(locale);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -131,7 +124,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
-          {/* Top Right Close Icon Button */}
+          {/* Top Right Close Button */}
           <button
             ref={closeButtonRef}
             onClick={onClose}
@@ -143,133 +136,39 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </button>
         </div>
 
-        {/* Tab Selector Bar */}
-        <div className="flex items-center gap-2 px-3.5 sm:px-5 py-2 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800/80 shrink-0">
-          <button
-            onClick={() => setActiveTab('web')}
-            type="button"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === 'web'
-                ? 'bg-blue-600 text-white shadow-xs'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
-            }`}
-          >
-            <Code2 className="w-3.5 h-3.5" />
-            <span>{t('cvModal.webResumeTab')}</span>
-          </button>
+        {/* Modal Body: PDF Container & Mobile Notification Banner */}
+        <div className="flex-1 bg-slate-100 dark:bg-slate-950 p-2.5 sm:p-4 flex flex-col space-y-2.5 min-h-[360px] sm:min-h-[500px]">
+          
+          {/* Mobile PDF Notice Banner */}
+          <div className="sm:hidden p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs text-blue-900 dark:text-blue-300 flex items-center justify-between gap-2.5 shrink-0">
+            <span className="leading-tight text-[11px] font-medium">{t('cvModal.mobileNotice')}</span>
+            <a
+              href="/alejo_rostata_cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] shrink-0 inline-flex items-center gap-1 shadow-xs"
+            >
+              <span>{t('cvModal.openNewTab')}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
 
-          <button
-            onClick={() => setActiveTab('pdf')}
-            type="button"
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === 'pdf'
-                ? 'bg-blue-600 text-white shadow-xs'
-                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
-            }`}
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span>{t('cvModal.pdfDocTab')}</span>
-          </button>
+          {/* Embedded PDF iframe */}
+          <div className="flex-1 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white">
+            <iframe
+              src="/alejo_rostata_cv.pdf#toolbar=1&navpanes=0&view=FitH"
+              title="Alejo Rostata PDF Resume"
+              className="w-full h-full min-h-[350px] sm:min-h-[500px]"
+            />
+          </div>
         </div>
 
-        {/* Modal Content Body */}
-        <div className="flex-1 overflow-y-auto bg-slate-100 dark:bg-slate-950 p-3 sm:p-6 min-h-[350px] sm:min-h-[500px]">
-          {activeTab === 'web' ? (
-            /* Rich HTML Web Resume View (Works 100% on Mobile Devices) */
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 sm:p-8 space-y-6 text-slate-800 dark:text-slate-200 shadow-sm max-w-3xl mx-auto">
-              
-              {/* Header */}
-              <div className="border-b border-slate-200 dark:border-slate-800 pb-5 space-y-2">
-                <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-slate-100">{PERSONAL_INFO.name}</h1>
-                <p className="text-sm font-bold text-blue-600 dark:text-blue-400">{PERSONAL_INFO.title}</p>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400 pt-1">
-                  <span>{PERSONAL_INFO.location}</span>
-                  <span>•</span>
-                  <span>{PERSONAL_INFO.email}</span>
-                  <span>•</span>
-                  <span>{PERSONAL_INFO.viberPhone}</span>
-                </div>
-              </div>
-
-              {/* Summary */}
-              <div className="space-y-2">
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Professional Summary</h3>
-                <p className="text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">{PERSONAL_INFO.summary}</p>
-              </div>
-
-              {/* Work Experience */}
-              <div className="space-y-4">
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                  <Briefcase className="w-3.5 h-3.5 text-blue-600" /> Work Experience
-                </h3>
-                <div className="space-y-4">
-                  {experiences.map((exp) => (
-                    <div key={exp.id} className="space-y-1.5 border-l-2 border-blue-500/40 pl-3.5">
-                      <div className="flex flex-wrap items-center justify-between gap-1">
-                        <h4 className="font-bold text-sm text-slate-900 dark:text-slate-100">{exp.role}</h4>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">{exp.period}</span>
-                      </div>
-                      <p className="text-xs font-semibold text-blue-600 dark:text-blue-400">{exp.company} • {exp.location}</p>
-                      <ul className="list-disc list-inside space-y-1 pt-1 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                        {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx}>{resp}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Education */}
-              <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                  <GraduationCap className="w-3.5 h-3.5 text-blue-600" /> Education
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {education.map((edu) => (
-                    <div key={edu.id} className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-1">
-                      <h4 className="font-bold text-xs text-slate-900 dark:text-slate-100">{edu.degree}</h4>
-                      <p className="text-[11px] font-medium text-blue-600 dark:text-blue-400">{edu.institution}</p>
-                      <p className="text-[10px] text-slate-500">{edu.period} • {edu.location}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          ) : (
-            /* PDF File View with Mobile Fallback Banner */
-            <div className="w-full h-full flex flex-col space-y-3">
-              {/* Mobile Notification Banner */}
-              <div className="sm:hidden p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs text-blue-800 dark:text-blue-300 flex items-center justify-between gap-2">
-                <span>PDF iframe rendering is limited on mobile browsers. Use <strong>Web Resume</strong> tab above or open PDF below.</span>
-                <a
-                  href="/alejo_rostata_cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[11px] shrink-0 inline-flex items-center gap-1"
-                >
-                  <span>{t('cvModal.openNewTab')}</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-
-              <iframe
-                src="/alejo_rostata_cv.pdf#toolbar=1&navpanes=0&view=FitH"
-                title="Alejo Rostata PDF Resume"
-                className="w-full h-full min-h-[350px] sm:min-h-[500px] rounded-xl border border-slate-200 dark:border-slate-800 bg-white"
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Modal Action Footer Bar (Structured & Responsive) */}
+        {/* Modal Action Footer Bar */}
         <div className="p-3.5 sm:p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 shrink-0">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
             
-            {/* Left Secondary Action Group */}
+            {/* Left Secondary Actions */}
             <div className="flex items-center gap-2">
-              {/* Share CV Link */}
               <button
                 onClick={handleShareCV}
                 type="button"
@@ -289,7 +188,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 )}
               </button>
 
-              {/* Open in New Tab Button */}
               <a
                 href="/alejo_rostata_cv.pdf"
                 target="_blank"
@@ -301,7 +199,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </a>
             </div>
 
-            {/* Right Primary Action Group */}
+            {/* Right Primary Download CTA */}
             <div className="flex items-center gap-2">
               <a
                 href="/alejo_rostata_cv.pdf"
