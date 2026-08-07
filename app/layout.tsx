@@ -71,12 +71,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   document.documentElement.classList.add('dark');
                   document.documentElement.classList.remove('light');
                 }
+                if (window.scrollY > 20) {
+                  document.documentElement.classList.add('is-scrolled');
+                }
               } catch(e) {}
             })();`,
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200">
+      <body
+        className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200"
+        suppressHydrationWarning
+      >
         <SkipLink />
         {children}
         {/* GoatCounter Analytics — privacy-friendly, no cookies, GDPR compliant */}

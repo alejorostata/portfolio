@@ -25,7 +25,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
+      if (scrolled) {
+        document.documentElement.classList.add('is-scrolled');
+      } else {
+        document.documentElement.classList.remove('is-scrolled');
+      }
 
       // Scroll Spy for active section highlight
       const sections = navLinks.map((link) => document.getElementById(link.id));
@@ -42,22 +48,21 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
     // Immediately trigger on mount to detect scroll position on page refresh
     handleScroll();
-    const rafId = requestAnimationFrame(handleScroll);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      cancelAnimationFrame(rafId);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <header
+      id="main-header"
       role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md py-3 shadow-xs dark:shadow-slate-900/40 border-b-0'
-          : 'bg-transparent py-4 sm:py-5 border-b-0'
+          : 'bg-transparent py-4 sm:py-5 border-b-0 [.is-scrolled_&]:bg-white/90 dark:[.is-scrolled_&]:bg-slate-950/90 [.is-scrolled_&]:backdrop-blur-md [.is-scrolled_&]:py-3 [.is-scrolled_&]:shadow-xs'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
