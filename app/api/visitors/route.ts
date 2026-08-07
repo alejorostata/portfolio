@@ -32,12 +32,11 @@ export async function GET() {
 
     const data = await res.json();
 
-    // Sum count_unique across all page paths for total unique visitor estimate
-    // For a single-page portfolio, this equals the root "/" unique visits
-    const hits: { count: number; count_unique: number }[] = data?.hits ?? [];
-    const totalUnique = hits.reduce((sum, hit) => sum + (hit.count_unique ?? 0), 0);
+    // GoatCounter returns time-series data per path.
+    // data.total = total visit count across all paths and the queried date range.
+    const count: number = data?.total ?? 0;
 
-    return NextResponse.json({ count: totalUnique });
+    return NextResponse.json({ count });
   } catch {
     return NextResponse.json({ count: null }, { status: 500 });
   }

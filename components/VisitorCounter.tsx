@@ -34,7 +34,7 @@ export const VisitorCounter: React.FC = () => {
       title="Unique portfolio visitors tracked by GoatCounter"
     >
       <Users className="w-3 h-3 text-slate-500 shrink-0" aria-hidden="true" />
-      <span>{count.toLocaleString()} unique visitors</span>
+      <span>{count.toLocaleString()} visits</span>
     </span>
   );
 };
