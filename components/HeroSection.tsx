@@ -3,12 +3,14 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
 import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
+  const { t } = useLanguage();
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
   return (
@@ -26,52 +28,52 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-500"></span>
                 </span>
-                <span className="truncate">{PERSONAL_INFO.availability}</span>
+                <span className="truncate">{t('hero.availabilityBadge')}</span>
               </div>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-1.5 sm:space-y-2">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-[1.15]">
-                Hi, I'm <span className="text-blue-600 dark:text-blue-400">{PERSONAL_INFO.name}</span>
+                {t('hero.title')}
               </h1>
               <p className="text-base sm:text-2xl font-bold text-slate-700 dark:text-slate-300 leading-snug">
-                Full Stack Software Engineer & Team Lead
+                {t('hero.role')}
               </p>
             </div>
 
             {/* Metric Cards Grid - Side-by-Side 2 Columns on Mobile for Clean Symmetry */}
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">~10 Years</p>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">Software Experience</p>
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.statsYears')}</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.statsYearsLabel')}</p>
               </div>
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">Full-Stack</p>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">Web, Mobile & APIs</p>
+                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.statsProjects')}</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.statsProjectsLabel')}</p>
               </div>
             </div>
 
             {/* Summary Bio */}
             <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-base leading-relaxed">
-              Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications.
+              {t('hero.tagline')}
             </p>
 
             {/* Meta Role Details */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                <span>{PERSONAL_INFO.location}</span>
+                <span>{t('hero.location')}</span>
               </div>
               <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
                 <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                <span>Team Lead @ Kryterion</span>
+                <span>{t('hero.company')}</span>
               </div>
               <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
               <div className="flex items-center gap-1.5">
                 <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                <span>MS IT Candidate</span>
+                <span>{t('hero.degree')}</span>
               </div>
             </div>
 
@@ -81,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 href="#experience"
                 className="h-11 sm:h-12 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-sm shrink-0 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
-                <span>Explore Experience</span>
+                <span>{t('nav.experience')}</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
 
@@ -91,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 className="h-11 sm:h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>Review or Download CV</span>
+                <span>{t('hero.btnCV')}</span>
                 <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

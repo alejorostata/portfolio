@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
 import { Mail, MapPin, Copy, Check, Send, MessageSquare, PhoneCall, ExternalLink } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -17,6 +18,7 @@ const GitHubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 );
 
 export const ContactSection: React.FC = () => {
+  const { t } = useLanguage();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedViber, setCopiedViber] = useState(false);
 
@@ -66,13 +68,13 @@ export const ContactSection: React.FC = () => {
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-xs font-semibold uppercase tracking-wider">
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Let's Connect</span>
+            <span>{t('contact.badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Get In Touch
+            {t('contact.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            Whether you are looking for a full stack software engineer, technical lead, or consulting partner, feel free to connect directly via Email or Viber.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -89,7 +91,7 @@ export const ContactSection: React.FC = () => {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="truncate">
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Email Address</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t('contact.emailLabel')}</p>
                     <span className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base truncate block">
                       {PERSONAL_INFO.email}
                     </span>
@@ -121,9 +123,9 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div className="truncate">
                     <div className="flex items-center gap-2">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Mobile / Viber</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t('contact.mobileLabel')}</p>
                       <span className="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded bg-blue-50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-500/30">
-                        Viber Active
+                        {t('contact.viberActive')}
                       </span>
                     </div>
                     <span className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base truncate block">
@@ -154,8 +156,8 @@ export const ContactSection: React.FC = () => {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Location</p>
-                <p className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">{PERSONAL_INFO.location}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t('contact.locationLabel')}</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">{t('contact.locationValue')}</p>
               </div>
             </div>
 
@@ -187,7 +189,7 @@ export const ContactSection: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-8 space-y-5 sm:space-y-6 shadow-sm dark:shadow-xl">
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">
-                Send a Direct Message
+                {t('contact.formTitle')}
               </h3>
 
               {isSubmitted ? (
@@ -195,10 +197,7 @@ export const ContactSection: React.FC = () => {
                   <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 mx-auto flex items-center justify-center">
                     <Check className="w-6 h-6" />
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">Opening Mail Client...</h4>
-                  <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm">
-                    If your email app didn't launch automatically, click below to send directly:
-                  </p>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">{t('contact.successMessage')}</h4>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-xs hover:bg-blue-700 transition-all focus-visible:ring-2 focus-visible:ring-blue-500"
@@ -212,7 +211,7 @@ export const ContactSection: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label htmlFor="contact-name" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Your Name <span className="text-rose-500">*</span>
+                        {t('contact.nameField')} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         id="contact-name"
@@ -227,7 +226,7 @@ export const ContactSection: React.FC = () => {
 
                     <div className="space-y-1.5">
                       <label htmlFor="contact-email" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Your Email <span className="text-rose-500">*</span>
+                        {t('contact.emailField')} <span className="text-rose-500">*</span>
                       </label>
                       <input
                         id="contact-email"
@@ -243,7 +242,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="space-y-1.5">
                     <label htmlFor="contact-subject" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Subject
+                      {t('contact.subjectField')}
                     </label>
                     <input
                       id="contact-subject"
@@ -257,7 +256,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="space-y-1.5">
                     <label htmlFor="contact-message" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Message <span className="text-rose-500">*</span>
+                      {t('contact.messageField')} <span className="text-rose-500">*</span>
                     </label>
                     <textarea
                       id="contact-message"
@@ -265,7 +264,7 @@ export const ContactSection: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hi Alejo, I would love to discuss a software engineering opportunity with you..."
+                      placeholder="Hi Alejo..."
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-blue-500 focus:outline-none transition-colors resize-none"
                     />
                   </div>
@@ -275,7 +274,7 @@ export const ContactSection: React.FC = () => {
                     className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Send Message</span>
+                    <span>{t('contact.btnSend')}</span>
                   </button>
                 </form>
               )}

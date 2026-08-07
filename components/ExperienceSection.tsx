@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { EXPERIENCES } from '@/data/cvData';
 import { Briefcase, Calendar, MapPin, CheckCircle, ChevronRight, Layers } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const ExperienceSection: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedExpId, setSelectedExpId] = useState<string>(EXPERIENCES[0].id);
 
   const selectedExperience = EXPERIENCES.find((exp) => exp.id === selectedExpId) || EXPERIENCES[0];
@@ -17,13 +19,13 @@ export const ExperienceSection: React.FC = () => {
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30 text-xs font-semibold uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>Career History</span>
+            <span>{t('experience.badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Work Experience & Technical Leadership
+            {t('experience.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            Nearly a decade of progression from system development to full-stack engineering and team leadership across international and enterprise environments.
+            {t('experience.subtitle')}
           </p>
         </div>
 
@@ -60,7 +62,7 @@ export const ExperienceSection: React.FC = () => {
                         </h3>
                         {exp.isCurrent && (
                           <span className="px-2 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase rounded bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30">
-                            Present
+                            {t('experience.present')}
                           </span>
                         )}
                       </div>

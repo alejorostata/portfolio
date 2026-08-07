@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '@/data/cvData';
 import { Cpu, Server, Layout, Smartphone, Cloud, Users, Check, Sparkles, ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const SkillsSection: React.FC = () => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<string>('all');
 
   const getCategoryIcon = (id: string) => {
@@ -57,13 +59,13 @@ export const SkillsSection: React.FC = () => {
         <div className="max-w-3xl space-y-2.5 sm:space-y-3 mb-6 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-xs font-semibold uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Technical Ecosystem</span>
+            <span>{t('skills.badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Skills, Languages & Frameworks
+            {t('skills.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base">
-            Comprehensive skill set built across backend APIs, modern frontend web apps, mobile, AI tools, Supabase, and engineering leadership.
+            {t('skills.subtitle')}
           </p>
         </div>
 

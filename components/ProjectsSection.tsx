@@ -3,8 +3,11 @@
 import React from 'react';
 import { PROJECTS } from '@/data/cvData';
 import { FolderGit2, ExternalLink, CheckCircle2, Server, Smartphone, Cpu, Wrench, Globe, Database } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const ProjectsSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Web & Cloud':
@@ -28,13 +31,13 @@ export const ProjectsSection: React.FC = () => {
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30 text-xs font-semibold uppercase tracking-wider">
             <FolderGit2 className="w-3.5 h-3.5" />
-            <span>Featured Projects</span>
+            <span>{t('projects.badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Projects & Systems I've Built
+            {t('projects.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            A showcase of SaaS products, mobile apps, and enterprise systems I've architected, built, or currently maintain.
+            {t('projects.subtitle')}
           </p>
         </div>
 

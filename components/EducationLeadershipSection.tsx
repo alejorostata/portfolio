@@ -3,8 +3,11 @@
 import React from 'react';
 import { EDUCATION, ACHIEVEMENTS } from '@/data/cvData';
 import { GraduationCap, Award, Trophy, BookOpen } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const EducationLeadershipSection: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="education" className="py-16 sm:py-20 relative bg-slate-50 dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,13 +16,13 @@ export const EducationLeadershipSection: React.FC = () => {
         <div className="max-w-3xl space-y-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-xs font-semibold uppercase tracking-wider">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic Background & Honors</span>
+            <span>{t('education.badge')}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-            Education, ACM-ICPC & Achievements
+            {t('education.title')}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-            Rooted in strong computer science fundamentals, continuous graduate education, and competitive algorithmic problem-solving.
+            {t('education.subtitle')}
           </p>
         </div>
 

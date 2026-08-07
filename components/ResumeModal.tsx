@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Download, ShieldCheck, FileText, Share2, Check } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useLanguage();
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
@@ -121,7 +123,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div>
               <h2 id="resume-modal-title" className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-slate-100">
-                Curriculum Vitae — Alejo Rostata
+                {t('cvModal.title')} — Alejo Rostata
               </h2>
               <p className="text-xs text-slate-600 dark:text-slate-300 flex items-center gap-1.5 mt-0.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" aria-hidden="true" />
@@ -152,12 +154,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             {copiedShare ? (
               <>
                 <Check className="w-4 h-4 text-emerald-500" aria-hidden="true" />
-                <span className="text-emerald-600 dark:text-emerald-400">Portfolio CV Link Copied!</span>
+                <span className="text-emerald-600 dark:text-emerald-400">{t('cvModal.copyLinkSuccess')}</span>
               </>
             ) : (
               <>
                 <Share2 className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                <span>Share CV</span>
+                <span>{t('cvModal.shareBtn')}</span>
               </>
             )}
           </button>
@@ -169,7 +171,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             className="h-11 px-5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <Download className="w-4 h-4" aria-hidden="true" />
-            <span>Download PDF CV</span>
+            <span>{t('cvModal.downloadBtn')}</span>
           </a>
 
           {/* Close Button */}
@@ -179,7 +181,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             type="button"
             className="h-11 px-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/80 text-slate-800 dark:text-slate-100 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
           >
-            <span>Close</span>
+            <span>{t('cvModal.closeBtn')}</span>
           </button>
         </div>
       </div>

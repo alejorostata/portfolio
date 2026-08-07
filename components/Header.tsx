@@ -4,23 +4,26 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface HeaderProps {
   onOpenResume?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   const navLinks = [
-    { name: 'About', href: '#hero', id: 'hero' },
-    { name: 'Experience', href: '#experience', id: 'experience' },
-    { name: 'Skills', href: '#skills', id: 'skills' },
-    { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'Education', href: '#education', id: 'education' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: t('nav.about'), href: '#hero', id: 'hero' },
+    { name: t('nav.experience'), href: '#experience', id: 'experience' },
+    { name: t('nav.skills'), href: '#skills', id: 'skills' },
+    { name: t('nav.projects'), href: '#projects', id: 'projects' },
+    { name: t('nav.education'), href: '#education', id: 'education' },
+    { name: t('nav.contact'), href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -88,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 Alejo Rostata
               </span>
               <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
-                Software Engineer & Team Lead
+                {t('hero.role')}
               </span>
             </div>
           </a>
@@ -102,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               const isActive = activeSection === link.id;
               return (
                 <a
-                  key={link.name}
+                  key={link.id}
                   href={link.href}
                   aria-current={isActive ? 'page' : undefined}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500 ${
@@ -119,6 +122,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
           {/* Right Action Controls */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <LanguageToggle />
             <ThemeToggle />
 
             {/* Contact CTA Button */}
@@ -127,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               aria-label="Get in touch with Alejo Rostata"
               className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 focus-visible:ring-2 focus-visible:ring-blue-500"
             >
-              <span>Get In Touch</span>
+              <span>{t('nav.getInTouch')}</span>
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
 
@@ -157,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 const isActive = activeSection === link.id;
                 return (
                   <a
-                    key={link.name}
+                    key={link.id}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     aria-current={isActive ? 'page' : undefined}
@@ -171,13 +175,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                   </a>
                 );
               })}
-              <div className="pt-2 border-t border-slate-200 dark:border-slate-800 mt-1">
+              <div className="pt-2 border-t border-slate-200 dark:border-slate-800 mt-1 flex flex-col gap-2">
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full h-11 rounded-xl bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs"
                 >
-                  <span>Get In Touch</span>
+                  <span>{t('nav.getInTouch')}</span>
                   <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
