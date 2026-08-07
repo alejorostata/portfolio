@@ -82,6 +82,7 @@ export interface TranslationSchema {
     mobileLabel: string;
     viberActive: string;
     locationLabel: string;
+    locationValue: string;
     formTitle: string;
     nameField: string;
     emailField: string;

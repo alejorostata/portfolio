@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { PROJECTS } from '@/data/cvData';
+import { getProjects } from '@/data/localizedCvData';
 import { FolderGit2, ExternalLink, CheckCircle2, Server, Smartphone, Cpu, Wrench, Globe, Database } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export const ProjectsSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const projects = getProjects(locale);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -43,7 +44,7 @@ export const ProjectsSection: React.FC = () => {
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {PROJECTS.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-8 space-y-5 sm:space-y-6 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-sm dark:shadow-xl flex flex-col justify-between group"
@@ -72,7 +73,7 @@ export const ProjectsSection: React.FC = () => {
                       className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-[11px] sm:text-xs font-semibold hover:bg-emerald-600 hover:text-white transition-all"
                     >
                       <Globe className="w-3.5 h-3.5" />
-                      <span>Live Site</span>
+                      <span>{t('projects.liveSite')}</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : project.company ? (
@@ -95,13 +96,13 @@ export const ProjectsSection: React.FC = () => {
                 {/* Database Badge */}
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-950 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
                   <Database className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                  <span>Database: <strong className="text-slate-900 dark:text-slate-200">{project.database}</strong></span>
+                  <span>{t('projects.database')} <strong className="text-slate-900 dark:text-slate-200">{project.database}</strong></span>
                 </div>
 
                 {/* Key Highlights */}
                 <div className="space-y-2 pt-1">
                   <h4 className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                    Architectural & Engineering Highlights
+                    {t('projects.highlights')}
                   </h4>
                   <ul className="space-y-2">
                     {project.highlights.map((highlight: string, idx: number) => (
@@ -135,7 +136,7 @@ export const ProjectsSection: React.FC = () => {
                       rel="noopener noreferrer"
                       className="w-full py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-500/50 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
                     >
-                      <span>Visit Live Site</span>
+                      <span>{t('projects.visitLiveSite')}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>

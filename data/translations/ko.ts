@@ -66,6 +66,7 @@ export const ko: TranslationSchema = {
     mobileLabel: '휴대전화 / Viber',
     viberActive: 'Viber 활성화',
     locationLabel: '위치',
+    locationValue: '필리핀 카마리네스 수르 나가 시',
     formTitle: '메시지 보내기',
     nameField: '성함',
     emailField: '이메일',

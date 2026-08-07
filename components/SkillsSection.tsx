@@ -72,7 +72,7 @@ export const SkillsSection: React.FC = () => {
         {/* Category Controls: Mobile Dropdown Select Menu (< sm: 640px) */}
         <div className="sm:hidden mb-6">
           <label htmlFor="mobile-category-select" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-            Filter Skill Category:
+            {t('skills.filterLabel')}
           </label>
           <div className="relative">
             <select
@@ -81,10 +81,10 @@ export const SkillsSection: React.FC = () => {
               onChange={(e) => setActiveTab(e.target.value)}
               className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-semibold text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xs"
             >
-              <option value="all">⚡ All Skills ({SKILL_CATEGORIES.reduce((acc, cat) => acc + cat.skills.length, 0)} total)</option>
+              <option value="all">⚡ {t('skills.allSkills')} ({SKILL_CATEGORIES.reduce((acc, cat) => acc + cat.skills.length, 0)} total)</option>
               {SKILL_CATEGORIES.map((cat) => (
                 <option key={cat.id} value={cat.id}>
-                  {cat.name} ({cat.skills.length} skills)
+                  {cat.name} ({cat.skills.length} {t('skills.skillsCount')})
                 </option>
               ))}
             </select>
@@ -105,7 +105,7 @@ export const SkillsSection: React.FC = () => {
             role="tab"
             aria-selected={activeTab === 'all'}
           >
-            All Skills
+            {t('skills.allSkills')}
           </button>
           {SKILL_CATEGORIES.map((cat) => {
             const isActive = activeTab === cat.id;
@@ -148,7 +148,7 @@ export const SkillsSection: React.FC = () => {
                     </h3>
                   </div>
                   <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-800 whitespace-nowrap shrink-0">
-                    {category.skills.length} skills
+                    {category.skills.length} {t('skills.skillsCount')}
                   </span>
                 </div>
 

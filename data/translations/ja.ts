@@ -66,6 +66,7 @@ export const ja: TranslationSchema = {
     mobileLabel: '携帯電話 / Viber',
     viberActive: 'Viber 対応可',
     locationLabel: '所在地',
+    locationValue: 'フィリピン カマリネス・スル州 ナガ市',
     formTitle: 'ダイレクトメッセージを送る',
     nameField: 'お名前',
     emailField: 'メールアドレス',

@@ -66,6 +66,7 @@ export const de: TranslationSchema = {
     mobileLabel: 'Mobil / Viber',
     viberActive: 'Viber Aktiv',
     locationLabel: 'Standort',
+    locationValue: 'Naga City, Camarines Sur, Philippinen',
     formTitle: 'Direktnachricht senden',
     nameField: 'Ihr Name',
     emailField: 'Ihre E-Mail',

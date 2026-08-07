@@ -66,6 +66,7 @@ export const zh: TranslationSchema = {
     mobileLabel: '手机 / Viber',
     viberActive: 'Viber 在线',
     locationLabel: '所在地',
+    locationValue: '菲律宾 卡马林斯州 纳加市',
     formTitle: '发送直接消息',
     nameField: '您的姓名',
     emailField: '您的邮箱',

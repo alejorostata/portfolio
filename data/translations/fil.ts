@@ -66,6 +66,7 @@ export const fil: TranslationSchema = {
     mobileLabel: 'Mobile / Viber',
     viberActive: 'Viber Aktibo',
     locationLabel: 'Lokasyon',
+    locationValue: 'Lungsod ng Naga, Camarines Sur, Pilipinas',
     formTitle: 'Magpadala ng Mensahe',
     nameField: 'Iyong Pangalan',
     emailField: 'Iyong Email',

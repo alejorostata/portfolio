@@ -1,15 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { EXPERIENCES } from '@/data/cvData';
+import { getExperiences } from '@/data/localizedCvData';
 import { Briefcase, Calendar, MapPin, CheckCircle, ChevronRight, Layers } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export const ExperienceSection: React.FC = () => {
-  const { t } = useLanguage();
-  const [selectedExpId, setSelectedExpId] = useState<string>(EXPERIENCES[0].id);
+  const { t, locale } = useLanguage();
+  const experiences = getExperiences(locale);
+  const [selectedExpId, setSelectedExpId] = useState<string>(experiences[0].id);
 
-  const selectedExperience = EXPERIENCES.find((exp) => exp.id === selectedExpId) || EXPERIENCES[0];
+  const selectedExperience = experiences.find((exp) => exp.id === selectedExpId) || experiences[0];
 
   return (
     <section id="experience" className="py-16 sm:py-20 bg-white dark:bg-slate-950 border-y border-slate-200/80 dark:border-slate-800/80 relative">
@@ -34,7 +35,7 @@ export const ExperienceSection: React.FC = () => {
           
           {/* Left Column: Timeline Selectors */}
           <div className="lg:col-span-5 flex flex-col gap-2.5 sm:gap-3">
-            {EXPERIENCES.map((exp) => {
+            {experiences.map((exp) => {
               const isSelected = exp.id === selectedExpId;
               return (
                 <button
@@ -109,7 +110,7 @@ export const ExperienceSection: React.FC = () => {
               <div className="space-y-3 sm:space-y-4">
                 <h4 className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                  Key Responsibilities & Achievements
+                  {t('experience.keyResponsibilities')}
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3">
                   {selectedExperience.responsibilities.map((item: string, idx: number) => (
@@ -125,7 +126,7 @@ export const ExperienceSection: React.FC = () => {
               <div className="pt-4 border-t border-slate-200 dark:border-slate-800/80 space-y-3">
                 <h4 className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
                   <Layers className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" />
-                  Technologies & Tools
+                  {t('experience.techAndTools')}
                 </h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {selectedExperience.technologies.map((tech: string) => (
