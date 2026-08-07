@@ -72,15 +72,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   }, [isOpen, onClose]);
 
   const handleShareCV = async () => {
-    const cvUrl = typeof window !== 'undefined' ? `${window.location.origin}/alejo_rostata_cv.pdf` : '/alejo_rostata_cv.pdf';
+    const cvShareUrl = typeof window !== 'undefined'
+      ? `${window.location.origin}/?view=cv#cv`
+      : 'https://alejorostata.com/?view=cv#cv';
     
     // Attempt native Web Share API
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: 'Alejo Rostata — CV (Software Engineer)',
-          text: 'Check out Alejo Rostata\'s Software Engineer & Team Lead CV',
-          url: cvUrl,
+          title: 'Alejo Rostata — CV (Software Engineer & Team Lead)',
+          text: 'View Alejo Rostata\'s Curriculum Vitae on his official portfolio',
+          url: cvShareUrl,
         });
         return;
       } catch (err) {
@@ -88,9 +90,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       }
     }
 
-    // Fallback: Copy direct URL to clipboard
+    // Fallback: Copy sharable portfolio link to clipboard
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      await navigator.clipboard.writeText(cvUrl);
+      await navigator.clipboard.writeText(cvShareUrl);
       setCopiedShare(true);
       setTimeout(() => setCopiedShare(false), 2500);
     }
@@ -140,17 +142,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         {/* Modal Footer: Standardized Action Buttons */}
         <div className="flex flex-wrap items-center justify-end gap-2.5 p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 shrink-0">
-          {/* Share CV Button */}
+          {/* Share CV Link Button */}
           <button
             onClick={handleShareCV}
             type="button"
             className="h-11 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/80 text-slate-800 dark:text-slate-100 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer hover:border-blue-400"
-            title="Share or Copy Direct Link to CV"
+            title="Share or Copy Direct Link to Auto-Opening Portfolio Resume"
           >
             {copiedShare ? (
               <>
                 <Check className="w-4 h-4 text-emerald-500" aria-hidden="true" />
-                <span className="text-emerald-600 dark:text-emerald-400">CV Link Copied!</span>
+                <span className="text-emerald-600 dark:text-emerald-400">Portfolio CV Link Copied!</span>
               </>
             ) : (
               <>

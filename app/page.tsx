@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
@@ -14,6 +14,17 @@ import { ResumeModal } from '@/components/ResumeModal';
 
 export default function Home() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Auto-open CV modal if URL contains #cv or ?view=cv
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      const search = window.location.search;
+      if (hash === '#cv' || search.includes('view=cv') || search.includes('modal=cv')) {
+        setIsResumeModalOpen(true);
+      }
+    }
+  }, []);
 
   return (
     <ThemeProvider>
@@ -45,7 +56,13 @@ export default function Home() {
         {/* CV Modal */}
         <ResumeModal
           isOpen={isResumeModalOpen}
-          onClose={() => setIsResumeModalOpen(false)}
+          onClose={() => {
+            setIsResumeModalOpen(false);
+            // Clean up URL hash if closing modal
+            if (typeof window !== 'undefined' && window.location.hash === '#cv') {
+              window.history.replaceState(null, '', window.location.pathname);
+            }
+          }}
         />
       </div>
     </ThemeProvider>
