@@ -1,17 +1,22 @@
 import { NextResponse } from 'next/server';
 
-// Official GoatCounter counter endpoint — no API token required once you enable
-// "Allow adding visitor counts on your website" in GoatCounter site settings.
-// The special path "TOTAL" returns the all-time site-wide visitor total.
-// Docs: https://www.goatcounter.com/help/visitor-counter#json-10309
-const COUNTER_URL = 'https://alejorostata.goatcounter.com/counter/TOTAL.json';
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+// Official GoatCounter counter endpoint — returns live site-wide visitor total.
+const BASE_COUNTER_URL = 'https://alejorostata.goatcounter.com/counter/TOTAL.json';
 
 export async function GET() {
   try {
-    const res = await fetch(COUNTER_URL, {
-      // Cache for 5 minutes — GoatCounter's own cache is up to 4 hours,
-      // so there's no benefit going lower than that on our end.
-      next: { revalidate: 300 },
+    // Append timestamp query parameter to bypass upstream HTTP caching completely
+    const liveUrl = `${BASE_COUNTER_URL}?_t=${Date.now()}`;
+    
+    const res = await fetch(liveUrl, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+      },
     });
 
     if (!res.ok) {
@@ -20,12 +25,18 @@ export async function GET() {
 
     const data = await res.json();
 
-    // GoatCounter returns count as a pre-formatted string with thousands separators
-    // e.g. "1,234" — parse it to a raw number so we can format it ourselves.
+    // GoatCounter returns count as a pre-formatted string with thousands separators (e.g. "1,234")
     const raw = data?.count ?? '0';
     const count = parseInt(String(raw).replace(/[^0-9]/g, ''), 10) || 0;
 
-    return NextResponse.json({ count });
+    return NextResponse.json(
+      { count },
+      {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate',
+        },
+      }
+    );
   } catch {
     return NextResponse.json({ count: null }, { status: 500 });
   }
