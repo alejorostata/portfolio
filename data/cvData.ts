@@ -151,7 +151,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'backend',
     name: 'Backend & APIs',
-    skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices'],
+    skills: ['Java (Spring Boot)', 'C# / .NET', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices'],
   },
   {
     id: 'frontend',

@@ -17,12 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-orpin-six-31.vercel.app"),
   title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
-  description: "Official portfolio of Alejo Rostata — Seasoned Full Stack Software Engineer & Team Lead with ~10 years experience in Java, Next.js, Vue.js, Flutter, Supabase & React Native.",
+  description: "Official portfolio of Alejo Rostata — Seasoned Full Stack Software Engineer & Team Lead with ~10 years experience in Java, C#, Next.js, Vue.js, Flutter, Supabase & React Native.",
   keywords: [
     "Alejo Rostata",
     "Software Engineer & Team Lead",
     "Full-Stack Developer",
     "Java Spring Boot",
+    "C# .NET",
     "Next.js",
     "Vue.js",
     "Flutter",
