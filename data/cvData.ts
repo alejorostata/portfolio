@@ -151,17 +151,17 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'backend',
     name: 'Backend & APIs',
-    skills: ['Java (Spring Boot)', 'C# / .NET', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices'],
+    skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'JWT Auth'],
   },
   {
     id: 'frontend',
-    name: 'Frontend Web & CMS',
-    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+    name: 'Frontend Web & Desktop',
+    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
   },
   {
     id: 'mobile',
     name: 'Mobile & Cross-Platform',
-    skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Cross-Platform Architecture'],
+    skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Android Studio (Native)', 'Cross-Platform Architecture'],
   },
   {
     id: 'aitools',
@@ -171,7 +171,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'devops',
     name: 'Databases, Cloud & DevOps',
-    skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+    skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
   },
   {
     id: 'leadership',

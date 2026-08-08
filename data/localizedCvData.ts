@@ -13,21 +13,21 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'バックエンド & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (決済)', 'Resend.com (メール)', 'マイクロサービス', '国際化 (i18n) & 多言語'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'GraphQL', 'Stripe (決済)', 'Resend.com (メール)', 'マイクロサービス', 'JWT 認証'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          name: 'フロントエンド Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '多言語ローカライゼーション (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Webアクセシビリティ (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          name: 'フロントエンド Web & デスクトップ',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Webアクセシビリティ (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
         return {
           ...cat,
           name: 'モバイル & クロスプラットフォーム',
-          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'クロスプラットフォームアーキテクチャ'],
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Android Studio (ネイティブ)', 'クロスプラットフォームアーキテクチャ'],
         };
       }
       if (cat.id === 'aitools') {
@@ -41,7 +41,7 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'データベース、クラウド & DevOps',
-          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (ホスティング)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (ホスティング)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
         };
       }
       if (cat.id === 'leadership') {
@@ -58,21 +58,21 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Backend y APIs',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'APIs REST', 'GraphQL', 'Stripe (Pagos)', 'Resend.com (Correos)', 'Microservicios', 'Internacionalización (i18n)'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'APIs REST', 'GraphQL', 'Stripe (Pagos)', 'Resend.com (Correos)', 'Microservicios', 'Autenticación JWT'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          name: 'Frontend Web y CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Localización Multilingüe (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Accesibilidad Web (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          name: 'Frontend Web y Escritorio',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Accesibilidad Web (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
         return {
           ...cat,
           name: 'Móvil y Multiplataforma',
-          skills: ['Flutter (iOS y Android)', 'React Native (iOS y Android)', 'Arquitectura Multiplataforma'],
+          skills: ['Flutter (iOS y Android)', 'React Native (iOS y Android)', 'Android Studio (Nativo)', 'Arquitectura Multiplataforma'],
         };
       }
       if (cat.id === 'aitools') {
@@ -86,7 +86,7 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Bases de Datos, Nube y DevOps',
-          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'Servicios AWS'],
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'Servicios AWS'],
         };
       }
       if (cat.id === 'leadership') {
@@ -103,21 +103,21 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Backend & APIs',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Zahlungen)', 'Resend.com (E-Mails)', 'Mikroservices', 'Internationalisierung (i18n)'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'GraphQL', 'Stripe (Zahlungen)', 'Resend.com (E-Mails)', 'Mikroservices', 'JWT Authentifizierung'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          name: 'Frontend Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Mehrsprachige Lokalisierung (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Barrierefreiheit (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          name: 'Frontend Web & Desktop',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Barrierefreiheit (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
         return {
           ...cat,
           name: 'Mobil & Plattformübergreifend',
-          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Plattformübergreifende Architektur'],
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Android Studio (Nativ)', 'Plattformübergreifende Architektur'],
         };
       }
       if (cat.id === 'aitools') {
@@ -131,7 +131,7 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: 'Datenbanken, Cloud & DevOps',
-          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
         };
       }
       if (cat.id === 'leadership') {
@@ -148,21 +148,21 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '백엔드 & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (결제)', 'Resend.com (이메일)', '마이크로서비스', '국제화 (i18n)'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST API', 'GraphQL', 'Stripe (결제)', 'Resend.com (이메일)', '마이크로서비스', 'JWT 인증'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          name: '프론트엔드 웹 & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '다국어 로컬라이제이션 (i18n)', 'Shadcn UI', 'Tailwind CSS', '웹 접근성 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          name: '프론트엔드 웹 & 데스크톱',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', '웹 접근성 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
         return {
           ...cat,
           name: '모바일 & 교차 플랫폼',
-          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', '크로스 플랫폼 아키텍처'],
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Android Studio (네이티브)', '크로스 플랫폼 아키텍처'],
         };
       }
       if (cat.id === 'aitools') {
@@ -176,7 +176,7 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '데이터베이스, 클라우드 & DevOps',
-          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (호스팅)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 서비스'],
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (호스팅)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 서비스'],
         };
       }
       if (cat.id === 'leadership') {
@@ -193,21 +193,21 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '后端 & API',
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST API', 'GraphQL', 'Stripe (支付)', 'Resend.com (邮件)', '微服务', '国际化 (i18n)'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST API', 'GraphQL', 'Stripe (支付)', 'Resend.com (邮件)', '微服务', 'JWT 认证'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          name: '前端 Web & CMS',
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', '多语言本地化 (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Web 无障碍 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          name: '前端 Web & 桌面端',
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Web 无障碍 (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'mobile') {
         return {
           ...cat,
           name: '移动端 & 跨平台',
-          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', '跨平台架构'],
+          skills: ['Flutter (iOS & Android)', 'React Native (iOS & Android)', 'Android Studio (原生)', '跨平台架构'],
         };
       }
       if (cat.id === 'aitools') {
@@ -221,7 +221,7 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
         return {
           ...cat,
           name: '数据库、云端与 DevOps',
-          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'Redis', 'Vercel (托管)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 服务'],
+          skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (托管)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS 服务'],
         };
       }
       if (cat.id === 'leadership') {
@@ -237,13 +237,13 @@ export function getSkillCategories(locale: Locale): SkillCategory[] {
       if (cat.id === 'backend') {
         return {
           ...cat,
-          skills: ['Java (Spring Boot)', 'Node.js / Express', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'Multi-Language i18n'],
+          skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'JWT Auth'],
         };
       }
       if (cat.id === 'frontend') {
         return {
           ...cat,
-          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Multi-Language Localization (i18n)', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
+          skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Web Accessibility (WCAG AAA)', 'WAI-ARIA 1.2', 'Bootstrap', 'WordPress'],
         };
       }
       if (cat.id === 'aitools') {
