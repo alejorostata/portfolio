@@ -3,43 +3,38 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-// GoatCounter counter endpoints:
-// 1. /counter/%2F.json returns real-time visits for the root path (/)
-// 2. /counter/TOTAL.json returns background aggregate total
-const ROOT_COUNTER_URL = 'https://alejorostata.goatcounter.com/counter/%2F.json';
-const TOTAL_COUNTER_URL = 'https://alejorostata.goatcounter.com/counter/TOTAL.json';
+// Authenticated GoatCounter Stats API — real-time, zero cache delay
+// Returns the same data as the GoatCounter dashboard
+const STATS_API_URL = 'https://alejorostata.goatcounter.com/api/v0/stats/total';
 
 export async function GET() {
+  const token = process.env.GOATCOUNTER_API_TOKEN;
+
+  if (!token) {
+    return NextResponse.json({ count: null }, { status: 500 });
+  }
+
   try {
-    const timestamp = Date.now();
-    const headers = {
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-    };
+    const res = await fetch(STATS_API_URL, {
+      cache: 'no-store',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-    // Fetch both root path and total endpoints concurrently to guarantee real-time accuracy
-    const results = await Promise.allSettled([
-      fetch(`${ROOT_COUNTER_URL}?_t=${timestamp}`, { cache: 'no-store', headers }),
-      fetch(`${TOTAL_COUNTER_URL}?_t=${timestamp}`, { cache: 'no-store', headers }),
-    ]);
-
-    let maxCount = 0;
-
-    for (const res of results) {
-      if (res.status === 'fulfilled' && res.value.ok) {
-        try {
-          const data = await res.value.json();
-          const rawCount = parseInt(String(data?.count ?? '0').replace(/[^0-9]/g, ''), 10) || 0;
-          const rawUnique = parseInt(String(data?.count_unique ?? '0').replace(/[^0-9]/g, ''), 10) || 0;
-          maxCount = Math.max(maxCount, rawCount, rawUnique);
-        } catch {
-          // Skip invalid JSON
-        }
-      }
+    if (!res.ok) {
+      return NextResponse.json({ count: null }, { status: 502 });
     }
 
+    const data = await res.json();
+
+    // The authenticated API returns { total: number } — this is the exact
+    // same real-time count that the GoatCounter admin dashboard shows.
+    const count = typeof data?.total === 'number' ? data.total : 0;
+
     return NextResponse.json(
-      { count: maxCount },
+      { count },
       {
         headers: {
           'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate',
