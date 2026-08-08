@@ -30,6 +30,7 @@ export interface Project {
   id: string;
   title: string;
   category: string;
+  categoryKey?: string;
   projectType: string;
   database: string;
   description: string;

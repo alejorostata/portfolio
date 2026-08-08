@@ -45,6 +45,8 @@ export const ko: TranslationSchema = {
     consoleAiHeader: '// AI 기반 엔지니어링 워크플로우',
     consoleImpactVal: '가속화된 개발 속도 & 깨끗한 리팩토링',
     consoleStatus: '엔지니어링 프로젝트 및 채용 기회 지원 가능',
+    consoleFilename: 'alejo_콘솔.ts',
+    consoleInteractive: '인터랙티브',
   },
   experience: {
     badge: '경력 사항',
@@ -97,6 +99,7 @@ export const ko: TranslationSchema = {
     messageField: '메시지 내용',
     messagePlaceholder: '안녕하세요 Alejo님, 소프트웨어 엔지니어링 기회에 대해 논의하고 싶습니다...',
     btnSend: '메시지 전송',
+    successMessage: '이메일 앱이 열렸습니다 — 메일 앱을 확인해 주세요',
     copiedClipboard: '✓ 클립보드에 복사되었습니다!',
     copiedViber: '✓ Viber 번호가 복사되었습니다!',
     openingMailClient: '이메일 클라이언트 실행 중...',

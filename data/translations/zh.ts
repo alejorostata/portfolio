@@ -45,6 +45,8 @@ export const zh: TranslationSchema = {
     consoleAiHeader: '// AI 辅助工程工作流',
     consoleImpactVal: '加速开发速度与高质量代码重构',
     consoleStatus: '准备就绪，随时接受软件工程合作与职位邀请',
+    consoleFilename: 'alejo_控制台.ts',
+    consoleInteractive: '交互式',
   },
   experience: {
     badge: '职业轨迹',
@@ -97,6 +99,7 @@ export const zh: TranslationSchema = {
     messageField: '消息内容',
     messagePlaceholder: '你好 Alejo，我想与您探讨软件工程职位的合作机会...',
     btnSend: '发送消息',
+    successMessage: '邮件客户端已打开 — 请检查您的邮件应用',
     copiedClipboard: '✓ 已复制到剪贴板！',
     copiedViber: '✓ 已复制 Viber 号码！',
     openingMailClient: '正在打开邮件客户端...',

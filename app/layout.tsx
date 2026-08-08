@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alejorostata.vercel.app"),
   title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
-  description: "Official portfolio of Alejo Rostata — Seasoned Full Stack Software Engineer & Team Lead with 10+ years experience in Java, Next.js, Vue.js, Flutter, Supabase & C#.",
+  description: "Official portfolio of Alejo Rostata — Seasoned Full Stack Software Engineer & Team Lead with ~10 years experience in Java, Next.js, Vue.js, Flutter, Supabase & React Native.",
   keywords: [
     "Alejo Rostata",
     "Software Engineer & Team Lead",
@@ -34,16 +35,25 @@ export const metadata: Metadata = {
   creator: "Alejo Rostata",
   openGraph: {
     title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
-    description: "Seasoned Software Engineer with nearly a decade of experience leading, architecture, and building scalable full-stack web, desktop & mobile applications.",
-    url: "https://github.com/alejorostata/portfolio",
+    description: "Seasoned Software Engineer with nearly a decade of experience leading, architecting, and building scalable full-stack web, desktop & mobile applications.",
+    url: "https://alejorostata.vercel.app",
     siteName: "Alejo Rostata Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alejo Rostata — Full Stack Software Engineer & Team Lead",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
-    description: "Full Stack Software Engineer & Team Lead specializing in Java, Next.js, Vue.js, Flutter, Supabase, C#, and AI tools.",
+    description: "Full Stack Software Engineer & Team Lead specializing in Java, Next.js, Vue.js, Flutter, Supabase, and React Native.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

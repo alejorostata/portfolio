@@ -9,8 +9,8 @@ export const ProjectsSection: React.FC = () => {
   const { t, locale } = useLanguage();
   const projects = getProjects(locale);
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
+  const getCategoryIcon = (project: any) => {
+    switch (project.categoryKey ?? project.category) {
       case 'Web & Cloud':
         return <Server className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />;
       case 'Mobile App':
@@ -55,7 +55,7 @@ export const ProjectsSection: React.FC = () => {
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-[11px] sm:text-xs font-medium shadow-sm">
-                      {getCategoryIcon(project.category)}
+                      {getCategoryIcon(project)}
                       <span>{project.category}</span>
                     </span>
 

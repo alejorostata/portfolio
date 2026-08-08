@@ -45,6 +45,8 @@ export const en: TranslationSchema = {
     consoleAiHeader: '// AI-Assisted Engineering Workflow',
     consoleImpactVal: 'Accelerated development velocity & clean refactoring',
     consoleStatus: 'Ready for Engineering Opportunities',
+    consoleFilename: 'alejo_console.ts',
+    consoleInteractive: 'Interactive',
   },
   experience: {
     badge: 'Career History',
@@ -97,6 +99,7 @@ export const en: TranslationSchema = {
     messageField: 'Message',
     messagePlaceholder: 'Hi Alejo, I would love to discuss a software engineering opportunity with you...',
     btnSend: 'Send Message',
+    successMessage: 'Email Client Opened — Check Your Mail App',
     copiedClipboard: '✓ Copied to clipboard!',
     copiedViber: '✓ Viber number copied!',
     openingMailClient: 'Opening Mail Client...',

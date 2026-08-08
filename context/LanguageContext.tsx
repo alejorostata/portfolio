@@ -25,6 +25,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
       if (saved && translations[saved]) {
         setLocaleState(saved);
+        document.documentElement.lang = saved;
         return;
       }
 
@@ -33,6 +34,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const matched = SUPPORTED_LANGUAGES.find((l) => l.code === browserLang);
       if (matched) {
         setLocaleState(matched.code);
+        document.documentElement.lang = matched.code;
       }
     } catch {
       // Ignore storage read errors

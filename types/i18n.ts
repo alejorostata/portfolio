@@ -61,6 +61,8 @@ export interface TranslationSchema {
     consoleAiHeader: string;
     consoleImpactVal: string;
     consoleStatus: string;
+    consoleFilename: string;
+    consoleInteractive: string;
   };
   experience: {
     badge: string;
@@ -113,6 +115,7 @@ export interface TranslationSchema {
     messageField: string;
     messagePlaceholder: string;
     btnSend: string;
+    successMessage: string;
     copiedClipboard: string;
     copiedViber: string;
     openingMailClient: string;

@@ -57,7 +57,8 @@ export const ContactSection: React.FC = () => {
 
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 4000);
+      setIsSubmitted(false);
+    }, 6000);
   };
 
   return (
@@ -109,7 +110,7 @@ export const ContactSection: React.FC = () => {
               </div>
               {copiedEmail && (
                 <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold text-right animate-in fade-in duration-200">
-                  ✓ Copied to clipboard!
+                  {t('contact.copiedClipboard')}
                 </p>
               )}
             </div>
@@ -145,7 +146,7 @@ export const ContactSection: React.FC = () => {
               </div>
               {copiedViber && (
                 <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold text-right animate-in fade-in duration-200">
-                  ✓ Viber number copied!
+                  {t('contact.copiedViber')}
                 </p>
               )}
             </div>
@@ -202,7 +203,7 @@ export const ContactSection: React.FC = () => {
                     href={`mailto:${PERSONAL_INFO.email}`}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-xs hover:bg-blue-700 transition-all focus-visible:ring-2 focus-visible:ring-blue-500"
                   >
-                    <span>Send Email to {PERSONAL_INFO.email}</span>
+                    <span>{t('contact.sendEmailTo')} {PERSONAL_INFO.email}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>

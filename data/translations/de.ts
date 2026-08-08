@@ -45,6 +45,8 @@ export const de: TranslationSchema = {
     consoleAiHeader: '// KI-Unterstützter Entwicklungs-Workflow',
     consoleImpactVal: 'Beschleunigte Entwicklungsgeschwindigkeit & sauberes Refactoring',
     consoleStatus: 'Bereit für Software-Engineering-Möglichkeiten',
+    consoleFilename: 'alejo_konsole.ts',
+    consoleInteractive: 'Interaktiv',
   },
   experience: {
     badge: 'Beruflicher Werdegang',
@@ -97,6 +99,7 @@ export const de: TranslationSchema = {
     messageField: 'Nachricht',
     messagePlaceholder: 'Hallo Alejo, ich würde gerne über eine Möglichkeit im Bereich Software Engineering sprechen...',
     btnSend: 'Nachricht senden',
+    successMessage: 'E-Mail-Client geöffnet — Prüfe deine Mail-App',
     copiedClipboard: '✓ In die Zwischenablage kopiert!',
     copiedViber: '✓ Viber-Nummer kopiert!',
     openingMailClient: 'E-Mail-Programm wird geöffnet...',

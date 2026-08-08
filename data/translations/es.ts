@@ -45,6 +45,8 @@ export const es: TranslationSchema = {
     consoleAiHeader: '// Flujo de Trabajo Asistido por Inteligencia Artificial',
     consoleImpactVal: 'Velocidad de desarrollo acelerada y refactorización limpia',
     consoleStatus: 'Disponible para Oportunidades de Ingeniería',
+    consoleFilename: 'alejo_consola.ts',
+    consoleInteractive: 'Interactivo',
   },
   experience: {
     badge: 'Trayectoria Profesional',
@@ -97,6 +99,7 @@ export const es: TranslationSchema = {
     messageField: 'Mensaje',
     messagePlaceholder: 'Hola Alejo, me gustaría conversar sobre una oportunidad de ingeniería de software...',
     btnSend: 'Enviar Mensaje',
+    successMessage: 'Cliente de correo abierto — Revisa tu aplicación de correo',
     copiedClipboard: '✓ ¡Copiado al portapapeles!',
     copiedViber: '✓ ¡Número de Viber copiado!',
     openingMailClient: 'Abriendo cliente de correo...',

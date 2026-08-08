@@ -45,6 +45,8 @@ export const fil: TranslationSchema = {
     consoleAiHeader: '// Alinsunod sa AI na Daloy ng Trabaho',
     consoleImpactVal: 'Mas mabilis na pag-unlad at malinis na refactoring',
     consoleStatus: 'Handa para sa mga Fult-Stack at Leadership Opportunity',
+    consoleFilename: 'alejo_console.ts',
+    consoleInteractive: 'Interaktibo',
   },
   experience: {
     badge: 'Kasaysayan sa Trabaho',
@@ -97,6 +99,7 @@ export const fil: TranslationSchema = {
     messageField: 'Mensahe',
     messagePlaceholder: 'Hi Alejo, gusto ko sanang makipag-usap tungkol sa isang pagkakataon sa software engineering...',
     btnSend: 'Ipadala ang Mensahe',
+    successMessage: 'Nabuksan ang Mail App — Suriin ang iyong mail app',
     copiedClipboard: '✓ Na-kopya sa clipboard!',
     copiedViber: '✓ Na-kopya ang Viber number!',
     openingMailClient: 'Binubuksan ang Mail Client...',

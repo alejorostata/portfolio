@@ -45,6 +45,8 @@ export const ja: TranslationSchema = {
     consoleAiHeader: '// AI活用エンジニアリングワークフロー',
     consoleImpactVal: '開発速度の加速 & 高品質なリファクタリング',
     consoleStatus: 'エンジニアリング案件・オファーに対応可能',
+    consoleFilename: 'alejo_コンソール.ts',
+    consoleInteractive: 'インタラクティブ',
   },
   experience: {
     badge: '職務経歴',
@@ -97,6 +99,7 @@ export const ja: TranslationSchema = {
     messageField: 'メッセージ内容',
     messagePlaceholder: 'Alejoさん、こんにちは。ソフトウェアエンジニアリングの機会についてご相談したく連絡いたしました...',
     btnSend: 'メッセージを送信',
+    successMessage: 'メールアプリを起動しました — メールアプリをご確認ください',
     copiedClipboard: '✓ クリップボードにコピーしました！',
     copiedViber: '✓ Viber番号をコピーしました！',
     openingMailClient: 'メールソフトを起動中...',

@@ -111,10 +111,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                     <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="ml-2 text-slate-300 font-mono text-[11px]">alejo_console.ts</span>
+                    <span className="ml-2 text-slate-300 font-mono text-[11px]">{t('hero.consoleFilename')}</span>
                   </div>
                   <span className="text-[10px] font-mono text-blue-400 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5" /> Interactive
+                    <ShieldCheck className="w-3.5 h-3.5" /> {t('hero.consoleInteractive')}
                   </span>
                 </div>
 
