@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, subject, message } = await request.json();
+    const { name, email, subject, message, attachment } = await request.json();
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -22,6 +22,25 @@ export async function POST(request: Request) {
 
     const emailSubject = subject || `Portfolio Contact from ${name}`;
 
+    // Process attachment if provided (5MB limit)
+    let attachmentsPayload = undefined;
+    let attachmentSizeMB = 0;
+    if (attachment && attachment.content && attachment.name) {
+      const buffer = Buffer.from(attachment.content, 'base64');
+      attachmentSizeMB = buffer.length / (1024 * 1024);
+      
+      if (buffer.length > 5 * 1024 * 1024) {
+        return NextResponse.json({ error: 'Attachment exceeds 5MB limit' }, { status: 400 });
+      }
+
+      attachmentsPayload = [
+        {
+          filename: attachment.name,
+          content: buffer,
+        },
+      ];
+    }
+
     const data = await resend.emails.send({
       from: 'New Portfolio Message <portfolio@stelifo.com>',
       to: ['alejorostata@gmail.com'],
@@ -32,6 +51,7 @@ export async function POST(request: Request) {
         'X-Auto-Response-Suppress': 'OOF, AutoReply',
       },
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'N/A'}\n\nMessage:\n${message}`,
+      attachments: attachmentsPayload,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
           
@@ -63,12 +83,18 @@ export async function POST(request: Request) {
               <td style="padding: 6px 0; color: #64748b; font-weight: 600;">Subject:</td>
               <td style="padding: 6px 0; color: #0f172a;">${subject || 'N/A'}</td>
             </tr>
+            ${attachment ? `
+            <tr>
+              <td style="padding: 6px 0; color: #64748b; font-weight: 600;">Attachment:</td>
+              <td style="padding: 6px 0; color: #2563eb; font-weight: 600;">📎 ${attachment.name} (${attachmentSizeMB.toFixed(2)} MB)</td>
+            </tr>
+            ` : ''}
           </table>
 
           <!-- Message Box -->
           <div style="margin-bottom: 24px;">
             <p style="color: #475569; font-size: 12px; font-weight: 700; uppercase; tracking: 0.05em; margin: 0 0 8px 0;">Message Content:</p>
-            <div style="background-color: #f8fafc; padding: 18px; border-radius: 12px; font-size: 14px; line-height: 1.6; white-space: pre-wrap; color: #1e293b; border: 1px solid #e2e8f0;">
+            <div style="background-color: #f8fafc; padding: 18px; border-radius: 12px; font-size: 14px; line-height: 1.6; color: #1e293b; border: 1px solid #e2e8f0;">
               ${message}
             </div>
           </div>
