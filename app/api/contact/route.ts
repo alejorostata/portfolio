@@ -20,13 +20,13 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
 
-    const formattedSubject = `📬 [PORTFOLIO INQUIRY] ${name} — ${subject || 'Direct Message'}`;
+    const emailSubject = subject || `Portfolio Contact from ${name}`;
 
     const data = await resend.emails.send({
-      from: 'Alejo Portfolio Direct <portfolio@stelifo.com>',
+      from: 'New Portfolio Message <portfolio@stelifo.com>',
       to: ['alejorostata@gmail.com'],
       replyTo: email,
-      subject: formattedSubject,
+      subject: emailSubject,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'N/A'}\n\nMessage:\n${message}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
