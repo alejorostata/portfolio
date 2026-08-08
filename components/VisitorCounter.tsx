@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Set to 0 to show exact live raw count from GoatCounter
-const VISITOR_OFFSET = 0;
+// Configurable offset for initial display — set to 5000 to maintain baseline count
+const VISITOR_OFFSET = 5000;
 
 export const VisitorCounter: React.FC = () => {
   const { t } = useLanguage();
