@@ -16,10 +16,9 @@ interface RichTextEditorProps {
 
 export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange, placeholder = 'Write your message...' }) => {
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
-      StarterKit.configure({
-        link: false,
-      }),
+      StarterKit,
       Image.configure({
         inline: true,
         allowBase64: true,
