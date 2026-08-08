@@ -23,7 +23,9 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
 }) => {
   const extensions = useMemo(
     () => [
-      StarterKit,
+      StarterKit.configure({
+        link: false,
+      }),
       Image.configure({
         inline: true,
         allowBase64: true,
@@ -44,23 +46,20 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
     [placeholder]
   );
 
-  const editor = useEditor(
-    {
-      immediatelyRender: false,
-      extensions,
-      content,
-      editorProps: {
-        attributes: {
-          id,
-          class: 'prose dark:prose-invert max-w-none p-3.5 min-h-[140px] focus:outline-none text-slate-900 dark:text-slate-100 text-sm leading-relaxed',
-        },
-      },
-      onUpdate: ({ editor }) => {
-        onChange(editor.getHTML());
+  const editor = useEditor({
+    immediatelyRender: false,
+    extensions,
+    content,
+    editorProps: {
+      attributes: {
+        id,
+        class: 'prose dark:prose-invert max-w-none p-3.5 min-h-[140px] focus:outline-none text-slate-900 dark:text-slate-100 text-sm leading-relaxed',
       },
     },
-    [placeholder]
-  );
+    onUpdate: ({ editor }) => {
+      onChange(editor.getHTML());
+    },
+  });
 
   if (!editor) return null;
 

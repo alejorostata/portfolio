@@ -360,9 +360,9 @@ export const ContactSection: React.FC = () => {
 
                   {/* Rich Text Editor Message Field */}
                   <div className="space-y-1.5">
-                    <label htmlFor="contact-message" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       {t('contact.messageField')} <span className="text-rose-500">*</span>
-                    </label>
+                    </div>
                     <RichTextEditor
                       id="contact-message"
                       content={formData.message}
