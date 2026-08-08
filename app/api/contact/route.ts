@@ -27,6 +27,10 @@ export async function POST(request: Request) {
       to: ['alejorostata@gmail.com'],
       replyTo: email,
       subject: emailSubject,
+      headers: {
+        'X-Entity-Ref-ID': `portfolio-${Date.now()}`,
+        'X-Auto-Response-Suppress': 'OOF, AutoReply',
+      },
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject || 'N/A'}\n\nMessage:\n${message}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 28px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
