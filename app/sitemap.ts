@@ -1,27 +1,28 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://portfolio-orpin-six-31.vercel.app';
   return [
     {
-      url: 'https://alejorostata.vercel.app',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://alejorostata.vercel.app/#experience',
+      url: `${baseUrl}/#experience`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://alejorostata.vercel.app/#projects',
+      url: `${baseUrl}/#projects`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://alejorostata.vercel.app/#contact',
+      url: `${baseUrl}/#contact`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,

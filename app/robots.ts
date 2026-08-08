@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://alejorostata.vercel.app/sitemap.xml',
+    sitemap: 'https://portfolio-orpin-six-31.vercel.app/sitemap.xml',
   };
 }

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alejorostata.vercel.app"),
+  metadataBase: new URL("https://portfolio-orpin-six-31.vercel.app"),
   title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
   description: "Official portfolio of Alejo Rostata — Seasoned Full Stack Software Engineer & Team Lead with ~10 years experience in Java, Next.js, Vue.js, Flutter, Supabase & React Native.",
   keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Alejo Rostata | Full Stack Software Engineer & Team Lead",
     description: "Seasoned Software Engineer with nearly a decade of experience leading, architecting, and building scalable full-stack web, desktop & mobile applications.",
-    url: "https://alejorostata.vercel.app",
+    url: "https://portfolio-orpin-six-31.vercel.app",
     siteName: "Alejo Rostata Portfolio",
     images: [
       {
