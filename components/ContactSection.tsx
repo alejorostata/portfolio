@@ -364,7 +364,7 @@ export const ContactSection: React.FC = () => {
                       {t('contact.messageField')} <span className="text-rose-500">*</span>
                     </label>
                     <RichTextEditor
-                      key={t('contact.messagePlaceholder')}
+                      id="contact-message"
                       content={formData.message}
                       onChange={(html) => setFormData({ ...formData, message: html })}
                       placeholder={t('contact.messagePlaceholder')}
@@ -374,10 +374,10 @@ export const ContactSection: React.FC = () => {
                   {/* File Attachments Zone (Up to 5 files, 10MB total max) */}
                   <div className="space-y-2 pt-1">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-start sm:items-center gap-1.5">
+                      <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-start sm:items-center gap-1.5">
                         <Paperclip className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5 sm:mt-0" />
                         <span>{t('contact.attachmentLabel')}</span>
-                      </label>
+                      </div>
                       <span className="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0 self-start sm:self-auto">
                         {t('contact.attachmentMax')}
                       </span>
@@ -407,8 +407,9 @@ export const ContactSection: React.FC = () => {
                     )}
 
                     {attachments.length < MAX_FILES_COUNT && (
-                      <label className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500/50 bg-slate-50/50 dark:bg-slate-950/50 cursor-pointer transition-all group">
+                      <label htmlFor="contact-file-input" className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500/50 bg-slate-50/50 dark:bg-slate-950/50 cursor-pointer transition-all group">
                         <input
+                          id="contact-file-input"
                           type="file"
                           multiple
                           accept=".pdf,.docx,.doc,.png,.jpg,.jpeg,.txt"

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
@@ -12,12 +12,17 @@ interface RichTextEditorProps {
   content: string;
   onChange: (html: string) => void;
   placeholder?: string;
+  id?: string;
 }
 
-export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChange, placeholder = 'Write your message...' }) => {
-  const editor = useEditor({
-    immediatelyRender: false,
-    extensions: [
+export const RichTextEditor: React.FC<RichTextEditorProps> = ({
+  content,
+  onChange,
+  placeholder = 'Write your message...',
+  id = 'contact-message',
+}) => {
+  const extensions = useMemo(
+    () => [
       StarterKit,
       Image.configure({
         inline: true,
@@ -36,16 +41,26 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
         placeholder,
       }),
     ],
-    content,
-    editorProps: {
-      attributes: {
-        class: 'prose dark:prose-invert max-w-none p-3.5 min-h-[140px] focus:outline-none text-slate-900 dark:text-slate-100 text-sm leading-relaxed',
+    [placeholder]
+  );
+
+  const editor = useEditor(
+    {
+      immediatelyRender: false,
+      extensions,
+      content,
+      editorProps: {
+        attributes: {
+          id,
+          class: 'prose dark:prose-invert max-w-none p-3.5 min-h-[140px] focus:outline-none text-slate-900 dark:text-slate-100 text-sm leading-relaxed',
+        },
+      },
+      onUpdate: ({ editor }) => {
+        onChange(editor.getHTML());
       },
     },
-    onUpdate: ({ editor }) => {
-      onChange(editor.getHTML());
-    },
-  });
+    [placeholder]
+  );
 
   if (!editor) return null;
 
