@@ -19,7 +19,17 @@ const GitHubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 );
 
 const ALLOWED_EXTS = ['.pdf', '.docx', '.doc', '.png', '.jpg', '.jpeg', '.txt'];
-const MAX_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
+const MAX_SINGLE_FILE_BYTES = 5 * 1024 * 1024; // 5 MB per file
+const MAX_TOTAL_BYTES = 10 * 1024 * 1024; // 10 MB total cumulative
+const MAX_FILES_COUNT = 5;
+
+interface AttachmentItem {
+  id: string;
+  name: string;
+  sizeBytes: number;
+  sizeMB: string;
+  content: string;
+}
 
 export const ContactSection: React.FC = () => {
   const { t } = useLanguage();
@@ -33,7 +43,7 @@ export const ContactSection: React.FC = () => {
     message: '',
   });
 
-  const [attachment, setAttachment] = useState<{ name: string; sizeMB: string; content: string } | null>(null);
+  const [attachments, setAttachments] = useState<AttachmentItem[]>([]);
   const [attachmentError, setAttachmentError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -52,35 +62,66 @@ export const ContactSection: React.FC = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAttachmentError('');
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
 
-    const ext = '.' + file.name.split('.').pop()?.toLowerCase();
-    if (!ALLOWED_EXTS.includes(ext)) {
-      setAttachmentError('Unsupported file type. Please upload a PDF, DOCX, PNG, JPG, or TXT file.');
+    if (attachments.length + files.length > MAX_FILES_COUNT) {
+      setAttachmentError(`Maximum ${MAX_FILES_COUNT} files allowed in total.`);
       return;
     }
 
-    if (file.size > MAX_SIZE_BYTES) {
-      setAttachmentError(`File size (${(file.size / (1024 * 1024)).toFixed(2)} MB) exceeds 5MB limit.`);
-      return;
+    const newItems: AttachmentItem[] = [];
+    let currentTotalBytes = attachments.reduce((sum, item) => sum + item.sizeBytes, 0);
+
+    for (const file of files) {
+      const ext = '.' + file.name.split('.').pop()?.toLowerCase();
+      if (!ALLOWED_EXTS.includes(ext)) {
+        setAttachmentError(`"${file.name}" has an unsupported file type. Please upload PDF, DOCX, PNG, JPG, or TXT.`);
+        return;
+      }
+
+      if (file.size > MAX_SINGLE_FILE_BYTES) {
+        setAttachmentError(`"${file.name}" (${(file.size / (1024 * 1024)).toFixed(2)} MB) exceeds the 5MB single file limit.`);
+        return;
+      }
+
+      currentTotalBytes += file.size;
+      if (currentTotalBytes > MAX_TOTAL_BYTES) {
+        setAttachmentError(`Total attachments size exceeds the 10MB limit.`);
+        return;
+      }
     }
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64 = (reader.result as string).split(',')[1];
-      setAttachment({
-        name: file.name,
-        sizeMB: (file.size / (1024 * 1024)).toFixed(2),
-        content: base64,
-      });
-    };
-    reader.readAsDataURL(file);
+    // Read files as Base64
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64 = (reader.result as string).split(',')[1];
+        setAttachments((prev) => [
+          ...prev,
+          {
+            id: `${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+            name: file.name,
+            sizeBytes: file.size,
+            sizeMB: (file.size / (1024 * 1024)).toFixed(2),
+            content: base64,
+          },
+        ]);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Reset input
+    e.target.value = '';
+  };
+
+  const removeAttachment = (id: string) => {
+    setAttachments((prev) => prev.filter((item) => item.id !== id));
+    setAttachmentError('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Strip HTML tags for empty check
     const plainMessage = formData.message.replace(/<[^>]*>/g, '').trim();
     if (!formData.name || !formData.email || !plainMessage) return;
 
@@ -92,7 +133,7 @@ export const ContactSection: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          attachment,
+          attachments,
         }),
       });
 
@@ -102,7 +143,7 @@ export const ContactSection: React.FC = () => {
 
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setAttachment(null);
+      setAttachments([]);
 
       setTimeout(() => {
         setIsSubmitted(false);
@@ -115,7 +156,7 @@ export const ContactSection: React.FC = () => {
       setIsSubmitted(true);
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
-        setAttachment(null);
+        setAttachments([]);
         setIsSubmitted(false);
       }, 6000);
     } finally {
@@ -329,43 +370,51 @@ export const ContactSection: React.FC = () => {
                     />
                   </div>
 
-                  {/* File Attachment Dropzone */}
+                  {/* File Attachments Zone (Up to 5 files, 10MB total max) */}
                   <div className="space-y-2 pt-1">
                     <div className="flex items-center justify-between">
                       <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                         <Paperclip className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                        <span>Attachment (Optional — PDF, DOCX, Images max 5MB)</span>
+                        <span>{t('contact.attachmentLabel')}</span>
                       </label>
-                      <span className="text-[11px] text-slate-600 dark:text-slate-400">Max 5 MB</span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400">{t('contact.attachmentMax')}</span>
                     </div>
 
-                    {attachment ? (
-                      <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-xs">
-                        <div className="flex items-center gap-2.5 overflow-hidden">
-                          <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
-                          <span className="font-semibold text-slate-900 dark:text-slate-100 truncate">{attachment.name}</span>
-                          <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">({attachment.sizeMB} MB)</span>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setAttachment(null)}
-                          className="p-1 rounded-md hover:bg-blue-100 dark:hover:bg-blue-500/20 text-slate-500 hover:text-rose-500 transition-colors cursor-pointer"
-                          title="Remove attachment"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
+                    {/* Multi-file List */}
+                    {attachments.length > 0 && (
+                      <div className="space-y-2">
+                        {attachments.map((item) => (
+                          <div key={item.id} className="flex items-center justify-between p-2.5 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-xs">
+                            <div className="flex items-center gap-2.5 overflow-hidden">
+                              <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                              <span className="font-semibold text-slate-900 dark:text-slate-100 truncate">{item.name}</span>
+                              <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">({item.sizeMB} MB)</span>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => removeAttachment(item.id)}
+                              className="p-1 rounded-md hover:bg-blue-100 dark:hover:bg-blue-500/20 text-slate-500 hover:text-rose-500 transition-colors cursor-pointer"
+                              title="Remove attachment"
+                            >
+                              <X className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        ))}
                       </div>
-                    ) : (
-                      <label className="flex flex-col items-center justify-center p-4 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500/50 bg-slate-50/50 dark:bg-slate-950/50 cursor-pointer transition-all group">
+                    )}
+
+                    {attachments.length < MAX_FILES_COUNT && (
+                      <label className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500/50 bg-slate-50/50 dark:bg-slate-950/50 cursor-pointer transition-all group">
                         <input
                           type="file"
+                          multiple
                           accept=".pdf,.docx,.doc,.png,.jpg,.jpeg,.txt"
                           onChange={handleFileChange}
                           className="hidden"
                         />
                         <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 font-medium">
-                          <Paperclip className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:scale-110 transition-all" />
-                          <span>Attach Job Description PDF, DOCX, or Image</span>
+                          <Paperclip className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:scale-110 transition-all" />
+                          <span>{t('contact.attachmentPlaceholder')}</span>
                         </div>
                       </label>
                     )}

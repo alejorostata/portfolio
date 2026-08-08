@@ -105,6 +105,9 @@ export const fil: TranslationSchema = {
     openingMailClient: 'Binubuksan ang Mail Client...',
     mailClientSubtext: 'Kung hindi man awtomatikong bumukas ang iyong email app, mag-click sa ibaba upang direktang magpadala:',
     sendEmailTo: 'Magpadala ng Email sa',
+    attachmentLabel: 'Mga Attachments (Opsyonal — PDF, DOCX, Larawan hanggang 5 files)',
+    attachmentPlaceholder: 'Mag-lakip ng Job Description PDF, DOCX, o Larawan',
+    attachmentMax: 'Hanggang 10 MB kabuuan',
   },
   cvModal: {
     title: 'Curriculum Vitae',

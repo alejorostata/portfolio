@@ -105,6 +105,9 @@ export const de: TranslationSchema = {
     openingMailClient: 'E-Mail-Programm wird geöffnet...',
     mailClientSubtext: 'Falls sich Ihre E-Mail-App nicht automatisch öffnet, klicken Sie unten, um direkt zu senden:',
     sendEmailTo: 'E-Mail senden an',
+    attachmentLabel: 'Anhänge (Optional — PDF, DOCX, Bilder bis zu 5 Dateien)',
+    attachmentPlaceholder: 'Stellenbeschreibung (PDF, DOCX oder Bilder) anhängen',
+    attachmentMax: 'Max. 10 MB insgesamt',
   },
   cvModal: {
     title: 'Lebenslauf',

@@ -105,6 +105,9 @@ export const zh: TranslationSchema = {
     openingMailClient: '正在打开邮件客户端...',
     mailClientSubtext: '如果您的邮件应用未自动打开，请点击下方直接发送：',
     sendEmailTo: '发送邮件至',
+    attachmentLabel: '附件 (可选 — PDF、DOCX、图片 最多 5 个文件)',
+    attachmentPlaceholder: '添加职位描述 (PDF、DOCX 或图片)',
+    attachmentMax: '总计最大 10 MB',
   },
   cvModal: {
     title: '个人简历 / 履历',

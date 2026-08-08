@@ -4,8 +4,9 @@ import React from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
+import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
-import { Bold, Italic, List, ListOrdered, Link as LinkIcon, Heading2, Quote, Undo, Redo, Strikethrough } from 'lucide-react';
+import { Bold, Italic, List, ListOrdered, Link as LinkIcon, Heading2, Quote, Undo, Redo, Strikethrough, Code, ImageIcon, Minus, RemoveFormatting } from 'lucide-react';
 
 interface RichTextEditorProps {
   content: string;
@@ -17,6 +18,13 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Image.configure({
+        inline: true,
+        allowBase64: true,
+        HTMLAttributes: {
+          class: 'rounded-xl max-h-64 object-contain my-2 border border-slate-200 dark:border-slate-800',
+        },
+      }),
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
@@ -49,6 +57,13 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
       return;
     }
     editor.chain().focus().extendMarkRange('link').setMark('link', { href: url }).run();
+  };
+
+  const addImage = () => {
+    const url = window.prompt('Enter Image URL (or paste image directly into editor):');
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run();
+    }
   };
 
   return (
@@ -89,6 +104,18 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
           aria-label="Strikethrough"
         >
           <Strikethrough className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleCode().run()}
+          className={`p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer ${
+            editor.isActive('code') ? 'bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400' : ''
+          }`}
+          title="Inline Code"
+          aria-label="Inline Code"
+        >
+          <Code className="w-4 h-4" />
         </button>
 
         <div className="w-px h-4 bg-slate-200 dark:bg-slate-800 mx-1" />
@@ -143,6 +170,18 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
 
         <button
           type="button"
+          onClick={() => editor.chain().focus().setHorizontalRule().run()}
+          className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          title="Divider Line"
+          aria-label="Divider Line"
+        >
+          <Minus className="w-4 h-4" />
+        </button>
+
+        <div className="w-px h-4 bg-slate-200 dark:bg-slate-800 mx-1" />
+
+        <button
+          type="button"
           onClick={setLink}
           className={`p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer ${
             editor.isActive('link') ? 'bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400' : ''
@@ -151,6 +190,26 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ content, onChang
           aria-label="Insert Link"
         >
           <LinkIcon className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={addImage}
+          className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          title="Insert / Paste Image"
+          aria-label="Insert / Paste Image"
+        >
+          <ImageIcon className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+          className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          title="Clear Formatting"
+          aria-label="Clear Formatting"
+        >
+          <RemoveFormatting className="w-4 h-4" />
         </button>
 
         <div className="w-px h-4 bg-slate-200 dark:bg-slate-800 mx-1" />

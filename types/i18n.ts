@@ -121,6 +121,9 @@ export interface TranslationSchema {
     openingMailClient: string;
     mailClientSubtext: string;
     sendEmailTo: string;
+    attachmentLabel: string;
+    attachmentPlaceholder: string;
+    attachmentMax: string;
   };
   cvModal: {
     title: string;

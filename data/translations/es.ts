@@ -105,6 +105,9 @@ export const es: TranslationSchema = {
     openingMailClient: 'Abriendo cliente de correo...',
     mailClientSubtext: 'Si su aplicación de correo no se abrió automáticamente, haga clic a continuación para enviar directamente:',
     sendEmailTo: 'Enviar correo a',
+    attachmentLabel: 'Archivos Adjuntos (Opcional — PDF, DOCX, Imágenes hasta 5 archivos)',
+    attachmentPlaceholder: 'Adjuntar Descripción del Puesto (PDF, DOCX o Imágenes)',
+    attachmentMax: 'Máx 10 MB total',
   },
   cvModal: {
     title: 'Currículum Vitae',

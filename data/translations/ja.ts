@@ -105,6 +105,9 @@ export const ja: TranslationSchema = {
     openingMailClient: 'メールソフトを起動中...',
     mailClientSubtext: 'メールアプリが自動的に起動しない場合は、以下をクリックして直接送信してください:',
     sendEmailTo: 'メールを送信:',
+    attachmentLabel: '添付ファイル (任意 — PDF、DOCX、画像 最大5ファイル)',
+    attachmentPlaceholder: '求人票 (PDF、DOCX、画像) を添付',
+    attachmentMax: '合計 最大 10 MB',
   },
   cvModal: {
     title: '職務経歴書 / 履歴書',

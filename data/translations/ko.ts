@@ -104,7 +104,10 @@ export const ko: TranslationSchema = {
     copiedViber: '✓ Viber 번호가 복사되었습니다!',
     openingMailClient: '이메일 클라이언트 실행 중...',
     mailClientSubtext: '이메일 앱이 자동으로 실행되지 않는 경우 아래를 클릭하여 직접 보내세요:',
-    sendEmailTo: '이메일 전송:',
+    sendEmailTo: '이메일 보내기:',
+    attachmentLabel: '첨부파일 (선택 — PDF, DOCX, 이미지 최대 5개)',
+    attachmentPlaceholder: '채용 공고 (PDF, DOCX, 이미지) 첨부',
+    attachmentMax: '총 최대 10 MB',
   },
   cvModal: {
     title: '이력서 / 경력기술서',
