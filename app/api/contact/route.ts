@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, subject, message, attachment } = await request.json();
+    const { name, email, subject, message, attachments, attachment } = await request.json();
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -22,23 +22,29 @@ export async function POST(request: Request) {
 
     const emailSubject = subject || `Portfolio Contact from ${name}`;
 
-    // Process attachment if provided (5MB limit)
-    let attachmentsPayload = undefined;
-    let attachmentSizeMB = 0;
-    if (attachment && attachment.content && attachment.name) {
-      const buffer = Buffer.from(attachment.content, 'base64');
-      attachmentSizeMB = buffer.length / (1024 * 1024);
-      
-      if (buffer.length > 5 * 1024 * 1024) {
-        return NextResponse.json({ error: 'Attachment exceeds 5MB limit' }, { status: 400 });
-      }
+    // Normalize attachments array (support both multi-file attachments array and single attachment)
+    const rawList: Array<{ name: string; content: string }> = [];
+    if (Array.isArray(attachments) && attachments.length > 0) {
+      rawList.push(...attachments);
+    } else if (attachment && attachment.content && attachment.name) {
+      rawList.push(attachment);
+    }
 
-      attachmentsPayload = [
-        {
-          filename: attachment.name,
+    let attachmentsPayload: Array<{ filename: string; content: Buffer }> | undefined = undefined;
+    let attachmentDetailsHtml = '';
+
+    if (rawList.length > 0) {
+      attachmentsPayload = [];
+      for (const item of rawList) {
+        if (!item.name || !item.content) continue;
+        const buffer = Buffer.from(item.content, 'base64');
+        const sizeMB = (buffer.length / (1024 * 1024)).toFixed(2);
+        attachmentDetailsHtml += `<div style="color: #2563eb; font-weight: 600; margin-top: 2px;">📎 ${item.name} (${sizeMB} MB)</div>`;
+        attachmentsPayload.push({
+          filename: item.name,
           content: buffer,
-        },
-      ];
+        });
+      }
     }
 
     const data = await resend.emails.send({
@@ -72,7 +78,7 @@ export async function POST(request: Request) {
           <!-- Details Card -->
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px;">
             <tr>
-              <td style="padding: 6px 0; color: #64748b; font-weight: 600; width: 110px;">Sender Name:</td>
+              <td style="padding: 6px 0; color: #64748b; font-weight: 600; width: 120px;">Sender Name:</td>
               <td style="padding: 6px 0; color: #0f172a; font-weight: 700;">${name}</td>
             </tr>
             <tr>
@@ -83,10 +89,10 @@ export async function POST(request: Request) {
               <td style="padding: 6px 0; color: #64748b; font-weight: 600;">Subject:</td>
               <td style="padding: 6px 0; color: #0f172a;">${subject || 'N/A'}</td>
             </tr>
-            ${attachment ? `
+            ${attachmentDetailsHtml ? `
             <tr>
-              <td style="padding: 6px 0; color: #64748b; font-weight: 600;">Attachment:</td>
-              <td style="padding: 6px 0; color: #2563eb; font-weight: 600;">📎 ${attachment.name} (${attachmentSizeMB.toFixed(2)} MB)</td>
+              <td style="padding: 6px 0; color: #64748b; font-weight: 600; vertical-align: top;">Attachments:</td>
+              <td style="padding: 6px 0;">${attachmentDetailsHtml}</td>
             </tr>
             ` : ''}
           </table>
