@@ -30,7 +30,7 @@ export const EXPERIENCES: Experience[] = [
       'Champion Agile methodologies, improving team workflows, sprint planning, and delivery efficiency.',
       'Foster a collaborative and growth-oriented engineering culture focused on innovation, accessibility standards, and continuous improvement.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Docker', 'Gradle', 'Git', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis', 'Team Leadership', 'Agile Scrum'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Twilio API', 'Docker', 'Gradle', 'Git', 'Jira', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis', 'Team Leadership', 'Agile Scrum'],
   },
   {
     id: 'kryterion-engineer',
@@ -46,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
       'Designed and integrated RESTful APIs with secure authentication to ensure protected access and reliable communication.',
       'Participated in Agile Scrum ceremonies such as sprint planning, stand-ups, and retrospectives to ensure alignment and timely delivery.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Docker', 'Gradle', 'Git', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Twilio API', 'Docker', 'Gradle', 'Git', 'Jira', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis'],
   },
   {
     id: 'caceres-fullstack',
@@ -63,7 +63,7 @@ export const EXPERIENCES: Experience[] = [
       'Delivered technical assistance, onboarding sessions, and user documentation to ensure smooth adoption and usability.',
       'Applied access controls, monitoring, and routine audits to safeguard sensitive information and maintain compliance standards.',
     ],
-    technologies: ['Java', 'PHP', 'React', 'Node.js', 'Bootstrap', 'Electron JS', 'Python', 'MySQL', 'CouchDB', 'PouchDB', 'REST API', 'Git', 'Jenkins', 'Docker', 'Relational & NoSQL', 'Android Studio'],
+    technologies: ['Java', 'PHP', 'React', 'Node.js', 'Bootstrap', 'Electron JS', 'Python', 'MySQL', 'CouchDB', 'PouchDB', 'Google Maps API', 'REST API', 'Git', 'Jenkins', 'Docker', 'Relational & NoSQL', 'Android Studio'],
   },
   {
     id: 'caceres-system',
@@ -151,7 +151,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'backend',
     name: 'Backend & APIs',
-    skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'GraphQL', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'JWT Auth'],
+    skills: ['Java (Spring Boot)', 'C# / .NET', 'PHP / Laravel', 'Node.js / Express', 'Python', 'REST APIs', 'Twilio API', 'Google Maps API', 'Stripe (Payments)', 'Resend.com (Emails)', 'Microservices', 'JWT Auth'],
   },
   {
     id: 'frontend',
@@ -171,7 +171,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'devops',
     name: 'Databases, Cloud & DevOps',
-    skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (Hosting)', 'Docker', 'Git', 'Jenkins CI/CD', 'AWS Services'],
+    skills: ['Supabase (PostgreSQL)', 'MariaDB / MySQL', 'CouchDB / PouchDB', 'Redis', 'Liquibase', 'Vercel (Hosting)', 'Docker', 'Git', 'Jira', 'Jenkins CI/CD', 'AWS Services'],
   },
   {
     id: 'leadership',
