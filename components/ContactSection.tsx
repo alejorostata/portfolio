@@ -364,6 +364,7 @@ export const ContactSection: React.FC = () => {
                       {t('contact.messageField')} <span className="text-rose-500">*</span>
                     </label>
                     <RichTextEditor
+                      key={t('contact.messagePlaceholder')}
                       content={formData.message}
                       onChange={(html) => setFormData({ ...formData, message: html })}
                       placeholder={t('contact.messagePlaceholder')}
