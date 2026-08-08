@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
-import { Mail, MapPin, Copy, Check, Send, MessageSquare, PhoneCall, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, Send, MessageSquare, PhoneCall, ExternalLink, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const LinkedInIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
@@ -29,6 +29,7 @@ export const ContactSection: React.FC = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleCopyEmail = () => {
@@ -43,22 +44,42 @@ export const ContactSection: React.FC = () => {
     setTimeout(() => setCopiedViber(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    // Build Mailto Link
-    const mailtoSubject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
-    const mailtoBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setIsSubmitting(true);
 
-    window.location.href = mailtoUrl;
-    setIsSubmitted(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
+      if (!res.ok) {
+        throw new Error('Direct send unavailable');
+      }
+
+      setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 6000);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 6000);
+    } catch {
+      // Fallback: If API key is not configured yet or network fails, open mailto link
+      const mailtoSubject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
+      const mailtoBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitted(false);
+      }, 6000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -272,10 +293,15 @@ export const ContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-500"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-blue-500"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{t('contact.btnSend')}</span>
+                    {isSubmitting ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Send className="w-4 h-4" />
+                    )}
+                    <span>{isSubmitting ? 'Sending...' : t('contact.btnSend')}</span>
                   </button>
                 </form>
               )}
