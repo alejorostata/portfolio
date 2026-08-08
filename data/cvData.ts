@@ -30,7 +30,7 @@ export const EXPERIENCES: Experience[] = [
       'Champion Agile methodologies, improving team workflows, sprint planning, and delivery efficiency.',
       'Foster a collaborative and growth-oriented engineering culture focused on innovation, accessibility standards, and continuous improvement.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'WCAG AAA Accessibility', 'Multi-Language i18n', 'Flutter', 'React Native', 'MariaDB', 'Team Leadership', 'Agile Scrum'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Docker', 'Gradle', 'Git', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis', 'Team Leadership', 'Agile Scrum'],
   },
   {
     id: 'kryterion-engineer',
@@ -46,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
       'Designed and integrated RESTful APIs with secure authentication to ensure protected access and reliable communication.',
       'Participated in Agile Scrum ceremonies such as sprint planning, stand-ups, and retrospectives to ensure alignment and timely delivery.',
     ],
-    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Bootstrap', 'Tailwind CSS', 'Flutter', 'React Native', 'Node.js', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Docker', 'Jenkins', 'AWS', 'Redis'],
+    technologies: ['Java (Spring Boot)', 'Vue.js', 'Next.js', 'Flutter', 'React Native', 'Node.js', 'Tailwind CSS', 'Bootstrap', 'MariaDB', 'Liquibase', 'JWT', 'REST API', 'Docker', 'Gradle', 'Git', 'Jenkins', 'JFrog', 'RabbitMQ', 'AWS', 'Nginx', 'Janus', 'Redis'],
   },
   {
     id: 'caceres-fullstack',
@@ -63,7 +63,7 @@ export const EXPERIENCES: Experience[] = [
       'Delivered technical assistance, onboarding sessions, and user documentation to ensure smooth adoption and usability.',
       'Applied access controls, monitoring, and routine audits to safeguard sensitive information and maintain compliance standards.',
     ],
-    technologies: ['Java', 'React', 'Node.js', 'Bootstrap', 'REST API', 'CI/CD Pipelines', 'SQL Databases'],
+    technologies: ['Java', 'PHP', 'React', 'Node.js', 'Bootstrap', 'Electron JS', 'Python', 'MySQL', 'CouchDB', 'PouchDB', 'REST API', 'Git', 'Jenkins', 'Docker', 'Relational & NoSQL', 'Android Studio'],
   },
   {
     id: 'caceres-system',
@@ -79,7 +79,7 @@ export const EXPERIENCES: Experience[] = [
       'Delivered day-to-day IT assistance to end users, ensuring minimal downtime and smooth system adoption.',
       'Structured databases, implemented backend logic, and adjusted frontend interfaces to support complete system functionality.',
     ],
-    technologies: ['Java', 'Electron JS', 'Python', 'MySQL', 'CouchDB', 'PouchDB', 'Android Studio'],
+    technologies: ['Java', 'PHP', 'Electron JS', 'Python', 'MySQL', 'CouchDB', 'PouchDB', 'Android Studio', 'Git', 'Troubleshooting'],
   },
 ];
 
