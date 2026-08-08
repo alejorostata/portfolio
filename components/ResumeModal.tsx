@@ -96,7 +96,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <div
-      className="fixed inset-[0] z-[100] flex items-center justify-center p-2.5 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-2.5 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -104,7 +104,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-4xl max-h-[92vh] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-4xl h-[90vh] max-h-[850px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header Bar */}
@@ -137,7 +137,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Modal Body: PDF Container & Mobile Notification Banner */}
-        <div className="flex-1 bg-slate-100 dark:bg-slate-950 p-2.5 sm:p-4 flex flex-col space-y-2.5 min-h-[360px] sm:min-h-[500px]">
+        <div className="flex-1 min-h-0 bg-slate-100 dark:bg-slate-950 p-2.5 sm:p-4 flex flex-col space-y-2.5 overflow-hidden">
           
           {/* Mobile PDF Notice Banner */}
           <div className="sm:hidden p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-[11px] font-medium text-blue-900 dark:text-blue-300 text-center shrink-0">
@@ -145,11 +145,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Embedded PDF iframe */}
-          <div className="flex-1 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white">
+          <div className="flex-1 min-h-0 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white">
             <iframe
               src="/alejo_rostata_cv.pdf#toolbar=1&navpanes=0&view=FitH"
               title="Alejo Rostata PDF Resume"
-              className="w-full h-full min-h-[350px] sm:min-h-[500px]"
+              className="w-full h-full border-0"
             />
           </div>
         </div>
