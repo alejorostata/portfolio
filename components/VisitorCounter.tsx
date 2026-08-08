@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Configurable offset for initial display — set to 5000 to maintain baseline count
+// Configurable offset for baseline display count
 const VISITOR_OFFSET = 5000;
 
 export const VisitorCounter: React.FC = () => {
@@ -13,8 +13,11 @@ export const VisitorCounter: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+
     const fetchCount = async () => {
       try {
+        // Fetch with no-store cache control
         const res = await fetch(`/api/visitors?_t=${Date.now()}`, { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
@@ -29,14 +32,29 @@ export const VisitorCounter: React.FC = () => {
       }
     };
 
-    fetchCount();
+    // Defer execution until browser idle to ensure 0 impact on initial page load speed
+    const deferFetch = () => {
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(() => {
+          fetchCount();
+          intervalId = setInterval(fetchCount, 15000);
+        });
+      } else {
+        setTimeout(() => {
+          fetchCount();
+          intervalId = setInterval(fetchCount, 15000);
+        }, 300);
+      }
+    };
 
-    // Poll live count every 15 seconds
-    const interval = setInterval(fetchCount, 15000);
+    deferFetch();
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
   }, []);
 
+  // Hide while initial loading or if API fails
   if (loading || count === null) return null;
 
   const totalVisits = count + VISITOR_OFFSET;
