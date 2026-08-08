@@ -118,6 +118,6 @@ export const de: TranslationSchema = {
     backToTop: 'Nach oben',
     wcagBadge: 'WCAG 2.1 AAA Konform',
     visits: 'Besuche',
-    techNote: 'Erstellt mit Next.js 16, React 19 & Tailwind CSS',
+    techNote: 'Entwickelt mit Next.js 16, React 19, Tailwind CSS & Mehrsprachiger i18n (7 Sprachen)',
   },
 };

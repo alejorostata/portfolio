@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   location: 'Naga City, Camarines Sur, Philippines',
   email: 'alejorostata@gmail.com',
   viberPhone: '+63 949 575 6987',
-  linkedin: 'https://linkedin.com/in/alejo-rostata',
+  linkedin: 'https://www.linkedin.com/in/alejorostata/',
   github: 'https://github.com/alejorostata',
   availability: 'Available for Full-Stack & Engineering Lead Roles',
   summary:
