@@ -17,7 +17,7 @@ export const zh: TranslationSchema = {
     name: 'Alejo Rostata',
     role: '全栈软件工程师与技术负责人',
     metric1Val: '约10年',
-    metric1Label: '软件开发经验',
+    metric1Label: '软件开发实务经验',
     metric2Val: '全栈架构',
     metric2Label: 'Web、移动端与 API',
     tagline: '拥有近十年经验的资深全栈软件工程师与技术负责人，精通 Web 和移动端系统的架构与交付。出色的团队领导者，在打造现代可扩展应用的同时推动工程团队绩效（KPI 和 PAF）的提升。',
