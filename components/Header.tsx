@@ -87,12 +87,25 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               />
             </div>
             <div className="flex flex-col min-w-0 truncate">
-              <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
-                {t('nav.brandName')}
-              </span>
-              <span className="hidden md:inline-block text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight truncate max-w-[180px] xl:max-w-[240px]">
-                {t('hero.role')}
-              </span>
+              {/* Mobile View: Stacked Name (Alejo / Rostata) */}
+              <div className="flex flex-col md:hidden leading-none min-w-0">
+                <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                  Alejo
+                </span>
+                <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 leading-tight tracking-wider uppercase group-hover:text-blue-600/80 dark:group-hover:text-blue-400/80 transition-colors truncate">
+                  Rostata
+                </span>
+              </div>
+
+              {/* Desktop View (md+): Standard Full Name & Role */}
+              <div className="hidden md:flex md:flex-col leading-tight min-w-0">
+                <span className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                  {t('nav.brandName')}
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-medium text-slate-600 dark:text-slate-400 leading-tight truncate max-w-[180px] xl:max-w-[240px]">
+                  {t('hero.role')}
+                </span>
+              </div>
             </div>
           </a>
 
