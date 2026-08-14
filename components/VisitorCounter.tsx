@@ -55,7 +55,14 @@ export const VisitorCounter: React.FC = () => {
   }, []);
 
   // Hide while initial loading or if API fails
-  if (loading || count === null) return null;
+  if (loading || count === null) {
+    return (
+      <span
+        className="inline-block w-28 h-6 rounded-full bg-slate-800/50 border border-slate-700/30 animate-pulse"
+        aria-hidden="true"
+      />
+    );
+  }
 
   const totalVisits = count + VISITOR_OFFSET;
 

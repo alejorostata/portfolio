@@ -83,6 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
                 alt="Alejo Rostata Logo"
                 width={36}
                 height={36}
+                priority
                 className="w-full h-full object-contain"
               />
             </div>

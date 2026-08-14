@@ -7,11 +7,13 @@ import { SkipLink } from "@/components/SkipLink";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -100,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           data-goatcounter="https://alejorostata.goatcounter.com/count"
           src="//gc.zgo.at/count.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

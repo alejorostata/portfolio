@@ -5,13 +5,15 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
-import { ExperienceSection } from '@/components/ExperienceSection';
-import { SkillsSection } from '@/components/SkillsSection';
-import { ProjectsSection } from '@/components/ProjectsSection';
-import { EducationLeadershipSection } from '@/components/EducationLeadershipSection';
-import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
-import { ResumeModal } from '@/components/ResumeModal';
+import dynamic from 'next/dynamic';
+
+const DynamicExperienceSection = dynamic(() => import('@/components/ExperienceSection').then(m => m.ExperienceSection), { ssr: true });
+const DynamicSkillsSection = dynamic(() => import('@/components/SkillsSection').then(m => m.SkillsSection), { ssr: true });
+const DynamicProjectsSection = dynamic(() => import('@/components/ProjectsSection').then(m => m.ProjectsSection), { ssr: true });
+const DynamicEducationLeadershipSection = dynamic(() => import('@/components/EducationLeadershipSection').then(m => m.EducationLeadershipSection), { ssr: true });
+const DynamicContactSection = dynamic(() => import('@/components/ContactSection').then(m => m.ContactSection), { ssr: true });
+const DynamicResumeModal = dynamic(() => import('@/components/ResumeModal').then(m => m.ResumeModal), { ssr: false });
 
 export default function Home() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -37,18 +39,18 @@ export default function Home() {
           {/* Main Content Area */}
           <main id="main-content" className="flex-grow" tabIndex={-1}>
             <HeroSection onOpenResume={() => setIsResumeModalOpen(true)} />
-            <ExperienceSection />
-            <SkillsSection />
-            <ProjectsSection />
-            <EducationLeadershipSection />
-            <ContactSection />
+            <DynamicExperienceSection />
+            <DynamicSkillsSection />
+            <DynamicProjectsSection />
+            <DynamicEducationLeadershipSection />
+            <DynamicContactSection />
           </main>
 
           {/* Footer */}
           <Footer />
 
           {/* CV Modal */}
-          <ResumeModal
+          <DynamicResumeModal
             isOpen={isResumeModalOpen}
             onClose={() => {
               setIsResumeModalOpen(false);
