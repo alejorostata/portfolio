@@ -34,7 +34,7 @@ export const ExperienceSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* Left Column: Timeline Selectors */}
-          <div className="lg:col-span-5 flex flex-col gap-2.5 sm:gap-3">
+          <div role="tablist" aria-label="Experience Timeline" aria-orientation="vertical" className="lg:col-span-5 flex flex-col gap-2.5 sm:gap-3">
             {experiences.map((exp) => {
               const isSelected = exp.id === selectedExpId;
               return (

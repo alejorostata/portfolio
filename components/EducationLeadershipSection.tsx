@@ -114,7 +114,7 @@ export const EducationLeadershipSection: React.FC = () => {
                         <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-snug">
                           {item.title}
                         </h4>
-                        <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-950 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800">
+                        <span className="text-[11px] font-mono text-slate-400 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800">
                           {item.year}
                         </span>
                       </div>

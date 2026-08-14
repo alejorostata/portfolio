@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           {/* Logo & Brand Identity */}
           <a
             href="#hero"
-            aria-label="Alejo Rostata Portfolio Homepage"
+            aria-label="Alejo Rostata — Full Stack Software Engineer & Team Lead"
             className="flex items-center gap-2.5 group shrink min-w-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform shrink-0">
