@@ -54,6 +54,9 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
       attributes: {
         id,
         class: 'prose dark:prose-invert max-w-none p-3.5 min-h-[140px] focus:outline-none text-slate-900 dark:text-slate-100 text-sm leading-relaxed',
+        role: 'textbox',
+        'aria-multiline': 'true',
+        'aria-label': placeholder || 'Message content',
       },
     },
     onUpdate: ({ editor }) => {

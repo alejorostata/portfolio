@@ -41,11 +41,11 @@ export const HeroSection: React.FC = () => {
             {/* Metric Cards Grid - Side-by-Side 2 Columns on Mobile for Clean Symmetry */}
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 py-3 border-y border-slate-200 dark:border-slate-800/80">
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric1Val')}</p>
+                <div className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric1Val')}</div>
                 <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.metric1Label')}</p>
               </div>
               <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-0.5 sm:space-y-1 shadow-xs">
-                <p className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric2Val')}</p>
+                <div className="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">{t('hero.metric2Val')}</div>
                 <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium leading-tight">{t('hero.metric2Label')}</p>
               </div>
             </div>
