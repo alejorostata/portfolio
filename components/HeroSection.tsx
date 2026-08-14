@@ -5,11 +5,7 @@ import { PERSONAL_INFO } from '@/data/cvData';
 import { Briefcase, MapPin, ArrowRight, FileText, CheckCircle2, ShieldCheck, GraduationCap, Code2, Layers, Users, Sparkles, Terminal } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
-interface HeroSectionProps {
-  onOpenResume: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
+export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
@@ -87,15 +83,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
 
-              <button
-                onClick={onOpenResume}
-                type="button"
+              <a
+                href="#cv"
                 className="h-11 sm:h-12 px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-xs sm:text-sm flex items-center justify-center sm:justify-start gap-2 transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <span>{t('hero.btnReviewCV')}</span>
                 <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
 
           </div>

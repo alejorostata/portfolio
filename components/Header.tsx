@@ -7,11 +7,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useLanguage } from '@/context/LanguageContext';
 
-interface HeaderProps {
-  onOpenResume?: () => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
+export const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -35,26 +31,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       } else {
         document.documentElement.classList.remove('is-scrolled');
       }
-
-      // Scroll Spy for active section highlight
-      const sections = navLinks.map((link) => document.getElementById(link.id));
-      const scrollPosition = window.scrollY + 120;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navLinks[i].id);
-          break;
-        }
-      }
     };
 
-    // Immediately trigger on mount to detect scroll position on page refresh
     handleScroll();
-
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Scroll Spy using IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-120px 0px -50% 0px', threshold: 0 }
+    );
+
+    navLinks.forEach((link) => {
+      const el = document.getElementById(link.id);
+      if (el) observer.observe(el);
+    });
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
@@ -74,7 +75,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
           {/* Logo & Brand Identity */}
           <a
             href="#hero"
-            aria-label="Alejo Rostata — Full Stack Software Engineer & Team Lead"
             className="flex items-center gap-2.5 group shrink min-w-0 focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-xs group-hover:scale-105 transition-transform shrink-0">
