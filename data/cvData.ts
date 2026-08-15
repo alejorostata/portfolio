@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/alejorostata',
   availability: 'Available for Full-Stack & Engineering Lead Roles',
   summary:
-    'Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications with 100% WCAG AAA Accessibility standards.',
+    'Seasoned Full Stack Software Engineer & Team Lead with nearly a decade of experience architecting and delivering web, desktop, and mobile systems. Proven leader driving engineering team performance (KPIs & PAF) while delivering modern scalable applications with WCAG AA Accessibility standards.',
 };
 
 export const EXPERIENCES: Experience[] = [
@@ -152,7 +152,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'frontend',
     name: 'Frontend & Mobile',
-    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'React Native (iOS & Android)', 'Flutter (iOS & Android)', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Bootstrap', 'Web Accessibility (a11y / WCAG AAA)', 'Lighthouse'],
+    skills: ['Next.js (App Router)', 'Vue.js', 'React', 'TypeScript', 'React Native (iOS & Android)', 'Flutter (iOS & Android)', 'Electron.js', 'Shadcn UI', 'Tailwind CSS', 'Bootstrap', 'Web Accessibility (a11y / WCAG AA)', 'Lighthouse'],
   },
   {
     id: 'devops',

@@ -122,7 +122,7 @@ export const zh: TranslationSchema = {
   footer: {
     rights: '保留所有权利。',
     backToTop: '返回顶部',
-    wcagBadge: '符合 WCAG 2.1 AAA 标准',
+    wcagBadge: '符合 WCAG 2.1 AA 标准',
     visits: '次访问',
     techNote: '基于 Next.js 16、React 19、Tailwind CSS 与多语言 i18n (7种语言) 构建',
   },

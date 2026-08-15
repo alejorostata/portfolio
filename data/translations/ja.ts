@@ -122,7 +122,7 @@ export const ja: TranslationSchema = {
   footer: {
     rights: '無断転載を禁じます。',
     backToTop: 'ページトップへ',
-    wcagBadge: 'WCAG 2.1 AAA 準拠',
+    wcagBadge: 'WCAG 2.1 AA 準拠',
     visits: '回訪問',
     techNote: 'Next.js 16、React 19、Tailwind CSS、および多言語 i18n (7言語) で構築',
   },

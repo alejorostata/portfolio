@@ -122,7 +122,7 @@ export const en: TranslationSchema = {
   footer: {
     rights: 'All rights reserved.',
     backToTop: 'Back to Top',
-    wcagBadge: 'WCAG 2.1 AAA Compliant',
+    wcagBadge: 'WCAG 2.1 AA Compliant',
     visits: 'visits',
     techNote: 'Built with Next.js 16, React 19, Tailwind CSS & Multi-Language i18n (7 Locales)',
   },

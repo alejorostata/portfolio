@@ -122,7 +122,7 @@ export const ko: TranslationSchema = {
   footer: {
     rights: '모든 권리 보유.',
     backToTop: '맨 위로',
-    wcagBadge: 'WCAG 2.1 AAA 준수',
+    wcagBadge: 'WCAG 2.1 AA 준수',
     visits: '회 방문',
     techNote: 'Next.js 16, React 19, Tailwind CSS 및 다국어 i18n (7개 언어)으로 제작',
   },
