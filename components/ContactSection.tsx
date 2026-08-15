@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { PERSONAL_INFO } from '@/data/cvData';
 import { Mail, MapPin, Copy, Check, Send, MessageSquare, PhoneCall, ExternalLink, Loader2, Paperclip, X, FileText, AlertCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -11,7 +11,9 @@ const RichTextEditor = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900/50 h-44 animate-pulse" />
+      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900/50 h-44 animate-pulse flex items-center justify-center">
+        <span className="text-slate-400 text-sm">Loading editor...</span>
+      </div>
     ),
   }
 );
@@ -56,6 +58,25 @@ export const ContactSection: React.FC = () => {
   const [attachmentError, setAttachmentError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const [isEditorVisible, setIsEditorVisible] = useState(false);
+  const editorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsEditorVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    if (editorRef.current) {
+      observer.observe(editorRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -368,16 +389,22 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   {/* Rich Text Editor Message Field */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5" ref={editorRef}>
                     <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       {t('contact.messageField')} <span className="text-rose-500">*</span>
                     </div>
-                    <RichTextEditor
-                      id="contact-message"
-                      content={formData.message}
-                      onChange={(html) => setFormData({ ...formData, message: html })}
-                      placeholder={t('contact.messagePlaceholder')}
-                    />
+                    {isEditorVisible ? (
+                      <RichTextEditor
+                        id="contact-message"
+                        content={formData.message}
+                        onChange={(html) => setFormData({ ...formData, message: html })}
+                        placeholder={t('contact.messagePlaceholder')}
+                      />
+                    ) : (
+                      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900/50 h-44 animate-pulse flex items-center justify-center">
+                        <span className="text-slate-400 text-sm">{t('contact.messagePlaceholder') || 'Loading editor...'}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* File Attachments Zone (Up to 5 files, 10MB total max) */}

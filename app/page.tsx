@@ -6,6 +6,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { Footer } from '@/components/Footer';
+import { LazySection } from '@/components/LazySection';
 import dynamic from 'next/dynamic';
 
 const DynamicExperienceSection = dynamic(() => import('@/components/ExperienceSection').then(m => m.ExperienceSection), { ssr: false });
@@ -47,11 +48,21 @@ export default function Home() {
           {/* Main Content Area */}
           <main id="main-content" className="flex-grow" tabIndex={-1}>
             <HeroSection />
-            <DynamicExperienceSection />
-            <DynamicSkillsSection />
-            <DynamicProjectsSection />
-            <DynamicEducationLeadershipSection />
-            <DynamicContactSection />
+            <LazySection minHeight="800px">
+              <DynamicExperienceSection />
+            </LazySection>
+            <LazySection minHeight="800px">
+              <DynamicSkillsSection />
+            </LazySection>
+            <LazySection minHeight="1200px">
+              <DynamicProjectsSection />
+            </LazySection>
+            <LazySection minHeight="600px">
+              <DynamicEducationLeadershipSection />
+            </LazySection>
+            <LazySection minHeight="600px">
+              <DynamicContactSection />
+            </LazySection>
           </main>
 
           {/* Footer */}

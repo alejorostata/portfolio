@@ -17,7 +17,7 @@ export const de: TranslationSchema = {
     name: 'Alejo Rostata',
     role: 'Full Stack Software Engineer & Team Lead',
     metric1Val: '~10 Jahre',
-    metric1Label: 'Software-Entwicklung',
+    metric1Label: 'Softwareentwicklung',
     metric2Val: 'Full-Stack',
     metric2Label: 'Web, Mobile & APIs',
     tagline: 'Erfahrener Full-Stack-Software-Ingenieur und Teamleiter mit fast zehn Jahren Erfahrung in der Architektur und Bereitstellung von Web- und Mobil-Systemen. Nachgewiesene Führungskraft bei der Steigerung der Teamleistung (KPIs & PAF) und der Bereitstellung moderner, skalierbarer Anwendungen.',

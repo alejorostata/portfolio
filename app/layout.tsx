@@ -101,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* GoatCounter Analytics — privacy-friendly, no cookies, GDPR compliant */}
         <Script
           data-goatcounter="https://alejorostata.goatcounter.com/count"
-          src="//gc.zgo.at/count.js"
+          src="https://gc.zgo.at/count.js"
           strategy="lazyOnload"
         />
       </body>
