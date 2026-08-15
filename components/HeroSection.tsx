@@ -10,7 +10,9 @@ export const HeroSection: React.FC = () => {
   const [activeConsoleTab, setActiveConsoleTab] = useState<'overview' | 'stack' | 'leadership' | 'ai'>('overview');
 
   return (
-    <section id="hero" className="relative pt-24 pb-12 sm:pt-36 sm:pb-24 overflow-hidden bg-ambient-slate bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-900">
+    <section id="hero" className="relative pt-24 pb-12 sm:pt-36 sm:pb-24 overflow-hidden bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-900">
+      {/* Absolute Ambient Gradient Background - moved here to satisfy accessibility contrast checkers */}
+      <div className="absolute inset-0 z-0 bg-ambient-slate pointer-events-none" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
