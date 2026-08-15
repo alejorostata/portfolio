@@ -74,6 +74,7 @@ export const ProjectsSection: React.FC = () => {
                     >
                       <Globe className="w-3.5 h-3.5" />
                       <span>{t('projects.liveSite')}</span>
+                      <span className="sr-only"> for {project.title}</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : project.company ? (
@@ -137,6 +138,7 @@ export const ProjectsSection: React.FC = () => {
                       className="w-full py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-500/50 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm"
                     >
                       <span>{t('projects.visitLiveSite')}</span>
+                      <span className="sr-only"> for {project.title}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
