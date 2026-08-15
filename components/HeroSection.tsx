@@ -21,12 +21,12 @@ export const HeroSection: React.FC = () => {
             
             {/* Availability Status Badge */}
             <div>
-              <div className="inline-flex max-w-full items-start sm:items-center gap-2 px-3.5 py-2 sm:px-3 sm:py-1.5 rounded-xl sm:rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs">
-                <span className="relative flex h-2 w-2 shrink-0 mt-1 sm:mt-0">
+              <div className="inline-flex max-w-full items-center gap-2 px-3.5 py-2 sm:px-3 sm:py-1.5 rounded-xl sm:rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 text-[11px] sm:text-xs font-semibold tracking-wide shadow-xs">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-500"></span>
                 </span>
-                <span className="leading-snug text-left">{t('hero.availabilityBadge')}</span>
+                <span className="leading-snug text-left text-pretty">{t('hero.availabilityBadge')}</span>
               </div>
             </div>
 
