@@ -17,7 +17,7 @@ export const ko: TranslationSchema = {
     name: 'Alejo Rostata',
     role: '풀스택 소프트웨어 엔지니어 & 팀 리드',
     metric1Val: '약 10년',
-    metric1Label: '소프트웨어 개발 실무 경력',
+    metric1Label: '소프트웨어 개발',
     metric2Val: '풀스택',
     metric2Label: '웹, 모바일 & API',
     tagline: '10년 가까이 웹 및 모바일 시스템을 아키텍팅하고 배포해 온 숙련된 풀스택 소프트웨어 엔지니어 겸 팀 리드입니다. 현대적이고 확장 가능한 애플리케이션을 제공하면서 엔지니어링 팀 성과(KPI 및 PAF)를 이끄는 검증된 리더입니다.',

@@ -17,7 +17,7 @@ export const ja: TranslationSchema = {
     name: 'Alejo Rostata',
     role: 'フルスタックソフトウェアエンジニア & チームリード',
     metric1Val: '約10年',
-    metric1Label: 'ソフトウェア開発実務経験',
+    metric1Label: 'ソフトウェア開発',
     metric2Val: 'フルスタック',
     metric2Label: 'Web・モバイル・API',
     tagline: '約10年にわたりWebおよびモバイルシステムのアーキテクチャ設計と構築に従事してきた経験豊富なフルスタックエンジニア＆チームリード。開発チームのパフォーマンス（KPIおよびPAF）向上を推進しながら、モダンで拡張性の高いアプリケーションを提供。',
